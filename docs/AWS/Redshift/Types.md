@@ -28,7 +28,7 @@ Encode AccessToSnapshotDeniedFault
 
 ``` purescript
 newtype AccountWithRestoreAccess
-  = AccountWithRestoreAccess { "AccountId" :: NullOrUndefined (String), "AccountAlias" :: NullOrUndefined (String) }
+  = AccountWithRestoreAccess { "AccountId" :: Maybe (String), "AccountAlias" :: Maybe (String) }
 ```
 
 <p>Describes an AWS customer account authorized to restore a snapshot.</p>
@@ -53,7 +53,7 @@ Constructs AccountWithRestoreAccess from required parameters
 #### `newAccountWithRestoreAccess'`
 
 ``` purescript
-newAccountWithRestoreAccess' :: ({ "AccountId" :: NullOrUndefined (String), "AccountAlias" :: NullOrUndefined (String) } -> { "AccountId" :: NullOrUndefined (String), "AccountAlias" :: NullOrUndefined (String) }) -> AccountWithRestoreAccess
+newAccountWithRestoreAccess' :: ({ "AccountId" :: Maybe (String), "AccountAlias" :: Maybe (String) } -> { "AccountId" :: Maybe (String), "AccountAlias" :: Maybe (String) }) -> AccountWithRestoreAccess
 ```
 
 Constructs AccountWithRestoreAccess's fields from required parameters
@@ -132,7 +132,7 @@ Encode AuthorizationQuotaExceededFault
 
 ``` purescript
 newtype AuthorizeClusterSecurityGroupIngressMessage
-  = AuthorizeClusterSecurityGroupIngressMessage { "ClusterSecurityGroupName" :: String, "CIDRIP" :: NullOrUndefined (String), "EC2SecurityGroupName" :: NullOrUndefined (String), "EC2SecurityGroupOwnerId" :: NullOrUndefined (String) }
+  = AuthorizeClusterSecurityGroupIngressMessage { "ClusterSecurityGroupName" :: String, "CIDRIP" :: Maybe (String), "EC2SecurityGroupName" :: Maybe (String), "EC2SecurityGroupOwnerId" :: Maybe (String) }
 ```
 
 <p/>
@@ -157,7 +157,7 @@ Constructs AuthorizeClusterSecurityGroupIngressMessage from required parameters
 #### `newAuthorizeClusterSecurityGroupIngressMessage'`
 
 ``` purescript
-newAuthorizeClusterSecurityGroupIngressMessage' :: String -> ({ "ClusterSecurityGroupName" :: String, "CIDRIP" :: NullOrUndefined (String), "EC2SecurityGroupName" :: NullOrUndefined (String), "EC2SecurityGroupOwnerId" :: NullOrUndefined (String) } -> { "ClusterSecurityGroupName" :: String, "CIDRIP" :: NullOrUndefined (String), "EC2SecurityGroupName" :: NullOrUndefined (String), "EC2SecurityGroupOwnerId" :: NullOrUndefined (String) }) -> AuthorizeClusterSecurityGroupIngressMessage
+newAuthorizeClusterSecurityGroupIngressMessage' :: String -> ({ "ClusterSecurityGroupName" :: String, "CIDRIP" :: Maybe (String), "EC2SecurityGroupName" :: Maybe (String), "EC2SecurityGroupOwnerId" :: Maybe (String) } -> { "ClusterSecurityGroupName" :: String, "CIDRIP" :: Maybe (String), "EC2SecurityGroupName" :: Maybe (String), "EC2SecurityGroupOwnerId" :: Maybe (String) }) -> AuthorizeClusterSecurityGroupIngressMessage
 ```
 
 Constructs AuthorizeClusterSecurityGroupIngressMessage's fields from required parameters
@@ -166,7 +166,7 @@ Constructs AuthorizeClusterSecurityGroupIngressMessage's fields from required pa
 
 ``` purescript
 newtype AuthorizeClusterSecurityGroupIngressResult
-  = AuthorizeClusterSecurityGroupIngressResult { "ClusterSecurityGroup" :: NullOrUndefined (ClusterSecurityGroup) }
+  = AuthorizeClusterSecurityGroupIngressResult { "ClusterSecurityGroup" :: Maybe (ClusterSecurityGroup) }
 ```
 
 ##### Instances
@@ -189,7 +189,7 @@ Constructs AuthorizeClusterSecurityGroupIngressResult from required parameters
 #### `newAuthorizeClusterSecurityGroupIngressResult'`
 
 ``` purescript
-newAuthorizeClusterSecurityGroupIngressResult' :: ({ "ClusterSecurityGroup" :: NullOrUndefined (ClusterSecurityGroup) } -> { "ClusterSecurityGroup" :: NullOrUndefined (ClusterSecurityGroup) }) -> AuthorizeClusterSecurityGroupIngressResult
+newAuthorizeClusterSecurityGroupIngressResult' :: ({ "ClusterSecurityGroup" :: Maybe (ClusterSecurityGroup) } -> { "ClusterSecurityGroup" :: Maybe (ClusterSecurityGroup) }) -> AuthorizeClusterSecurityGroupIngressResult
 ```
 
 Constructs AuthorizeClusterSecurityGroupIngressResult's fields from required parameters
@@ -198,7 +198,7 @@ Constructs AuthorizeClusterSecurityGroupIngressResult's fields from required par
 
 ``` purescript
 newtype AuthorizeSnapshotAccessMessage
-  = AuthorizeSnapshotAccessMessage { "SnapshotIdentifier" :: String, "SnapshotClusterIdentifier" :: NullOrUndefined (String), "AccountWithRestoreAccess" :: String }
+  = AuthorizeSnapshotAccessMessage { "SnapshotIdentifier" :: String, "SnapshotClusterIdentifier" :: Maybe (String), "AccountWithRestoreAccess" :: String }
 ```
 
 <p/>
@@ -223,7 +223,7 @@ Constructs AuthorizeSnapshotAccessMessage from required parameters
 #### `newAuthorizeSnapshotAccessMessage'`
 
 ``` purescript
-newAuthorizeSnapshotAccessMessage' :: String -> String -> ({ "SnapshotIdentifier" :: String, "SnapshotClusterIdentifier" :: NullOrUndefined (String), "AccountWithRestoreAccess" :: String } -> { "SnapshotIdentifier" :: String, "SnapshotClusterIdentifier" :: NullOrUndefined (String), "AccountWithRestoreAccess" :: String }) -> AuthorizeSnapshotAccessMessage
+newAuthorizeSnapshotAccessMessage' :: String -> String -> ({ "SnapshotIdentifier" :: String, "SnapshotClusterIdentifier" :: Maybe (String), "AccountWithRestoreAccess" :: String } -> { "SnapshotIdentifier" :: String, "SnapshotClusterIdentifier" :: Maybe (String), "AccountWithRestoreAccess" :: String }) -> AuthorizeSnapshotAccessMessage
 ```
 
 Constructs AuthorizeSnapshotAccessMessage's fields from required parameters
@@ -232,7 +232,7 @@ Constructs AuthorizeSnapshotAccessMessage's fields from required parameters
 
 ``` purescript
 newtype AuthorizeSnapshotAccessResult
-  = AuthorizeSnapshotAccessResult { "Snapshot" :: NullOrUndefined (Snapshot) }
+  = AuthorizeSnapshotAccessResult { "Snapshot" :: Maybe (Snapshot) }
 ```
 
 ##### Instances
@@ -255,7 +255,7 @@ Constructs AuthorizeSnapshotAccessResult from required parameters
 #### `newAuthorizeSnapshotAccessResult'`
 
 ``` purescript
-newAuthorizeSnapshotAccessResult' :: ({ "Snapshot" :: NullOrUndefined (Snapshot) } -> { "Snapshot" :: NullOrUndefined (Snapshot) }) -> AuthorizeSnapshotAccessResult
+newAuthorizeSnapshotAccessResult' :: ({ "Snapshot" :: Maybe (Snapshot) } -> { "Snapshot" :: Maybe (Snapshot) }) -> AuthorizeSnapshotAccessResult
 ```
 
 Constructs AuthorizeSnapshotAccessResult's fields from required parameters
@@ -264,7 +264,7 @@ Constructs AuthorizeSnapshotAccessResult's fields from required parameters
 
 ``` purescript
 newtype AvailabilityZone
-  = AvailabilityZone { "Name" :: NullOrUndefined (String) }
+  = AvailabilityZone { "Name" :: Maybe (String) }
 ```
 
 <p>Describes an availability zone.</p>
@@ -289,7 +289,7 @@ Constructs AvailabilityZone from required parameters
 #### `newAvailabilityZone'`
 
 ``` purescript
-newAvailabilityZone' :: ({ "Name" :: NullOrUndefined (String) } -> { "Name" :: NullOrUndefined (String) }) -> AvailabilityZone
+newAvailabilityZone' :: ({ "Name" :: Maybe (String) } -> { "Name" :: Maybe (String) }) -> AvailabilityZone
 ```
 
 Constructs AvailabilityZone's fields from required parameters
@@ -348,7 +348,7 @@ Encode BucketNotFoundFault
 
 ``` purescript
 newtype Cluster
-  = Cluster { "ClusterIdentifier" :: NullOrUndefined (String), "NodeType" :: NullOrUndefined (String), "ClusterStatus" :: NullOrUndefined (String), "ModifyStatus" :: NullOrUndefined (String), "MasterUsername" :: NullOrUndefined (String), "DBName" :: NullOrUndefined (String), "Endpoint" :: NullOrUndefined (Endpoint), "ClusterCreateTime" :: NullOrUndefined (TStamp), "AutomatedSnapshotRetentionPeriod" :: NullOrUndefined (Int), "ClusterSecurityGroups" :: NullOrUndefined (ClusterSecurityGroupMembershipList), "VpcSecurityGroups" :: NullOrUndefined (VpcSecurityGroupMembershipList), "ClusterParameterGroups" :: NullOrUndefined (ClusterParameterGroupStatusList), "ClusterSubnetGroupName" :: NullOrUndefined (String), "VpcId" :: NullOrUndefined (String), "AvailabilityZone" :: NullOrUndefined (String), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "PendingModifiedValues" :: NullOrUndefined (PendingModifiedValues), "ClusterVersion" :: NullOrUndefined (String), "AllowVersionUpgrade" :: NullOrUndefined (Boolean), "NumberOfNodes" :: NullOrUndefined (Int), "PubliclyAccessible" :: NullOrUndefined (Boolean), "Encrypted" :: NullOrUndefined (Boolean), "RestoreStatus" :: NullOrUndefined (RestoreStatus), "HsmStatus" :: NullOrUndefined (HsmStatus), "ClusterSnapshotCopyStatus" :: NullOrUndefined (ClusterSnapshotCopyStatus), "ClusterPublicKey" :: NullOrUndefined (String), "ClusterNodes" :: NullOrUndefined (ClusterNodesList), "ElasticIpStatus" :: NullOrUndefined (ElasticIpStatus), "ClusterRevisionNumber" :: NullOrUndefined (String), "Tags" :: NullOrUndefined (TagList), "KmsKeyId" :: NullOrUndefined (String), "EnhancedVpcRouting" :: NullOrUndefined (Boolean), "IamRoles" :: NullOrUndefined (ClusterIamRoleList) }
+  = Cluster { "ClusterIdentifier" :: Maybe (String), "NodeType" :: Maybe (String), "ClusterStatus" :: Maybe (String), "ModifyStatus" :: Maybe (String), "MasterUsername" :: Maybe (String), "DBName" :: Maybe (String), "Endpoint" :: Maybe (Endpoint), "ClusterCreateTime" :: Maybe (TStamp), "AutomatedSnapshotRetentionPeriod" :: Maybe (Int), "ClusterSecurityGroups" :: Maybe (ClusterSecurityGroupMembershipList), "VpcSecurityGroups" :: Maybe (VpcSecurityGroupMembershipList), "ClusterParameterGroups" :: Maybe (ClusterParameterGroupStatusList), "ClusterSubnetGroupName" :: Maybe (String), "VpcId" :: Maybe (String), "AvailabilityZone" :: Maybe (String), "PreferredMaintenanceWindow" :: Maybe (String), "PendingModifiedValues" :: Maybe (PendingModifiedValues), "ClusterVersion" :: Maybe (String), "AllowVersionUpgrade" :: Maybe (Boolean), "NumberOfNodes" :: Maybe (Int), "PubliclyAccessible" :: Maybe (Boolean), "Encrypted" :: Maybe (Boolean), "RestoreStatus" :: Maybe (RestoreStatus), "HsmStatus" :: Maybe (HsmStatus), "ClusterSnapshotCopyStatus" :: Maybe (ClusterSnapshotCopyStatus), "ClusterPublicKey" :: Maybe (String), "ClusterNodes" :: Maybe (ClusterNodesList), "ElasticIpStatus" :: Maybe (ElasticIpStatus), "ClusterRevisionNumber" :: Maybe (String), "Tags" :: Maybe (TagList), "KmsKeyId" :: Maybe (String), "EnhancedVpcRouting" :: Maybe (Boolean), "IamRoles" :: Maybe (ClusterIamRoleList) }
 ```
 
 <p>Describes a cluster.</p>
@@ -373,7 +373,7 @@ Constructs Cluster from required parameters
 #### `newCluster'`
 
 ``` purescript
-newCluster' :: ({ "ClusterIdentifier" :: NullOrUndefined (String), "NodeType" :: NullOrUndefined (String), "ClusterStatus" :: NullOrUndefined (String), "ModifyStatus" :: NullOrUndefined (String), "MasterUsername" :: NullOrUndefined (String), "DBName" :: NullOrUndefined (String), "Endpoint" :: NullOrUndefined (Endpoint), "ClusterCreateTime" :: NullOrUndefined (TStamp), "AutomatedSnapshotRetentionPeriod" :: NullOrUndefined (Int), "ClusterSecurityGroups" :: NullOrUndefined (ClusterSecurityGroupMembershipList), "VpcSecurityGroups" :: NullOrUndefined (VpcSecurityGroupMembershipList), "ClusterParameterGroups" :: NullOrUndefined (ClusterParameterGroupStatusList), "ClusterSubnetGroupName" :: NullOrUndefined (String), "VpcId" :: NullOrUndefined (String), "AvailabilityZone" :: NullOrUndefined (String), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "PendingModifiedValues" :: NullOrUndefined (PendingModifiedValues), "ClusterVersion" :: NullOrUndefined (String), "AllowVersionUpgrade" :: NullOrUndefined (Boolean), "NumberOfNodes" :: NullOrUndefined (Int), "PubliclyAccessible" :: NullOrUndefined (Boolean), "Encrypted" :: NullOrUndefined (Boolean), "RestoreStatus" :: NullOrUndefined (RestoreStatus), "HsmStatus" :: NullOrUndefined (HsmStatus), "ClusterSnapshotCopyStatus" :: NullOrUndefined (ClusterSnapshotCopyStatus), "ClusterPublicKey" :: NullOrUndefined (String), "ClusterNodes" :: NullOrUndefined (ClusterNodesList), "ElasticIpStatus" :: NullOrUndefined (ElasticIpStatus), "ClusterRevisionNumber" :: NullOrUndefined (String), "Tags" :: NullOrUndefined (TagList), "KmsKeyId" :: NullOrUndefined (String), "EnhancedVpcRouting" :: NullOrUndefined (Boolean), "IamRoles" :: NullOrUndefined (ClusterIamRoleList) } -> { "ClusterIdentifier" :: NullOrUndefined (String), "NodeType" :: NullOrUndefined (String), "ClusterStatus" :: NullOrUndefined (String), "ModifyStatus" :: NullOrUndefined (String), "MasterUsername" :: NullOrUndefined (String), "DBName" :: NullOrUndefined (String), "Endpoint" :: NullOrUndefined (Endpoint), "ClusterCreateTime" :: NullOrUndefined (TStamp), "AutomatedSnapshotRetentionPeriod" :: NullOrUndefined (Int), "ClusterSecurityGroups" :: NullOrUndefined (ClusterSecurityGroupMembershipList), "VpcSecurityGroups" :: NullOrUndefined (VpcSecurityGroupMembershipList), "ClusterParameterGroups" :: NullOrUndefined (ClusterParameterGroupStatusList), "ClusterSubnetGroupName" :: NullOrUndefined (String), "VpcId" :: NullOrUndefined (String), "AvailabilityZone" :: NullOrUndefined (String), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "PendingModifiedValues" :: NullOrUndefined (PendingModifiedValues), "ClusterVersion" :: NullOrUndefined (String), "AllowVersionUpgrade" :: NullOrUndefined (Boolean), "NumberOfNodes" :: NullOrUndefined (Int), "PubliclyAccessible" :: NullOrUndefined (Boolean), "Encrypted" :: NullOrUndefined (Boolean), "RestoreStatus" :: NullOrUndefined (RestoreStatus), "HsmStatus" :: NullOrUndefined (HsmStatus), "ClusterSnapshotCopyStatus" :: NullOrUndefined (ClusterSnapshotCopyStatus), "ClusterPublicKey" :: NullOrUndefined (String), "ClusterNodes" :: NullOrUndefined (ClusterNodesList), "ElasticIpStatus" :: NullOrUndefined (ElasticIpStatus), "ClusterRevisionNumber" :: NullOrUndefined (String), "Tags" :: NullOrUndefined (TagList), "KmsKeyId" :: NullOrUndefined (String), "EnhancedVpcRouting" :: NullOrUndefined (Boolean), "IamRoles" :: NullOrUndefined (ClusterIamRoleList) }) -> Cluster
+newCluster' :: ({ "ClusterIdentifier" :: Maybe (String), "NodeType" :: Maybe (String), "ClusterStatus" :: Maybe (String), "ModifyStatus" :: Maybe (String), "MasterUsername" :: Maybe (String), "DBName" :: Maybe (String), "Endpoint" :: Maybe (Endpoint), "ClusterCreateTime" :: Maybe (TStamp), "AutomatedSnapshotRetentionPeriod" :: Maybe (Int), "ClusterSecurityGroups" :: Maybe (ClusterSecurityGroupMembershipList), "VpcSecurityGroups" :: Maybe (VpcSecurityGroupMembershipList), "ClusterParameterGroups" :: Maybe (ClusterParameterGroupStatusList), "ClusterSubnetGroupName" :: Maybe (String), "VpcId" :: Maybe (String), "AvailabilityZone" :: Maybe (String), "PreferredMaintenanceWindow" :: Maybe (String), "PendingModifiedValues" :: Maybe (PendingModifiedValues), "ClusterVersion" :: Maybe (String), "AllowVersionUpgrade" :: Maybe (Boolean), "NumberOfNodes" :: Maybe (Int), "PubliclyAccessible" :: Maybe (Boolean), "Encrypted" :: Maybe (Boolean), "RestoreStatus" :: Maybe (RestoreStatus), "HsmStatus" :: Maybe (HsmStatus), "ClusterSnapshotCopyStatus" :: Maybe (ClusterSnapshotCopyStatus), "ClusterPublicKey" :: Maybe (String), "ClusterNodes" :: Maybe (ClusterNodesList), "ElasticIpStatus" :: Maybe (ElasticIpStatus), "ClusterRevisionNumber" :: Maybe (String), "Tags" :: Maybe (TagList), "KmsKeyId" :: Maybe (String), "EnhancedVpcRouting" :: Maybe (Boolean), "IamRoles" :: Maybe (ClusterIamRoleList) } -> { "ClusterIdentifier" :: Maybe (String), "NodeType" :: Maybe (String), "ClusterStatus" :: Maybe (String), "ModifyStatus" :: Maybe (String), "MasterUsername" :: Maybe (String), "DBName" :: Maybe (String), "Endpoint" :: Maybe (Endpoint), "ClusterCreateTime" :: Maybe (TStamp), "AutomatedSnapshotRetentionPeriod" :: Maybe (Int), "ClusterSecurityGroups" :: Maybe (ClusterSecurityGroupMembershipList), "VpcSecurityGroups" :: Maybe (VpcSecurityGroupMembershipList), "ClusterParameterGroups" :: Maybe (ClusterParameterGroupStatusList), "ClusterSubnetGroupName" :: Maybe (String), "VpcId" :: Maybe (String), "AvailabilityZone" :: Maybe (String), "PreferredMaintenanceWindow" :: Maybe (String), "PendingModifiedValues" :: Maybe (PendingModifiedValues), "ClusterVersion" :: Maybe (String), "AllowVersionUpgrade" :: Maybe (Boolean), "NumberOfNodes" :: Maybe (Int), "PubliclyAccessible" :: Maybe (Boolean), "Encrypted" :: Maybe (Boolean), "RestoreStatus" :: Maybe (RestoreStatus), "HsmStatus" :: Maybe (HsmStatus), "ClusterSnapshotCopyStatus" :: Maybe (ClusterSnapshotCopyStatus), "ClusterPublicKey" :: Maybe (String), "ClusterNodes" :: Maybe (ClusterNodesList), "ElasticIpStatus" :: Maybe (ElasticIpStatus), "ClusterRevisionNumber" :: Maybe (String), "Tags" :: Maybe (TagList), "KmsKeyId" :: Maybe (String), "EnhancedVpcRouting" :: Maybe (Boolean), "IamRoles" :: Maybe (ClusterIamRoleList) }) -> Cluster
 ```
 
 Constructs Cluster's fields from required parameters
@@ -400,7 +400,7 @@ Encode ClusterAlreadyExistsFault
 
 ``` purescript
 newtype ClusterCredentials
-  = ClusterCredentials { "DbUser" :: NullOrUndefined (String), "DbPassword" :: NullOrUndefined (SensitiveString), "Expiration" :: NullOrUndefined (TStamp) }
+  = ClusterCredentials { "DbUser" :: Maybe (String), "DbPassword" :: Maybe (SensitiveString), "Expiration" :: Maybe (TStamp) }
 ```
 
 <p>Temporary credentials with authorization to log on to an Amazon Redshift database. </p>
@@ -425,7 +425,7 @@ Constructs ClusterCredentials from required parameters
 #### `newClusterCredentials'`
 
 ``` purescript
-newClusterCredentials' :: ({ "DbUser" :: NullOrUndefined (String), "DbPassword" :: NullOrUndefined (SensitiveString), "Expiration" :: NullOrUndefined (TStamp) } -> { "DbUser" :: NullOrUndefined (String), "DbPassword" :: NullOrUndefined (SensitiveString), "Expiration" :: NullOrUndefined (TStamp) }) -> ClusterCredentials
+newClusterCredentials' :: ({ "DbUser" :: Maybe (String), "DbPassword" :: Maybe (SensitiveString), "Expiration" :: Maybe (TStamp) } -> { "DbUser" :: Maybe (String), "DbPassword" :: Maybe (SensitiveString), "Expiration" :: Maybe (TStamp) }) -> ClusterCredentials
 ```
 
 Constructs ClusterCredentials's fields from required parameters
@@ -434,7 +434,7 @@ Constructs ClusterCredentials's fields from required parameters
 
 ``` purescript
 newtype ClusterIamRole
-  = ClusterIamRole { "IamRoleArn" :: NullOrUndefined (String), "ApplyStatus" :: NullOrUndefined (String) }
+  = ClusterIamRole { "IamRoleArn" :: Maybe (String), "ApplyStatus" :: Maybe (String) }
 ```
 
 <p>An AWS Identity and Access Management (IAM) role that can be used by the associated Amazon Redshift cluster to access other AWS services.</p>
@@ -459,7 +459,7 @@ Constructs ClusterIamRole from required parameters
 #### `newClusterIamRole'`
 
 ``` purescript
-newClusterIamRole' :: ({ "IamRoleArn" :: NullOrUndefined (String), "ApplyStatus" :: NullOrUndefined (String) } -> { "IamRoleArn" :: NullOrUndefined (String), "ApplyStatus" :: NullOrUndefined (String) }) -> ClusterIamRole
+newClusterIamRole' :: ({ "IamRoleArn" :: Maybe (String), "ApplyStatus" :: Maybe (String) } -> { "IamRoleArn" :: Maybe (String), "ApplyStatus" :: Maybe (String) }) -> ClusterIamRole
 ```
 
 Constructs ClusterIamRole's fields from required parameters
@@ -500,7 +500,7 @@ Encode ClusterList
 
 ``` purescript
 newtype ClusterNode
-  = ClusterNode { "NodeRole" :: NullOrUndefined (String), "PrivateIPAddress" :: NullOrUndefined (String), "PublicIPAddress" :: NullOrUndefined (String) }
+  = ClusterNode { "NodeRole" :: Maybe (String), "PrivateIPAddress" :: Maybe (String), "PublicIPAddress" :: Maybe (String) }
 ```
 
 <p>The identifier of a node in a cluster.</p>
@@ -525,7 +525,7 @@ Constructs ClusterNode from required parameters
 #### `newClusterNode'`
 
 ``` purescript
-newClusterNode' :: ({ "NodeRole" :: NullOrUndefined (String), "PrivateIPAddress" :: NullOrUndefined (String), "PublicIPAddress" :: NullOrUndefined (String) } -> { "NodeRole" :: NullOrUndefined (String), "PrivateIPAddress" :: NullOrUndefined (String), "PublicIPAddress" :: NullOrUndefined (String) }) -> ClusterNode
+newClusterNode' :: ({ "NodeRole" :: Maybe (String), "PrivateIPAddress" :: Maybe (String), "PublicIPAddress" :: Maybe (String) } -> { "NodeRole" :: Maybe (String), "PrivateIPAddress" :: Maybe (String), "PublicIPAddress" :: Maybe (String) }) -> ClusterNode
 ```
 
 Constructs ClusterNode's fields from required parameters
@@ -568,7 +568,7 @@ Encode ClusterNotFoundFault
 
 ``` purescript
 newtype ClusterParameterGroup
-  = ClusterParameterGroup { "ParameterGroupName" :: NullOrUndefined (String), "ParameterGroupFamily" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "Tags" :: NullOrUndefined (TagList) }
+  = ClusterParameterGroup { "ParameterGroupName" :: Maybe (String), "ParameterGroupFamily" :: Maybe (String), "Description" :: Maybe (String), "Tags" :: Maybe (TagList) }
 ```
 
 <p>Describes a parameter group.</p>
@@ -593,7 +593,7 @@ Constructs ClusterParameterGroup from required parameters
 #### `newClusterParameterGroup'`
 
 ``` purescript
-newClusterParameterGroup' :: ({ "ParameterGroupName" :: NullOrUndefined (String), "ParameterGroupFamily" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "Tags" :: NullOrUndefined (TagList) } -> { "ParameterGroupName" :: NullOrUndefined (String), "ParameterGroupFamily" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "Tags" :: NullOrUndefined (TagList) }) -> ClusterParameterGroup
+newClusterParameterGroup' :: ({ "ParameterGroupName" :: Maybe (String), "ParameterGroupFamily" :: Maybe (String), "Description" :: Maybe (String), "Tags" :: Maybe (TagList) } -> { "ParameterGroupName" :: Maybe (String), "ParameterGroupFamily" :: Maybe (String), "Description" :: Maybe (String), "Tags" :: Maybe (TagList) }) -> ClusterParameterGroup
 ```
 
 Constructs ClusterParameterGroup's fields from required parameters
@@ -620,7 +620,7 @@ Encode ClusterParameterGroupAlreadyExistsFault
 
 ``` purescript
 newtype ClusterParameterGroupDetails
-  = ClusterParameterGroupDetails { "Parameters" :: NullOrUndefined (ParametersList), "Marker" :: NullOrUndefined (String) }
+  = ClusterParameterGroupDetails { "Parameters" :: Maybe (ParametersList), "Marker" :: Maybe (String) }
 ```
 
 <p>Contains the output from the <a>DescribeClusterParameters</a> action. </p>
@@ -645,7 +645,7 @@ Constructs ClusterParameterGroupDetails from required parameters
 #### `newClusterParameterGroupDetails'`
 
 ``` purescript
-newClusterParameterGroupDetails' :: ({ "Parameters" :: NullOrUndefined (ParametersList), "Marker" :: NullOrUndefined (String) } -> { "Parameters" :: NullOrUndefined (ParametersList), "Marker" :: NullOrUndefined (String) }) -> ClusterParameterGroupDetails
+newClusterParameterGroupDetails' :: ({ "Parameters" :: Maybe (ParametersList), "Marker" :: Maybe (String) } -> { "Parameters" :: Maybe (ParametersList), "Marker" :: Maybe (String) }) -> ClusterParameterGroupDetails
 ```
 
 Constructs ClusterParameterGroupDetails's fields from required parameters
@@ -654,7 +654,7 @@ Constructs ClusterParameterGroupDetails's fields from required parameters
 
 ``` purescript
 newtype ClusterParameterGroupNameMessage
-  = ClusterParameterGroupNameMessage { "ParameterGroupName" :: NullOrUndefined (String), "ParameterGroupStatus" :: NullOrUndefined (String) }
+  = ClusterParameterGroupNameMessage { "ParameterGroupName" :: Maybe (String), "ParameterGroupStatus" :: Maybe (String) }
 ```
 
 <p/>
@@ -679,7 +679,7 @@ Constructs ClusterParameterGroupNameMessage from required parameters
 #### `newClusterParameterGroupNameMessage'`
 
 ``` purescript
-newClusterParameterGroupNameMessage' :: ({ "ParameterGroupName" :: NullOrUndefined (String), "ParameterGroupStatus" :: NullOrUndefined (String) } -> { "ParameterGroupName" :: NullOrUndefined (String), "ParameterGroupStatus" :: NullOrUndefined (String) }) -> ClusterParameterGroupNameMessage
+newClusterParameterGroupNameMessage' :: ({ "ParameterGroupName" :: Maybe (String), "ParameterGroupStatus" :: Maybe (String) } -> { "ParameterGroupName" :: Maybe (String), "ParameterGroupStatus" :: Maybe (String) }) -> ClusterParameterGroupNameMessage
 ```
 
 Constructs ClusterParameterGroupNameMessage's fields from required parameters
@@ -724,7 +724,7 @@ Encode ClusterParameterGroupQuotaExceededFault
 
 ``` purescript
 newtype ClusterParameterGroupStatus
-  = ClusterParameterGroupStatus { "ParameterGroupName" :: NullOrUndefined (String), "ParameterApplyStatus" :: NullOrUndefined (String), "ClusterParameterStatusList" :: NullOrUndefined (ClusterParameterStatusList) }
+  = ClusterParameterGroupStatus { "ParameterGroupName" :: Maybe (String), "ParameterApplyStatus" :: Maybe (String), "ClusterParameterStatusList" :: Maybe (ClusterParameterStatusList) }
 ```
 
 <p>Describes the status of a parameter group.</p>
@@ -749,7 +749,7 @@ Constructs ClusterParameterGroupStatus from required parameters
 #### `newClusterParameterGroupStatus'`
 
 ``` purescript
-newClusterParameterGroupStatus' :: ({ "ParameterGroupName" :: NullOrUndefined (String), "ParameterApplyStatus" :: NullOrUndefined (String), "ClusterParameterStatusList" :: NullOrUndefined (ClusterParameterStatusList) } -> { "ParameterGroupName" :: NullOrUndefined (String), "ParameterApplyStatus" :: NullOrUndefined (String), "ClusterParameterStatusList" :: NullOrUndefined (ClusterParameterStatusList) }) -> ClusterParameterGroupStatus
+newClusterParameterGroupStatus' :: ({ "ParameterGroupName" :: Maybe (String), "ParameterApplyStatus" :: Maybe (String), "ClusterParameterStatusList" :: Maybe (ClusterParameterStatusList) } -> { "ParameterGroupName" :: Maybe (String), "ParameterApplyStatus" :: Maybe (String), "ClusterParameterStatusList" :: Maybe (ClusterParameterStatusList) }) -> ClusterParameterGroupStatus
 ```
 
 Constructs ClusterParameterGroupStatus's fields from required parameters
@@ -774,7 +774,7 @@ Encode ClusterParameterGroupStatusList
 
 ``` purescript
 newtype ClusterParameterGroupsMessage
-  = ClusterParameterGroupsMessage { "Marker" :: NullOrUndefined (String), "ParameterGroups" :: NullOrUndefined (ParameterGroupList) }
+  = ClusterParameterGroupsMessage { "Marker" :: Maybe (String), "ParameterGroups" :: Maybe (ParameterGroupList) }
 ```
 
 <p>Contains the output from the <a>DescribeClusterParameterGroups</a> action. </p>
@@ -799,7 +799,7 @@ Constructs ClusterParameterGroupsMessage from required parameters
 #### `newClusterParameterGroupsMessage'`
 
 ``` purescript
-newClusterParameterGroupsMessage' :: ({ "Marker" :: NullOrUndefined (String), "ParameterGroups" :: NullOrUndefined (ParameterGroupList) } -> { "Marker" :: NullOrUndefined (String), "ParameterGroups" :: NullOrUndefined (ParameterGroupList) }) -> ClusterParameterGroupsMessage
+newClusterParameterGroupsMessage' :: ({ "Marker" :: Maybe (String), "ParameterGroups" :: Maybe (ParameterGroupList) } -> { "Marker" :: Maybe (String), "ParameterGroups" :: Maybe (ParameterGroupList) }) -> ClusterParameterGroupsMessage
 ```
 
 Constructs ClusterParameterGroupsMessage's fields from required parameters
@@ -808,7 +808,7 @@ Constructs ClusterParameterGroupsMessage's fields from required parameters
 
 ``` purescript
 newtype ClusterParameterStatus
-  = ClusterParameterStatus { "ParameterName" :: NullOrUndefined (String), "ParameterApplyStatus" :: NullOrUndefined (String), "ParameterApplyErrorDescription" :: NullOrUndefined (String) }
+  = ClusterParameterStatus { "ParameterName" :: Maybe (String), "ParameterApplyStatus" :: Maybe (String), "ParameterApplyErrorDescription" :: Maybe (String) }
 ```
 
 <p>Describes the status of a parameter group.</p>
@@ -833,7 +833,7 @@ Constructs ClusterParameterStatus from required parameters
 #### `newClusterParameterStatus'`
 
 ``` purescript
-newClusterParameterStatus' :: ({ "ParameterName" :: NullOrUndefined (String), "ParameterApplyStatus" :: NullOrUndefined (String), "ParameterApplyErrorDescription" :: NullOrUndefined (String) } -> { "ParameterName" :: NullOrUndefined (String), "ParameterApplyStatus" :: NullOrUndefined (String), "ParameterApplyErrorDescription" :: NullOrUndefined (String) }) -> ClusterParameterStatus
+newClusterParameterStatus' :: ({ "ParameterName" :: Maybe (String), "ParameterApplyStatus" :: Maybe (String), "ParameterApplyErrorDescription" :: Maybe (String) } -> { "ParameterName" :: Maybe (String), "ParameterApplyStatus" :: Maybe (String), "ParameterApplyErrorDescription" :: Maybe (String) }) -> ClusterParameterStatus
 ```
 
 Constructs ClusterParameterStatus's fields from required parameters
@@ -876,7 +876,7 @@ Encode ClusterQuotaExceededFault
 
 ``` purescript
 newtype ClusterSecurityGroup
-  = ClusterSecurityGroup { "ClusterSecurityGroupName" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "EC2SecurityGroups" :: NullOrUndefined (EC2SecurityGroupList), "IPRanges" :: NullOrUndefined (IPRangeList), "Tags" :: NullOrUndefined (TagList) }
+  = ClusterSecurityGroup { "ClusterSecurityGroupName" :: Maybe (String), "Description" :: Maybe (String), "EC2SecurityGroups" :: Maybe (EC2SecurityGroupList), "IPRanges" :: Maybe (IPRangeList), "Tags" :: Maybe (TagList) }
 ```
 
 <p>Describes a security group.</p>
@@ -901,7 +901,7 @@ Constructs ClusterSecurityGroup from required parameters
 #### `newClusterSecurityGroup'`
 
 ``` purescript
-newClusterSecurityGroup' :: ({ "ClusterSecurityGroupName" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "EC2SecurityGroups" :: NullOrUndefined (EC2SecurityGroupList), "IPRanges" :: NullOrUndefined (IPRangeList), "Tags" :: NullOrUndefined (TagList) } -> { "ClusterSecurityGroupName" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "EC2SecurityGroups" :: NullOrUndefined (EC2SecurityGroupList), "IPRanges" :: NullOrUndefined (IPRangeList), "Tags" :: NullOrUndefined (TagList) }) -> ClusterSecurityGroup
+newClusterSecurityGroup' :: ({ "ClusterSecurityGroupName" :: Maybe (String), "Description" :: Maybe (String), "EC2SecurityGroups" :: Maybe (EC2SecurityGroupList), "IPRanges" :: Maybe (IPRangeList), "Tags" :: Maybe (TagList) } -> { "ClusterSecurityGroupName" :: Maybe (String), "Description" :: Maybe (String), "EC2SecurityGroups" :: Maybe (EC2SecurityGroupList), "IPRanges" :: Maybe (IPRangeList), "Tags" :: Maybe (TagList) }) -> ClusterSecurityGroup
 ```
 
 Constructs ClusterSecurityGroup's fields from required parameters
@@ -928,7 +928,7 @@ Encode ClusterSecurityGroupAlreadyExistsFault
 
 ``` purescript
 newtype ClusterSecurityGroupMembership
-  = ClusterSecurityGroupMembership { "ClusterSecurityGroupName" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String) }
+  = ClusterSecurityGroupMembership { "ClusterSecurityGroupName" :: Maybe (String), "Status" :: Maybe (String) }
 ```
 
 <p>Describes a cluster security group.</p>
@@ -953,7 +953,7 @@ Constructs ClusterSecurityGroupMembership from required parameters
 #### `newClusterSecurityGroupMembership'`
 
 ``` purescript
-newClusterSecurityGroupMembership' :: ({ "ClusterSecurityGroupName" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String) } -> { "ClusterSecurityGroupName" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String) }) -> ClusterSecurityGroupMembership
+newClusterSecurityGroupMembership' :: ({ "ClusterSecurityGroupName" :: Maybe (String), "Status" :: Maybe (String) } -> { "ClusterSecurityGroupName" :: Maybe (String), "Status" :: Maybe (String) }) -> ClusterSecurityGroupMembership
 ```
 
 Constructs ClusterSecurityGroupMembership's fields from required parameters
@@ -978,7 +978,7 @@ Encode ClusterSecurityGroupMembershipList
 
 ``` purescript
 newtype ClusterSecurityGroupMessage
-  = ClusterSecurityGroupMessage { "Marker" :: NullOrUndefined (String), "ClusterSecurityGroups" :: NullOrUndefined (ClusterSecurityGroups) }
+  = ClusterSecurityGroupMessage { "Marker" :: Maybe (String), "ClusterSecurityGroups" :: Maybe (ClusterSecurityGroups) }
 ```
 
 <p/>
@@ -1003,7 +1003,7 @@ Constructs ClusterSecurityGroupMessage from required parameters
 #### `newClusterSecurityGroupMessage'`
 
 ``` purescript
-newClusterSecurityGroupMessage' :: ({ "Marker" :: NullOrUndefined (String), "ClusterSecurityGroups" :: NullOrUndefined (ClusterSecurityGroups) } -> { "Marker" :: NullOrUndefined (String), "ClusterSecurityGroups" :: NullOrUndefined (ClusterSecurityGroups) }) -> ClusterSecurityGroupMessage
+newClusterSecurityGroupMessage' :: ({ "Marker" :: Maybe (String), "ClusterSecurityGroups" :: Maybe (ClusterSecurityGroups) } -> { "Marker" :: Maybe (String), "ClusterSecurityGroups" :: Maybe (ClusterSecurityGroups) }) -> ClusterSecurityGroupMessage
 ```
 
 Constructs ClusterSecurityGroupMessage's fields from required parameters
@@ -1098,7 +1098,7 @@ Encode ClusterSnapshotAlreadyExistsFault
 
 ``` purescript
 newtype ClusterSnapshotCopyStatus
-  = ClusterSnapshotCopyStatus { "DestinationRegion" :: NullOrUndefined (String), "RetentionPeriod" :: NullOrUndefined (Number), "SnapshotCopyGrantName" :: NullOrUndefined (String) }
+  = ClusterSnapshotCopyStatus { "DestinationRegion" :: Maybe (String), "RetentionPeriod" :: Maybe (Number), "SnapshotCopyGrantName" :: Maybe (String) }
 ```
 
 <p>Returns the destination region and retention period that are configured for cross-region snapshot copy.</p>
@@ -1123,7 +1123,7 @@ Constructs ClusterSnapshotCopyStatus from required parameters
 #### `newClusterSnapshotCopyStatus'`
 
 ``` purescript
-newClusterSnapshotCopyStatus' :: ({ "DestinationRegion" :: NullOrUndefined (String), "RetentionPeriod" :: NullOrUndefined (Number), "SnapshotCopyGrantName" :: NullOrUndefined (String) } -> { "DestinationRegion" :: NullOrUndefined (String), "RetentionPeriod" :: NullOrUndefined (Number), "SnapshotCopyGrantName" :: NullOrUndefined (String) }) -> ClusterSnapshotCopyStatus
+newClusterSnapshotCopyStatus' :: ({ "DestinationRegion" :: Maybe (String), "RetentionPeriod" :: Maybe (Number), "SnapshotCopyGrantName" :: Maybe (String) } -> { "DestinationRegion" :: Maybe (String), "RetentionPeriod" :: Maybe (Number), "SnapshotCopyGrantName" :: Maybe (String) }) -> ClusterSnapshotCopyStatus
 ```
 
 Constructs ClusterSnapshotCopyStatus's fields from required parameters
@@ -1168,7 +1168,7 @@ Encode ClusterSnapshotQuotaExceededFault
 
 ``` purescript
 newtype ClusterSubnetGroup
-  = ClusterSubnetGroup { "ClusterSubnetGroupName" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "VpcId" :: NullOrUndefined (String), "SubnetGroupStatus" :: NullOrUndefined (String), "Subnets" :: NullOrUndefined (SubnetList), "Tags" :: NullOrUndefined (TagList) }
+  = ClusterSubnetGroup { "ClusterSubnetGroupName" :: Maybe (String), "Description" :: Maybe (String), "VpcId" :: Maybe (String), "SubnetGroupStatus" :: Maybe (String), "Subnets" :: Maybe (SubnetList), "Tags" :: Maybe (TagList) }
 ```
 
 <p>Describes a subnet group.</p>
@@ -1193,7 +1193,7 @@ Constructs ClusterSubnetGroup from required parameters
 #### `newClusterSubnetGroup'`
 
 ``` purescript
-newClusterSubnetGroup' :: ({ "ClusterSubnetGroupName" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "VpcId" :: NullOrUndefined (String), "SubnetGroupStatus" :: NullOrUndefined (String), "Subnets" :: NullOrUndefined (SubnetList), "Tags" :: NullOrUndefined (TagList) } -> { "ClusterSubnetGroupName" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "VpcId" :: NullOrUndefined (String), "SubnetGroupStatus" :: NullOrUndefined (String), "Subnets" :: NullOrUndefined (SubnetList), "Tags" :: NullOrUndefined (TagList) }) -> ClusterSubnetGroup
+newClusterSubnetGroup' :: ({ "ClusterSubnetGroupName" :: Maybe (String), "Description" :: Maybe (String), "VpcId" :: Maybe (String), "SubnetGroupStatus" :: Maybe (String), "Subnets" :: Maybe (SubnetList), "Tags" :: Maybe (TagList) } -> { "ClusterSubnetGroupName" :: Maybe (String), "Description" :: Maybe (String), "VpcId" :: Maybe (String), "SubnetGroupStatus" :: Maybe (String), "Subnets" :: Maybe (SubnetList), "Tags" :: Maybe (TagList) }) -> ClusterSubnetGroup
 ```
 
 Constructs ClusterSubnetGroup's fields from required parameters
@@ -1220,7 +1220,7 @@ Encode ClusterSubnetGroupAlreadyExistsFault
 
 ``` purescript
 newtype ClusterSubnetGroupMessage
-  = ClusterSubnetGroupMessage { "Marker" :: NullOrUndefined (String), "ClusterSubnetGroups" :: NullOrUndefined (ClusterSubnetGroups) }
+  = ClusterSubnetGroupMessage { "Marker" :: Maybe (String), "ClusterSubnetGroups" :: Maybe (ClusterSubnetGroups) }
 ```
 
 <p>Contains the output from the <a>DescribeClusterSubnetGroups</a> action. </p>
@@ -1245,7 +1245,7 @@ Constructs ClusterSubnetGroupMessage from required parameters
 #### `newClusterSubnetGroupMessage'`
 
 ``` purescript
-newClusterSubnetGroupMessage' :: ({ "Marker" :: NullOrUndefined (String), "ClusterSubnetGroups" :: NullOrUndefined (ClusterSubnetGroups) } -> { "Marker" :: NullOrUndefined (String), "ClusterSubnetGroups" :: NullOrUndefined (ClusterSubnetGroups) }) -> ClusterSubnetGroupMessage
+newClusterSubnetGroupMessage' :: ({ "Marker" :: Maybe (String), "ClusterSubnetGroups" :: Maybe (ClusterSubnetGroups) } -> { "Marker" :: Maybe (String), "ClusterSubnetGroups" :: Maybe (ClusterSubnetGroups) }) -> ClusterSubnetGroupMessage
 ```
 
 Constructs ClusterSubnetGroupMessage's fields from required parameters
@@ -1324,7 +1324,7 @@ Encode ClusterSubnetQuotaExceededFault
 
 ``` purescript
 newtype ClusterVersion
-  = ClusterVersion { "ClusterVersion" :: NullOrUndefined (String), "ClusterParameterGroupFamily" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String) }
+  = ClusterVersion { "ClusterVersion" :: Maybe (String), "ClusterParameterGroupFamily" :: Maybe (String), "Description" :: Maybe (String) }
 ```
 
 <p>Describes a cluster version, including the parameter group family and description of the version.</p>
@@ -1349,7 +1349,7 @@ Constructs ClusterVersion from required parameters
 #### `newClusterVersion'`
 
 ``` purescript
-newClusterVersion' :: ({ "ClusterVersion" :: NullOrUndefined (String), "ClusterParameterGroupFamily" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String) } -> { "ClusterVersion" :: NullOrUndefined (String), "ClusterParameterGroupFamily" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String) }) -> ClusterVersion
+newClusterVersion' :: ({ "ClusterVersion" :: Maybe (String), "ClusterParameterGroupFamily" :: Maybe (String), "Description" :: Maybe (String) } -> { "ClusterVersion" :: Maybe (String), "ClusterParameterGroupFamily" :: Maybe (String), "Description" :: Maybe (String) }) -> ClusterVersion
 ```
 
 Constructs ClusterVersion's fields from required parameters
@@ -1374,7 +1374,7 @@ Encode ClusterVersionList
 
 ``` purescript
 newtype ClusterVersionsMessage
-  = ClusterVersionsMessage { "Marker" :: NullOrUndefined (String), "ClusterVersions" :: NullOrUndefined (ClusterVersionList) }
+  = ClusterVersionsMessage { "Marker" :: Maybe (String), "ClusterVersions" :: Maybe (ClusterVersionList) }
 ```
 
 <p>Contains the output from the <a>DescribeClusterVersions</a> action. </p>
@@ -1399,7 +1399,7 @@ Constructs ClusterVersionsMessage from required parameters
 #### `newClusterVersionsMessage'`
 
 ``` purescript
-newClusterVersionsMessage' :: ({ "Marker" :: NullOrUndefined (String), "ClusterVersions" :: NullOrUndefined (ClusterVersionList) } -> { "Marker" :: NullOrUndefined (String), "ClusterVersions" :: NullOrUndefined (ClusterVersionList) }) -> ClusterVersionsMessage
+newClusterVersionsMessage' :: ({ "Marker" :: Maybe (String), "ClusterVersions" :: Maybe (ClusterVersionList) } -> { "Marker" :: Maybe (String), "ClusterVersions" :: Maybe (ClusterVersionList) }) -> ClusterVersionsMessage
 ```
 
 Constructs ClusterVersionsMessage's fields from required parameters
@@ -1408,7 +1408,7 @@ Constructs ClusterVersionsMessage's fields from required parameters
 
 ``` purescript
 newtype ClustersMessage
-  = ClustersMessage { "Marker" :: NullOrUndefined (String), "Clusters" :: NullOrUndefined (ClusterList) }
+  = ClustersMessage { "Marker" :: Maybe (String), "Clusters" :: Maybe (ClusterList) }
 ```
 
 <p>Contains the output from the <a>DescribeClusters</a> action. </p>
@@ -1433,7 +1433,7 @@ Constructs ClustersMessage from required parameters
 #### `newClustersMessage'`
 
 ``` purescript
-newClustersMessage' :: ({ "Marker" :: NullOrUndefined (String), "Clusters" :: NullOrUndefined (ClusterList) } -> { "Marker" :: NullOrUndefined (String), "Clusters" :: NullOrUndefined (ClusterList) }) -> ClustersMessage
+newClustersMessage' :: ({ "Marker" :: Maybe (String), "Clusters" :: Maybe (ClusterList) } -> { "Marker" :: Maybe (String), "Clusters" :: Maybe (ClusterList) }) -> ClustersMessage
 ```
 
 Constructs ClustersMessage's fields from required parameters
@@ -1442,7 +1442,7 @@ Constructs ClustersMessage's fields from required parameters
 
 ``` purescript
 newtype CopyClusterSnapshotMessage
-  = CopyClusterSnapshotMessage { "SourceSnapshotIdentifier" :: String, "SourceSnapshotClusterIdentifier" :: NullOrUndefined (String), "TargetSnapshotIdentifier" :: String }
+  = CopyClusterSnapshotMessage { "SourceSnapshotIdentifier" :: String, "SourceSnapshotClusterIdentifier" :: Maybe (String), "TargetSnapshotIdentifier" :: String }
 ```
 
 <p/>
@@ -1467,7 +1467,7 @@ Constructs CopyClusterSnapshotMessage from required parameters
 #### `newCopyClusterSnapshotMessage'`
 
 ``` purescript
-newCopyClusterSnapshotMessage' :: String -> String -> ({ "SourceSnapshotIdentifier" :: String, "SourceSnapshotClusterIdentifier" :: NullOrUndefined (String), "TargetSnapshotIdentifier" :: String } -> { "SourceSnapshotIdentifier" :: String, "SourceSnapshotClusterIdentifier" :: NullOrUndefined (String), "TargetSnapshotIdentifier" :: String }) -> CopyClusterSnapshotMessage
+newCopyClusterSnapshotMessage' :: String -> String -> ({ "SourceSnapshotIdentifier" :: String, "SourceSnapshotClusterIdentifier" :: Maybe (String), "TargetSnapshotIdentifier" :: String } -> { "SourceSnapshotIdentifier" :: String, "SourceSnapshotClusterIdentifier" :: Maybe (String), "TargetSnapshotIdentifier" :: String }) -> CopyClusterSnapshotMessage
 ```
 
 Constructs CopyClusterSnapshotMessage's fields from required parameters
@@ -1476,7 +1476,7 @@ Constructs CopyClusterSnapshotMessage's fields from required parameters
 
 ``` purescript
 newtype CopyClusterSnapshotResult
-  = CopyClusterSnapshotResult { "Snapshot" :: NullOrUndefined (Snapshot) }
+  = CopyClusterSnapshotResult { "Snapshot" :: Maybe (Snapshot) }
 ```
 
 ##### Instances
@@ -1499,7 +1499,7 @@ Constructs CopyClusterSnapshotResult from required parameters
 #### `newCopyClusterSnapshotResult'`
 
 ``` purescript
-newCopyClusterSnapshotResult' :: ({ "Snapshot" :: NullOrUndefined (Snapshot) } -> { "Snapshot" :: NullOrUndefined (Snapshot) }) -> CopyClusterSnapshotResult
+newCopyClusterSnapshotResult' :: ({ "Snapshot" :: Maybe (Snapshot) } -> { "Snapshot" :: Maybe (Snapshot) }) -> CopyClusterSnapshotResult
 ```
 
 Constructs CopyClusterSnapshotResult's fields from required parameters
@@ -1526,7 +1526,7 @@ Encode CopyToRegionDisabledFault
 
 ``` purescript
 newtype CreateClusterMessage
-  = CreateClusterMessage { "DBName" :: NullOrUndefined (String), "ClusterIdentifier" :: String, "ClusterType" :: NullOrUndefined (String), "NodeType" :: String, "MasterUsername" :: String, "MasterUserPassword" :: String, "ClusterSecurityGroups" :: NullOrUndefined (ClusterSecurityGroupNameList), "VpcSecurityGroupIds" :: NullOrUndefined (VpcSecurityGroupIdList), "ClusterSubnetGroupName" :: NullOrUndefined (String), "AvailabilityZone" :: NullOrUndefined (String), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "ClusterParameterGroupName" :: NullOrUndefined (String), "AutomatedSnapshotRetentionPeriod" :: NullOrUndefined (IntegerOptional), "Port" :: NullOrUndefined (IntegerOptional), "ClusterVersion" :: NullOrUndefined (String), "AllowVersionUpgrade" :: NullOrUndefined (BooleanOptional), "NumberOfNodes" :: NullOrUndefined (IntegerOptional), "PubliclyAccessible" :: NullOrUndefined (BooleanOptional), "Encrypted" :: NullOrUndefined (BooleanOptional), "HsmClientCertificateIdentifier" :: NullOrUndefined (String), "HsmConfigurationIdentifier" :: NullOrUndefined (String), "ElasticIp" :: NullOrUndefined (String), "Tags" :: NullOrUndefined (TagList), "KmsKeyId" :: NullOrUndefined (String), "EnhancedVpcRouting" :: NullOrUndefined (BooleanOptional), "AdditionalInfo" :: NullOrUndefined (String), "IamRoles" :: NullOrUndefined (IamRoleArnList) }
+  = CreateClusterMessage { "DBName" :: Maybe (String), "ClusterIdentifier" :: String, "ClusterType" :: Maybe (String), "NodeType" :: String, "MasterUsername" :: String, "MasterUserPassword" :: String, "ClusterSecurityGroups" :: Maybe (ClusterSecurityGroupNameList), "VpcSecurityGroupIds" :: Maybe (VpcSecurityGroupIdList), "ClusterSubnetGroupName" :: Maybe (String), "AvailabilityZone" :: Maybe (String), "PreferredMaintenanceWindow" :: Maybe (String), "ClusterParameterGroupName" :: Maybe (String), "AutomatedSnapshotRetentionPeriod" :: Maybe (IntegerOptional), "Port" :: Maybe (IntegerOptional), "ClusterVersion" :: Maybe (String), "AllowVersionUpgrade" :: Maybe (BooleanOptional), "NumberOfNodes" :: Maybe (IntegerOptional), "PubliclyAccessible" :: Maybe (BooleanOptional), "Encrypted" :: Maybe (BooleanOptional), "HsmClientCertificateIdentifier" :: Maybe (String), "HsmConfigurationIdentifier" :: Maybe (String), "ElasticIp" :: Maybe (String), "Tags" :: Maybe (TagList), "KmsKeyId" :: Maybe (String), "EnhancedVpcRouting" :: Maybe (BooleanOptional), "AdditionalInfo" :: Maybe (String), "IamRoles" :: Maybe (IamRoleArnList) }
 ```
 
 <p/>
@@ -1551,7 +1551,7 @@ Constructs CreateClusterMessage from required parameters
 #### `newCreateClusterMessage'`
 
 ``` purescript
-newCreateClusterMessage' :: String -> String -> String -> String -> ({ "DBName" :: NullOrUndefined (String), "ClusterIdentifier" :: String, "ClusterType" :: NullOrUndefined (String), "NodeType" :: String, "MasterUsername" :: String, "MasterUserPassword" :: String, "ClusterSecurityGroups" :: NullOrUndefined (ClusterSecurityGroupNameList), "VpcSecurityGroupIds" :: NullOrUndefined (VpcSecurityGroupIdList), "ClusterSubnetGroupName" :: NullOrUndefined (String), "AvailabilityZone" :: NullOrUndefined (String), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "ClusterParameterGroupName" :: NullOrUndefined (String), "AutomatedSnapshotRetentionPeriod" :: NullOrUndefined (IntegerOptional), "Port" :: NullOrUndefined (IntegerOptional), "ClusterVersion" :: NullOrUndefined (String), "AllowVersionUpgrade" :: NullOrUndefined (BooleanOptional), "NumberOfNodes" :: NullOrUndefined (IntegerOptional), "PubliclyAccessible" :: NullOrUndefined (BooleanOptional), "Encrypted" :: NullOrUndefined (BooleanOptional), "HsmClientCertificateIdentifier" :: NullOrUndefined (String), "HsmConfigurationIdentifier" :: NullOrUndefined (String), "ElasticIp" :: NullOrUndefined (String), "Tags" :: NullOrUndefined (TagList), "KmsKeyId" :: NullOrUndefined (String), "EnhancedVpcRouting" :: NullOrUndefined (BooleanOptional), "AdditionalInfo" :: NullOrUndefined (String), "IamRoles" :: NullOrUndefined (IamRoleArnList) } -> { "DBName" :: NullOrUndefined (String), "ClusterIdentifier" :: String, "ClusterType" :: NullOrUndefined (String), "NodeType" :: String, "MasterUsername" :: String, "MasterUserPassword" :: String, "ClusterSecurityGroups" :: NullOrUndefined (ClusterSecurityGroupNameList), "VpcSecurityGroupIds" :: NullOrUndefined (VpcSecurityGroupIdList), "ClusterSubnetGroupName" :: NullOrUndefined (String), "AvailabilityZone" :: NullOrUndefined (String), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "ClusterParameterGroupName" :: NullOrUndefined (String), "AutomatedSnapshotRetentionPeriod" :: NullOrUndefined (IntegerOptional), "Port" :: NullOrUndefined (IntegerOptional), "ClusterVersion" :: NullOrUndefined (String), "AllowVersionUpgrade" :: NullOrUndefined (BooleanOptional), "NumberOfNodes" :: NullOrUndefined (IntegerOptional), "PubliclyAccessible" :: NullOrUndefined (BooleanOptional), "Encrypted" :: NullOrUndefined (BooleanOptional), "HsmClientCertificateIdentifier" :: NullOrUndefined (String), "HsmConfigurationIdentifier" :: NullOrUndefined (String), "ElasticIp" :: NullOrUndefined (String), "Tags" :: NullOrUndefined (TagList), "KmsKeyId" :: NullOrUndefined (String), "EnhancedVpcRouting" :: NullOrUndefined (BooleanOptional), "AdditionalInfo" :: NullOrUndefined (String), "IamRoles" :: NullOrUndefined (IamRoleArnList) }) -> CreateClusterMessage
+newCreateClusterMessage' :: String -> String -> String -> String -> ({ "DBName" :: Maybe (String), "ClusterIdentifier" :: String, "ClusterType" :: Maybe (String), "NodeType" :: String, "MasterUsername" :: String, "MasterUserPassword" :: String, "ClusterSecurityGroups" :: Maybe (ClusterSecurityGroupNameList), "VpcSecurityGroupIds" :: Maybe (VpcSecurityGroupIdList), "ClusterSubnetGroupName" :: Maybe (String), "AvailabilityZone" :: Maybe (String), "PreferredMaintenanceWindow" :: Maybe (String), "ClusterParameterGroupName" :: Maybe (String), "AutomatedSnapshotRetentionPeriod" :: Maybe (IntegerOptional), "Port" :: Maybe (IntegerOptional), "ClusterVersion" :: Maybe (String), "AllowVersionUpgrade" :: Maybe (BooleanOptional), "NumberOfNodes" :: Maybe (IntegerOptional), "PubliclyAccessible" :: Maybe (BooleanOptional), "Encrypted" :: Maybe (BooleanOptional), "HsmClientCertificateIdentifier" :: Maybe (String), "HsmConfigurationIdentifier" :: Maybe (String), "ElasticIp" :: Maybe (String), "Tags" :: Maybe (TagList), "KmsKeyId" :: Maybe (String), "EnhancedVpcRouting" :: Maybe (BooleanOptional), "AdditionalInfo" :: Maybe (String), "IamRoles" :: Maybe (IamRoleArnList) } -> { "DBName" :: Maybe (String), "ClusterIdentifier" :: String, "ClusterType" :: Maybe (String), "NodeType" :: String, "MasterUsername" :: String, "MasterUserPassword" :: String, "ClusterSecurityGroups" :: Maybe (ClusterSecurityGroupNameList), "VpcSecurityGroupIds" :: Maybe (VpcSecurityGroupIdList), "ClusterSubnetGroupName" :: Maybe (String), "AvailabilityZone" :: Maybe (String), "PreferredMaintenanceWindow" :: Maybe (String), "ClusterParameterGroupName" :: Maybe (String), "AutomatedSnapshotRetentionPeriod" :: Maybe (IntegerOptional), "Port" :: Maybe (IntegerOptional), "ClusterVersion" :: Maybe (String), "AllowVersionUpgrade" :: Maybe (BooleanOptional), "NumberOfNodes" :: Maybe (IntegerOptional), "PubliclyAccessible" :: Maybe (BooleanOptional), "Encrypted" :: Maybe (BooleanOptional), "HsmClientCertificateIdentifier" :: Maybe (String), "HsmConfigurationIdentifier" :: Maybe (String), "ElasticIp" :: Maybe (String), "Tags" :: Maybe (TagList), "KmsKeyId" :: Maybe (String), "EnhancedVpcRouting" :: Maybe (BooleanOptional), "AdditionalInfo" :: Maybe (String), "IamRoles" :: Maybe (IamRoleArnList) }) -> CreateClusterMessage
 ```
 
 Constructs CreateClusterMessage's fields from required parameters
@@ -1560,7 +1560,7 @@ Constructs CreateClusterMessage's fields from required parameters
 
 ``` purescript
 newtype CreateClusterParameterGroupMessage
-  = CreateClusterParameterGroupMessage { "ParameterGroupName" :: String, "ParameterGroupFamily" :: String, "Description" :: String, "Tags" :: NullOrUndefined (TagList) }
+  = CreateClusterParameterGroupMessage { "ParameterGroupName" :: String, "ParameterGroupFamily" :: String, "Description" :: String, "Tags" :: Maybe (TagList) }
 ```
 
 <p/>
@@ -1585,7 +1585,7 @@ Constructs CreateClusterParameterGroupMessage from required parameters
 #### `newCreateClusterParameterGroupMessage'`
 
 ``` purescript
-newCreateClusterParameterGroupMessage' :: String -> String -> String -> ({ "ParameterGroupName" :: String, "ParameterGroupFamily" :: String, "Description" :: String, "Tags" :: NullOrUndefined (TagList) } -> { "ParameterGroupName" :: String, "ParameterGroupFamily" :: String, "Description" :: String, "Tags" :: NullOrUndefined (TagList) }) -> CreateClusterParameterGroupMessage
+newCreateClusterParameterGroupMessage' :: String -> String -> String -> ({ "ParameterGroupName" :: String, "ParameterGroupFamily" :: String, "Description" :: String, "Tags" :: Maybe (TagList) } -> { "ParameterGroupName" :: String, "ParameterGroupFamily" :: String, "Description" :: String, "Tags" :: Maybe (TagList) }) -> CreateClusterParameterGroupMessage
 ```
 
 Constructs CreateClusterParameterGroupMessage's fields from required parameters
@@ -1594,7 +1594,7 @@ Constructs CreateClusterParameterGroupMessage's fields from required parameters
 
 ``` purescript
 newtype CreateClusterParameterGroupResult
-  = CreateClusterParameterGroupResult { "ClusterParameterGroup" :: NullOrUndefined (ClusterParameterGroup) }
+  = CreateClusterParameterGroupResult { "ClusterParameterGroup" :: Maybe (ClusterParameterGroup) }
 ```
 
 ##### Instances
@@ -1617,7 +1617,7 @@ Constructs CreateClusterParameterGroupResult from required parameters
 #### `newCreateClusterParameterGroupResult'`
 
 ``` purescript
-newCreateClusterParameterGroupResult' :: ({ "ClusterParameterGroup" :: NullOrUndefined (ClusterParameterGroup) } -> { "ClusterParameterGroup" :: NullOrUndefined (ClusterParameterGroup) }) -> CreateClusterParameterGroupResult
+newCreateClusterParameterGroupResult' :: ({ "ClusterParameterGroup" :: Maybe (ClusterParameterGroup) } -> { "ClusterParameterGroup" :: Maybe (ClusterParameterGroup) }) -> CreateClusterParameterGroupResult
 ```
 
 Constructs CreateClusterParameterGroupResult's fields from required parameters
@@ -1626,7 +1626,7 @@ Constructs CreateClusterParameterGroupResult's fields from required parameters
 
 ``` purescript
 newtype CreateClusterResult
-  = CreateClusterResult { "Cluster" :: NullOrUndefined (Cluster) }
+  = CreateClusterResult { "Cluster" :: Maybe (Cluster) }
 ```
 
 ##### Instances
@@ -1649,7 +1649,7 @@ Constructs CreateClusterResult from required parameters
 #### `newCreateClusterResult'`
 
 ``` purescript
-newCreateClusterResult' :: ({ "Cluster" :: NullOrUndefined (Cluster) } -> { "Cluster" :: NullOrUndefined (Cluster) }) -> CreateClusterResult
+newCreateClusterResult' :: ({ "Cluster" :: Maybe (Cluster) } -> { "Cluster" :: Maybe (Cluster) }) -> CreateClusterResult
 ```
 
 Constructs CreateClusterResult's fields from required parameters
@@ -1658,7 +1658,7 @@ Constructs CreateClusterResult's fields from required parameters
 
 ``` purescript
 newtype CreateClusterSecurityGroupMessage
-  = CreateClusterSecurityGroupMessage { "ClusterSecurityGroupName" :: String, "Description" :: String, "Tags" :: NullOrUndefined (TagList) }
+  = CreateClusterSecurityGroupMessage { "ClusterSecurityGroupName" :: String, "Description" :: String, "Tags" :: Maybe (TagList) }
 ```
 
 <p/>
@@ -1683,7 +1683,7 @@ Constructs CreateClusterSecurityGroupMessage from required parameters
 #### `newCreateClusterSecurityGroupMessage'`
 
 ``` purescript
-newCreateClusterSecurityGroupMessage' :: String -> String -> ({ "ClusterSecurityGroupName" :: String, "Description" :: String, "Tags" :: NullOrUndefined (TagList) } -> { "ClusterSecurityGroupName" :: String, "Description" :: String, "Tags" :: NullOrUndefined (TagList) }) -> CreateClusterSecurityGroupMessage
+newCreateClusterSecurityGroupMessage' :: String -> String -> ({ "ClusterSecurityGroupName" :: String, "Description" :: String, "Tags" :: Maybe (TagList) } -> { "ClusterSecurityGroupName" :: String, "Description" :: String, "Tags" :: Maybe (TagList) }) -> CreateClusterSecurityGroupMessage
 ```
 
 Constructs CreateClusterSecurityGroupMessage's fields from required parameters
@@ -1692,7 +1692,7 @@ Constructs CreateClusterSecurityGroupMessage's fields from required parameters
 
 ``` purescript
 newtype CreateClusterSecurityGroupResult
-  = CreateClusterSecurityGroupResult { "ClusterSecurityGroup" :: NullOrUndefined (ClusterSecurityGroup) }
+  = CreateClusterSecurityGroupResult { "ClusterSecurityGroup" :: Maybe (ClusterSecurityGroup) }
 ```
 
 ##### Instances
@@ -1715,7 +1715,7 @@ Constructs CreateClusterSecurityGroupResult from required parameters
 #### `newCreateClusterSecurityGroupResult'`
 
 ``` purescript
-newCreateClusterSecurityGroupResult' :: ({ "ClusterSecurityGroup" :: NullOrUndefined (ClusterSecurityGroup) } -> { "ClusterSecurityGroup" :: NullOrUndefined (ClusterSecurityGroup) }) -> CreateClusterSecurityGroupResult
+newCreateClusterSecurityGroupResult' :: ({ "ClusterSecurityGroup" :: Maybe (ClusterSecurityGroup) } -> { "ClusterSecurityGroup" :: Maybe (ClusterSecurityGroup) }) -> CreateClusterSecurityGroupResult
 ```
 
 Constructs CreateClusterSecurityGroupResult's fields from required parameters
@@ -1724,7 +1724,7 @@ Constructs CreateClusterSecurityGroupResult's fields from required parameters
 
 ``` purescript
 newtype CreateClusterSnapshotMessage
-  = CreateClusterSnapshotMessage { "SnapshotIdentifier" :: String, "ClusterIdentifier" :: String, "Tags" :: NullOrUndefined (TagList) }
+  = CreateClusterSnapshotMessage { "SnapshotIdentifier" :: String, "ClusterIdentifier" :: String, "Tags" :: Maybe (TagList) }
 ```
 
 <p/>
@@ -1749,7 +1749,7 @@ Constructs CreateClusterSnapshotMessage from required parameters
 #### `newCreateClusterSnapshotMessage'`
 
 ``` purescript
-newCreateClusterSnapshotMessage' :: String -> String -> ({ "SnapshotIdentifier" :: String, "ClusterIdentifier" :: String, "Tags" :: NullOrUndefined (TagList) } -> { "SnapshotIdentifier" :: String, "ClusterIdentifier" :: String, "Tags" :: NullOrUndefined (TagList) }) -> CreateClusterSnapshotMessage
+newCreateClusterSnapshotMessage' :: String -> String -> ({ "SnapshotIdentifier" :: String, "ClusterIdentifier" :: String, "Tags" :: Maybe (TagList) } -> { "SnapshotIdentifier" :: String, "ClusterIdentifier" :: String, "Tags" :: Maybe (TagList) }) -> CreateClusterSnapshotMessage
 ```
 
 Constructs CreateClusterSnapshotMessage's fields from required parameters
@@ -1758,7 +1758,7 @@ Constructs CreateClusterSnapshotMessage's fields from required parameters
 
 ``` purescript
 newtype CreateClusterSnapshotResult
-  = CreateClusterSnapshotResult { "Snapshot" :: NullOrUndefined (Snapshot) }
+  = CreateClusterSnapshotResult { "Snapshot" :: Maybe (Snapshot) }
 ```
 
 ##### Instances
@@ -1781,7 +1781,7 @@ Constructs CreateClusterSnapshotResult from required parameters
 #### `newCreateClusterSnapshotResult'`
 
 ``` purescript
-newCreateClusterSnapshotResult' :: ({ "Snapshot" :: NullOrUndefined (Snapshot) } -> { "Snapshot" :: NullOrUndefined (Snapshot) }) -> CreateClusterSnapshotResult
+newCreateClusterSnapshotResult' :: ({ "Snapshot" :: Maybe (Snapshot) } -> { "Snapshot" :: Maybe (Snapshot) }) -> CreateClusterSnapshotResult
 ```
 
 Constructs CreateClusterSnapshotResult's fields from required parameters
@@ -1790,7 +1790,7 @@ Constructs CreateClusterSnapshotResult's fields from required parameters
 
 ``` purescript
 newtype CreateClusterSubnetGroupMessage
-  = CreateClusterSubnetGroupMessage { "ClusterSubnetGroupName" :: String, "Description" :: String, "SubnetIds" :: SubnetIdentifierList, "Tags" :: NullOrUndefined (TagList) }
+  = CreateClusterSubnetGroupMessage { "ClusterSubnetGroupName" :: String, "Description" :: String, "SubnetIds" :: SubnetIdentifierList, "Tags" :: Maybe (TagList) }
 ```
 
 <p/>
@@ -1815,7 +1815,7 @@ Constructs CreateClusterSubnetGroupMessage from required parameters
 #### `newCreateClusterSubnetGroupMessage'`
 
 ``` purescript
-newCreateClusterSubnetGroupMessage' :: String -> String -> SubnetIdentifierList -> ({ "ClusterSubnetGroupName" :: String, "Description" :: String, "SubnetIds" :: SubnetIdentifierList, "Tags" :: NullOrUndefined (TagList) } -> { "ClusterSubnetGroupName" :: String, "Description" :: String, "SubnetIds" :: SubnetIdentifierList, "Tags" :: NullOrUndefined (TagList) }) -> CreateClusterSubnetGroupMessage
+newCreateClusterSubnetGroupMessage' :: String -> String -> SubnetIdentifierList -> ({ "ClusterSubnetGroupName" :: String, "Description" :: String, "SubnetIds" :: SubnetIdentifierList, "Tags" :: Maybe (TagList) } -> { "ClusterSubnetGroupName" :: String, "Description" :: String, "SubnetIds" :: SubnetIdentifierList, "Tags" :: Maybe (TagList) }) -> CreateClusterSubnetGroupMessage
 ```
 
 Constructs CreateClusterSubnetGroupMessage's fields from required parameters
@@ -1824,7 +1824,7 @@ Constructs CreateClusterSubnetGroupMessage's fields from required parameters
 
 ``` purescript
 newtype CreateClusterSubnetGroupResult
-  = CreateClusterSubnetGroupResult { "ClusterSubnetGroup" :: NullOrUndefined (ClusterSubnetGroup) }
+  = CreateClusterSubnetGroupResult { "ClusterSubnetGroup" :: Maybe (ClusterSubnetGroup) }
 ```
 
 ##### Instances
@@ -1847,7 +1847,7 @@ Constructs CreateClusterSubnetGroupResult from required parameters
 #### `newCreateClusterSubnetGroupResult'`
 
 ``` purescript
-newCreateClusterSubnetGroupResult' :: ({ "ClusterSubnetGroup" :: NullOrUndefined (ClusterSubnetGroup) } -> { "ClusterSubnetGroup" :: NullOrUndefined (ClusterSubnetGroup) }) -> CreateClusterSubnetGroupResult
+newCreateClusterSubnetGroupResult' :: ({ "ClusterSubnetGroup" :: Maybe (ClusterSubnetGroup) } -> { "ClusterSubnetGroup" :: Maybe (ClusterSubnetGroup) }) -> CreateClusterSubnetGroupResult
 ```
 
 Constructs CreateClusterSubnetGroupResult's fields from required parameters
@@ -1856,7 +1856,7 @@ Constructs CreateClusterSubnetGroupResult's fields from required parameters
 
 ``` purescript
 newtype CreateEventSubscriptionMessage
-  = CreateEventSubscriptionMessage { "SubscriptionName" :: String, "SnsTopicArn" :: String, "SourceType" :: NullOrUndefined (String), "SourceIds" :: NullOrUndefined (SourceIdsList), "EventCategories" :: NullOrUndefined (EventCategoriesList), "Severity" :: NullOrUndefined (String), "Enabled" :: NullOrUndefined (BooleanOptional), "Tags" :: NullOrUndefined (TagList) }
+  = CreateEventSubscriptionMessage { "SubscriptionName" :: String, "SnsTopicArn" :: String, "SourceType" :: Maybe (String), "SourceIds" :: Maybe (SourceIdsList), "EventCategories" :: Maybe (EventCategoriesList), "Severity" :: Maybe (String), "Enabled" :: Maybe (BooleanOptional), "Tags" :: Maybe (TagList) }
 ```
 
 <p/>
@@ -1881,7 +1881,7 @@ Constructs CreateEventSubscriptionMessage from required parameters
 #### `newCreateEventSubscriptionMessage'`
 
 ``` purescript
-newCreateEventSubscriptionMessage' :: String -> String -> ({ "SubscriptionName" :: String, "SnsTopicArn" :: String, "SourceType" :: NullOrUndefined (String), "SourceIds" :: NullOrUndefined (SourceIdsList), "EventCategories" :: NullOrUndefined (EventCategoriesList), "Severity" :: NullOrUndefined (String), "Enabled" :: NullOrUndefined (BooleanOptional), "Tags" :: NullOrUndefined (TagList) } -> { "SubscriptionName" :: String, "SnsTopicArn" :: String, "SourceType" :: NullOrUndefined (String), "SourceIds" :: NullOrUndefined (SourceIdsList), "EventCategories" :: NullOrUndefined (EventCategoriesList), "Severity" :: NullOrUndefined (String), "Enabled" :: NullOrUndefined (BooleanOptional), "Tags" :: NullOrUndefined (TagList) }) -> CreateEventSubscriptionMessage
+newCreateEventSubscriptionMessage' :: String -> String -> ({ "SubscriptionName" :: String, "SnsTopicArn" :: String, "SourceType" :: Maybe (String), "SourceIds" :: Maybe (SourceIdsList), "EventCategories" :: Maybe (EventCategoriesList), "Severity" :: Maybe (String), "Enabled" :: Maybe (BooleanOptional), "Tags" :: Maybe (TagList) } -> { "SubscriptionName" :: String, "SnsTopicArn" :: String, "SourceType" :: Maybe (String), "SourceIds" :: Maybe (SourceIdsList), "EventCategories" :: Maybe (EventCategoriesList), "Severity" :: Maybe (String), "Enabled" :: Maybe (BooleanOptional), "Tags" :: Maybe (TagList) }) -> CreateEventSubscriptionMessage
 ```
 
 Constructs CreateEventSubscriptionMessage's fields from required parameters
@@ -1890,7 +1890,7 @@ Constructs CreateEventSubscriptionMessage's fields from required parameters
 
 ``` purescript
 newtype CreateEventSubscriptionResult
-  = CreateEventSubscriptionResult { "EventSubscription" :: NullOrUndefined (EventSubscription) }
+  = CreateEventSubscriptionResult { "EventSubscription" :: Maybe (EventSubscription) }
 ```
 
 ##### Instances
@@ -1913,7 +1913,7 @@ Constructs CreateEventSubscriptionResult from required parameters
 #### `newCreateEventSubscriptionResult'`
 
 ``` purescript
-newCreateEventSubscriptionResult' :: ({ "EventSubscription" :: NullOrUndefined (EventSubscription) } -> { "EventSubscription" :: NullOrUndefined (EventSubscription) }) -> CreateEventSubscriptionResult
+newCreateEventSubscriptionResult' :: ({ "EventSubscription" :: Maybe (EventSubscription) } -> { "EventSubscription" :: Maybe (EventSubscription) }) -> CreateEventSubscriptionResult
 ```
 
 Constructs CreateEventSubscriptionResult's fields from required parameters
@@ -1922,7 +1922,7 @@ Constructs CreateEventSubscriptionResult's fields from required parameters
 
 ``` purescript
 newtype CreateHsmClientCertificateMessage
-  = CreateHsmClientCertificateMessage { "HsmClientCertificateIdentifier" :: String, "Tags" :: NullOrUndefined (TagList) }
+  = CreateHsmClientCertificateMessage { "HsmClientCertificateIdentifier" :: String, "Tags" :: Maybe (TagList) }
 ```
 
 <p/>
@@ -1947,7 +1947,7 @@ Constructs CreateHsmClientCertificateMessage from required parameters
 #### `newCreateHsmClientCertificateMessage'`
 
 ``` purescript
-newCreateHsmClientCertificateMessage' :: String -> ({ "HsmClientCertificateIdentifier" :: String, "Tags" :: NullOrUndefined (TagList) } -> { "HsmClientCertificateIdentifier" :: String, "Tags" :: NullOrUndefined (TagList) }) -> CreateHsmClientCertificateMessage
+newCreateHsmClientCertificateMessage' :: String -> ({ "HsmClientCertificateIdentifier" :: String, "Tags" :: Maybe (TagList) } -> { "HsmClientCertificateIdentifier" :: String, "Tags" :: Maybe (TagList) }) -> CreateHsmClientCertificateMessage
 ```
 
 Constructs CreateHsmClientCertificateMessage's fields from required parameters
@@ -1956,7 +1956,7 @@ Constructs CreateHsmClientCertificateMessage's fields from required parameters
 
 ``` purescript
 newtype CreateHsmClientCertificateResult
-  = CreateHsmClientCertificateResult { "HsmClientCertificate" :: NullOrUndefined (HsmClientCertificate) }
+  = CreateHsmClientCertificateResult { "HsmClientCertificate" :: Maybe (HsmClientCertificate) }
 ```
 
 ##### Instances
@@ -1979,7 +1979,7 @@ Constructs CreateHsmClientCertificateResult from required parameters
 #### `newCreateHsmClientCertificateResult'`
 
 ``` purescript
-newCreateHsmClientCertificateResult' :: ({ "HsmClientCertificate" :: NullOrUndefined (HsmClientCertificate) } -> { "HsmClientCertificate" :: NullOrUndefined (HsmClientCertificate) }) -> CreateHsmClientCertificateResult
+newCreateHsmClientCertificateResult' :: ({ "HsmClientCertificate" :: Maybe (HsmClientCertificate) } -> { "HsmClientCertificate" :: Maybe (HsmClientCertificate) }) -> CreateHsmClientCertificateResult
 ```
 
 Constructs CreateHsmClientCertificateResult's fields from required parameters
@@ -1988,7 +1988,7 @@ Constructs CreateHsmClientCertificateResult's fields from required parameters
 
 ``` purescript
 newtype CreateHsmConfigurationMessage
-  = CreateHsmConfigurationMessage { "HsmConfigurationIdentifier" :: String, "Description" :: String, "HsmIpAddress" :: String, "HsmPartitionName" :: String, "HsmPartitionPassword" :: String, "HsmServerPublicCertificate" :: String, "Tags" :: NullOrUndefined (TagList) }
+  = CreateHsmConfigurationMessage { "HsmConfigurationIdentifier" :: String, "Description" :: String, "HsmIpAddress" :: String, "HsmPartitionName" :: String, "HsmPartitionPassword" :: String, "HsmServerPublicCertificate" :: String, "Tags" :: Maybe (TagList) }
 ```
 
 <p/>
@@ -2013,7 +2013,7 @@ Constructs CreateHsmConfigurationMessage from required parameters
 #### `newCreateHsmConfigurationMessage'`
 
 ``` purescript
-newCreateHsmConfigurationMessage' :: String -> String -> String -> String -> String -> String -> ({ "HsmConfigurationIdentifier" :: String, "Description" :: String, "HsmIpAddress" :: String, "HsmPartitionName" :: String, "HsmPartitionPassword" :: String, "HsmServerPublicCertificate" :: String, "Tags" :: NullOrUndefined (TagList) } -> { "HsmConfigurationIdentifier" :: String, "Description" :: String, "HsmIpAddress" :: String, "HsmPartitionName" :: String, "HsmPartitionPassword" :: String, "HsmServerPublicCertificate" :: String, "Tags" :: NullOrUndefined (TagList) }) -> CreateHsmConfigurationMessage
+newCreateHsmConfigurationMessage' :: String -> String -> String -> String -> String -> String -> ({ "HsmConfigurationIdentifier" :: String, "Description" :: String, "HsmIpAddress" :: String, "HsmPartitionName" :: String, "HsmPartitionPassword" :: String, "HsmServerPublicCertificate" :: String, "Tags" :: Maybe (TagList) } -> { "HsmConfigurationIdentifier" :: String, "Description" :: String, "HsmIpAddress" :: String, "HsmPartitionName" :: String, "HsmPartitionPassword" :: String, "HsmServerPublicCertificate" :: String, "Tags" :: Maybe (TagList) }) -> CreateHsmConfigurationMessage
 ```
 
 Constructs CreateHsmConfigurationMessage's fields from required parameters
@@ -2022,7 +2022,7 @@ Constructs CreateHsmConfigurationMessage's fields from required parameters
 
 ``` purescript
 newtype CreateHsmConfigurationResult
-  = CreateHsmConfigurationResult { "HsmConfiguration" :: NullOrUndefined (HsmConfiguration) }
+  = CreateHsmConfigurationResult { "HsmConfiguration" :: Maybe (HsmConfiguration) }
 ```
 
 ##### Instances
@@ -2045,7 +2045,7 @@ Constructs CreateHsmConfigurationResult from required parameters
 #### `newCreateHsmConfigurationResult'`
 
 ``` purescript
-newCreateHsmConfigurationResult' :: ({ "HsmConfiguration" :: NullOrUndefined (HsmConfiguration) } -> { "HsmConfiguration" :: NullOrUndefined (HsmConfiguration) }) -> CreateHsmConfigurationResult
+newCreateHsmConfigurationResult' :: ({ "HsmConfiguration" :: Maybe (HsmConfiguration) } -> { "HsmConfiguration" :: Maybe (HsmConfiguration) }) -> CreateHsmConfigurationResult
 ```
 
 Constructs CreateHsmConfigurationResult's fields from required parameters
@@ -2054,7 +2054,7 @@ Constructs CreateHsmConfigurationResult's fields from required parameters
 
 ``` purescript
 newtype CreateSnapshotCopyGrantMessage
-  = CreateSnapshotCopyGrantMessage { "SnapshotCopyGrantName" :: String, "KmsKeyId" :: NullOrUndefined (String), "Tags" :: NullOrUndefined (TagList) }
+  = CreateSnapshotCopyGrantMessage { "SnapshotCopyGrantName" :: String, "KmsKeyId" :: Maybe (String), "Tags" :: Maybe (TagList) }
 ```
 
 <p>The result of the <code>CreateSnapshotCopyGrant</code> action.</p>
@@ -2079,7 +2079,7 @@ Constructs CreateSnapshotCopyGrantMessage from required parameters
 #### `newCreateSnapshotCopyGrantMessage'`
 
 ``` purescript
-newCreateSnapshotCopyGrantMessage' :: String -> ({ "SnapshotCopyGrantName" :: String, "KmsKeyId" :: NullOrUndefined (String), "Tags" :: NullOrUndefined (TagList) } -> { "SnapshotCopyGrantName" :: String, "KmsKeyId" :: NullOrUndefined (String), "Tags" :: NullOrUndefined (TagList) }) -> CreateSnapshotCopyGrantMessage
+newCreateSnapshotCopyGrantMessage' :: String -> ({ "SnapshotCopyGrantName" :: String, "KmsKeyId" :: Maybe (String), "Tags" :: Maybe (TagList) } -> { "SnapshotCopyGrantName" :: String, "KmsKeyId" :: Maybe (String), "Tags" :: Maybe (TagList) }) -> CreateSnapshotCopyGrantMessage
 ```
 
 Constructs CreateSnapshotCopyGrantMessage's fields from required parameters
@@ -2088,7 +2088,7 @@ Constructs CreateSnapshotCopyGrantMessage's fields from required parameters
 
 ``` purescript
 newtype CreateSnapshotCopyGrantResult
-  = CreateSnapshotCopyGrantResult { "SnapshotCopyGrant" :: NullOrUndefined (SnapshotCopyGrant) }
+  = CreateSnapshotCopyGrantResult { "SnapshotCopyGrant" :: Maybe (SnapshotCopyGrant) }
 ```
 
 ##### Instances
@@ -2111,7 +2111,7 @@ Constructs CreateSnapshotCopyGrantResult from required parameters
 #### `newCreateSnapshotCopyGrantResult'`
 
 ``` purescript
-newCreateSnapshotCopyGrantResult' :: ({ "SnapshotCopyGrant" :: NullOrUndefined (SnapshotCopyGrant) } -> { "SnapshotCopyGrant" :: NullOrUndefined (SnapshotCopyGrant) }) -> CreateSnapshotCopyGrantResult
+newCreateSnapshotCopyGrantResult' :: ({ "SnapshotCopyGrant" :: Maybe (SnapshotCopyGrant) } -> { "SnapshotCopyGrant" :: Maybe (SnapshotCopyGrant) }) -> CreateSnapshotCopyGrantResult
 ```
 
 Constructs CreateSnapshotCopyGrantResult's fields from required parameters
@@ -2170,7 +2170,7 @@ Encode DbGroupList
 
 ``` purescript
 newtype DefaultClusterParameters
-  = DefaultClusterParameters { "ParameterGroupFamily" :: NullOrUndefined (String), "Marker" :: NullOrUndefined (String), "Parameters" :: NullOrUndefined (ParametersList) }
+  = DefaultClusterParameters { "ParameterGroupFamily" :: Maybe (String), "Marker" :: Maybe (String), "Parameters" :: Maybe (ParametersList) }
 ```
 
 <p>Describes the default cluster parameters for a parameter group family.</p>
@@ -2195,7 +2195,7 @@ Constructs DefaultClusterParameters from required parameters
 #### `newDefaultClusterParameters'`
 
 ``` purescript
-newDefaultClusterParameters' :: ({ "ParameterGroupFamily" :: NullOrUndefined (String), "Marker" :: NullOrUndefined (String), "Parameters" :: NullOrUndefined (ParametersList) } -> { "ParameterGroupFamily" :: NullOrUndefined (String), "Marker" :: NullOrUndefined (String), "Parameters" :: NullOrUndefined (ParametersList) }) -> DefaultClusterParameters
+newDefaultClusterParameters' :: ({ "ParameterGroupFamily" :: Maybe (String), "Marker" :: Maybe (String), "Parameters" :: Maybe (ParametersList) } -> { "ParameterGroupFamily" :: Maybe (String), "Marker" :: Maybe (String), "Parameters" :: Maybe (ParametersList) }) -> DefaultClusterParameters
 ```
 
 Constructs DefaultClusterParameters's fields from required parameters
@@ -2204,7 +2204,7 @@ Constructs DefaultClusterParameters's fields from required parameters
 
 ``` purescript
 newtype DeleteClusterMessage
-  = DeleteClusterMessage { "ClusterIdentifier" :: String, "SkipFinalClusterSnapshot" :: NullOrUndefined (Boolean), "FinalClusterSnapshotIdentifier" :: NullOrUndefined (String) }
+  = DeleteClusterMessage { "ClusterIdentifier" :: String, "SkipFinalClusterSnapshot" :: Maybe (Boolean), "FinalClusterSnapshotIdentifier" :: Maybe (String) }
 ```
 
 <p/>
@@ -2229,7 +2229,7 @@ Constructs DeleteClusterMessage from required parameters
 #### `newDeleteClusterMessage'`
 
 ``` purescript
-newDeleteClusterMessage' :: String -> ({ "ClusterIdentifier" :: String, "SkipFinalClusterSnapshot" :: NullOrUndefined (Boolean), "FinalClusterSnapshotIdentifier" :: NullOrUndefined (String) } -> { "ClusterIdentifier" :: String, "SkipFinalClusterSnapshot" :: NullOrUndefined (Boolean), "FinalClusterSnapshotIdentifier" :: NullOrUndefined (String) }) -> DeleteClusterMessage
+newDeleteClusterMessage' :: String -> ({ "ClusterIdentifier" :: String, "SkipFinalClusterSnapshot" :: Maybe (Boolean), "FinalClusterSnapshotIdentifier" :: Maybe (String) } -> { "ClusterIdentifier" :: String, "SkipFinalClusterSnapshot" :: Maybe (Boolean), "FinalClusterSnapshotIdentifier" :: Maybe (String) }) -> DeleteClusterMessage
 ```
 
 Constructs DeleteClusterMessage's fields from required parameters
@@ -2272,7 +2272,7 @@ Constructs DeleteClusterParameterGroupMessage's fields from required parameters
 
 ``` purescript
 newtype DeleteClusterResult
-  = DeleteClusterResult { "Cluster" :: NullOrUndefined (Cluster) }
+  = DeleteClusterResult { "Cluster" :: Maybe (Cluster) }
 ```
 
 ##### Instances
@@ -2295,7 +2295,7 @@ Constructs DeleteClusterResult from required parameters
 #### `newDeleteClusterResult'`
 
 ``` purescript
-newDeleteClusterResult' :: ({ "Cluster" :: NullOrUndefined (Cluster) } -> { "Cluster" :: NullOrUndefined (Cluster) }) -> DeleteClusterResult
+newDeleteClusterResult' :: ({ "Cluster" :: Maybe (Cluster) } -> { "Cluster" :: Maybe (Cluster) }) -> DeleteClusterResult
 ```
 
 Constructs DeleteClusterResult's fields from required parameters
@@ -2338,7 +2338,7 @@ Constructs DeleteClusterSecurityGroupMessage's fields from required parameters
 
 ``` purescript
 newtype DeleteClusterSnapshotMessage
-  = DeleteClusterSnapshotMessage { "SnapshotIdentifier" :: String, "SnapshotClusterIdentifier" :: NullOrUndefined (String) }
+  = DeleteClusterSnapshotMessage { "SnapshotIdentifier" :: String, "SnapshotClusterIdentifier" :: Maybe (String) }
 ```
 
 <p/>
@@ -2363,7 +2363,7 @@ Constructs DeleteClusterSnapshotMessage from required parameters
 #### `newDeleteClusterSnapshotMessage'`
 
 ``` purescript
-newDeleteClusterSnapshotMessage' :: String -> ({ "SnapshotIdentifier" :: String, "SnapshotClusterIdentifier" :: NullOrUndefined (String) } -> { "SnapshotIdentifier" :: String, "SnapshotClusterIdentifier" :: NullOrUndefined (String) }) -> DeleteClusterSnapshotMessage
+newDeleteClusterSnapshotMessage' :: String -> ({ "SnapshotIdentifier" :: String, "SnapshotClusterIdentifier" :: Maybe (String) } -> { "SnapshotIdentifier" :: String, "SnapshotClusterIdentifier" :: Maybe (String) }) -> DeleteClusterSnapshotMessage
 ```
 
 Constructs DeleteClusterSnapshotMessage's fields from required parameters
@@ -2372,7 +2372,7 @@ Constructs DeleteClusterSnapshotMessage's fields from required parameters
 
 ``` purescript
 newtype DeleteClusterSnapshotResult
-  = DeleteClusterSnapshotResult { "Snapshot" :: NullOrUndefined (Snapshot) }
+  = DeleteClusterSnapshotResult { "Snapshot" :: Maybe (Snapshot) }
 ```
 
 ##### Instances
@@ -2395,7 +2395,7 @@ Constructs DeleteClusterSnapshotResult from required parameters
 #### `newDeleteClusterSnapshotResult'`
 
 ``` purescript
-newDeleteClusterSnapshotResult' :: ({ "Snapshot" :: NullOrUndefined (Snapshot) } -> { "Snapshot" :: NullOrUndefined (Snapshot) }) -> DeleteClusterSnapshotResult
+newDeleteClusterSnapshotResult' :: ({ "Snapshot" :: Maybe (Snapshot) } -> { "Snapshot" :: Maybe (Snapshot) }) -> DeleteClusterSnapshotResult
 ```
 
 Constructs DeleteClusterSnapshotResult's fields from required parameters
@@ -2644,7 +2644,7 @@ Encode DependentServiceUnavailableFault
 
 ``` purescript
 newtype DescribeClusterParameterGroupsMessage
-  = DescribeClusterParameterGroupsMessage { "ParameterGroupName" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String), "TagKeys" :: NullOrUndefined (TagKeyList), "TagValues" :: NullOrUndefined (TagValueList) }
+  = DescribeClusterParameterGroupsMessage { "ParameterGroupName" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String), "TagKeys" :: Maybe (TagKeyList), "TagValues" :: Maybe (TagValueList) }
 ```
 
 <p/>
@@ -2669,7 +2669,7 @@ Constructs DescribeClusterParameterGroupsMessage from required parameters
 #### `newDescribeClusterParameterGroupsMessage'`
 
 ``` purescript
-newDescribeClusterParameterGroupsMessage' :: ({ "ParameterGroupName" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String), "TagKeys" :: NullOrUndefined (TagKeyList), "TagValues" :: NullOrUndefined (TagValueList) } -> { "ParameterGroupName" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String), "TagKeys" :: NullOrUndefined (TagKeyList), "TagValues" :: NullOrUndefined (TagValueList) }) -> DescribeClusterParameterGroupsMessage
+newDescribeClusterParameterGroupsMessage' :: ({ "ParameterGroupName" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String), "TagKeys" :: Maybe (TagKeyList), "TagValues" :: Maybe (TagValueList) } -> { "ParameterGroupName" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String), "TagKeys" :: Maybe (TagKeyList), "TagValues" :: Maybe (TagValueList) }) -> DescribeClusterParameterGroupsMessage
 ```
 
 Constructs DescribeClusterParameterGroupsMessage's fields from required parameters
@@ -2678,7 +2678,7 @@ Constructs DescribeClusterParameterGroupsMessage's fields from required paramete
 
 ``` purescript
 newtype DescribeClusterParametersMessage
-  = DescribeClusterParametersMessage { "ParameterGroupName" :: String, "Source" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }
+  = DescribeClusterParametersMessage { "ParameterGroupName" :: String, "Source" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }
 ```
 
 <p/>
@@ -2703,7 +2703,7 @@ Constructs DescribeClusterParametersMessage from required parameters
 #### `newDescribeClusterParametersMessage'`
 
 ``` purescript
-newDescribeClusterParametersMessage' :: String -> ({ "ParameterGroupName" :: String, "Source" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) } -> { "ParameterGroupName" :: String, "Source" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }) -> DescribeClusterParametersMessage
+newDescribeClusterParametersMessage' :: String -> ({ "ParameterGroupName" :: String, "Source" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) } -> { "ParameterGroupName" :: String, "Source" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }) -> DescribeClusterParametersMessage
 ```
 
 Constructs DescribeClusterParametersMessage's fields from required parameters
@@ -2712,7 +2712,7 @@ Constructs DescribeClusterParametersMessage's fields from required parameters
 
 ``` purescript
 newtype DescribeClusterSecurityGroupsMessage
-  = DescribeClusterSecurityGroupsMessage { "ClusterSecurityGroupName" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String), "TagKeys" :: NullOrUndefined (TagKeyList), "TagValues" :: NullOrUndefined (TagValueList) }
+  = DescribeClusterSecurityGroupsMessage { "ClusterSecurityGroupName" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String), "TagKeys" :: Maybe (TagKeyList), "TagValues" :: Maybe (TagValueList) }
 ```
 
 <p/>
@@ -2737,7 +2737,7 @@ Constructs DescribeClusterSecurityGroupsMessage from required parameters
 #### `newDescribeClusterSecurityGroupsMessage'`
 
 ``` purescript
-newDescribeClusterSecurityGroupsMessage' :: ({ "ClusterSecurityGroupName" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String), "TagKeys" :: NullOrUndefined (TagKeyList), "TagValues" :: NullOrUndefined (TagValueList) } -> { "ClusterSecurityGroupName" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String), "TagKeys" :: NullOrUndefined (TagKeyList), "TagValues" :: NullOrUndefined (TagValueList) }) -> DescribeClusterSecurityGroupsMessage
+newDescribeClusterSecurityGroupsMessage' :: ({ "ClusterSecurityGroupName" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String), "TagKeys" :: Maybe (TagKeyList), "TagValues" :: Maybe (TagValueList) } -> { "ClusterSecurityGroupName" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String), "TagKeys" :: Maybe (TagKeyList), "TagValues" :: Maybe (TagValueList) }) -> DescribeClusterSecurityGroupsMessage
 ```
 
 Constructs DescribeClusterSecurityGroupsMessage's fields from required parameters
@@ -2746,7 +2746,7 @@ Constructs DescribeClusterSecurityGroupsMessage's fields from required parameter
 
 ``` purescript
 newtype DescribeClusterSnapshotsMessage
-  = DescribeClusterSnapshotsMessage { "ClusterIdentifier" :: NullOrUndefined (String), "SnapshotIdentifier" :: NullOrUndefined (String), "SnapshotType" :: NullOrUndefined (String), "StartTime" :: NullOrUndefined (TStamp), "EndTime" :: NullOrUndefined (TStamp), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String), "OwnerAccount" :: NullOrUndefined (String), "TagKeys" :: NullOrUndefined (TagKeyList), "TagValues" :: NullOrUndefined (TagValueList) }
+  = DescribeClusterSnapshotsMessage { "ClusterIdentifier" :: Maybe (String), "SnapshotIdentifier" :: Maybe (String), "SnapshotType" :: Maybe (String), "StartTime" :: Maybe (TStamp), "EndTime" :: Maybe (TStamp), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String), "OwnerAccount" :: Maybe (String), "TagKeys" :: Maybe (TagKeyList), "TagValues" :: Maybe (TagValueList) }
 ```
 
 <p/>
@@ -2771,7 +2771,7 @@ Constructs DescribeClusterSnapshotsMessage from required parameters
 #### `newDescribeClusterSnapshotsMessage'`
 
 ``` purescript
-newDescribeClusterSnapshotsMessage' :: ({ "ClusterIdentifier" :: NullOrUndefined (String), "SnapshotIdentifier" :: NullOrUndefined (String), "SnapshotType" :: NullOrUndefined (String), "StartTime" :: NullOrUndefined (TStamp), "EndTime" :: NullOrUndefined (TStamp), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String), "OwnerAccount" :: NullOrUndefined (String), "TagKeys" :: NullOrUndefined (TagKeyList), "TagValues" :: NullOrUndefined (TagValueList) } -> { "ClusterIdentifier" :: NullOrUndefined (String), "SnapshotIdentifier" :: NullOrUndefined (String), "SnapshotType" :: NullOrUndefined (String), "StartTime" :: NullOrUndefined (TStamp), "EndTime" :: NullOrUndefined (TStamp), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String), "OwnerAccount" :: NullOrUndefined (String), "TagKeys" :: NullOrUndefined (TagKeyList), "TagValues" :: NullOrUndefined (TagValueList) }) -> DescribeClusterSnapshotsMessage
+newDescribeClusterSnapshotsMessage' :: ({ "ClusterIdentifier" :: Maybe (String), "SnapshotIdentifier" :: Maybe (String), "SnapshotType" :: Maybe (String), "StartTime" :: Maybe (TStamp), "EndTime" :: Maybe (TStamp), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String), "OwnerAccount" :: Maybe (String), "TagKeys" :: Maybe (TagKeyList), "TagValues" :: Maybe (TagValueList) } -> { "ClusterIdentifier" :: Maybe (String), "SnapshotIdentifier" :: Maybe (String), "SnapshotType" :: Maybe (String), "StartTime" :: Maybe (TStamp), "EndTime" :: Maybe (TStamp), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String), "OwnerAccount" :: Maybe (String), "TagKeys" :: Maybe (TagKeyList), "TagValues" :: Maybe (TagValueList) }) -> DescribeClusterSnapshotsMessage
 ```
 
 Constructs DescribeClusterSnapshotsMessage's fields from required parameters
@@ -2780,7 +2780,7 @@ Constructs DescribeClusterSnapshotsMessage's fields from required parameters
 
 ``` purescript
 newtype DescribeClusterSubnetGroupsMessage
-  = DescribeClusterSubnetGroupsMessage { "ClusterSubnetGroupName" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String), "TagKeys" :: NullOrUndefined (TagKeyList), "TagValues" :: NullOrUndefined (TagValueList) }
+  = DescribeClusterSubnetGroupsMessage { "ClusterSubnetGroupName" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String), "TagKeys" :: Maybe (TagKeyList), "TagValues" :: Maybe (TagValueList) }
 ```
 
 <p/>
@@ -2805,7 +2805,7 @@ Constructs DescribeClusterSubnetGroupsMessage from required parameters
 #### `newDescribeClusterSubnetGroupsMessage'`
 
 ``` purescript
-newDescribeClusterSubnetGroupsMessage' :: ({ "ClusterSubnetGroupName" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String), "TagKeys" :: NullOrUndefined (TagKeyList), "TagValues" :: NullOrUndefined (TagValueList) } -> { "ClusterSubnetGroupName" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String), "TagKeys" :: NullOrUndefined (TagKeyList), "TagValues" :: NullOrUndefined (TagValueList) }) -> DescribeClusterSubnetGroupsMessage
+newDescribeClusterSubnetGroupsMessage' :: ({ "ClusterSubnetGroupName" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String), "TagKeys" :: Maybe (TagKeyList), "TagValues" :: Maybe (TagValueList) } -> { "ClusterSubnetGroupName" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String), "TagKeys" :: Maybe (TagKeyList), "TagValues" :: Maybe (TagValueList) }) -> DescribeClusterSubnetGroupsMessage
 ```
 
 Constructs DescribeClusterSubnetGroupsMessage's fields from required parameters
@@ -2814,7 +2814,7 @@ Constructs DescribeClusterSubnetGroupsMessage's fields from required parameters
 
 ``` purescript
 newtype DescribeClusterVersionsMessage
-  = DescribeClusterVersionsMessage { "ClusterVersion" :: NullOrUndefined (String), "ClusterParameterGroupFamily" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }
+  = DescribeClusterVersionsMessage { "ClusterVersion" :: Maybe (String), "ClusterParameterGroupFamily" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }
 ```
 
 <p/>
@@ -2839,7 +2839,7 @@ Constructs DescribeClusterVersionsMessage from required parameters
 #### `newDescribeClusterVersionsMessage'`
 
 ``` purescript
-newDescribeClusterVersionsMessage' :: ({ "ClusterVersion" :: NullOrUndefined (String), "ClusterParameterGroupFamily" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) } -> { "ClusterVersion" :: NullOrUndefined (String), "ClusterParameterGroupFamily" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }) -> DescribeClusterVersionsMessage
+newDescribeClusterVersionsMessage' :: ({ "ClusterVersion" :: Maybe (String), "ClusterParameterGroupFamily" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) } -> { "ClusterVersion" :: Maybe (String), "ClusterParameterGroupFamily" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }) -> DescribeClusterVersionsMessage
 ```
 
 Constructs DescribeClusterVersionsMessage's fields from required parameters
@@ -2848,7 +2848,7 @@ Constructs DescribeClusterVersionsMessage's fields from required parameters
 
 ``` purescript
 newtype DescribeClustersMessage
-  = DescribeClustersMessage { "ClusterIdentifier" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String), "TagKeys" :: NullOrUndefined (TagKeyList), "TagValues" :: NullOrUndefined (TagValueList) }
+  = DescribeClustersMessage { "ClusterIdentifier" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String), "TagKeys" :: Maybe (TagKeyList), "TagValues" :: Maybe (TagValueList) }
 ```
 
 <p/>
@@ -2873,7 +2873,7 @@ Constructs DescribeClustersMessage from required parameters
 #### `newDescribeClustersMessage'`
 
 ``` purescript
-newDescribeClustersMessage' :: ({ "ClusterIdentifier" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String), "TagKeys" :: NullOrUndefined (TagKeyList), "TagValues" :: NullOrUndefined (TagValueList) } -> { "ClusterIdentifier" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String), "TagKeys" :: NullOrUndefined (TagKeyList), "TagValues" :: NullOrUndefined (TagValueList) }) -> DescribeClustersMessage
+newDescribeClustersMessage' :: ({ "ClusterIdentifier" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String), "TagKeys" :: Maybe (TagKeyList), "TagValues" :: Maybe (TagValueList) } -> { "ClusterIdentifier" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String), "TagKeys" :: Maybe (TagKeyList), "TagValues" :: Maybe (TagValueList) }) -> DescribeClustersMessage
 ```
 
 Constructs DescribeClustersMessage's fields from required parameters
@@ -2882,7 +2882,7 @@ Constructs DescribeClustersMessage's fields from required parameters
 
 ``` purescript
 newtype DescribeDefaultClusterParametersMessage
-  = DescribeDefaultClusterParametersMessage { "ParameterGroupFamily" :: String, "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }
+  = DescribeDefaultClusterParametersMessage { "ParameterGroupFamily" :: String, "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }
 ```
 
 <p/>
@@ -2907,7 +2907,7 @@ Constructs DescribeDefaultClusterParametersMessage from required parameters
 #### `newDescribeDefaultClusterParametersMessage'`
 
 ``` purescript
-newDescribeDefaultClusterParametersMessage' :: String -> ({ "ParameterGroupFamily" :: String, "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) } -> { "ParameterGroupFamily" :: String, "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }) -> DescribeDefaultClusterParametersMessage
+newDescribeDefaultClusterParametersMessage' :: String -> ({ "ParameterGroupFamily" :: String, "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) } -> { "ParameterGroupFamily" :: String, "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }) -> DescribeDefaultClusterParametersMessage
 ```
 
 Constructs DescribeDefaultClusterParametersMessage's fields from required parameters
@@ -2916,7 +2916,7 @@ Constructs DescribeDefaultClusterParametersMessage's fields from required parame
 
 ``` purescript
 newtype DescribeDefaultClusterParametersResult
-  = DescribeDefaultClusterParametersResult { "DefaultClusterParameters" :: NullOrUndefined (DefaultClusterParameters) }
+  = DescribeDefaultClusterParametersResult { "DefaultClusterParameters" :: Maybe (DefaultClusterParameters) }
 ```
 
 ##### Instances
@@ -2939,7 +2939,7 @@ Constructs DescribeDefaultClusterParametersResult from required parameters
 #### `newDescribeDefaultClusterParametersResult'`
 
 ``` purescript
-newDescribeDefaultClusterParametersResult' :: ({ "DefaultClusterParameters" :: NullOrUndefined (DefaultClusterParameters) } -> { "DefaultClusterParameters" :: NullOrUndefined (DefaultClusterParameters) }) -> DescribeDefaultClusterParametersResult
+newDescribeDefaultClusterParametersResult' :: ({ "DefaultClusterParameters" :: Maybe (DefaultClusterParameters) } -> { "DefaultClusterParameters" :: Maybe (DefaultClusterParameters) }) -> DescribeDefaultClusterParametersResult
 ```
 
 Constructs DescribeDefaultClusterParametersResult's fields from required parameters
@@ -2948,7 +2948,7 @@ Constructs DescribeDefaultClusterParametersResult's fields from required paramet
 
 ``` purescript
 newtype DescribeEventCategoriesMessage
-  = DescribeEventCategoriesMessage { "SourceType" :: NullOrUndefined (String) }
+  = DescribeEventCategoriesMessage { "SourceType" :: Maybe (String) }
 ```
 
 <p/>
@@ -2973,7 +2973,7 @@ Constructs DescribeEventCategoriesMessage from required parameters
 #### `newDescribeEventCategoriesMessage'`
 
 ``` purescript
-newDescribeEventCategoriesMessage' :: ({ "SourceType" :: NullOrUndefined (String) } -> { "SourceType" :: NullOrUndefined (String) }) -> DescribeEventCategoriesMessage
+newDescribeEventCategoriesMessage' :: ({ "SourceType" :: Maybe (String) } -> { "SourceType" :: Maybe (String) }) -> DescribeEventCategoriesMessage
 ```
 
 Constructs DescribeEventCategoriesMessage's fields from required parameters
@@ -2982,7 +2982,7 @@ Constructs DescribeEventCategoriesMessage's fields from required parameters
 
 ``` purescript
 newtype DescribeEventSubscriptionsMessage
-  = DescribeEventSubscriptionsMessage { "SubscriptionName" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String), "TagKeys" :: NullOrUndefined (TagKeyList), "TagValues" :: NullOrUndefined (TagValueList) }
+  = DescribeEventSubscriptionsMessage { "SubscriptionName" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String), "TagKeys" :: Maybe (TagKeyList), "TagValues" :: Maybe (TagValueList) }
 ```
 
 <p/>
@@ -3007,7 +3007,7 @@ Constructs DescribeEventSubscriptionsMessage from required parameters
 #### `newDescribeEventSubscriptionsMessage'`
 
 ``` purescript
-newDescribeEventSubscriptionsMessage' :: ({ "SubscriptionName" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String), "TagKeys" :: NullOrUndefined (TagKeyList), "TagValues" :: NullOrUndefined (TagValueList) } -> { "SubscriptionName" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String), "TagKeys" :: NullOrUndefined (TagKeyList), "TagValues" :: NullOrUndefined (TagValueList) }) -> DescribeEventSubscriptionsMessage
+newDescribeEventSubscriptionsMessage' :: ({ "SubscriptionName" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String), "TagKeys" :: Maybe (TagKeyList), "TagValues" :: Maybe (TagValueList) } -> { "SubscriptionName" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String), "TagKeys" :: Maybe (TagKeyList), "TagValues" :: Maybe (TagValueList) }) -> DescribeEventSubscriptionsMessage
 ```
 
 Constructs DescribeEventSubscriptionsMessage's fields from required parameters
@@ -3016,7 +3016,7 @@ Constructs DescribeEventSubscriptionsMessage's fields from required parameters
 
 ``` purescript
 newtype DescribeEventsMessage
-  = DescribeEventsMessage { "SourceIdentifier" :: NullOrUndefined (String), "SourceType" :: NullOrUndefined (SourceType), "StartTime" :: NullOrUndefined (TStamp), "EndTime" :: NullOrUndefined (TStamp), "Duration" :: NullOrUndefined (IntegerOptional), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }
+  = DescribeEventsMessage { "SourceIdentifier" :: Maybe (String), "SourceType" :: Maybe (SourceType), "StartTime" :: Maybe (TStamp), "EndTime" :: Maybe (TStamp), "Duration" :: Maybe (IntegerOptional), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }
 ```
 
 <p/>
@@ -3041,7 +3041,7 @@ Constructs DescribeEventsMessage from required parameters
 #### `newDescribeEventsMessage'`
 
 ``` purescript
-newDescribeEventsMessage' :: ({ "SourceIdentifier" :: NullOrUndefined (String), "SourceType" :: NullOrUndefined (SourceType), "StartTime" :: NullOrUndefined (TStamp), "EndTime" :: NullOrUndefined (TStamp), "Duration" :: NullOrUndefined (IntegerOptional), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) } -> { "SourceIdentifier" :: NullOrUndefined (String), "SourceType" :: NullOrUndefined (SourceType), "StartTime" :: NullOrUndefined (TStamp), "EndTime" :: NullOrUndefined (TStamp), "Duration" :: NullOrUndefined (IntegerOptional), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }) -> DescribeEventsMessage
+newDescribeEventsMessage' :: ({ "SourceIdentifier" :: Maybe (String), "SourceType" :: Maybe (SourceType), "StartTime" :: Maybe (TStamp), "EndTime" :: Maybe (TStamp), "Duration" :: Maybe (IntegerOptional), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) } -> { "SourceIdentifier" :: Maybe (String), "SourceType" :: Maybe (SourceType), "StartTime" :: Maybe (TStamp), "EndTime" :: Maybe (TStamp), "Duration" :: Maybe (IntegerOptional), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }) -> DescribeEventsMessage
 ```
 
 Constructs DescribeEventsMessage's fields from required parameters
@@ -3050,7 +3050,7 @@ Constructs DescribeEventsMessage's fields from required parameters
 
 ``` purescript
 newtype DescribeHsmClientCertificatesMessage
-  = DescribeHsmClientCertificatesMessage { "HsmClientCertificateIdentifier" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String), "TagKeys" :: NullOrUndefined (TagKeyList), "TagValues" :: NullOrUndefined (TagValueList) }
+  = DescribeHsmClientCertificatesMessage { "HsmClientCertificateIdentifier" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String), "TagKeys" :: Maybe (TagKeyList), "TagValues" :: Maybe (TagValueList) }
 ```
 
 <p/>
@@ -3075,7 +3075,7 @@ Constructs DescribeHsmClientCertificatesMessage from required parameters
 #### `newDescribeHsmClientCertificatesMessage'`
 
 ``` purescript
-newDescribeHsmClientCertificatesMessage' :: ({ "HsmClientCertificateIdentifier" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String), "TagKeys" :: NullOrUndefined (TagKeyList), "TagValues" :: NullOrUndefined (TagValueList) } -> { "HsmClientCertificateIdentifier" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String), "TagKeys" :: NullOrUndefined (TagKeyList), "TagValues" :: NullOrUndefined (TagValueList) }) -> DescribeHsmClientCertificatesMessage
+newDescribeHsmClientCertificatesMessage' :: ({ "HsmClientCertificateIdentifier" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String), "TagKeys" :: Maybe (TagKeyList), "TagValues" :: Maybe (TagValueList) } -> { "HsmClientCertificateIdentifier" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String), "TagKeys" :: Maybe (TagKeyList), "TagValues" :: Maybe (TagValueList) }) -> DescribeHsmClientCertificatesMessage
 ```
 
 Constructs DescribeHsmClientCertificatesMessage's fields from required parameters
@@ -3084,7 +3084,7 @@ Constructs DescribeHsmClientCertificatesMessage's fields from required parameter
 
 ``` purescript
 newtype DescribeHsmConfigurationsMessage
-  = DescribeHsmConfigurationsMessage { "HsmConfigurationIdentifier" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String), "TagKeys" :: NullOrUndefined (TagKeyList), "TagValues" :: NullOrUndefined (TagValueList) }
+  = DescribeHsmConfigurationsMessage { "HsmConfigurationIdentifier" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String), "TagKeys" :: Maybe (TagKeyList), "TagValues" :: Maybe (TagValueList) }
 ```
 
 <p/>
@@ -3109,7 +3109,7 @@ Constructs DescribeHsmConfigurationsMessage from required parameters
 #### `newDescribeHsmConfigurationsMessage'`
 
 ``` purescript
-newDescribeHsmConfigurationsMessage' :: ({ "HsmConfigurationIdentifier" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String), "TagKeys" :: NullOrUndefined (TagKeyList), "TagValues" :: NullOrUndefined (TagValueList) } -> { "HsmConfigurationIdentifier" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String), "TagKeys" :: NullOrUndefined (TagKeyList), "TagValues" :: NullOrUndefined (TagValueList) }) -> DescribeHsmConfigurationsMessage
+newDescribeHsmConfigurationsMessage' :: ({ "HsmConfigurationIdentifier" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String), "TagKeys" :: Maybe (TagKeyList), "TagValues" :: Maybe (TagValueList) } -> { "HsmConfigurationIdentifier" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String), "TagKeys" :: Maybe (TagKeyList), "TagValues" :: Maybe (TagValueList) }) -> DescribeHsmConfigurationsMessage
 ```
 
 Constructs DescribeHsmConfigurationsMessage's fields from required parameters
@@ -3152,7 +3152,7 @@ Constructs DescribeLoggingStatusMessage's fields from required parameters
 
 ``` purescript
 newtype DescribeOrderableClusterOptionsMessage
-  = DescribeOrderableClusterOptionsMessage { "ClusterVersion" :: NullOrUndefined (String), "NodeType" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }
+  = DescribeOrderableClusterOptionsMessage { "ClusterVersion" :: Maybe (String), "NodeType" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }
 ```
 
 <p/>
@@ -3177,7 +3177,7 @@ Constructs DescribeOrderableClusterOptionsMessage from required parameters
 #### `newDescribeOrderableClusterOptionsMessage'`
 
 ``` purescript
-newDescribeOrderableClusterOptionsMessage' :: ({ "ClusterVersion" :: NullOrUndefined (String), "NodeType" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) } -> { "ClusterVersion" :: NullOrUndefined (String), "NodeType" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }) -> DescribeOrderableClusterOptionsMessage
+newDescribeOrderableClusterOptionsMessage' :: ({ "ClusterVersion" :: Maybe (String), "NodeType" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) } -> { "ClusterVersion" :: Maybe (String), "NodeType" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }) -> DescribeOrderableClusterOptionsMessage
 ```
 
 Constructs DescribeOrderableClusterOptionsMessage's fields from required parameters
@@ -3186,7 +3186,7 @@ Constructs DescribeOrderableClusterOptionsMessage's fields from required paramet
 
 ``` purescript
 newtype DescribeReservedNodeOfferingsMessage
-  = DescribeReservedNodeOfferingsMessage { "ReservedNodeOfferingId" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }
+  = DescribeReservedNodeOfferingsMessage { "ReservedNodeOfferingId" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }
 ```
 
 <p/>
@@ -3211,7 +3211,7 @@ Constructs DescribeReservedNodeOfferingsMessage from required parameters
 #### `newDescribeReservedNodeOfferingsMessage'`
 
 ``` purescript
-newDescribeReservedNodeOfferingsMessage' :: ({ "ReservedNodeOfferingId" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) } -> { "ReservedNodeOfferingId" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }) -> DescribeReservedNodeOfferingsMessage
+newDescribeReservedNodeOfferingsMessage' :: ({ "ReservedNodeOfferingId" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) } -> { "ReservedNodeOfferingId" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }) -> DescribeReservedNodeOfferingsMessage
 ```
 
 Constructs DescribeReservedNodeOfferingsMessage's fields from required parameters
@@ -3220,7 +3220,7 @@ Constructs DescribeReservedNodeOfferingsMessage's fields from required parameter
 
 ``` purescript
 newtype DescribeReservedNodesMessage
-  = DescribeReservedNodesMessage { "ReservedNodeId" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }
+  = DescribeReservedNodesMessage { "ReservedNodeId" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }
 ```
 
 <p/>
@@ -3245,7 +3245,7 @@ Constructs DescribeReservedNodesMessage from required parameters
 #### `newDescribeReservedNodesMessage'`
 
 ``` purescript
-newDescribeReservedNodesMessage' :: ({ "ReservedNodeId" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) } -> { "ReservedNodeId" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }) -> DescribeReservedNodesMessage
+newDescribeReservedNodesMessage' :: ({ "ReservedNodeId" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) } -> { "ReservedNodeId" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }) -> DescribeReservedNodesMessage
 ```
 
 Constructs DescribeReservedNodesMessage's fields from required parameters
@@ -3288,7 +3288,7 @@ Constructs DescribeResizeMessage's fields from required parameters
 
 ``` purescript
 newtype DescribeSnapshotCopyGrantsMessage
-  = DescribeSnapshotCopyGrantsMessage { "SnapshotCopyGrantName" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String), "TagKeys" :: NullOrUndefined (TagKeyList), "TagValues" :: NullOrUndefined (TagValueList) }
+  = DescribeSnapshotCopyGrantsMessage { "SnapshotCopyGrantName" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String), "TagKeys" :: Maybe (TagKeyList), "TagValues" :: Maybe (TagValueList) }
 ```
 
 <p>The result of the <code>DescribeSnapshotCopyGrants</code> action.</p>
@@ -3313,7 +3313,7 @@ Constructs DescribeSnapshotCopyGrantsMessage from required parameters
 #### `newDescribeSnapshotCopyGrantsMessage'`
 
 ``` purescript
-newDescribeSnapshotCopyGrantsMessage' :: ({ "SnapshotCopyGrantName" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String), "TagKeys" :: NullOrUndefined (TagKeyList), "TagValues" :: NullOrUndefined (TagValueList) } -> { "SnapshotCopyGrantName" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String), "TagKeys" :: NullOrUndefined (TagKeyList), "TagValues" :: NullOrUndefined (TagValueList) }) -> DescribeSnapshotCopyGrantsMessage
+newDescribeSnapshotCopyGrantsMessage' :: ({ "SnapshotCopyGrantName" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String), "TagKeys" :: Maybe (TagKeyList), "TagValues" :: Maybe (TagValueList) } -> { "SnapshotCopyGrantName" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String), "TagKeys" :: Maybe (TagKeyList), "TagValues" :: Maybe (TagValueList) }) -> DescribeSnapshotCopyGrantsMessage
 ```
 
 Constructs DescribeSnapshotCopyGrantsMessage's fields from required parameters
@@ -3322,7 +3322,7 @@ Constructs DescribeSnapshotCopyGrantsMessage's fields from required parameters
 
 ``` purescript
 newtype DescribeTableRestoreStatusMessage
-  = DescribeTableRestoreStatusMessage { "ClusterIdentifier" :: NullOrUndefined (String), "TableRestoreRequestId" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }
+  = DescribeTableRestoreStatusMessage { "ClusterIdentifier" :: Maybe (String), "TableRestoreRequestId" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }
 ```
 
 <p/>
@@ -3347,7 +3347,7 @@ Constructs DescribeTableRestoreStatusMessage from required parameters
 #### `newDescribeTableRestoreStatusMessage'`
 
 ``` purescript
-newDescribeTableRestoreStatusMessage' :: ({ "ClusterIdentifier" :: NullOrUndefined (String), "TableRestoreRequestId" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) } -> { "ClusterIdentifier" :: NullOrUndefined (String), "TableRestoreRequestId" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String) }) -> DescribeTableRestoreStatusMessage
+newDescribeTableRestoreStatusMessage' :: ({ "ClusterIdentifier" :: Maybe (String), "TableRestoreRequestId" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) } -> { "ClusterIdentifier" :: Maybe (String), "TableRestoreRequestId" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String) }) -> DescribeTableRestoreStatusMessage
 ```
 
 Constructs DescribeTableRestoreStatusMessage's fields from required parameters
@@ -3356,7 +3356,7 @@ Constructs DescribeTableRestoreStatusMessage's fields from required parameters
 
 ``` purescript
 newtype DescribeTagsMessage
-  = DescribeTagsMessage { "ResourceName" :: NullOrUndefined (String), "ResourceType" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String), "TagKeys" :: NullOrUndefined (TagKeyList), "TagValues" :: NullOrUndefined (TagValueList) }
+  = DescribeTagsMessage { "ResourceName" :: Maybe (String), "ResourceType" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String), "TagKeys" :: Maybe (TagKeyList), "TagValues" :: Maybe (TagValueList) }
 ```
 
 <p/>
@@ -3381,7 +3381,7 @@ Constructs DescribeTagsMessage from required parameters
 #### `newDescribeTagsMessage'`
 
 ``` purescript
-newDescribeTagsMessage' :: ({ "ResourceName" :: NullOrUndefined (String), "ResourceType" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String), "TagKeys" :: NullOrUndefined (TagKeyList), "TagValues" :: NullOrUndefined (TagValueList) } -> { "ResourceName" :: NullOrUndefined (String), "ResourceType" :: NullOrUndefined (String), "MaxRecords" :: NullOrUndefined (IntegerOptional), "Marker" :: NullOrUndefined (String), "TagKeys" :: NullOrUndefined (TagKeyList), "TagValues" :: NullOrUndefined (TagValueList) }) -> DescribeTagsMessage
+newDescribeTagsMessage' :: ({ "ResourceName" :: Maybe (String), "ResourceType" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String), "TagKeys" :: Maybe (TagKeyList), "TagValues" :: Maybe (TagValueList) } -> { "ResourceName" :: Maybe (String), "ResourceType" :: Maybe (String), "MaxRecords" :: Maybe (IntegerOptional), "Marker" :: Maybe (String), "TagKeys" :: Maybe (TagKeyList), "TagValues" :: Maybe (TagValueList) }) -> DescribeTagsMessage
 ```
 
 Constructs DescribeTagsMessage's fields from required parameters
@@ -3458,7 +3458,7 @@ Constructs DisableSnapshotCopyMessage's fields from required parameters
 
 ``` purescript
 newtype DisableSnapshotCopyResult
-  = DisableSnapshotCopyResult { "Cluster" :: NullOrUndefined (Cluster) }
+  = DisableSnapshotCopyResult { "Cluster" :: Maybe (Cluster) }
 ```
 
 ##### Instances
@@ -3481,7 +3481,7 @@ Constructs DisableSnapshotCopyResult from required parameters
 #### `newDisableSnapshotCopyResult'`
 
 ``` purescript
-newDisableSnapshotCopyResult' :: ({ "Cluster" :: NullOrUndefined (Cluster) } -> { "Cluster" :: NullOrUndefined (Cluster) }) -> DisableSnapshotCopyResult
+newDisableSnapshotCopyResult' :: ({ "Cluster" :: Maybe (Cluster) } -> { "Cluster" :: Maybe (Cluster) }) -> DisableSnapshotCopyResult
 ```
 
 Constructs DisableSnapshotCopyResult's fields from required parameters
@@ -3506,7 +3506,7 @@ Encode DoubleOptional
 
 ``` purescript
 newtype EC2SecurityGroup
-  = EC2SecurityGroup { "Status" :: NullOrUndefined (String), "EC2SecurityGroupName" :: NullOrUndefined (String), "EC2SecurityGroupOwnerId" :: NullOrUndefined (String), "Tags" :: NullOrUndefined (TagList) }
+  = EC2SecurityGroup { "Status" :: Maybe (String), "EC2SecurityGroupName" :: Maybe (String), "EC2SecurityGroupOwnerId" :: Maybe (String), "Tags" :: Maybe (TagList) }
 ```
 
 <p>Describes an Amazon EC2 security group.</p>
@@ -3531,7 +3531,7 @@ Constructs EC2SecurityGroup from required parameters
 #### `newEC2SecurityGroup'`
 
 ``` purescript
-newEC2SecurityGroup' :: ({ "Status" :: NullOrUndefined (String), "EC2SecurityGroupName" :: NullOrUndefined (String), "EC2SecurityGroupOwnerId" :: NullOrUndefined (String), "Tags" :: NullOrUndefined (TagList) } -> { "Status" :: NullOrUndefined (String), "EC2SecurityGroupName" :: NullOrUndefined (String), "EC2SecurityGroupOwnerId" :: NullOrUndefined (String), "Tags" :: NullOrUndefined (TagList) }) -> EC2SecurityGroup
+newEC2SecurityGroup' :: ({ "Status" :: Maybe (String), "EC2SecurityGroupName" :: Maybe (String), "EC2SecurityGroupOwnerId" :: Maybe (String), "Tags" :: Maybe (TagList) } -> { "Status" :: Maybe (String), "EC2SecurityGroupName" :: Maybe (String), "EC2SecurityGroupOwnerId" :: Maybe (String), "Tags" :: Maybe (TagList) }) -> EC2SecurityGroup
 ```
 
 Constructs EC2SecurityGroup's fields from required parameters
@@ -3556,7 +3556,7 @@ Encode EC2SecurityGroupList
 
 ``` purescript
 newtype ElasticIpStatus
-  = ElasticIpStatus { "ElasticIp" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String) }
+  = ElasticIpStatus { "ElasticIp" :: Maybe (String), "Status" :: Maybe (String) }
 ```
 
 <p>Describes the status of the elastic IP (EIP) address.</p>
@@ -3581,7 +3581,7 @@ Constructs ElasticIpStatus from required parameters
 #### `newElasticIpStatus'`
 
 ``` purescript
-newElasticIpStatus' :: ({ "ElasticIp" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String) } -> { "ElasticIp" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String) }) -> ElasticIpStatus
+newElasticIpStatus' :: ({ "ElasticIp" :: Maybe (String), "Status" :: Maybe (String) } -> { "ElasticIp" :: Maybe (String), "Status" :: Maybe (String) }) -> ElasticIpStatus
 ```
 
 Constructs ElasticIpStatus's fields from required parameters
@@ -3590,7 +3590,7 @@ Constructs ElasticIpStatus's fields from required parameters
 
 ``` purescript
 newtype EnableLoggingMessage
-  = EnableLoggingMessage { "ClusterIdentifier" :: String, "BucketName" :: String, "S3KeyPrefix" :: NullOrUndefined (String) }
+  = EnableLoggingMessage { "ClusterIdentifier" :: String, "BucketName" :: String, "S3KeyPrefix" :: Maybe (String) }
 ```
 
 <p/>
@@ -3615,7 +3615,7 @@ Constructs EnableLoggingMessage from required parameters
 #### `newEnableLoggingMessage'`
 
 ``` purescript
-newEnableLoggingMessage' :: String -> String -> ({ "ClusterIdentifier" :: String, "BucketName" :: String, "S3KeyPrefix" :: NullOrUndefined (String) } -> { "ClusterIdentifier" :: String, "BucketName" :: String, "S3KeyPrefix" :: NullOrUndefined (String) }) -> EnableLoggingMessage
+newEnableLoggingMessage' :: String -> String -> ({ "ClusterIdentifier" :: String, "BucketName" :: String, "S3KeyPrefix" :: Maybe (String) } -> { "ClusterIdentifier" :: String, "BucketName" :: String, "S3KeyPrefix" :: Maybe (String) }) -> EnableLoggingMessage
 ```
 
 Constructs EnableLoggingMessage's fields from required parameters
@@ -3624,7 +3624,7 @@ Constructs EnableLoggingMessage's fields from required parameters
 
 ``` purescript
 newtype EnableSnapshotCopyMessage
-  = EnableSnapshotCopyMessage { "ClusterIdentifier" :: String, "DestinationRegion" :: String, "RetentionPeriod" :: NullOrUndefined (IntegerOptional), "SnapshotCopyGrantName" :: NullOrUndefined (String) }
+  = EnableSnapshotCopyMessage { "ClusterIdentifier" :: String, "DestinationRegion" :: String, "RetentionPeriod" :: Maybe (IntegerOptional), "SnapshotCopyGrantName" :: Maybe (String) }
 ```
 
 <p/>
@@ -3649,7 +3649,7 @@ Constructs EnableSnapshotCopyMessage from required parameters
 #### `newEnableSnapshotCopyMessage'`
 
 ``` purescript
-newEnableSnapshotCopyMessage' :: String -> String -> ({ "ClusterIdentifier" :: String, "DestinationRegion" :: String, "RetentionPeriod" :: NullOrUndefined (IntegerOptional), "SnapshotCopyGrantName" :: NullOrUndefined (String) } -> { "ClusterIdentifier" :: String, "DestinationRegion" :: String, "RetentionPeriod" :: NullOrUndefined (IntegerOptional), "SnapshotCopyGrantName" :: NullOrUndefined (String) }) -> EnableSnapshotCopyMessage
+newEnableSnapshotCopyMessage' :: String -> String -> ({ "ClusterIdentifier" :: String, "DestinationRegion" :: String, "RetentionPeriod" :: Maybe (IntegerOptional), "SnapshotCopyGrantName" :: Maybe (String) } -> { "ClusterIdentifier" :: String, "DestinationRegion" :: String, "RetentionPeriod" :: Maybe (IntegerOptional), "SnapshotCopyGrantName" :: Maybe (String) }) -> EnableSnapshotCopyMessage
 ```
 
 Constructs EnableSnapshotCopyMessage's fields from required parameters
@@ -3658,7 +3658,7 @@ Constructs EnableSnapshotCopyMessage's fields from required parameters
 
 ``` purescript
 newtype EnableSnapshotCopyResult
-  = EnableSnapshotCopyResult { "Cluster" :: NullOrUndefined (Cluster) }
+  = EnableSnapshotCopyResult { "Cluster" :: Maybe (Cluster) }
 ```
 
 ##### Instances
@@ -3681,7 +3681,7 @@ Constructs EnableSnapshotCopyResult from required parameters
 #### `newEnableSnapshotCopyResult'`
 
 ``` purescript
-newEnableSnapshotCopyResult' :: ({ "Cluster" :: NullOrUndefined (Cluster) } -> { "Cluster" :: NullOrUndefined (Cluster) }) -> EnableSnapshotCopyResult
+newEnableSnapshotCopyResult' :: ({ "Cluster" :: Maybe (Cluster) } -> { "Cluster" :: Maybe (Cluster) }) -> EnableSnapshotCopyResult
 ```
 
 Constructs EnableSnapshotCopyResult's fields from required parameters
@@ -3690,7 +3690,7 @@ Constructs EnableSnapshotCopyResult's fields from required parameters
 
 ``` purescript
 newtype Endpoint
-  = Endpoint { "Address" :: NullOrUndefined (String), "Port" :: NullOrUndefined (Int) }
+  = Endpoint { "Address" :: Maybe (String), "Port" :: Maybe (Int) }
 ```
 
 <p>Describes a connection endpoint.</p>
@@ -3715,7 +3715,7 @@ Constructs Endpoint from required parameters
 #### `newEndpoint'`
 
 ``` purescript
-newEndpoint' :: ({ "Address" :: NullOrUndefined (String), "Port" :: NullOrUndefined (Int) } -> { "Address" :: NullOrUndefined (String), "Port" :: NullOrUndefined (Int) }) -> Endpoint
+newEndpoint' :: ({ "Address" :: Maybe (String), "Port" :: Maybe (Int) } -> { "Address" :: Maybe (String), "Port" :: Maybe (Int) }) -> Endpoint
 ```
 
 Constructs Endpoint's fields from required parameters
@@ -3724,7 +3724,7 @@ Constructs Endpoint's fields from required parameters
 
 ``` purescript
 newtype Event
-  = Event { "SourceIdentifier" :: NullOrUndefined (String), "SourceType" :: NullOrUndefined (SourceType), "Message" :: NullOrUndefined (String), "EventCategories" :: NullOrUndefined (EventCategoriesList), "Severity" :: NullOrUndefined (String), "Date" :: NullOrUndefined (TStamp), "EventId" :: NullOrUndefined (String) }
+  = Event { "SourceIdentifier" :: Maybe (String), "SourceType" :: Maybe (SourceType), "Message" :: Maybe (String), "EventCategories" :: Maybe (EventCategoriesList), "Severity" :: Maybe (String), "Date" :: Maybe (TStamp), "EventId" :: Maybe (String) }
 ```
 
 <p>Describes an event.</p>
@@ -3749,7 +3749,7 @@ Constructs Event from required parameters
 #### `newEvent'`
 
 ``` purescript
-newEvent' :: ({ "SourceIdentifier" :: NullOrUndefined (String), "SourceType" :: NullOrUndefined (SourceType), "Message" :: NullOrUndefined (String), "EventCategories" :: NullOrUndefined (EventCategoriesList), "Severity" :: NullOrUndefined (String), "Date" :: NullOrUndefined (TStamp), "EventId" :: NullOrUndefined (String) } -> { "SourceIdentifier" :: NullOrUndefined (String), "SourceType" :: NullOrUndefined (SourceType), "Message" :: NullOrUndefined (String), "EventCategories" :: NullOrUndefined (EventCategoriesList), "Severity" :: NullOrUndefined (String), "Date" :: NullOrUndefined (TStamp), "EventId" :: NullOrUndefined (String) }) -> Event
+newEvent' :: ({ "SourceIdentifier" :: Maybe (String), "SourceType" :: Maybe (SourceType), "Message" :: Maybe (String), "EventCategories" :: Maybe (EventCategoriesList), "Severity" :: Maybe (String), "Date" :: Maybe (TStamp), "EventId" :: Maybe (String) } -> { "SourceIdentifier" :: Maybe (String), "SourceType" :: Maybe (SourceType), "Message" :: Maybe (String), "EventCategories" :: Maybe (EventCategoriesList), "Severity" :: Maybe (String), "Date" :: Maybe (TStamp), "EventId" :: Maybe (String) }) -> Event
 ```
 
 Constructs Event's fields from required parameters
@@ -3774,7 +3774,7 @@ Encode EventCategoriesList
 
 ``` purescript
 newtype EventCategoriesMap
-  = EventCategoriesMap { "SourceType" :: NullOrUndefined (String), "Events" :: NullOrUndefined (EventInfoMapList) }
+  = EventCategoriesMap { "SourceType" :: Maybe (String), "Events" :: Maybe (EventInfoMapList) }
 ```
 
 <p>Describes event categories.</p>
@@ -3799,7 +3799,7 @@ Constructs EventCategoriesMap from required parameters
 #### `newEventCategoriesMap'`
 
 ``` purescript
-newEventCategoriesMap' :: ({ "SourceType" :: NullOrUndefined (String), "Events" :: NullOrUndefined (EventInfoMapList) } -> { "SourceType" :: NullOrUndefined (String), "Events" :: NullOrUndefined (EventInfoMapList) }) -> EventCategoriesMap
+newEventCategoriesMap' :: ({ "SourceType" :: Maybe (String), "Events" :: Maybe (EventInfoMapList) } -> { "SourceType" :: Maybe (String), "Events" :: Maybe (EventInfoMapList) }) -> EventCategoriesMap
 ```
 
 Constructs EventCategoriesMap's fields from required parameters
@@ -3824,7 +3824,7 @@ Encode EventCategoriesMapList
 
 ``` purescript
 newtype EventCategoriesMessage
-  = EventCategoriesMessage { "EventCategoriesMapList" :: NullOrUndefined (EventCategoriesMapList) }
+  = EventCategoriesMessage { "EventCategoriesMapList" :: Maybe (EventCategoriesMapList) }
 ```
 
 <p/>
@@ -3849,7 +3849,7 @@ Constructs EventCategoriesMessage from required parameters
 #### `newEventCategoriesMessage'`
 
 ``` purescript
-newEventCategoriesMessage' :: ({ "EventCategoriesMapList" :: NullOrUndefined (EventCategoriesMapList) } -> { "EventCategoriesMapList" :: NullOrUndefined (EventCategoriesMapList) }) -> EventCategoriesMessage
+newEventCategoriesMessage' :: ({ "EventCategoriesMapList" :: Maybe (EventCategoriesMapList) } -> { "EventCategoriesMapList" :: Maybe (EventCategoriesMapList) }) -> EventCategoriesMessage
 ```
 
 Constructs EventCategoriesMessage's fields from required parameters
@@ -3858,7 +3858,7 @@ Constructs EventCategoriesMessage's fields from required parameters
 
 ``` purescript
 newtype EventInfoMap
-  = EventInfoMap { "EventId" :: NullOrUndefined (String), "EventCategories" :: NullOrUndefined (EventCategoriesList), "EventDescription" :: NullOrUndefined (String), "Severity" :: NullOrUndefined (String) }
+  = EventInfoMap { "EventId" :: Maybe (String), "EventCategories" :: Maybe (EventCategoriesList), "EventDescription" :: Maybe (String), "Severity" :: Maybe (String) }
 ```
 
 <p>Describes event information.</p>
@@ -3883,7 +3883,7 @@ Constructs EventInfoMap from required parameters
 #### `newEventInfoMap'`
 
 ``` purescript
-newEventInfoMap' :: ({ "EventId" :: NullOrUndefined (String), "EventCategories" :: NullOrUndefined (EventCategoriesList), "EventDescription" :: NullOrUndefined (String), "Severity" :: NullOrUndefined (String) } -> { "EventId" :: NullOrUndefined (String), "EventCategories" :: NullOrUndefined (EventCategoriesList), "EventDescription" :: NullOrUndefined (String), "Severity" :: NullOrUndefined (String) }) -> EventInfoMap
+newEventInfoMap' :: ({ "EventId" :: Maybe (String), "EventCategories" :: Maybe (EventCategoriesList), "EventDescription" :: Maybe (String), "Severity" :: Maybe (String) } -> { "EventId" :: Maybe (String), "EventCategories" :: Maybe (EventCategoriesList), "EventDescription" :: Maybe (String), "Severity" :: Maybe (String) }) -> EventInfoMap
 ```
 
 Constructs EventInfoMap's fields from required parameters
@@ -3924,7 +3924,7 @@ Encode EventList
 
 ``` purescript
 newtype EventSubscription
-  = EventSubscription { "CustomerAwsId" :: NullOrUndefined (String), "CustSubscriptionId" :: NullOrUndefined (String), "SnsTopicArn" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String), "SubscriptionCreationTime" :: NullOrUndefined (TStamp), "SourceType" :: NullOrUndefined (String), "SourceIdsList" :: NullOrUndefined (SourceIdsList), "EventCategoriesList" :: NullOrUndefined (EventCategoriesList), "Severity" :: NullOrUndefined (String), "Enabled" :: NullOrUndefined (Boolean), "Tags" :: NullOrUndefined (TagList) }
+  = EventSubscription { "CustomerAwsId" :: Maybe (String), "CustSubscriptionId" :: Maybe (String), "SnsTopicArn" :: Maybe (String), "Status" :: Maybe (String), "SubscriptionCreationTime" :: Maybe (TStamp), "SourceType" :: Maybe (String), "SourceIdsList" :: Maybe (SourceIdsList), "EventCategoriesList" :: Maybe (EventCategoriesList), "Severity" :: Maybe (String), "Enabled" :: Maybe (Boolean), "Tags" :: Maybe (TagList) }
 ```
 
 <p>Describes event subscriptions.</p>
@@ -3949,7 +3949,7 @@ Constructs EventSubscription from required parameters
 #### `newEventSubscription'`
 
 ``` purescript
-newEventSubscription' :: ({ "CustomerAwsId" :: NullOrUndefined (String), "CustSubscriptionId" :: NullOrUndefined (String), "SnsTopicArn" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String), "SubscriptionCreationTime" :: NullOrUndefined (TStamp), "SourceType" :: NullOrUndefined (String), "SourceIdsList" :: NullOrUndefined (SourceIdsList), "EventCategoriesList" :: NullOrUndefined (EventCategoriesList), "Severity" :: NullOrUndefined (String), "Enabled" :: NullOrUndefined (Boolean), "Tags" :: NullOrUndefined (TagList) } -> { "CustomerAwsId" :: NullOrUndefined (String), "CustSubscriptionId" :: NullOrUndefined (String), "SnsTopicArn" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String), "SubscriptionCreationTime" :: NullOrUndefined (TStamp), "SourceType" :: NullOrUndefined (String), "SourceIdsList" :: NullOrUndefined (SourceIdsList), "EventCategoriesList" :: NullOrUndefined (EventCategoriesList), "Severity" :: NullOrUndefined (String), "Enabled" :: NullOrUndefined (Boolean), "Tags" :: NullOrUndefined (TagList) }) -> EventSubscription
+newEventSubscription' :: ({ "CustomerAwsId" :: Maybe (String), "CustSubscriptionId" :: Maybe (String), "SnsTopicArn" :: Maybe (String), "Status" :: Maybe (String), "SubscriptionCreationTime" :: Maybe (TStamp), "SourceType" :: Maybe (String), "SourceIdsList" :: Maybe (SourceIdsList), "EventCategoriesList" :: Maybe (EventCategoriesList), "Severity" :: Maybe (String), "Enabled" :: Maybe (Boolean), "Tags" :: Maybe (TagList) } -> { "CustomerAwsId" :: Maybe (String), "CustSubscriptionId" :: Maybe (String), "SnsTopicArn" :: Maybe (String), "Status" :: Maybe (String), "SubscriptionCreationTime" :: Maybe (TStamp), "SourceType" :: Maybe (String), "SourceIdsList" :: Maybe (SourceIdsList), "EventCategoriesList" :: Maybe (EventCategoriesList), "Severity" :: Maybe (String), "Enabled" :: Maybe (Boolean), "Tags" :: Maybe (TagList) }) -> EventSubscription
 ```
 
 Constructs EventSubscription's fields from required parameters
@@ -3992,7 +3992,7 @@ Encode EventSubscriptionsList
 
 ``` purescript
 newtype EventSubscriptionsMessage
-  = EventSubscriptionsMessage { "Marker" :: NullOrUndefined (String), "EventSubscriptionsList" :: NullOrUndefined (EventSubscriptionsList) }
+  = EventSubscriptionsMessage { "Marker" :: Maybe (String), "EventSubscriptionsList" :: Maybe (EventSubscriptionsList) }
 ```
 
 <p/>
@@ -4017,7 +4017,7 @@ Constructs EventSubscriptionsMessage from required parameters
 #### `newEventSubscriptionsMessage'`
 
 ``` purescript
-newEventSubscriptionsMessage' :: ({ "Marker" :: NullOrUndefined (String), "EventSubscriptionsList" :: NullOrUndefined (EventSubscriptionsList) } -> { "Marker" :: NullOrUndefined (String), "EventSubscriptionsList" :: NullOrUndefined (EventSubscriptionsList) }) -> EventSubscriptionsMessage
+newEventSubscriptionsMessage' :: ({ "Marker" :: Maybe (String), "EventSubscriptionsList" :: Maybe (EventSubscriptionsList) } -> { "Marker" :: Maybe (String), "EventSubscriptionsList" :: Maybe (EventSubscriptionsList) }) -> EventSubscriptionsMessage
 ```
 
 Constructs EventSubscriptionsMessage's fields from required parameters
@@ -4026,7 +4026,7 @@ Constructs EventSubscriptionsMessage's fields from required parameters
 
 ``` purescript
 newtype EventsMessage
-  = EventsMessage { "Marker" :: NullOrUndefined (String), "Events" :: NullOrUndefined (EventList) }
+  = EventsMessage { "Marker" :: Maybe (String), "Events" :: Maybe (EventList) }
 ```
 
 <p/>
@@ -4051,7 +4051,7 @@ Constructs EventsMessage from required parameters
 #### `newEventsMessage'`
 
 ``` purescript
-newEventsMessage' :: ({ "Marker" :: NullOrUndefined (String), "Events" :: NullOrUndefined (EventList) } -> { "Marker" :: NullOrUndefined (String), "Events" :: NullOrUndefined (EventList) }) -> EventsMessage
+newEventsMessage' :: ({ "Marker" :: Maybe (String), "Events" :: Maybe (EventList) } -> { "Marker" :: Maybe (String), "Events" :: Maybe (EventList) }) -> EventsMessage
 ```
 
 Constructs EventsMessage's fields from required parameters
@@ -4060,7 +4060,7 @@ Constructs EventsMessage's fields from required parameters
 
 ``` purescript
 newtype GetClusterCredentialsMessage
-  = GetClusterCredentialsMessage { "DbUser" :: String, "DbName" :: NullOrUndefined (String), "ClusterIdentifier" :: String, "DurationSeconds" :: NullOrUndefined (IntegerOptional), "AutoCreate" :: NullOrUndefined (BooleanOptional), "DbGroups" :: NullOrUndefined (DbGroupList) }
+  = GetClusterCredentialsMessage { "DbUser" :: String, "DbName" :: Maybe (String), "ClusterIdentifier" :: String, "DurationSeconds" :: Maybe (IntegerOptional), "AutoCreate" :: Maybe (BooleanOptional), "DbGroups" :: Maybe (DbGroupList) }
 ```
 
 <p>The request parameters to get cluster credentials.</p>
@@ -4085,7 +4085,7 @@ Constructs GetClusterCredentialsMessage from required parameters
 #### `newGetClusterCredentialsMessage'`
 
 ``` purescript
-newGetClusterCredentialsMessage' :: String -> String -> ({ "DbUser" :: String, "DbName" :: NullOrUndefined (String), "ClusterIdentifier" :: String, "DurationSeconds" :: NullOrUndefined (IntegerOptional), "AutoCreate" :: NullOrUndefined (BooleanOptional), "DbGroups" :: NullOrUndefined (DbGroupList) } -> { "DbUser" :: String, "DbName" :: NullOrUndefined (String), "ClusterIdentifier" :: String, "DurationSeconds" :: NullOrUndefined (IntegerOptional), "AutoCreate" :: NullOrUndefined (BooleanOptional), "DbGroups" :: NullOrUndefined (DbGroupList) }) -> GetClusterCredentialsMessage
+newGetClusterCredentialsMessage' :: String -> String -> ({ "DbUser" :: String, "DbName" :: Maybe (String), "ClusterIdentifier" :: String, "DurationSeconds" :: Maybe (IntegerOptional), "AutoCreate" :: Maybe (BooleanOptional), "DbGroups" :: Maybe (DbGroupList) } -> { "DbUser" :: String, "DbName" :: Maybe (String), "ClusterIdentifier" :: String, "DurationSeconds" :: Maybe (IntegerOptional), "AutoCreate" :: Maybe (BooleanOptional), "DbGroups" :: Maybe (DbGroupList) }) -> GetClusterCredentialsMessage
 ```
 
 Constructs GetClusterCredentialsMessage's fields from required parameters
@@ -4094,7 +4094,7 @@ Constructs GetClusterCredentialsMessage's fields from required parameters
 
 ``` purescript
 newtype HsmClientCertificate
-  = HsmClientCertificate { "HsmClientCertificateIdentifier" :: NullOrUndefined (String), "HsmClientCertificatePublicKey" :: NullOrUndefined (String), "Tags" :: NullOrUndefined (TagList) }
+  = HsmClientCertificate { "HsmClientCertificateIdentifier" :: Maybe (String), "HsmClientCertificatePublicKey" :: Maybe (String), "Tags" :: Maybe (TagList) }
 ```
 
 <p>Returns information about an HSM client certificate. The certificate is stored in a secure Hardware Storage Module (HSM), and used by the Amazon Redshift cluster to encrypt data files.</p>
@@ -4119,7 +4119,7 @@ Constructs HsmClientCertificate from required parameters
 #### `newHsmClientCertificate'`
 
 ``` purescript
-newHsmClientCertificate' :: ({ "HsmClientCertificateIdentifier" :: NullOrUndefined (String), "HsmClientCertificatePublicKey" :: NullOrUndefined (String), "Tags" :: NullOrUndefined (TagList) } -> { "HsmClientCertificateIdentifier" :: NullOrUndefined (String), "HsmClientCertificatePublicKey" :: NullOrUndefined (String), "Tags" :: NullOrUndefined (TagList) }) -> HsmClientCertificate
+newHsmClientCertificate' :: ({ "HsmClientCertificateIdentifier" :: Maybe (String), "HsmClientCertificatePublicKey" :: Maybe (String), "Tags" :: Maybe (TagList) } -> { "HsmClientCertificateIdentifier" :: Maybe (String), "HsmClientCertificatePublicKey" :: Maybe (String), "Tags" :: Maybe (TagList) }) -> HsmClientCertificate
 ```
 
 Constructs HsmClientCertificate's fields from required parameters
@@ -4162,7 +4162,7 @@ Encode HsmClientCertificateList
 
 ``` purescript
 newtype HsmClientCertificateMessage
-  = HsmClientCertificateMessage { "Marker" :: NullOrUndefined (String), "HsmClientCertificates" :: NullOrUndefined (HsmClientCertificateList) }
+  = HsmClientCertificateMessage { "Marker" :: Maybe (String), "HsmClientCertificates" :: Maybe (HsmClientCertificateList) }
 ```
 
 <p/>
@@ -4187,7 +4187,7 @@ Constructs HsmClientCertificateMessage from required parameters
 #### `newHsmClientCertificateMessage'`
 
 ``` purescript
-newHsmClientCertificateMessage' :: ({ "Marker" :: NullOrUndefined (String), "HsmClientCertificates" :: NullOrUndefined (HsmClientCertificateList) } -> { "Marker" :: NullOrUndefined (String), "HsmClientCertificates" :: NullOrUndefined (HsmClientCertificateList) }) -> HsmClientCertificateMessage
+newHsmClientCertificateMessage' :: ({ "Marker" :: Maybe (String), "HsmClientCertificates" :: Maybe (HsmClientCertificateList) } -> { "Marker" :: Maybe (String), "HsmClientCertificates" :: Maybe (HsmClientCertificateList) }) -> HsmClientCertificateMessage
 ```
 
 Constructs HsmClientCertificateMessage's fields from required parameters
@@ -4232,7 +4232,7 @@ Encode HsmClientCertificateQuotaExceededFault
 
 ``` purescript
 newtype HsmConfiguration
-  = HsmConfiguration { "HsmConfigurationIdentifier" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "HsmIpAddress" :: NullOrUndefined (String), "HsmPartitionName" :: NullOrUndefined (String), "Tags" :: NullOrUndefined (TagList) }
+  = HsmConfiguration { "HsmConfigurationIdentifier" :: Maybe (String), "Description" :: Maybe (String), "HsmIpAddress" :: Maybe (String), "HsmPartitionName" :: Maybe (String), "Tags" :: Maybe (TagList) }
 ```
 
 <p>Returns information about an HSM configuration, which is an object that describes to Amazon Redshift clusters the information they require to connect to an HSM where they can store database encryption keys.</p>
@@ -4257,7 +4257,7 @@ Constructs HsmConfiguration from required parameters
 #### `newHsmConfiguration'`
 
 ``` purescript
-newHsmConfiguration' :: ({ "HsmConfigurationIdentifier" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "HsmIpAddress" :: NullOrUndefined (String), "HsmPartitionName" :: NullOrUndefined (String), "Tags" :: NullOrUndefined (TagList) } -> { "HsmConfigurationIdentifier" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "HsmIpAddress" :: NullOrUndefined (String), "HsmPartitionName" :: NullOrUndefined (String), "Tags" :: NullOrUndefined (TagList) }) -> HsmConfiguration
+newHsmConfiguration' :: ({ "HsmConfigurationIdentifier" :: Maybe (String), "Description" :: Maybe (String), "HsmIpAddress" :: Maybe (String), "HsmPartitionName" :: Maybe (String), "Tags" :: Maybe (TagList) } -> { "HsmConfigurationIdentifier" :: Maybe (String), "Description" :: Maybe (String), "HsmIpAddress" :: Maybe (String), "HsmPartitionName" :: Maybe (String), "Tags" :: Maybe (TagList) }) -> HsmConfiguration
 ```
 
 Constructs HsmConfiguration's fields from required parameters
@@ -4300,7 +4300,7 @@ Encode HsmConfigurationList
 
 ``` purescript
 newtype HsmConfigurationMessage
-  = HsmConfigurationMessage { "Marker" :: NullOrUndefined (String), "HsmConfigurations" :: NullOrUndefined (HsmConfigurationList) }
+  = HsmConfigurationMessage { "Marker" :: Maybe (String), "HsmConfigurations" :: Maybe (HsmConfigurationList) }
 ```
 
 <p/>
@@ -4325,7 +4325,7 @@ Constructs HsmConfigurationMessage from required parameters
 #### `newHsmConfigurationMessage'`
 
 ``` purescript
-newHsmConfigurationMessage' :: ({ "Marker" :: NullOrUndefined (String), "HsmConfigurations" :: NullOrUndefined (HsmConfigurationList) } -> { "Marker" :: NullOrUndefined (String), "HsmConfigurations" :: NullOrUndefined (HsmConfigurationList) }) -> HsmConfigurationMessage
+newHsmConfigurationMessage' :: ({ "Marker" :: Maybe (String), "HsmConfigurations" :: Maybe (HsmConfigurationList) } -> { "Marker" :: Maybe (String), "HsmConfigurations" :: Maybe (HsmConfigurationList) }) -> HsmConfigurationMessage
 ```
 
 Constructs HsmConfigurationMessage's fields from required parameters
@@ -4370,7 +4370,7 @@ Encode HsmConfigurationQuotaExceededFault
 
 ``` purescript
 newtype HsmStatus
-  = HsmStatus { "HsmClientCertificateIdentifier" :: NullOrUndefined (String), "HsmConfigurationIdentifier" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String) }
+  = HsmStatus { "HsmClientCertificateIdentifier" :: Maybe (String), "HsmConfigurationIdentifier" :: Maybe (String), "Status" :: Maybe (String) }
 ```
 
 <p>Describes the status of changes to HSM settings.</p>
@@ -4395,7 +4395,7 @@ Constructs HsmStatus from required parameters
 #### `newHsmStatus'`
 
 ``` purescript
-newHsmStatus' :: ({ "HsmClientCertificateIdentifier" :: NullOrUndefined (String), "HsmConfigurationIdentifier" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String) } -> { "HsmClientCertificateIdentifier" :: NullOrUndefined (String), "HsmConfigurationIdentifier" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String) }) -> HsmStatus
+newHsmStatus' :: ({ "HsmClientCertificateIdentifier" :: Maybe (String), "HsmConfigurationIdentifier" :: Maybe (String), "Status" :: Maybe (String) } -> { "HsmClientCertificateIdentifier" :: Maybe (String), "HsmConfigurationIdentifier" :: Maybe (String), "Status" :: Maybe (String) }) -> HsmStatus
 ```
 
 Constructs HsmStatus's fields from required parameters
@@ -4404,7 +4404,7 @@ Constructs HsmStatus's fields from required parameters
 
 ``` purescript
 newtype IPRange
-  = IPRange { "Status" :: NullOrUndefined (String), "CIDRIP" :: NullOrUndefined (String), "Tags" :: NullOrUndefined (TagList) }
+  = IPRange { "Status" :: Maybe (String), "CIDRIP" :: Maybe (String), "Tags" :: Maybe (TagList) }
 ```
 
 <p>Describes an IP range used in a security group.</p>
@@ -4429,7 +4429,7 @@ Constructs IPRange from required parameters
 #### `newIPRange'`
 
 ``` purescript
-newIPRange' :: ({ "Status" :: NullOrUndefined (String), "CIDRIP" :: NullOrUndefined (String), "Tags" :: NullOrUndefined (TagList) } -> { "Status" :: NullOrUndefined (String), "CIDRIP" :: NullOrUndefined (String), "Tags" :: NullOrUndefined (TagList) }) -> IPRange
+newIPRange' :: ({ "Status" :: Maybe (String), "CIDRIP" :: Maybe (String), "Tags" :: Maybe (TagList) } -> { "Status" :: Maybe (String), "CIDRIP" :: Maybe (String), "Tags" :: Maybe (TagList) }) -> IPRange
 ```
 
 Constructs IPRange's fields from required parameters
@@ -4948,7 +4948,7 @@ Encode LimitExceededFault
 
 ``` purescript
 newtype LoggingStatus
-  = LoggingStatus { "LoggingEnabled" :: NullOrUndefined (Boolean), "BucketName" :: NullOrUndefined (String), "S3KeyPrefix" :: NullOrUndefined (String), "LastSuccessfulDeliveryTime" :: NullOrUndefined (TStamp), "LastFailureTime" :: NullOrUndefined (TStamp), "LastFailureMessage" :: NullOrUndefined (String) }
+  = LoggingStatus { "LoggingEnabled" :: Maybe (Boolean), "BucketName" :: Maybe (String), "S3KeyPrefix" :: Maybe (String), "LastSuccessfulDeliveryTime" :: Maybe (TStamp), "LastFailureTime" :: Maybe (TStamp), "LastFailureMessage" :: Maybe (String) }
 ```
 
 <p>Describes the status of logging for a cluster.</p>
@@ -4973,7 +4973,7 @@ Constructs LoggingStatus from required parameters
 #### `newLoggingStatus'`
 
 ``` purescript
-newLoggingStatus' :: ({ "LoggingEnabled" :: NullOrUndefined (Boolean), "BucketName" :: NullOrUndefined (String), "S3KeyPrefix" :: NullOrUndefined (String), "LastSuccessfulDeliveryTime" :: NullOrUndefined (TStamp), "LastFailureTime" :: NullOrUndefined (TStamp), "LastFailureMessage" :: NullOrUndefined (String) } -> { "LoggingEnabled" :: NullOrUndefined (Boolean), "BucketName" :: NullOrUndefined (String), "S3KeyPrefix" :: NullOrUndefined (String), "LastSuccessfulDeliveryTime" :: NullOrUndefined (TStamp), "LastFailureTime" :: NullOrUndefined (TStamp), "LastFailureMessage" :: NullOrUndefined (String) }) -> LoggingStatus
+newLoggingStatus' :: ({ "LoggingEnabled" :: Maybe (Boolean), "BucketName" :: Maybe (String), "S3KeyPrefix" :: Maybe (String), "LastSuccessfulDeliveryTime" :: Maybe (TStamp), "LastFailureTime" :: Maybe (TStamp), "LastFailureMessage" :: Maybe (String) } -> { "LoggingEnabled" :: Maybe (Boolean), "BucketName" :: Maybe (String), "S3KeyPrefix" :: Maybe (String), "LastSuccessfulDeliveryTime" :: Maybe (TStamp), "LastFailureTime" :: Maybe (TStamp), "LastFailureMessage" :: Maybe (String) }) -> LoggingStatus
 ```
 
 Constructs LoggingStatus's fields from required parameters
@@ -4998,7 +4998,7 @@ Encode LongOptional
 
 ``` purescript
 newtype ModifyClusterIamRolesMessage
-  = ModifyClusterIamRolesMessage { "ClusterIdentifier" :: String, "AddIamRoles" :: NullOrUndefined (IamRoleArnList), "RemoveIamRoles" :: NullOrUndefined (IamRoleArnList) }
+  = ModifyClusterIamRolesMessage { "ClusterIdentifier" :: String, "AddIamRoles" :: Maybe (IamRoleArnList), "RemoveIamRoles" :: Maybe (IamRoleArnList) }
 ```
 
 <p/>
@@ -5023,7 +5023,7 @@ Constructs ModifyClusterIamRolesMessage from required parameters
 #### `newModifyClusterIamRolesMessage'`
 
 ``` purescript
-newModifyClusterIamRolesMessage' :: String -> ({ "ClusterIdentifier" :: String, "AddIamRoles" :: NullOrUndefined (IamRoleArnList), "RemoveIamRoles" :: NullOrUndefined (IamRoleArnList) } -> { "ClusterIdentifier" :: String, "AddIamRoles" :: NullOrUndefined (IamRoleArnList), "RemoveIamRoles" :: NullOrUndefined (IamRoleArnList) }) -> ModifyClusterIamRolesMessage
+newModifyClusterIamRolesMessage' :: String -> ({ "ClusterIdentifier" :: String, "AddIamRoles" :: Maybe (IamRoleArnList), "RemoveIamRoles" :: Maybe (IamRoleArnList) } -> { "ClusterIdentifier" :: String, "AddIamRoles" :: Maybe (IamRoleArnList), "RemoveIamRoles" :: Maybe (IamRoleArnList) }) -> ModifyClusterIamRolesMessage
 ```
 
 Constructs ModifyClusterIamRolesMessage's fields from required parameters
@@ -5032,7 +5032,7 @@ Constructs ModifyClusterIamRolesMessage's fields from required parameters
 
 ``` purescript
 newtype ModifyClusterIamRolesResult
-  = ModifyClusterIamRolesResult { "Cluster" :: NullOrUndefined (Cluster) }
+  = ModifyClusterIamRolesResult { "Cluster" :: Maybe (Cluster) }
 ```
 
 ##### Instances
@@ -5055,7 +5055,7 @@ Constructs ModifyClusterIamRolesResult from required parameters
 #### `newModifyClusterIamRolesResult'`
 
 ``` purescript
-newModifyClusterIamRolesResult' :: ({ "Cluster" :: NullOrUndefined (Cluster) } -> { "Cluster" :: NullOrUndefined (Cluster) }) -> ModifyClusterIamRolesResult
+newModifyClusterIamRolesResult' :: ({ "Cluster" :: Maybe (Cluster) } -> { "Cluster" :: Maybe (Cluster) }) -> ModifyClusterIamRolesResult
 ```
 
 Constructs ModifyClusterIamRolesResult's fields from required parameters
@@ -5064,7 +5064,7 @@ Constructs ModifyClusterIamRolesResult's fields from required parameters
 
 ``` purescript
 newtype ModifyClusterMessage
-  = ModifyClusterMessage { "ClusterIdentifier" :: String, "ClusterType" :: NullOrUndefined (String), "NodeType" :: NullOrUndefined (String), "NumberOfNodes" :: NullOrUndefined (IntegerOptional), "ClusterSecurityGroups" :: NullOrUndefined (ClusterSecurityGroupNameList), "VpcSecurityGroupIds" :: NullOrUndefined (VpcSecurityGroupIdList), "MasterUserPassword" :: NullOrUndefined (String), "ClusterParameterGroupName" :: NullOrUndefined (String), "AutomatedSnapshotRetentionPeriod" :: NullOrUndefined (IntegerOptional), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "ClusterVersion" :: NullOrUndefined (String), "AllowVersionUpgrade" :: NullOrUndefined (BooleanOptional), "HsmClientCertificateIdentifier" :: NullOrUndefined (String), "HsmConfigurationIdentifier" :: NullOrUndefined (String), "NewClusterIdentifier" :: NullOrUndefined (String), "PubliclyAccessible" :: NullOrUndefined (BooleanOptional), "ElasticIp" :: NullOrUndefined (String), "EnhancedVpcRouting" :: NullOrUndefined (BooleanOptional) }
+  = ModifyClusterMessage { "ClusterIdentifier" :: String, "ClusterType" :: Maybe (String), "NodeType" :: Maybe (String), "NumberOfNodes" :: Maybe (IntegerOptional), "ClusterSecurityGroups" :: Maybe (ClusterSecurityGroupNameList), "VpcSecurityGroupIds" :: Maybe (VpcSecurityGroupIdList), "MasterUserPassword" :: Maybe (String), "ClusterParameterGroupName" :: Maybe (String), "AutomatedSnapshotRetentionPeriod" :: Maybe (IntegerOptional), "PreferredMaintenanceWindow" :: Maybe (String), "ClusterVersion" :: Maybe (String), "AllowVersionUpgrade" :: Maybe (BooleanOptional), "HsmClientCertificateIdentifier" :: Maybe (String), "HsmConfigurationIdentifier" :: Maybe (String), "NewClusterIdentifier" :: Maybe (String), "PubliclyAccessible" :: Maybe (BooleanOptional), "ElasticIp" :: Maybe (String), "EnhancedVpcRouting" :: Maybe (BooleanOptional) }
 ```
 
 <p/>
@@ -5089,7 +5089,7 @@ Constructs ModifyClusterMessage from required parameters
 #### `newModifyClusterMessage'`
 
 ``` purescript
-newModifyClusterMessage' :: String -> ({ "ClusterIdentifier" :: String, "ClusterType" :: NullOrUndefined (String), "NodeType" :: NullOrUndefined (String), "NumberOfNodes" :: NullOrUndefined (IntegerOptional), "ClusterSecurityGroups" :: NullOrUndefined (ClusterSecurityGroupNameList), "VpcSecurityGroupIds" :: NullOrUndefined (VpcSecurityGroupIdList), "MasterUserPassword" :: NullOrUndefined (String), "ClusterParameterGroupName" :: NullOrUndefined (String), "AutomatedSnapshotRetentionPeriod" :: NullOrUndefined (IntegerOptional), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "ClusterVersion" :: NullOrUndefined (String), "AllowVersionUpgrade" :: NullOrUndefined (BooleanOptional), "HsmClientCertificateIdentifier" :: NullOrUndefined (String), "HsmConfigurationIdentifier" :: NullOrUndefined (String), "NewClusterIdentifier" :: NullOrUndefined (String), "PubliclyAccessible" :: NullOrUndefined (BooleanOptional), "ElasticIp" :: NullOrUndefined (String), "EnhancedVpcRouting" :: NullOrUndefined (BooleanOptional) } -> { "ClusterIdentifier" :: String, "ClusterType" :: NullOrUndefined (String), "NodeType" :: NullOrUndefined (String), "NumberOfNodes" :: NullOrUndefined (IntegerOptional), "ClusterSecurityGroups" :: NullOrUndefined (ClusterSecurityGroupNameList), "VpcSecurityGroupIds" :: NullOrUndefined (VpcSecurityGroupIdList), "MasterUserPassword" :: NullOrUndefined (String), "ClusterParameterGroupName" :: NullOrUndefined (String), "AutomatedSnapshotRetentionPeriod" :: NullOrUndefined (IntegerOptional), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "ClusterVersion" :: NullOrUndefined (String), "AllowVersionUpgrade" :: NullOrUndefined (BooleanOptional), "HsmClientCertificateIdentifier" :: NullOrUndefined (String), "HsmConfigurationIdentifier" :: NullOrUndefined (String), "NewClusterIdentifier" :: NullOrUndefined (String), "PubliclyAccessible" :: NullOrUndefined (BooleanOptional), "ElasticIp" :: NullOrUndefined (String), "EnhancedVpcRouting" :: NullOrUndefined (BooleanOptional) }) -> ModifyClusterMessage
+newModifyClusterMessage' :: String -> ({ "ClusterIdentifier" :: String, "ClusterType" :: Maybe (String), "NodeType" :: Maybe (String), "NumberOfNodes" :: Maybe (IntegerOptional), "ClusterSecurityGroups" :: Maybe (ClusterSecurityGroupNameList), "VpcSecurityGroupIds" :: Maybe (VpcSecurityGroupIdList), "MasterUserPassword" :: Maybe (String), "ClusterParameterGroupName" :: Maybe (String), "AutomatedSnapshotRetentionPeriod" :: Maybe (IntegerOptional), "PreferredMaintenanceWindow" :: Maybe (String), "ClusterVersion" :: Maybe (String), "AllowVersionUpgrade" :: Maybe (BooleanOptional), "HsmClientCertificateIdentifier" :: Maybe (String), "HsmConfigurationIdentifier" :: Maybe (String), "NewClusterIdentifier" :: Maybe (String), "PubliclyAccessible" :: Maybe (BooleanOptional), "ElasticIp" :: Maybe (String), "EnhancedVpcRouting" :: Maybe (BooleanOptional) } -> { "ClusterIdentifier" :: String, "ClusterType" :: Maybe (String), "NodeType" :: Maybe (String), "NumberOfNodes" :: Maybe (IntegerOptional), "ClusterSecurityGroups" :: Maybe (ClusterSecurityGroupNameList), "VpcSecurityGroupIds" :: Maybe (VpcSecurityGroupIdList), "MasterUserPassword" :: Maybe (String), "ClusterParameterGroupName" :: Maybe (String), "AutomatedSnapshotRetentionPeriod" :: Maybe (IntegerOptional), "PreferredMaintenanceWindow" :: Maybe (String), "ClusterVersion" :: Maybe (String), "AllowVersionUpgrade" :: Maybe (BooleanOptional), "HsmClientCertificateIdentifier" :: Maybe (String), "HsmConfigurationIdentifier" :: Maybe (String), "NewClusterIdentifier" :: Maybe (String), "PubliclyAccessible" :: Maybe (BooleanOptional), "ElasticIp" :: Maybe (String), "EnhancedVpcRouting" :: Maybe (BooleanOptional) }) -> ModifyClusterMessage
 ```
 
 Constructs ModifyClusterMessage's fields from required parameters
@@ -5132,7 +5132,7 @@ Constructs ModifyClusterParameterGroupMessage's fields from required parameters
 
 ``` purescript
 newtype ModifyClusterResult
-  = ModifyClusterResult { "Cluster" :: NullOrUndefined (Cluster) }
+  = ModifyClusterResult { "Cluster" :: Maybe (Cluster) }
 ```
 
 ##### Instances
@@ -5155,7 +5155,7 @@ Constructs ModifyClusterResult from required parameters
 #### `newModifyClusterResult'`
 
 ``` purescript
-newModifyClusterResult' :: ({ "Cluster" :: NullOrUndefined (Cluster) } -> { "Cluster" :: NullOrUndefined (Cluster) }) -> ModifyClusterResult
+newModifyClusterResult' :: ({ "Cluster" :: Maybe (Cluster) } -> { "Cluster" :: Maybe (Cluster) }) -> ModifyClusterResult
 ```
 
 Constructs ModifyClusterResult's fields from required parameters
@@ -5164,7 +5164,7 @@ Constructs ModifyClusterResult's fields from required parameters
 
 ``` purescript
 newtype ModifyClusterSubnetGroupMessage
-  = ModifyClusterSubnetGroupMessage { "ClusterSubnetGroupName" :: String, "Description" :: NullOrUndefined (String), "SubnetIds" :: SubnetIdentifierList }
+  = ModifyClusterSubnetGroupMessage { "ClusterSubnetGroupName" :: String, "Description" :: Maybe (String), "SubnetIds" :: SubnetIdentifierList }
 ```
 
 <p/>
@@ -5189,7 +5189,7 @@ Constructs ModifyClusterSubnetGroupMessage from required parameters
 #### `newModifyClusterSubnetGroupMessage'`
 
 ``` purescript
-newModifyClusterSubnetGroupMessage' :: String -> SubnetIdentifierList -> ({ "ClusterSubnetGroupName" :: String, "Description" :: NullOrUndefined (String), "SubnetIds" :: SubnetIdentifierList } -> { "ClusterSubnetGroupName" :: String, "Description" :: NullOrUndefined (String), "SubnetIds" :: SubnetIdentifierList }) -> ModifyClusterSubnetGroupMessage
+newModifyClusterSubnetGroupMessage' :: String -> SubnetIdentifierList -> ({ "ClusterSubnetGroupName" :: String, "Description" :: Maybe (String), "SubnetIds" :: SubnetIdentifierList } -> { "ClusterSubnetGroupName" :: String, "Description" :: Maybe (String), "SubnetIds" :: SubnetIdentifierList }) -> ModifyClusterSubnetGroupMessage
 ```
 
 Constructs ModifyClusterSubnetGroupMessage's fields from required parameters
@@ -5198,7 +5198,7 @@ Constructs ModifyClusterSubnetGroupMessage's fields from required parameters
 
 ``` purescript
 newtype ModifyClusterSubnetGroupResult
-  = ModifyClusterSubnetGroupResult { "ClusterSubnetGroup" :: NullOrUndefined (ClusterSubnetGroup) }
+  = ModifyClusterSubnetGroupResult { "ClusterSubnetGroup" :: Maybe (ClusterSubnetGroup) }
 ```
 
 ##### Instances
@@ -5221,7 +5221,7 @@ Constructs ModifyClusterSubnetGroupResult from required parameters
 #### `newModifyClusterSubnetGroupResult'`
 
 ``` purescript
-newModifyClusterSubnetGroupResult' :: ({ "ClusterSubnetGroup" :: NullOrUndefined (ClusterSubnetGroup) } -> { "ClusterSubnetGroup" :: NullOrUndefined (ClusterSubnetGroup) }) -> ModifyClusterSubnetGroupResult
+newModifyClusterSubnetGroupResult' :: ({ "ClusterSubnetGroup" :: Maybe (ClusterSubnetGroup) } -> { "ClusterSubnetGroup" :: Maybe (ClusterSubnetGroup) }) -> ModifyClusterSubnetGroupResult
 ```
 
 Constructs ModifyClusterSubnetGroupResult's fields from required parameters
@@ -5230,7 +5230,7 @@ Constructs ModifyClusterSubnetGroupResult's fields from required parameters
 
 ``` purescript
 newtype ModifyEventSubscriptionMessage
-  = ModifyEventSubscriptionMessage { "SubscriptionName" :: String, "SnsTopicArn" :: NullOrUndefined (String), "SourceType" :: NullOrUndefined (String), "SourceIds" :: NullOrUndefined (SourceIdsList), "EventCategories" :: NullOrUndefined (EventCategoriesList), "Severity" :: NullOrUndefined (String), "Enabled" :: NullOrUndefined (BooleanOptional) }
+  = ModifyEventSubscriptionMessage { "SubscriptionName" :: String, "SnsTopicArn" :: Maybe (String), "SourceType" :: Maybe (String), "SourceIds" :: Maybe (SourceIdsList), "EventCategories" :: Maybe (EventCategoriesList), "Severity" :: Maybe (String), "Enabled" :: Maybe (BooleanOptional) }
 ```
 
 <p/>
@@ -5255,7 +5255,7 @@ Constructs ModifyEventSubscriptionMessage from required parameters
 #### `newModifyEventSubscriptionMessage'`
 
 ``` purescript
-newModifyEventSubscriptionMessage' :: String -> ({ "SubscriptionName" :: String, "SnsTopicArn" :: NullOrUndefined (String), "SourceType" :: NullOrUndefined (String), "SourceIds" :: NullOrUndefined (SourceIdsList), "EventCategories" :: NullOrUndefined (EventCategoriesList), "Severity" :: NullOrUndefined (String), "Enabled" :: NullOrUndefined (BooleanOptional) } -> { "SubscriptionName" :: String, "SnsTopicArn" :: NullOrUndefined (String), "SourceType" :: NullOrUndefined (String), "SourceIds" :: NullOrUndefined (SourceIdsList), "EventCategories" :: NullOrUndefined (EventCategoriesList), "Severity" :: NullOrUndefined (String), "Enabled" :: NullOrUndefined (BooleanOptional) }) -> ModifyEventSubscriptionMessage
+newModifyEventSubscriptionMessage' :: String -> ({ "SubscriptionName" :: String, "SnsTopicArn" :: Maybe (String), "SourceType" :: Maybe (String), "SourceIds" :: Maybe (SourceIdsList), "EventCategories" :: Maybe (EventCategoriesList), "Severity" :: Maybe (String), "Enabled" :: Maybe (BooleanOptional) } -> { "SubscriptionName" :: String, "SnsTopicArn" :: Maybe (String), "SourceType" :: Maybe (String), "SourceIds" :: Maybe (SourceIdsList), "EventCategories" :: Maybe (EventCategoriesList), "Severity" :: Maybe (String), "Enabled" :: Maybe (BooleanOptional) }) -> ModifyEventSubscriptionMessage
 ```
 
 Constructs ModifyEventSubscriptionMessage's fields from required parameters
@@ -5264,7 +5264,7 @@ Constructs ModifyEventSubscriptionMessage's fields from required parameters
 
 ``` purescript
 newtype ModifyEventSubscriptionResult
-  = ModifyEventSubscriptionResult { "EventSubscription" :: NullOrUndefined (EventSubscription) }
+  = ModifyEventSubscriptionResult { "EventSubscription" :: Maybe (EventSubscription) }
 ```
 
 ##### Instances
@@ -5287,7 +5287,7 @@ Constructs ModifyEventSubscriptionResult from required parameters
 #### `newModifyEventSubscriptionResult'`
 
 ``` purescript
-newModifyEventSubscriptionResult' :: ({ "EventSubscription" :: NullOrUndefined (EventSubscription) } -> { "EventSubscription" :: NullOrUndefined (EventSubscription) }) -> ModifyEventSubscriptionResult
+newModifyEventSubscriptionResult' :: ({ "EventSubscription" :: Maybe (EventSubscription) } -> { "EventSubscription" :: Maybe (EventSubscription) }) -> ModifyEventSubscriptionResult
 ```
 
 Constructs ModifyEventSubscriptionResult's fields from required parameters
@@ -5330,7 +5330,7 @@ Constructs ModifySnapshotCopyRetentionPeriodMessage's fields from required param
 
 ``` purescript
 newtype ModifySnapshotCopyRetentionPeriodResult
-  = ModifySnapshotCopyRetentionPeriodResult { "Cluster" :: NullOrUndefined (Cluster) }
+  = ModifySnapshotCopyRetentionPeriodResult { "Cluster" :: Maybe (Cluster) }
 ```
 
 ##### Instances
@@ -5353,7 +5353,7 @@ Constructs ModifySnapshotCopyRetentionPeriodResult from required parameters
 #### `newModifySnapshotCopyRetentionPeriodResult'`
 
 ``` purescript
-newModifySnapshotCopyRetentionPeriodResult' :: ({ "Cluster" :: NullOrUndefined (Cluster) } -> { "Cluster" :: NullOrUndefined (Cluster) }) -> ModifySnapshotCopyRetentionPeriodResult
+newModifySnapshotCopyRetentionPeriodResult' :: ({ "Cluster" :: Maybe (Cluster) } -> { "Cluster" :: Maybe (Cluster) }) -> ModifySnapshotCopyRetentionPeriodResult
 ```
 
 Constructs ModifySnapshotCopyRetentionPeriodResult's fields from required parameters
@@ -5398,7 +5398,7 @@ Encode NumberOfNodesQuotaExceededFault
 
 ``` purescript
 newtype OrderableClusterOption
-  = OrderableClusterOption { "ClusterVersion" :: NullOrUndefined (String), "ClusterType" :: NullOrUndefined (String), "NodeType" :: NullOrUndefined (String), "AvailabilityZones" :: NullOrUndefined (AvailabilityZoneList) }
+  = OrderableClusterOption { "ClusterVersion" :: Maybe (String), "ClusterType" :: Maybe (String), "NodeType" :: Maybe (String), "AvailabilityZones" :: Maybe (AvailabilityZoneList) }
 ```
 
 <p>Describes an orderable cluster option.</p>
@@ -5423,7 +5423,7 @@ Constructs OrderableClusterOption from required parameters
 #### `newOrderableClusterOption'`
 
 ``` purescript
-newOrderableClusterOption' :: ({ "ClusterVersion" :: NullOrUndefined (String), "ClusterType" :: NullOrUndefined (String), "NodeType" :: NullOrUndefined (String), "AvailabilityZones" :: NullOrUndefined (AvailabilityZoneList) } -> { "ClusterVersion" :: NullOrUndefined (String), "ClusterType" :: NullOrUndefined (String), "NodeType" :: NullOrUndefined (String), "AvailabilityZones" :: NullOrUndefined (AvailabilityZoneList) }) -> OrderableClusterOption
+newOrderableClusterOption' :: ({ "ClusterVersion" :: Maybe (String), "ClusterType" :: Maybe (String), "NodeType" :: Maybe (String), "AvailabilityZones" :: Maybe (AvailabilityZoneList) } -> { "ClusterVersion" :: Maybe (String), "ClusterType" :: Maybe (String), "NodeType" :: Maybe (String), "AvailabilityZones" :: Maybe (AvailabilityZoneList) }) -> OrderableClusterOption
 ```
 
 Constructs OrderableClusterOption's fields from required parameters
@@ -5448,7 +5448,7 @@ Encode OrderableClusterOptionsList
 
 ``` purescript
 newtype OrderableClusterOptionsMessage
-  = OrderableClusterOptionsMessage { "OrderableClusterOptions" :: NullOrUndefined (OrderableClusterOptionsList), "Marker" :: NullOrUndefined (String) }
+  = OrderableClusterOptionsMessage { "OrderableClusterOptions" :: Maybe (OrderableClusterOptionsList), "Marker" :: Maybe (String) }
 ```
 
 <p>Contains the output from the <a>DescribeOrderableClusterOptions</a> action. </p>
@@ -5473,7 +5473,7 @@ Constructs OrderableClusterOptionsMessage from required parameters
 #### `newOrderableClusterOptionsMessage'`
 
 ``` purescript
-newOrderableClusterOptionsMessage' :: ({ "OrderableClusterOptions" :: NullOrUndefined (OrderableClusterOptionsList), "Marker" :: NullOrUndefined (String) } -> { "OrderableClusterOptions" :: NullOrUndefined (OrderableClusterOptionsList), "Marker" :: NullOrUndefined (String) }) -> OrderableClusterOptionsMessage
+newOrderableClusterOptionsMessage' :: ({ "OrderableClusterOptions" :: Maybe (OrderableClusterOptionsList), "Marker" :: Maybe (String) } -> { "OrderableClusterOptions" :: Maybe (OrderableClusterOptionsList), "Marker" :: Maybe (String) }) -> OrderableClusterOptionsMessage
 ```
 
 Constructs OrderableClusterOptionsMessage's fields from required parameters
@@ -5482,7 +5482,7 @@ Constructs OrderableClusterOptionsMessage's fields from required parameters
 
 ``` purescript
 newtype Parameter
-  = Parameter { "ParameterName" :: NullOrUndefined (String), "ParameterValue" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "Source" :: NullOrUndefined (String), "DataType" :: NullOrUndefined (String), "AllowedValues" :: NullOrUndefined (String), "ApplyType" :: NullOrUndefined (ParameterApplyType), "IsModifiable" :: NullOrUndefined (Boolean), "MinimumEngineVersion" :: NullOrUndefined (String) }
+  = Parameter { "ParameterName" :: Maybe (String), "ParameterValue" :: Maybe (String), "Description" :: Maybe (String), "Source" :: Maybe (String), "DataType" :: Maybe (String), "AllowedValues" :: Maybe (String), "ApplyType" :: Maybe (ParameterApplyType), "IsModifiable" :: Maybe (Boolean), "MinimumEngineVersion" :: Maybe (String) }
 ```
 
 <p>Describes a parameter in a cluster parameter group.</p>
@@ -5507,7 +5507,7 @@ Constructs Parameter from required parameters
 #### `newParameter'`
 
 ``` purescript
-newParameter' :: ({ "ParameterName" :: NullOrUndefined (String), "ParameterValue" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "Source" :: NullOrUndefined (String), "DataType" :: NullOrUndefined (String), "AllowedValues" :: NullOrUndefined (String), "ApplyType" :: NullOrUndefined (ParameterApplyType), "IsModifiable" :: NullOrUndefined (Boolean), "MinimumEngineVersion" :: NullOrUndefined (String) } -> { "ParameterName" :: NullOrUndefined (String), "ParameterValue" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "Source" :: NullOrUndefined (String), "DataType" :: NullOrUndefined (String), "AllowedValues" :: NullOrUndefined (String), "ApplyType" :: NullOrUndefined (ParameterApplyType), "IsModifiable" :: NullOrUndefined (Boolean), "MinimumEngineVersion" :: NullOrUndefined (String) }) -> Parameter
+newParameter' :: ({ "ParameterName" :: Maybe (String), "ParameterValue" :: Maybe (String), "Description" :: Maybe (String), "Source" :: Maybe (String), "DataType" :: Maybe (String), "AllowedValues" :: Maybe (String), "ApplyType" :: Maybe (ParameterApplyType), "IsModifiable" :: Maybe (Boolean), "MinimumEngineVersion" :: Maybe (String) } -> { "ParameterName" :: Maybe (String), "ParameterValue" :: Maybe (String), "Description" :: Maybe (String), "Source" :: Maybe (String), "DataType" :: Maybe (String), "AllowedValues" :: Maybe (String), "ApplyType" :: Maybe (ParameterApplyType), "IsModifiable" :: Maybe (Boolean), "MinimumEngineVersion" :: Maybe (String) }) -> Parameter
 ```
 
 Constructs Parameter's fields from required parameters
@@ -5564,7 +5564,7 @@ Encode ParametersList
 
 ``` purescript
 newtype PendingModifiedValues
-  = PendingModifiedValues { "MasterUserPassword" :: NullOrUndefined (String), "NodeType" :: NullOrUndefined (String), "NumberOfNodes" :: NullOrUndefined (IntegerOptional), "ClusterType" :: NullOrUndefined (String), "ClusterVersion" :: NullOrUndefined (String), "AutomatedSnapshotRetentionPeriod" :: NullOrUndefined (IntegerOptional), "ClusterIdentifier" :: NullOrUndefined (String), "PubliclyAccessible" :: NullOrUndefined (BooleanOptional), "EnhancedVpcRouting" :: NullOrUndefined (BooleanOptional) }
+  = PendingModifiedValues { "MasterUserPassword" :: Maybe (String), "NodeType" :: Maybe (String), "NumberOfNodes" :: Maybe (IntegerOptional), "ClusterType" :: Maybe (String), "ClusterVersion" :: Maybe (String), "AutomatedSnapshotRetentionPeriod" :: Maybe (IntegerOptional), "ClusterIdentifier" :: Maybe (String), "PubliclyAccessible" :: Maybe (BooleanOptional), "EnhancedVpcRouting" :: Maybe (BooleanOptional) }
 ```
 
 <p>Describes cluster attributes that are in a pending state. A change to one or more the attributes was requested and is in progress or will be applied.</p>
@@ -5589,7 +5589,7 @@ Constructs PendingModifiedValues from required parameters
 #### `newPendingModifiedValues'`
 
 ``` purescript
-newPendingModifiedValues' :: ({ "MasterUserPassword" :: NullOrUndefined (String), "NodeType" :: NullOrUndefined (String), "NumberOfNodes" :: NullOrUndefined (IntegerOptional), "ClusterType" :: NullOrUndefined (String), "ClusterVersion" :: NullOrUndefined (String), "AutomatedSnapshotRetentionPeriod" :: NullOrUndefined (IntegerOptional), "ClusterIdentifier" :: NullOrUndefined (String), "PubliclyAccessible" :: NullOrUndefined (BooleanOptional), "EnhancedVpcRouting" :: NullOrUndefined (BooleanOptional) } -> { "MasterUserPassword" :: NullOrUndefined (String), "NodeType" :: NullOrUndefined (String), "NumberOfNodes" :: NullOrUndefined (IntegerOptional), "ClusterType" :: NullOrUndefined (String), "ClusterVersion" :: NullOrUndefined (String), "AutomatedSnapshotRetentionPeriod" :: NullOrUndefined (IntegerOptional), "ClusterIdentifier" :: NullOrUndefined (String), "PubliclyAccessible" :: NullOrUndefined (BooleanOptional), "EnhancedVpcRouting" :: NullOrUndefined (BooleanOptional) }) -> PendingModifiedValues
+newPendingModifiedValues' :: ({ "MasterUserPassword" :: Maybe (String), "NodeType" :: Maybe (String), "NumberOfNodes" :: Maybe (IntegerOptional), "ClusterType" :: Maybe (String), "ClusterVersion" :: Maybe (String), "AutomatedSnapshotRetentionPeriod" :: Maybe (IntegerOptional), "ClusterIdentifier" :: Maybe (String), "PubliclyAccessible" :: Maybe (BooleanOptional), "EnhancedVpcRouting" :: Maybe (BooleanOptional) } -> { "MasterUserPassword" :: Maybe (String), "NodeType" :: Maybe (String), "NumberOfNodes" :: Maybe (IntegerOptional), "ClusterType" :: Maybe (String), "ClusterVersion" :: Maybe (String), "AutomatedSnapshotRetentionPeriod" :: Maybe (IntegerOptional), "ClusterIdentifier" :: Maybe (String), "PubliclyAccessible" :: Maybe (BooleanOptional), "EnhancedVpcRouting" :: Maybe (BooleanOptional) }) -> PendingModifiedValues
 ```
 
 Constructs PendingModifiedValues's fields from required parameters
@@ -5598,7 +5598,7 @@ Constructs PendingModifiedValues's fields from required parameters
 
 ``` purescript
 newtype PurchaseReservedNodeOfferingMessage
-  = PurchaseReservedNodeOfferingMessage { "ReservedNodeOfferingId" :: String, "NodeCount" :: NullOrUndefined (IntegerOptional) }
+  = PurchaseReservedNodeOfferingMessage { "ReservedNodeOfferingId" :: String, "NodeCount" :: Maybe (IntegerOptional) }
 ```
 
 <p/>
@@ -5623,7 +5623,7 @@ Constructs PurchaseReservedNodeOfferingMessage from required parameters
 #### `newPurchaseReservedNodeOfferingMessage'`
 
 ``` purescript
-newPurchaseReservedNodeOfferingMessage' :: String -> ({ "ReservedNodeOfferingId" :: String, "NodeCount" :: NullOrUndefined (IntegerOptional) } -> { "ReservedNodeOfferingId" :: String, "NodeCount" :: NullOrUndefined (IntegerOptional) }) -> PurchaseReservedNodeOfferingMessage
+newPurchaseReservedNodeOfferingMessage' :: String -> ({ "ReservedNodeOfferingId" :: String, "NodeCount" :: Maybe (IntegerOptional) } -> { "ReservedNodeOfferingId" :: String, "NodeCount" :: Maybe (IntegerOptional) }) -> PurchaseReservedNodeOfferingMessage
 ```
 
 Constructs PurchaseReservedNodeOfferingMessage's fields from required parameters
@@ -5632,7 +5632,7 @@ Constructs PurchaseReservedNodeOfferingMessage's fields from required parameters
 
 ``` purescript
 newtype PurchaseReservedNodeOfferingResult
-  = PurchaseReservedNodeOfferingResult { "ReservedNode" :: NullOrUndefined (ReservedNode) }
+  = PurchaseReservedNodeOfferingResult { "ReservedNode" :: Maybe (ReservedNode) }
 ```
 
 ##### Instances
@@ -5655,7 +5655,7 @@ Constructs PurchaseReservedNodeOfferingResult from required parameters
 #### `newPurchaseReservedNodeOfferingResult'`
 
 ``` purescript
-newPurchaseReservedNodeOfferingResult' :: ({ "ReservedNode" :: NullOrUndefined (ReservedNode) } -> { "ReservedNode" :: NullOrUndefined (ReservedNode) }) -> PurchaseReservedNodeOfferingResult
+newPurchaseReservedNodeOfferingResult' :: ({ "ReservedNode" :: Maybe (ReservedNode) } -> { "ReservedNode" :: Maybe (ReservedNode) }) -> PurchaseReservedNodeOfferingResult
 ```
 
 Constructs PurchaseReservedNodeOfferingResult's fields from required parameters
@@ -5698,7 +5698,7 @@ Constructs RebootClusterMessage's fields from required parameters
 
 ``` purescript
 newtype RebootClusterResult
-  = RebootClusterResult { "Cluster" :: NullOrUndefined (Cluster) }
+  = RebootClusterResult { "Cluster" :: Maybe (Cluster) }
 ```
 
 ##### Instances
@@ -5721,7 +5721,7 @@ Constructs RebootClusterResult from required parameters
 #### `newRebootClusterResult'`
 
 ``` purescript
-newRebootClusterResult' :: ({ "Cluster" :: NullOrUndefined (Cluster) } -> { "Cluster" :: NullOrUndefined (Cluster) }) -> RebootClusterResult
+newRebootClusterResult' :: ({ "Cluster" :: Maybe (Cluster) } -> { "Cluster" :: Maybe (Cluster) }) -> RebootClusterResult
 ```
 
 Constructs RebootClusterResult's fields from required parameters
@@ -5730,7 +5730,7 @@ Constructs RebootClusterResult's fields from required parameters
 
 ``` purescript
 newtype RecurringCharge
-  = RecurringCharge { "RecurringChargeAmount" :: NullOrUndefined (Number), "RecurringChargeFrequency" :: NullOrUndefined (String) }
+  = RecurringCharge { "RecurringChargeAmount" :: Maybe (Number), "RecurringChargeFrequency" :: Maybe (String) }
 ```
 
 <p>Describes a recurring charge.</p>
@@ -5755,7 +5755,7 @@ Constructs RecurringCharge from required parameters
 #### `newRecurringCharge'`
 
 ``` purescript
-newRecurringCharge' :: ({ "RecurringChargeAmount" :: NullOrUndefined (Number), "RecurringChargeFrequency" :: NullOrUndefined (String) } -> { "RecurringChargeAmount" :: NullOrUndefined (Number), "RecurringChargeFrequency" :: NullOrUndefined (String) }) -> RecurringCharge
+newRecurringCharge' :: ({ "RecurringChargeAmount" :: Maybe (Number), "RecurringChargeFrequency" :: Maybe (String) } -> { "RecurringChargeAmount" :: Maybe (Number), "RecurringChargeFrequency" :: Maybe (String) }) -> RecurringCharge
 ```
 
 Constructs RecurringCharge's fields from required parameters
@@ -5780,7 +5780,7 @@ Encode RecurringChargeList
 
 ``` purescript
 newtype ReservedNode
-  = ReservedNode { "ReservedNodeId" :: NullOrUndefined (String), "ReservedNodeOfferingId" :: NullOrUndefined (String), "NodeType" :: NullOrUndefined (String), "StartTime" :: NullOrUndefined (TStamp), "Duration" :: NullOrUndefined (Int), "FixedPrice" :: NullOrUndefined (Number), "UsagePrice" :: NullOrUndefined (Number), "CurrencyCode" :: NullOrUndefined (String), "NodeCount" :: NullOrUndefined (Int), "State" :: NullOrUndefined (String), "OfferingType" :: NullOrUndefined (String), "RecurringCharges" :: NullOrUndefined (RecurringChargeList) }
+  = ReservedNode { "ReservedNodeId" :: Maybe (String), "ReservedNodeOfferingId" :: Maybe (String), "NodeType" :: Maybe (String), "StartTime" :: Maybe (TStamp), "Duration" :: Maybe (Int), "FixedPrice" :: Maybe (Number), "UsagePrice" :: Maybe (Number), "CurrencyCode" :: Maybe (String), "NodeCount" :: Maybe (Int), "State" :: Maybe (String), "OfferingType" :: Maybe (String), "RecurringCharges" :: Maybe (RecurringChargeList) }
 ```
 
 <p>Describes a reserved node. You can call the <a>DescribeReservedNodeOfferings</a> API to obtain the available reserved node offerings. </p>
@@ -5805,7 +5805,7 @@ Constructs ReservedNode from required parameters
 #### `newReservedNode'`
 
 ``` purescript
-newReservedNode' :: ({ "ReservedNodeId" :: NullOrUndefined (String), "ReservedNodeOfferingId" :: NullOrUndefined (String), "NodeType" :: NullOrUndefined (String), "StartTime" :: NullOrUndefined (TStamp), "Duration" :: NullOrUndefined (Int), "FixedPrice" :: NullOrUndefined (Number), "UsagePrice" :: NullOrUndefined (Number), "CurrencyCode" :: NullOrUndefined (String), "NodeCount" :: NullOrUndefined (Int), "State" :: NullOrUndefined (String), "OfferingType" :: NullOrUndefined (String), "RecurringCharges" :: NullOrUndefined (RecurringChargeList) } -> { "ReservedNodeId" :: NullOrUndefined (String), "ReservedNodeOfferingId" :: NullOrUndefined (String), "NodeType" :: NullOrUndefined (String), "StartTime" :: NullOrUndefined (TStamp), "Duration" :: NullOrUndefined (Int), "FixedPrice" :: NullOrUndefined (Number), "UsagePrice" :: NullOrUndefined (Number), "CurrencyCode" :: NullOrUndefined (String), "NodeCount" :: NullOrUndefined (Int), "State" :: NullOrUndefined (String), "OfferingType" :: NullOrUndefined (String), "RecurringCharges" :: NullOrUndefined (RecurringChargeList) }) -> ReservedNode
+newReservedNode' :: ({ "ReservedNodeId" :: Maybe (String), "ReservedNodeOfferingId" :: Maybe (String), "NodeType" :: Maybe (String), "StartTime" :: Maybe (TStamp), "Duration" :: Maybe (Int), "FixedPrice" :: Maybe (Number), "UsagePrice" :: Maybe (Number), "CurrencyCode" :: Maybe (String), "NodeCount" :: Maybe (Int), "State" :: Maybe (String), "OfferingType" :: Maybe (String), "RecurringCharges" :: Maybe (RecurringChargeList) } -> { "ReservedNodeId" :: Maybe (String), "ReservedNodeOfferingId" :: Maybe (String), "NodeType" :: Maybe (String), "StartTime" :: Maybe (TStamp), "Duration" :: Maybe (Int), "FixedPrice" :: Maybe (Number), "UsagePrice" :: Maybe (Number), "CurrencyCode" :: Maybe (String), "NodeCount" :: Maybe (Int), "State" :: Maybe (String), "OfferingType" :: Maybe (String), "RecurringCharges" :: Maybe (RecurringChargeList) }) -> ReservedNode
 ```
 
 Constructs ReservedNode's fields from required parameters
@@ -5866,7 +5866,7 @@ Encode ReservedNodeNotFoundFault
 
 ``` purescript
 newtype ReservedNodeOffering
-  = ReservedNodeOffering { "ReservedNodeOfferingId" :: NullOrUndefined (String), "NodeType" :: NullOrUndefined (String), "Duration" :: NullOrUndefined (Int), "FixedPrice" :: NullOrUndefined (Number), "UsagePrice" :: NullOrUndefined (Number), "CurrencyCode" :: NullOrUndefined (String), "OfferingType" :: NullOrUndefined (String), "RecurringCharges" :: NullOrUndefined (RecurringChargeList) }
+  = ReservedNodeOffering { "ReservedNodeOfferingId" :: Maybe (String), "NodeType" :: Maybe (String), "Duration" :: Maybe (Int), "FixedPrice" :: Maybe (Number), "UsagePrice" :: Maybe (Number), "CurrencyCode" :: Maybe (String), "OfferingType" :: Maybe (String), "RecurringCharges" :: Maybe (RecurringChargeList) }
 ```
 
 <p>Describes a reserved node offering.</p>
@@ -5891,7 +5891,7 @@ Constructs ReservedNodeOffering from required parameters
 #### `newReservedNodeOffering'`
 
 ``` purescript
-newReservedNodeOffering' :: ({ "ReservedNodeOfferingId" :: NullOrUndefined (String), "NodeType" :: NullOrUndefined (String), "Duration" :: NullOrUndefined (Int), "FixedPrice" :: NullOrUndefined (Number), "UsagePrice" :: NullOrUndefined (Number), "CurrencyCode" :: NullOrUndefined (String), "OfferingType" :: NullOrUndefined (String), "RecurringCharges" :: NullOrUndefined (RecurringChargeList) } -> { "ReservedNodeOfferingId" :: NullOrUndefined (String), "NodeType" :: NullOrUndefined (String), "Duration" :: NullOrUndefined (Int), "FixedPrice" :: NullOrUndefined (Number), "UsagePrice" :: NullOrUndefined (Number), "CurrencyCode" :: NullOrUndefined (String), "OfferingType" :: NullOrUndefined (String), "RecurringCharges" :: NullOrUndefined (RecurringChargeList) }) -> ReservedNodeOffering
+newReservedNodeOffering' :: ({ "ReservedNodeOfferingId" :: Maybe (String), "NodeType" :: Maybe (String), "Duration" :: Maybe (Int), "FixedPrice" :: Maybe (Number), "UsagePrice" :: Maybe (Number), "CurrencyCode" :: Maybe (String), "OfferingType" :: Maybe (String), "RecurringCharges" :: Maybe (RecurringChargeList) } -> { "ReservedNodeOfferingId" :: Maybe (String), "NodeType" :: Maybe (String), "Duration" :: Maybe (Int), "FixedPrice" :: Maybe (Number), "UsagePrice" :: Maybe (Number), "CurrencyCode" :: Maybe (String), "OfferingType" :: Maybe (String), "RecurringCharges" :: Maybe (RecurringChargeList) }) -> ReservedNodeOffering
 ```
 
 Constructs ReservedNodeOffering's fields from required parameters
@@ -5934,7 +5934,7 @@ Encode ReservedNodeOfferingNotFoundFault
 
 ``` purescript
 newtype ReservedNodeOfferingsMessage
-  = ReservedNodeOfferingsMessage { "Marker" :: NullOrUndefined (String), "ReservedNodeOfferings" :: NullOrUndefined (ReservedNodeOfferingList) }
+  = ReservedNodeOfferingsMessage { "Marker" :: Maybe (String), "ReservedNodeOfferings" :: Maybe (ReservedNodeOfferingList) }
 ```
 
 <p/>
@@ -5959,7 +5959,7 @@ Constructs ReservedNodeOfferingsMessage from required parameters
 #### `newReservedNodeOfferingsMessage'`
 
 ``` purescript
-newReservedNodeOfferingsMessage' :: ({ "Marker" :: NullOrUndefined (String), "ReservedNodeOfferings" :: NullOrUndefined (ReservedNodeOfferingList) } -> { "Marker" :: NullOrUndefined (String), "ReservedNodeOfferings" :: NullOrUndefined (ReservedNodeOfferingList) }) -> ReservedNodeOfferingsMessage
+newReservedNodeOfferingsMessage' :: ({ "Marker" :: Maybe (String), "ReservedNodeOfferings" :: Maybe (ReservedNodeOfferingList) } -> { "Marker" :: Maybe (String), "ReservedNodeOfferings" :: Maybe (ReservedNodeOfferingList) }) -> ReservedNodeOfferingsMessage
 ```
 
 Constructs ReservedNodeOfferingsMessage's fields from required parameters
@@ -5986,7 +5986,7 @@ Encode ReservedNodeQuotaExceededFault
 
 ``` purescript
 newtype ReservedNodesMessage
-  = ReservedNodesMessage { "Marker" :: NullOrUndefined (String), "ReservedNodes" :: NullOrUndefined (ReservedNodeList) }
+  = ReservedNodesMessage { "Marker" :: Maybe (String), "ReservedNodes" :: Maybe (ReservedNodeList) }
 ```
 
 <p/>
@@ -6011,7 +6011,7 @@ Constructs ReservedNodesMessage from required parameters
 #### `newReservedNodesMessage'`
 
 ``` purescript
-newReservedNodesMessage' :: ({ "Marker" :: NullOrUndefined (String), "ReservedNodes" :: NullOrUndefined (ReservedNodeList) } -> { "Marker" :: NullOrUndefined (String), "ReservedNodes" :: NullOrUndefined (ReservedNodeList) }) -> ReservedNodesMessage
+newReservedNodesMessage' :: ({ "Marker" :: Maybe (String), "ReservedNodes" :: Maybe (ReservedNodeList) } -> { "Marker" :: Maybe (String), "ReservedNodes" :: Maybe (ReservedNodeList) }) -> ReservedNodesMessage
 ```
 
 Constructs ReservedNodesMessage's fields from required parameters
@@ -6020,7 +6020,7 @@ Constructs ReservedNodesMessage's fields from required parameters
 
 ``` purescript
 newtype ResetClusterParameterGroupMessage
-  = ResetClusterParameterGroupMessage { "ParameterGroupName" :: String, "ResetAllParameters" :: NullOrUndefined (Boolean), "Parameters" :: NullOrUndefined (ParametersList) }
+  = ResetClusterParameterGroupMessage { "ParameterGroupName" :: String, "ResetAllParameters" :: Maybe (Boolean), "Parameters" :: Maybe (ParametersList) }
 ```
 
 <p/>
@@ -6045,7 +6045,7 @@ Constructs ResetClusterParameterGroupMessage from required parameters
 #### `newResetClusterParameterGroupMessage'`
 
 ``` purescript
-newResetClusterParameterGroupMessage' :: String -> ({ "ParameterGroupName" :: String, "ResetAllParameters" :: NullOrUndefined (Boolean), "Parameters" :: NullOrUndefined (ParametersList) } -> { "ParameterGroupName" :: String, "ResetAllParameters" :: NullOrUndefined (Boolean), "Parameters" :: NullOrUndefined (ParametersList) }) -> ResetClusterParameterGroupMessage
+newResetClusterParameterGroupMessage' :: String -> ({ "ParameterGroupName" :: String, "ResetAllParameters" :: Maybe (Boolean), "Parameters" :: Maybe (ParametersList) } -> { "ParameterGroupName" :: String, "ResetAllParameters" :: Maybe (Boolean), "Parameters" :: Maybe (ParametersList) }) -> ResetClusterParameterGroupMessage
 ```
 
 Constructs ResetClusterParameterGroupMessage's fields from required parameters
@@ -6072,7 +6072,7 @@ Encode ResizeNotFoundFault
 
 ``` purescript
 newtype ResizeProgressMessage
-  = ResizeProgressMessage { "TargetNodeType" :: NullOrUndefined (String), "TargetNumberOfNodes" :: NullOrUndefined (IntegerOptional), "TargetClusterType" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String), "ImportTablesCompleted" :: NullOrUndefined (ImportTablesCompleted), "ImportTablesInProgress" :: NullOrUndefined (ImportTablesInProgress), "ImportTablesNotStarted" :: NullOrUndefined (ImportTablesNotStarted), "AvgResizeRateInMegaBytesPerSecond" :: NullOrUndefined (DoubleOptional), "TotalResizeDataInMegaBytes" :: NullOrUndefined (LongOptional), "ProgressInMegaBytes" :: NullOrUndefined (LongOptional), "ElapsedTimeInSeconds" :: NullOrUndefined (LongOptional), "EstimatedTimeToCompletionInSeconds" :: NullOrUndefined (LongOptional) }
+  = ResizeProgressMessage { "TargetNodeType" :: Maybe (String), "TargetNumberOfNodes" :: Maybe (IntegerOptional), "TargetClusterType" :: Maybe (String), "Status" :: Maybe (String), "ImportTablesCompleted" :: Maybe (ImportTablesCompleted), "ImportTablesInProgress" :: Maybe (ImportTablesInProgress), "ImportTablesNotStarted" :: Maybe (ImportTablesNotStarted), "AvgResizeRateInMegaBytesPerSecond" :: Maybe (DoubleOptional), "TotalResizeDataInMegaBytes" :: Maybe (LongOptional), "ProgressInMegaBytes" :: Maybe (LongOptional), "ElapsedTimeInSeconds" :: Maybe (LongOptional), "EstimatedTimeToCompletionInSeconds" :: Maybe (LongOptional) }
 ```
 
 <p>Describes the result of a cluster resize operation.</p>
@@ -6097,7 +6097,7 @@ Constructs ResizeProgressMessage from required parameters
 #### `newResizeProgressMessage'`
 
 ``` purescript
-newResizeProgressMessage' :: ({ "TargetNodeType" :: NullOrUndefined (String), "TargetNumberOfNodes" :: NullOrUndefined (IntegerOptional), "TargetClusterType" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String), "ImportTablesCompleted" :: NullOrUndefined (ImportTablesCompleted), "ImportTablesInProgress" :: NullOrUndefined (ImportTablesInProgress), "ImportTablesNotStarted" :: NullOrUndefined (ImportTablesNotStarted), "AvgResizeRateInMegaBytesPerSecond" :: NullOrUndefined (DoubleOptional), "TotalResizeDataInMegaBytes" :: NullOrUndefined (LongOptional), "ProgressInMegaBytes" :: NullOrUndefined (LongOptional), "ElapsedTimeInSeconds" :: NullOrUndefined (LongOptional), "EstimatedTimeToCompletionInSeconds" :: NullOrUndefined (LongOptional) } -> { "TargetNodeType" :: NullOrUndefined (String), "TargetNumberOfNodes" :: NullOrUndefined (IntegerOptional), "TargetClusterType" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String), "ImportTablesCompleted" :: NullOrUndefined (ImportTablesCompleted), "ImportTablesInProgress" :: NullOrUndefined (ImportTablesInProgress), "ImportTablesNotStarted" :: NullOrUndefined (ImportTablesNotStarted), "AvgResizeRateInMegaBytesPerSecond" :: NullOrUndefined (DoubleOptional), "TotalResizeDataInMegaBytes" :: NullOrUndefined (LongOptional), "ProgressInMegaBytes" :: NullOrUndefined (LongOptional), "ElapsedTimeInSeconds" :: NullOrUndefined (LongOptional), "EstimatedTimeToCompletionInSeconds" :: NullOrUndefined (LongOptional) }) -> ResizeProgressMessage
+newResizeProgressMessage' :: ({ "TargetNodeType" :: Maybe (String), "TargetNumberOfNodes" :: Maybe (IntegerOptional), "TargetClusterType" :: Maybe (String), "Status" :: Maybe (String), "ImportTablesCompleted" :: Maybe (ImportTablesCompleted), "ImportTablesInProgress" :: Maybe (ImportTablesInProgress), "ImportTablesNotStarted" :: Maybe (ImportTablesNotStarted), "AvgResizeRateInMegaBytesPerSecond" :: Maybe (DoubleOptional), "TotalResizeDataInMegaBytes" :: Maybe (LongOptional), "ProgressInMegaBytes" :: Maybe (LongOptional), "ElapsedTimeInSeconds" :: Maybe (LongOptional), "EstimatedTimeToCompletionInSeconds" :: Maybe (LongOptional) } -> { "TargetNodeType" :: Maybe (String), "TargetNumberOfNodes" :: Maybe (IntegerOptional), "TargetClusterType" :: Maybe (String), "Status" :: Maybe (String), "ImportTablesCompleted" :: Maybe (ImportTablesCompleted), "ImportTablesInProgress" :: Maybe (ImportTablesInProgress), "ImportTablesNotStarted" :: Maybe (ImportTablesNotStarted), "AvgResizeRateInMegaBytesPerSecond" :: Maybe (DoubleOptional), "TotalResizeDataInMegaBytes" :: Maybe (LongOptional), "ProgressInMegaBytes" :: Maybe (LongOptional), "ElapsedTimeInSeconds" :: Maybe (LongOptional), "EstimatedTimeToCompletionInSeconds" :: Maybe (LongOptional) }) -> ResizeProgressMessage
 ```
 
 Constructs ResizeProgressMessage's fields from required parameters
@@ -6140,7 +6140,7 @@ Encode RestorableNodeTypeList
 
 ``` purescript
 newtype RestoreFromClusterSnapshotMessage
-  = RestoreFromClusterSnapshotMessage { "ClusterIdentifier" :: String, "SnapshotIdentifier" :: String, "SnapshotClusterIdentifier" :: NullOrUndefined (String), "Port" :: NullOrUndefined (IntegerOptional), "AvailabilityZone" :: NullOrUndefined (String), "AllowVersionUpgrade" :: NullOrUndefined (BooleanOptional), "ClusterSubnetGroupName" :: NullOrUndefined (String), "PubliclyAccessible" :: NullOrUndefined (BooleanOptional), "OwnerAccount" :: NullOrUndefined (String), "HsmClientCertificateIdentifier" :: NullOrUndefined (String), "HsmConfigurationIdentifier" :: NullOrUndefined (String), "ElasticIp" :: NullOrUndefined (String), "ClusterParameterGroupName" :: NullOrUndefined (String), "ClusterSecurityGroups" :: NullOrUndefined (ClusterSecurityGroupNameList), "VpcSecurityGroupIds" :: NullOrUndefined (VpcSecurityGroupIdList), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "AutomatedSnapshotRetentionPeriod" :: NullOrUndefined (IntegerOptional), "KmsKeyId" :: NullOrUndefined (String), "NodeType" :: NullOrUndefined (String), "EnhancedVpcRouting" :: NullOrUndefined (BooleanOptional), "AdditionalInfo" :: NullOrUndefined (String), "IamRoles" :: NullOrUndefined (IamRoleArnList) }
+  = RestoreFromClusterSnapshotMessage { "ClusterIdentifier" :: String, "SnapshotIdentifier" :: String, "SnapshotClusterIdentifier" :: Maybe (String), "Port" :: Maybe (IntegerOptional), "AvailabilityZone" :: Maybe (String), "AllowVersionUpgrade" :: Maybe (BooleanOptional), "ClusterSubnetGroupName" :: Maybe (String), "PubliclyAccessible" :: Maybe (BooleanOptional), "OwnerAccount" :: Maybe (String), "HsmClientCertificateIdentifier" :: Maybe (String), "HsmConfigurationIdentifier" :: Maybe (String), "ElasticIp" :: Maybe (String), "ClusterParameterGroupName" :: Maybe (String), "ClusterSecurityGroups" :: Maybe (ClusterSecurityGroupNameList), "VpcSecurityGroupIds" :: Maybe (VpcSecurityGroupIdList), "PreferredMaintenanceWindow" :: Maybe (String), "AutomatedSnapshotRetentionPeriod" :: Maybe (IntegerOptional), "KmsKeyId" :: Maybe (String), "NodeType" :: Maybe (String), "EnhancedVpcRouting" :: Maybe (BooleanOptional), "AdditionalInfo" :: Maybe (String), "IamRoles" :: Maybe (IamRoleArnList) }
 ```
 
 <p/>
@@ -6165,7 +6165,7 @@ Constructs RestoreFromClusterSnapshotMessage from required parameters
 #### `newRestoreFromClusterSnapshotMessage'`
 
 ``` purescript
-newRestoreFromClusterSnapshotMessage' :: String -> String -> ({ "ClusterIdentifier" :: String, "SnapshotIdentifier" :: String, "SnapshotClusterIdentifier" :: NullOrUndefined (String), "Port" :: NullOrUndefined (IntegerOptional), "AvailabilityZone" :: NullOrUndefined (String), "AllowVersionUpgrade" :: NullOrUndefined (BooleanOptional), "ClusterSubnetGroupName" :: NullOrUndefined (String), "PubliclyAccessible" :: NullOrUndefined (BooleanOptional), "OwnerAccount" :: NullOrUndefined (String), "HsmClientCertificateIdentifier" :: NullOrUndefined (String), "HsmConfigurationIdentifier" :: NullOrUndefined (String), "ElasticIp" :: NullOrUndefined (String), "ClusterParameterGroupName" :: NullOrUndefined (String), "ClusterSecurityGroups" :: NullOrUndefined (ClusterSecurityGroupNameList), "VpcSecurityGroupIds" :: NullOrUndefined (VpcSecurityGroupIdList), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "AutomatedSnapshotRetentionPeriod" :: NullOrUndefined (IntegerOptional), "KmsKeyId" :: NullOrUndefined (String), "NodeType" :: NullOrUndefined (String), "EnhancedVpcRouting" :: NullOrUndefined (BooleanOptional), "AdditionalInfo" :: NullOrUndefined (String), "IamRoles" :: NullOrUndefined (IamRoleArnList) } -> { "ClusterIdentifier" :: String, "SnapshotIdentifier" :: String, "SnapshotClusterIdentifier" :: NullOrUndefined (String), "Port" :: NullOrUndefined (IntegerOptional), "AvailabilityZone" :: NullOrUndefined (String), "AllowVersionUpgrade" :: NullOrUndefined (BooleanOptional), "ClusterSubnetGroupName" :: NullOrUndefined (String), "PubliclyAccessible" :: NullOrUndefined (BooleanOptional), "OwnerAccount" :: NullOrUndefined (String), "HsmClientCertificateIdentifier" :: NullOrUndefined (String), "HsmConfigurationIdentifier" :: NullOrUndefined (String), "ElasticIp" :: NullOrUndefined (String), "ClusterParameterGroupName" :: NullOrUndefined (String), "ClusterSecurityGroups" :: NullOrUndefined (ClusterSecurityGroupNameList), "VpcSecurityGroupIds" :: NullOrUndefined (VpcSecurityGroupIdList), "PreferredMaintenanceWindow" :: NullOrUndefined (String), "AutomatedSnapshotRetentionPeriod" :: NullOrUndefined (IntegerOptional), "KmsKeyId" :: NullOrUndefined (String), "NodeType" :: NullOrUndefined (String), "EnhancedVpcRouting" :: NullOrUndefined (BooleanOptional), "AdditionalInfo" :: NullOrUndefined (String), "IamRoles" :: NullOrUndefined (IamRoleArnList) }) -> RestoreFromClusterSnapshotMessage
+newRestoreFromClusterSnapshotMessage' :: String -> String -> ({ "ClusterIdentifier" :: String, "SnapshotIdentifier" :: String, "SnapshotClusterIdentifier" :: Maybe (String), "Port" :: Maybe (IntegerOptional), "AvailabilityZone" :: Maybe (String), "AllowVersionUpgrade" :: Maybe (BooleanOptional), "ClusterSubnetGroupName" :: Maybe (String), "PubliclyAccessible" :: Maybe (BooleanOptional), "OwnerAccount" :: Maybe (String), "HsmClientCertificateIdentifier" :: Maybe (String), "HsmConfigurationIdentifier" :: Maybe (String), "ElasticIp" :: Maybe (String), "ClusterParameterGroupName" :: Maybe (String), "ClusterSecurityGroups" :: Maybe (ClusterSecurityGroupNameList), "VpcSecurityGroupIds" :: Maybe (VpcSecurityGroupIdList), "PreferredMaintenanceWindow" :: Maybe (String), "AutomatedSnapshotRetentionPeriod" :: Maybe (IntegerOptional), "KmsKeyId" :: Maybe (String), "NodeType" :: Maybe (String), "EnhancedVpcRouting" :: Maybe (BooleanOptional), "AdditionalInfo" :: Maybe (String), "IamRoles" :: Maybe (IamRoleArnList) } -> { "ClusterIdentifier" :: String, "SnapshotIdentifier" :: String, "SnapshotClusterIdentifier" :: Maybe (String), "Port" :: Maybe (IntegerOptional), "AvailabilityZone" :: Maybe (String), "AllowVersionUpgrade" :: Maybe (BooleanOptional), "ClusterSubnetGroupName" :: Maybe (String), "PubliclyAccessible" :: Maybe (BooleanOptional), "OwnerAccount" :: Maybe (String), "HsmClientCertificateIdentifier" :: Maybe (String), "HsmConfigurationIdentifier" :: Maybe (String), "ElasticIp" :: Maybe (String), "ClusterParameterGroupName" :: Maybe (String), "ClusterSecurityGroups" :: Maybe (ClusterSecurityGroupNameList), "VpcSecurityGroupIds" :: Maybe (VpcSecurityGroupIdList), "PreferredMaintenanceWindow" :: Maybe (String), "AutomatedSnapshotRetentionPeriod" :: Maybe (IntegerOptional), "KmsKeyId" :: Maybe (String), "NodeType" :: Maybe (String), "EnhancedVpcRouting" :: Maybe (BooleanOptional), "AdditionalInfo" :: Maybe (String), "IamRoles" :: Maybe (IamRoleArnList) }) -> RestoreFromClusterSnapshotMessage
 ```
 
 Constructs RestoreFromClusterSnapshotMessage's fields from required parameters
@@ -6174,7 +6174,7 @@ Constructs RestoreFromClusterSnapshotMessage's fields from required parameters
 
 ``` purescript
 newtype RestoreFromClusterSnapshotResult
-  = RestoreFromClusterSnapshotResult { "Cluster" :: NullOrUndefined (Cluster) }
+  = RestoreFromClusterSnapshotResult { "Cluster" :: Maybe (Cluster) }
 ```
 
 ##### Instances
@@ -6197,7 +6197,7 @@ Constructs RestoreFromClusterSnapshotResult from required parameters
 #### `newRestoreFromClusterSnapshotResult'`
 
 ``` purescript
-newRestoreFromClusterSnapshotResult' :: ({ "Cluster" :: NullOrUndefined (Cluster) } -> { "Cluster" :: NullOrUndefined (Cluster) }) -> RestoreFromClusterSnapshotResult
+newRestoreFromClusterSnapshotResult' :: ({ "Cluster" :: Maybe (Cluster) } -> { "Cluster" :: Maybe (Cluster) }) -> RestoreFromClusterSnapshotResult
 ```
 
 Constructs RestoreFromClusterSnapshotResult's fields from required parameters
@@ -6206,7 +6206,7 @@ Constructs RestoreFromClusterSnapshotResult's fields from required parameters
 
 ``` purescript
 newtype RestoreStatus
-  = RestoreStatus { "Status" :: NullOrUndefined (String), "CurrentRestoreRateInMegaBytesPerSecond" :: NullOrUndefined (Number), "SnapshotSizeInMegaBytes" :: NullOrUndefined (Number), "ProgressInMegaBytes" :: NullOrUndefined (Number), "ElapsedTimeInSeconds" :: NullOrUndefined (Number), "EstimatedTimeToCompletionInSeconds" :: NullOrUndefined (Number) }
+  = RestoreStatus { "Status" :: Maybe (String), "CurrentRestoreRateInMegaBytesPerSecond" :: Maybe (Number), "SnapshotSizeInMegaBytes" :: Maybe (Number), "ProgressInMegaBytes" :: Maybe (Number), "ElapsedTimeInSeconds" :: Maybe (Number), "EstimatedTimeToCompletionInSeconds" :: Maybe (Number) }
 ```
 
 <p>Describes the status of a cluster restore action. Returns null if the cluster was not created by restoring a snapshot.</p>
@@ -6231,7 +6231,7 @@ Constructs RestoreStatus from required parameters
 #### `newRestoreStatus'`
 
 ``` purescript
-newRestoreStatus' :: ({ "Status" :: NullOrUndefined (String), "CurrentRestoreRateInMegaBytesPerSecond" :: NullOrUndefined (Number), "SnapshotSizeInMegaBytes" :: NullOrUndefined (Number), "ProgressInMegaBytes" :: NullOrUndefined (Number), "ElapsedTimeInSeconds" :: NullOrUndefined (Number), "EstimatedTimeToCompletionInSeconds" :: NullOrUndefined (Number) } -> { "Status" :: NullOrUndefined (String), "CurrentRestoreRateInMegaBytesPerSecond" :: NullOrUndefined (Number), "SnapshotSizeInMegaBytes" :: NullOrUndefined (Number), "ProgressInMegaBytes" :: NullOrUndefined (Number), "ElapsedTimeInSeconds" :: NullOrUndefined (Number), "EstimatedTimeToCompletionInSeconds" :: NullOrUndefined (Number) }) -> RestoreStatus
+newRestoreStatus' :: ({ "Status" :: Maybe (String), "CurrentRestoreRateInMegaBytesPerSecond" :: Maybe (Number), "SnapshotSizeInMegaBytes" :: Maybe (Number), "ProgressInMegaBytes" :: Maybe (Number), "ElapsedTimeInSeconds" :: Maybe (Number), "EstimatedTimeToCompletionInSeconds" :: Maybe (Number) } -> { "Status" :: Maybe (String), "CurrentRestoreRateInMegaBytesPerSecond" :: Maybe (Number), "SnapshotSizeInMegaBytes" :: Maybe (Number), "ProgressInMegaBytes" :: Maybe (Number), "ElapsedTimeInSeconds" :: Maybe (Number), "EstimatedTimeToCompletionInSeconds" :: Maybe (Number) }) -> RestoreStatus
 ```
 
 Constructs RestoreStatus's fields from required parameters
@@ -6240,7 +6240,7 @@ Constructs RestoreStatus's fields from required parameters
 
 ``` purescript
 newtype RestoreTableFromClusterSnapshotMessage
-  = RestoreTableFromClusterSnapshotMessage { "ClusterIdentifier" :: String, "SnapshotIdentifier" :: String, "SourceDatabaseName" :: String, "SourceSchemaName" :: NullOrUndefined (String), "SourceTableName" :: String, "TargetDatabaseName" :: NullOrUndefined (String), "TargetSchemaName" :: NullOrUndefined (String), "NewTableName" :: String }
+  = RestoreTableFromClusterSnapshotMessage { "ClusterIdentifier" :: String, "SnapshotIdentifier" :: String, "SourceDatabaseName" :: String, "SourceSchemaName" :: Maybe (String), "SourceTableName" :: String, "TargetDatabaseName" :: Maybe (String), "TargetSchemaName" :: Maybe (String), "NewTableName" :: String }
 ```
 
 <p/>
@@ -6265,7 +6265,7 @@ Constructs RestoreTableFromClusterSnapshotMessage from required parameters
 #### `newRestoreTableFromClusterSnapshotMessage'`
 
 ``` purescript
-newRestoreTableFromClusterSnapshotMessage' :: String -> String -> String -> String -> String -> ({ "ClusterIdentifier" :: String, "SnapshotIdentifier" :: String, "SourceDatabaseName" :: String, "SourceSchemaName" :: NullOrUndefined (String), "SourceTableName" :: String, "TargetDatabaseName" :: NullOrUndefined (String), "TargetSchemaName" :: NullOrUndefined (String), "NewTableName" :: String } -> { "ClusterIdentifier" :: String, "SnapshotIdentifier" :: String, "SourceDatabaseName" :: String, "SourceSchemaName" :: NullOrUndefined (String), "SourceTableName" :: String, "TargetDatabaseName" :: NullOrUndefined (String), "TargetSchemaName" :: NullOrUndefined (String), "NewTableName" :: String }) -> RestoreTableFromClusterSnapshotMessage
+newRestoreTableFromClusterSnapshotMessage' :: String -> String -> String -> String -> String -> ({ "ClusterIdentifier" :: String, "SnapshotIdentifier" :: String, "SourceDatabaseName" :: String, "SourceSchemaName" :: Maybe (String), "SourceTableName" :: String, "TargetDatabaseName" :: Maybe (String), "TargetSchemaName" :: Maybe (String), "NewTableName" :: String } -> { "ClusterIdentifier" :: String, "SnapshotIdentifier" :: String, "SourceDatabaseName" :: String, "SourceSchemaName" :: Maybe (String), "SourceTableName" :: String, "TargetDatabaseName" :: Maybe (String), "TargetSchemaName" :: Maybe (String), "NewTableName" :: String }) -> RestoreTableFromClusterSnapshotMessage
 ```
 
 Constructs RestoreTableFromClusterSnapshotMessage's fields from required parameters
@@ -6274,7 +6274,7 @@ Constructs RestoreTableFromClusterSnapshotMessage's fields from required paramet
 
 ``` purescript
 newtype RestoreTableFromClusterSnapshotResult
-  = RestoreTableFromClusterSnapshotResult { "TableRestoreStatus" :: NullOrUndefined (TableRestoreStatus) }
+  = RestoreTableFromClusterSnapshotResult { "TableRestoreStatus" :: Maybe (TableRestoreStatus) }
 ```
 
 ##### Instances
@@ -6297,7 +6297,7 @@ Constructs RestoreTableFromClusterSnapshotResult from required parameters
 #### `newRestoreTableFromClusterSnapshotResult'`
 
 ``` purescript
-newRestoreTableFromClusterSnapshotResult' :: ({ "TableRestoreStatus" :: NullOrUndefined (TableRestoreStatus) } -> { "TableRestoreStatus" :: NullOrUndefined (TableRestoreStatus) }) -> RestoreTableFromClusterSnapshotResult
+newRestoreTableFromClusterSnapshotResult' :: ({ "TableRestoreStatus" :: Maybe (TableRestoreStatus) } -> { "TableRestoreStatus" :: Maybe (TableRestoreStatus) }) -> RestoreTableFromClusterSnapshotResult
 ```
 
 Constructs RestoreTableFromClusterSnapshotResult's fields from required parameters
@@ -6306,7 +6306,7 @@ Constructs RestoreTableFromClusterSnapshotResult's fields from required paramete
 
 ``` purescript
 newtype RevokeClusterSecurityGroupIngressMessage
-  = RevokeClusterSecurityGroupIngressMessage { "ClusterSecurityGroupName" :: String, "CIDRIP" :: NullOrUndefined (String), "EC2SecurityGroupName" :: NullOrUndefined (String), "EC2SecurityGroupOwnerId" :: NullOrUndefined (String) }
+  = RevokeClusterSecurityGroupIngressMessage { "ClusterSecurityGroupName" :: String, "CIDRIP" :: Maybe (String), "EC2SecurityGroupName" :: Maybe (String), "EC2SecurityGroupOwnerId" :: Maybe (String) }
 ```
 
 <p/>
@@ -6331,7 +6331,7 @@ Constructs RevokeClusterSecurityGroupIngressMessage from required parameters
 #### `newRevokeClusterSecurityGroupIngressMessage'`
 
 ``` purescript
-newRevokeClusterSecurityGroupIngressMessage' :: String -> ({ "ClusterSecurityGroupName" :: String, "CIDRIP" :: NullOrUndefined (String), "EC2SecurityGroupName" :: NullOrUndefined (String), "EC2SecurityGroupOwnerId" :: NullOrUndefined (String) } -> { "ClusterSecurityGroupName" :: String, "CIDRIP" :: NullOrUndefined (String), "EC2SecurityGroupName" :: NullOrUndefined (String), "EC2SecurityGroupOwnerId" :: NullOrUndefined (String) }) -> RevokeClusterSecurityGroupIngressMessage
+newRevokeClusterSecurityGroupIngressMessage' :: String -> ({ "ClusterSecurityGroupName" :: String, "CIDRIP" :: Maybe (String), "EC2SecurityGroupName" :: Maybe (String), "EC2SecurityGroupOwnerId" :: Maybe (String) } -> { "ClusterSecurityGroupName" :: String, "CIDRIP" :: Maybe (String), "EC2SecurityGroupName" :: Maybe (String), "EC2SecurityGroupOwnerId" :: Maybe (String) }) -> RevokeClusterSecurityGroupIngressMessage
 ```
 
 Constructs RevokeClusterSecurityGroupIngressMessage's fields from required parameters
@@ -6340,7 +6340,7 @@ Constructs RevokeClusterSecurityGroupIngressMessage's fields from required param
 
 ``` purescript
 newtype RevokeClusterSecurityGroupIngressResult
-  = RevokeClusterSecurityGroupIngressResult { "ClusterSecurityGroup" :: NullOrUndefined (ClusterSecurityGroup) }
+  = RevokeClusterSecurityGroupIngressResult { "ClusterSecurityGroup" :: Maybe (ClusterSecurityGroup) }
 ```
 
 ##### Instances
@@ -6363,7 +6363,7 @@ Constructs RevokeClusterSecurityGroupIngressResult from required parameters
 #### `newRevokeClusterSecurityGroupIngressResult'`
 
 ``` purescript
-newRevokeClusterSecurityGroupIngressResult' :: ({ "ClusterSecurityGroup" :: NullOrUndefined (ClusterSecurityGroup) } -> { "ClusterSecurityGroup" :: NullOrUndefined (ClusterSecurityGroup) }) -> RevokeClusterSecurityGroupIngressResult
+newRevokeClusterSecurityGroupIngressResult' :: ({ "ClusterSecurityGroup" :: Maybe (ClusterSecurityGroup) } -> { "ClusterSecurityGroup" :: Maybe (ClusterSecurityGroup) }) -> RevokeClusterSecurityGroupIngressResult
 ```
 
 Constructs RevokeClusterSecurityGroupIngressResult's fields from required parameters
@@ -6372,7 +6372,7 @@ Constructs RevokeClusterSecurityGroupIngressResult's fields from required parame
 
 ``` purescript
 newtype RevokeSnapshotAccessMessage
-  = RevokeSnapshotAccessMessage { "SnapshotIdentifier" :: String, "SnapshotClusterIdentifier" :: NullOrUndefined (String), "AccountWithRestoreAccess" :: String }
+  = RevokeSnapshotAccessMessage { "SnapshotIdentifier" :: String, "SnapshotClusterIdentifier" :: Maybe (String), "AccountWithRestoreAccess" :: String }
 ```
 
 <p/>
@@ -6397,7 +6397,7 @@ Constructs RevokeSnapshotAccessMessage from required parameters
 #### `newRevokeSnapshotAccessMessage'`
 
 ``` purescript
-newRevokeSnapshotAccessMessage' :: String -> String -> ({ "SnapshotIdentifier" :: String, "SnapshotClusterIdentifier" :: NullOrUndefined (String), "AccountWithRestoreAccess" :: String } -> { "SnapshotIdentifier" :: String, "SnapshotClusterIdentifier" :: NullOrUndefined (String), "AccountWithRestoreAccess" :: String }) -> RevokeSnapshotAccessMessage
+newRevokeSnapshotAccessMessage' :: String -> String -> ({ "SnapshotIdentifier" :: String, "SnapshotClusterIdentifier" :: Maybe (String), "AccountWithRestoreAccess" :: String } -> { "SnapshotIdentifier" :: String, "SnapshotClusterIdentifier" :: Maybe (String), "AccountWithRestoreAccess" :: String }) -> RevokeSnapshotAccessMessage
 ```
 
 Constructs RevokeSnapshotAccessMessage's fields from required parameters
@@ -6406,7 +6406,7 @@ Constructs RevokeSnapshotAccessMessage's fields from required parameters
 
 ``` purescript
 newtype RevokeSnapshotAccessResult
-  = RevokeSnapshotAccessResult { "Snapshot" :: NullOrUndefined (Snapshot) }
+  = RevokeSnapshotAccessResult { "Snapshot" :: Maybe (Snapshot) }
 ```
 
 ##### Instances
@@ -6429,7 +6429,7 @@ Constructs RevokeSnapshotAccessResult from required parameters
 #### `newRevokeSnapshotAccessResult'`
 
 ``` purescript
-newRevokeSnapshotAccessResult' :: ({ "Snapshot" :: NullOrUndefined (Snapshot) } -> { "Snapshot" :: NullOrUndefined (Snapshot) }) -> RevokeSnapshotAccessResult
+newRevokeSnapshotAccessResult' :: ({ "Snapshot" :: Maybe (Snapshot) } -> { "Snapshot" :: Maybe (Snapshot) }) -> RevokeSnapshotAccessResult
 ```
 
 Constructs RevokeSnapshotAccessResult's fields from required parameters
@@ -6472,7 +6472,7 @@ Constructs RotateEncryptionKeyMessage's fields from required parameters
 
 ``` purescript
 newtype RotateEncryptionKeyResult
-  = RotateEncryptionKeyResult { "Cluster" :: NullOrUndefined (Cluster) }
+  = RotateEncryptionKeyResult { "Cluster" :: Maybe (Cluster) }
 ```
 
 ##### Instances
@@ -6495,7 +6495,7 @@ Constructs RotateEncryptionKeyResult from required parameters
 #### `newRotateEncryptionKeyResult'`
 
 ``` purescript
-newRotateEncryptionKeyResult' :: ({ "Cluster" :: NullOrUndefined (Cluster) } -> { "Cluster" :: NullOrUndefined (Cluster) }) -> RotateEncryptionKeyResult
+newRotateEncryptionKeyResult' :: ({ "Cluster" :: Maybe (Cluster) } -> { "Cluster" :: Maybe (Cluster) }) -> RotateEncryptionKeyResult
 ```
 
 Constructs RotateEncryptionKeyResult's fields from required parameters
@@ -6574,7 +6574,7 @@ Encode SensitiveString
 
 ``` purescript
 newtype Snapshot
-  = Snapshot { "SnapshotIdentifier" :: NullOrUndefined (String), "ClusterIdentifier" :: NullOrUndefined (String), "SnapshotCreateTime" :: NullOrUndefined (TStamp), "Status" :: NullOrUndefined (String), "Port" :: NullOrUndefined (Int), "AvailabilityZone" :: NullOrUndefined (String), "ClusterCreateTime" :: NullOrUndefined (TStamp), "MasterUsername" :: NullOrUndefined (String), "ClusterVersion" :: NullOrUndefined (String), "SnapshotType" :: NullOrUndefined (String), "NodeType" :: NullOrUndefined (String), "NumberOfNodes" :: NullOrUndefined (Int), "DBName" :: NullOrUndefined (String), "VpcId" :: NullOrUndefined (String), "Encrypted" :: NullOrUndefined (Boolean), "KmsKeyId" :: NullOrUndefined (String), "EncryptedWithHSM" :: NullOrUndefined (Boolean), "AccountsWithRestoreAccess" :: NullOrUndefined (AccountsWithRestoreAccessList), "OwnerAccount" :: NullOrUndefined (String), "TotalBackupSizeInMegaBytes" :: NullOrUndefined (Number), "ActualIncrementalBackupSizeInMegaBytes" :: NullOrUndefined (Number), "BackupProgressInMegaBytes" :: NullOrUndefined (Number), "CurrentBackupRateInMegaBytesPerSecond" :: NullOrUndefined (Number), "EstimatedSecondsToCompletion" :: NullOrUndefined (Number), "ElapsedTimeInSeconds" :: NullOrUndefined (Number), "SourceRegion" :: NullOrUndefined (String), "Tags" :: NullOrUndefined (TagList), "RestorableNodeTypes" :: NullOrUndefined (RestorableNodeTypeList), "EnhancedVpcRouting" :: NullOrUndefined (Boolean) }
+  = Snapshot { "SnapshotIdentifier" :: Maybe (String), "ClusterIdentifier" :: Maybe (String), "SnapshotCreateTime" :: Maybe (TStamp), "Status" :: Maybe (String), "Port" :: Maybe (Int), "AvailabilityZone" :: Maybe (String), "ClusterCreateTime" :: Maybe (TStamp), "MasterUsername" :: Maybe (String), "ClusterVersion" :: Maybe (String), "SnapshotType" :: Maybe (String), "NodeType" :: Maybe (String), "NumberOfNodes" :: Maybe (Int), "DBName" :: Maybe (String), "VpcId" :: Maybe (String), "Encrypted" :: Maybe (Boolean), "KmsKeyId" :: Maybe (String), "EncryptedWithHSM" :: Maybe (Boolean), "AccountsWithRestoreAccess" :: Maybe (AccountsWithRestoreAccessList), "OwnerAccount" :: Maybe (String), "TotalBackupSizeInMegaBytes" :: Maybe (Number), "ActualIncrementalBackupSizeInMegaBytes" :: Maybe (Number), "BackupProgressInMegaBytes" :: Maybe (Number), "CurrentBackupRateInMegaBytesPerSecond" :: Maybe (Number), "EstimatedSecondsToCompletion" :: Maybe (Number), "ElapsedTimeInSeconds" :: Maybe (Number), "SourceRegion" :: Maybe (String), "Tags" :: Maybe (TagList), "RestorableNodeTypes" :: Maybe (RestorableNodeTypeList), "EnhancedVpcRouting" :: Maybe (Boolean) }
 ```
 
 <p>Describes a snapshot.</p>
@@ -6599,7 +6599,7 @@ Constructs Snapshot from required parameters
 #### `newSnapshot'`
 
 ``` purescript
-newSnapshot' :: ({ "SnapshotIdentifier" :: NullOrUndefined (String), "ClusterIdentifier" :: NullOrUndefined (String), "SnapshotCreateTime" :: NullOrUndefined (TStamp), "Status" :: NullOrUndefined (String), "Port" :: NullOrUndefined (Int), "AvailabilityZone" :: NullOrUndefined (String), "ClusterCreateTime" :: NullOrUndefined (TStamp), "MasterUsername" :: NullOrUndefined (String), "ClusterVersion" :: NullOrUndefined (String), "SnapshotType" :: NullOrUndefined (String), "NodeType" :: NullOrUndefined (String), "NumberOfNodes" :: NullOrUndefined (Int), "DBName" :: NullOrUndefined (String), "VpcId" :: NullOrUndefined (String), "Encrypted" :: NullOrUndefined (Boolean), "KmsKeyId" :: NullOrUndefined (String), "EncryptedWithHSM" :: NullOrUndefined (Boolean), "AccountsWithRestoreAccess" :: NullOrUndefined (AccountsWithRestoreAccessList), "OwnerAccount" :: NullOrUndefined (String), "TotalBackupSizeInMegaBytes" :: NullOrUndefined (Number), "ActualIncrementalBackupSizeInMegaBytes" :: NullOrUndefined (Number), "BackupProgressInMegaBytes" :: NullOrUndefined (Number), "CurrentBackupRateInMegaBytesPerSecond" :: NullOrUndefined (Number), "EstimatedSecondsToCompletion" :: NullOrUndefined (Number), "ElapsedTimeInSeconds" :: NullOrUndefined (Number), "SourceRegion" :: NullOrUndefined (String), "Tags" :: NullOrUndefined (TagList), "RestorableNodeTypes" :: NullOrUndefined (RestorableNodeTypeList), "EnhancedVpcRouting" :: NullOrUndefined (Boolean) } -> { "SnapshotIdentifier" :: NullOrUndefined (String), "ClusterIdentifier" :: NullOrUndefined (String), "SnapshotCreateTime" :: NullOrUndefined (TStamp), "Status" :: NullOrUndefined (String), "Port" :: NullOrUndefined (Int), "AvailabilityZone" :: NullOrUndefined (String), "ClusterCreateTime" :: NullOrUndefined (TStamp), "MasterUsername" :: NullOrUndefined (String), "ClusterVersion" :: NullOrUndefined (String), "SnapshotType" :: NullOrUndefined (String), "NodeType" :: NullOrUndefined (String), "NumberOfNodes" :: NullOrUndefined (Int), "DBName" :: NullOrUndefined (String), "VpcId" :: NullOrUndefined (String), "Encrypted" :: NullOrUndefined (Boolean), "KmsKeyId" :: NullOrUndefined (String), "EncryptedWithHSM" :: NullOrUndefined (Boolean), "AccountsWithRestoreAccess" :: NullOrUndefined (AccountsWithRestoreAccessList), "OwnerAccount" :: NullOrUndefined (String), "TotalBackupSizeInMegaBytes" :: NullOrUndefined (Number), "ActualIncrementalBackupSizeInMegaBytes" :: NullOrUndefined (Number), "BackupProgressInMegaBytes" :: NullOrUndefined (Number), "CurrentBackupRateInMegaBytesPerSecond" :: NullOrUndefined (Number), "EstimatedSecondsToCompletion" :: NullOrUndefined (Number), "ElapsedTimeInSeconds" :: NullOrUndefined (Number), "SourceRegion" :: NullOrUndefined (String), "Tags" :: NullOrUndefined (TagList), "RestorableNodeTypes" :: NullOrUndefined (RestorableNodeTypeList), "EnhancedVpcRouting" :: NullOrUndefined (Boolean) }) -> Snapshot
+newSnapshot' :: ({ "SnapshotIdentifier" :: Maybe (String), "ClusterIdentifier" :: Maybe (String), "SnapshotCreateTime" :: Maybe (TStamp), "Status" :: Maybe (String), "Port" :: Maybe (Int), "AvailabilityZone" :: Maybe (String), "ClusterCreateTime" :: Maybe (TStamp), "MasterUsername" :: Maybe (String), "ClusterVersion" :: Maybe (String), "SnapshotType" :: Maybe (String), "NodeType" :: Maybe (String), "NumberOfNodes" :: Maybe (Int), "DBName" :: Maybe (String), "VpcId" :: Maybe (String), "Encrypted" :: Maybe (Boolean), "KmsKeyId" :: Maybe (String), "EncryptedWithHSM" :: Maybe (Boolean), "AccountsWithRestoreAccess" :: Maybe (AccountsWithRestoreAccessList), "OwnerAccount" :: Maybe (String), "TotalBackupSizeInMegaBytes" :: Maybe (Number), "ActualIncrementalBackupSizeInMegaBytes" :: Maybe (Number), "BackupProgressInMegaBytes" :: Maybe (Number), "CurrentBackupRateInMegaBytesPerSecond" :: Maybe (Number), "EstimatedSecondsToCompletion" :: Maybe (Number), "ElapsedTimeInSeconds" :: Maybe (Number), "SourceRegion" :: Maybe (String), "Tags" :: Maybe (TagList), "RestorableNodeTypes" :: Maybe (RestorableNodeTypeList), "EnhancedVpcRouting" :: Maybe (Boolean) } -> { "SnapshotIdentifier" :: Maybe (String), "ClusterIdentifier" :: Maybe (String), "SnapshotCreateTime" :: Maybe (TStamp), "Status" :: Maybe (String), "Port" :: Maybe (Int), "AvailabilityZone" :: Maybe (String), "ClusterCreateTime" :: Maybe (TStamp), "MasterUsername" :: Maybe (String), "ClusterVersion" :: Maybe (String), "SnapshotType" :: Maybe (String), "NodeType" :: Maybe (String), "NumberOfNodes" :: Maybe (Int), "DBName" :: Maybe (String), "VpcId" :: Maybe (String), "Encrypted" :: Maybe (Boolean), "KmsKeyId" :: Maybe (String), "EncryptedWithHSM" :: Maybe (Boolean), "AccountsWithRestoreAccess" :: Maybe (AccountsWithRestoreAccessList), "OwnerAccount" :: Maybe (String), "TotalBackupSizeInMegaBytes" :: Maybe (Number), "ActualIncrementalBackupSizeInMegaBytes" :: Maybe (Number), "BackupProgressInMegaBytes" :: Maybe (Number), "CurrentBackupRateInMegaBytesPerSecond" :: Maybe (Number), "EstimatedSecondsToCompletion" :: Maybe (Number), "ElapsedTimeInSeconds" :: Maybe (Number), "SourceRegion" :: Maybe (String), "Tags" :: Maybe (TagList), "RestorableNodeTypes" :: Maybe (RestorableNodeTypeList), "EnhancedVpcRouting" :: Maybe (Boolean) }) -> Snapshot
 ```
 
 Constructs Snapshot's fields from required parameters
@@ -6662,7 +6662,7 @@ Encode SnapshotCopyDisabledFault
 
 ``` purescript
 newtype SnapshotCopyGrant
-  = SnapshotCopyGrant { "SnapshotCopyGrantName" :: NullOrUndefined (String), "KmsKeyId" :: NullOrUndefined (String), "Tags" :: NullOrUndefined (TagList) }
+  = SnapshotCopyGrant { "SnapshotCopyGrantName" :: Maybe (String), "KmsKeyId" :: Maybe (String), "Tags" :: Maybe (TagList) }
 ```
 
 <p>The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified customer master key (CMK) from AWS KMS in the destination region.</p> <p> For more information about managing snapshot copy grants, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
@@ -6687,7 +6687,7 @@ Constructs SnapshotCopyGrant from required parameters
 #### `newSnapshotCopyGrant'`
 
 ``` purescript
-newSnapshotCopyGrant' :: ({ "SnapshotCopyGrantName" :: NullOrUndefined (String), "KmsKeyId" :: NullOrUndefined (String), "Tags" :: NullOrUndefined (TagList) } -> { "SnapshotCopyGrantName" :: NullOrUndefined (String), "KmsKeyId" :: NullOrUndefined (String), "Tags" :: NullOrUndefined (TagList) }) -> SnapshotCopyGrant
+newSnapshotCopyGrant' :: ({ "SnapshotCopyGrantName" :: Maybe (String), "KmsKeyId" :: Maybe (String), "Tags" :: Maybe (TagList) } -> { "SnapshotCopyGrantName" :: Maybe (String), "KmsKeyId" :: Maybe (String), "Tags" :: Maybe (TagList) }) -> SnapshotCopyGrant
 ```
 
 Constructs SnapshotCopyGrant's fields from required parameters
@@ -6730,7 +6730,7 @@ Encode SnapshotCopyGrantList
 
 ``` purescript
 newtype SnapshotCopyGrantMessage
-  = SnapshotCopyGrantMessage { "Marker" :: NullOrUndefined (String), "SnapshotCopyGrants" :: NullOrUndefined (SnapshotCopyGrantList) }
+  = SnapshotCopyGrantMessage { "Marker" :: Maybe (String), "SnapshotCopyGrants" :: Maybe (SnapshotCopyGrantList) }
 ```
 
 <p/>
@@ -6755,7 +6755,7 @@ Constructs SnapshotCopyGrantMessage from required parameters
 #### `newSnapshotCopyGrantMessage'`
 
 ``` purescript
-newSnapshotCopyGrantMessage' :: ({ "Marker" :: NullOrUndefined (String), "SnapshotCopyGrants" :: NullOrUndefined (SnapshotCopyGrantList) } -> { "Marker" :: NullOrUndefined (String), "SnapshotCopyGrants" :: NullOrUndefined (SnapshotCopyGrantList) }) -> SnapshotCopyGrantMessage
+newSnapshotCopyGrantMessage' :: ({ "Marker" :: Maybe (String), "SnapshotCopyGrants" :: Maybe (SnapshotCopyGrantList) } -> { "Marker" :: Maybe (String), "SnapshotCopyGrants" :: Maybe (SnapshotCopyGrantList) }) -> SnapshotCopyGrantMessage
 ```
 
 Constructs SnapshotCopyGrantMessage's fields from required parameters
@@ -6816,7 +6816,7 @@ Encode SnapshotList
 
 ``` purescript
 newtype SnapshotMessage
-  = SnapshotMessage { "Marker" :: NullOrUndefined (String), "Snapshots" :: NullOrUndefined (SnapshotList) }
+  = SnapshotMessage { "Marker" :: Maybe (String), "Snapshots" :: Maybe (SnapshotList) }
 ```
 
 <p>Contains the output from the <a>DescribeClusterSnapshots</a> action. </p>
@@ -6841,7 +6841,7 @@ Constructs SnapshotMessage from required parameters
 #### `newSnapshotMessage'`
 
 ``` purescript
-newSnapshotMessage' :: ({ "Marker" :: NullOrUndefined (String), "Snapshots" :: NullOrUndefined (SnapshotList) } -> { "Marker" :: NullOrUndefined (String), "Snapshots" :: NullOrUndefined (SnapshotList) }) -> SnapshotMessage
+newSnapshotMessage' :: ({ "Marker" :: Maybe (String), "Snapshots" :: Maybe (SnapshotList) } -> { "Marker" :: Maybe (String), "Snapshots" :: Maybe (SnapshotList) }) -> SnapshotMessage
 ```
 
 Constructs SnapshotMessage's fields from required parameters
@@ -6900,7 +6900,7 @@ Encode SourceType
 
 ``` purescript
 newtype Subnet
-  = Subnet { "SubnetIdentifier" :: NullOrUndefined (String), "SubnetAvailabilityZone" :: NullOrUndefined (AvailabilityZone), "SubnetStatus" :: NullOrUndefined (String) }
+  = Subnet { "SubnetIdentifier" :: Maybe (String), "SubnetAvailabilityZone" :: Maybe (AvailabilityZone), "SubnetStatus" :: Maybe (String) }
 ```
 
 <p>Describes a subnet.</p>
@@ -6925,7 +6925,7 @@ Constructs Subnet from required parameters
 #### `newSubnet'`
 
 ``` purescript
-newSubnet' :: ({ "SubnetIdentifier" :: NullOrUndefined (String), "SubnetAvailabilityZone" :: NullOrUndefined (AvailabilityZone), "SubnetStatus" :: NullOrUndefined (String) } -> { "SubnetIdentifier" :: NullOrUndefined (String), "SubnetAvailabilityZone" :: NullOrUndefined (AvailabilityZone), "SubnetStatus" :: NullOrUndefined (String) }) -> Subnet
+newSubnet' :: ({ "SubnetIdentifier" :: Maybe (String), "SubnetAvailabilityZone" :: Maybe (AvailabilityZone), "SubnetStatus" :: Maybe (String) } -> { "SubnetIdentifier" :: Maybe (String), "SubnetAvailabilityZone" :: Maybe (AvailabilityZone), "SubnetStatus" :: Maybe (String) }) -> Subnet
 ```
 
 Constructs Subnet's fields from required parameters
@@ -7108,7 +7108,7 @@ Encode TableRestoreNotFoundFault
 
 ``` purescript
 newtype TableRestoreStatus
-  = TableRestoreStatus { "TableRestoreRequestId" :: NullOrUndefined (String), "Status" :: NullOrUndefined (TableRestoreStatusType), "Message" :: NullOrUndefined (String), "RequestTime" :: NullOrUndefined (TStamp), "ProgressInMegaBytes" :: NullOrUndefined (LongOptional), "TotalDataInMegaBytes" :: NullOrUndefined (LongOptional), "ClusterIdentifier" :: NullOrUndefined (String), "SnapshotIdentifier" :: NullOrUndefined (String), "SourceDatabaseName" :: NullOrUndefined (String), "SourceSchemaName" :: NullOrUndefined (String), "SourceTableName" :: NullOrUndefined (String), "TargetDatabaseName" :: NullOrUndefined (String), "TargetSchemaName" :: NullOrUndefined (String), "NewTableName" :: NullOrUndefined (String) }
+  = TableRestoreStatus { "TableRestoreRequestId" :: Maybe (String), "Status" :: Maybe (TableRestoreStatusType), "Message" :: Maybe (String), "RequestTime" :: Maybe (TStamp), "ProgressInMegaBytes" :: Maybe (LongOptional), "TotalDataInMegaBytes" :: Maybe (LongOptional), "ClusterIdentifier" :: Maybe (String), "SnapshotIdentifier" :: Maybe (String), "SourceDatabaseName" :: Maybe (String), "SourceSchemaName" :: Maybe (String), "SourceTableName" :: Maybe (String), "TargetDatabaseName" :: Maybe (String), "TargetSchemaName" :: Maybe (String), "NewTableName" :: Maybe (String) }
 ```
 
 <p>Describes the status of a <a>RestoreTableFromClusterSnapshot</a> operation.</p>
@@ -7133,7 +7133,7 @@ Constructs TableRestoreStatus from required parameters
 #### `newTableRestoreStatus'`
 
 ``` purescript
-newTableRestoreStatus' :: ({ "TableRestoreRequestId" :: NullOrUndefined (String), "Status" :: NullOrUndefined (TableRestoreStatusType), "Message" :: NullOrUndefined (String), "RequestTime" :: NullOrUndefined (TStamp), "ProgressInMegaBytes" :: NullOrUndefined (LongOptional), "TotalDataInMegaBytes" :: NullOrUndefined (LongOptional), "ClusterIdentifier" :: NullOrUndefined (String), "SnapshotIdentifier" :: NullOrUndefined (String), "SourceDatabaseName" :: NullOrUndefined (String), "SourceSchemaName" :: NullOrUndefined (String), "SourceTableName" :: NullOrUndefined (String), "TargetDatabaseName" :: NullOrUndefined (String), "TargetSchemaName" :: NullOrUndefined (String), "NewTableName" :: NullOrUndefined (String) } -> { "TableRestoreRequestId" :: NullOrUndefined (String), "Status" :: NullOrUndefined (TableRestoreStatusType), "Message" :: NullOrUndefined (String), "RequestTime" :: NullOrUndefined (TStamp), "ProgressInMegaBytes" :: NullOrUndefined (LongOptional), "TotalDataInMegaBytes" :: NullOrUndefined (LongOptional), "ClusterIdentifier" :: NullOrUndefined (String), "SnapshotIdentifier" :: NullOrUndefined (String), "SourceDatabaseName" :: NullOrUndefined (String), "SourceSchemaName" :: NullOrUndefined (String), "SourceTableName" :: NullOrUndefined (String), "TargetDatabaseName" :: NullOrUndefined (String), "TargetSchemaName" :: NullOrUndefined (String), "NewTableName" :: NullOrUndefined (String) }) -> TableRestoreStatus
+newTableRestoreStatus' :: ({ "TableRestoreRequestId" :: Maybe (String), "Status" :: Maybe (TableRestoreStatusType), "Message" :: Maybe (String), "RequestTime" :: Maybe (TStamp), "ProgressInMegaBytes" :: Maybe (LongOptional), "TotalDataInMegaBytes" :: Maybe (LongOptional), "ClusterIdentifier" :: Maybe (String), "SnapshotIdentifier" :: Maybe (String), "SourceDatabaseName" :: Maybe (String), "SourceSchemaName" :: Maybe (String), "SourceTableName" :: Maybe (String), "TargetDatabaseName" :: Maybe (String), "TargetSchemaName" :: Maybe (String), "NewTableName" :: Maybe (String) } -> { "TableRestoreRequestId" :: Maybe (String), "Status" :: Maybe (TableRestoreStatusType), "Message" :: Maybe (String), "RequestTime" :: Maybe (TStamp), "ProgressInMegaBytes" :: Maybe (LongOptional), "TotalDataInMegaBytes" :: Maybe (LongOptional), "ClusterIdentifier" :: Maybe (String), "SnapshotIdentifier" :: Maybe (String), "SourceDatabaseName" :: Maybe (String), "SourceSchemaName" :: Maybe (String), "SourceTableName" :: Maybe (String), "TargetDatabaseName" :: Maybe (String), "TargetSchemaName" :: Maybe (String), "NewTableName" :: Maybe (String) }) -> TableRestoreStatus
 ```
 
 Constructs TableRestoreStatus's fields from required parameters
@@ -7158,7 +7158,7 @@ Encode TableRestoreStatusList
 
 ``` purescript
 newtype TableRestoreStatusMessage
-  = TableRestoreStatusMessage { "TableRestoreStatusDetails" :: NullOrUndefined (TableRestoreStatusList), "Marker" :: NullOrUndefined (String) }
+  = TableRestoreStatusMessage { "TableRestoreStatusDetails" :: Maybe (TableRestoreStatusList), "Marker" :: Maybe (String) }
 ```
 
 <p/>
@@ -7183,7 +7183,7 @@ Constructs TableRestoreStatusMessage from required parameters
 #### `newTableRestoreStatusMessage'`
 
 ``` purescript
-newTableRestoreStatusMessage' :: ({ "TableRestoreStatusDetails" :: NullOrUndefined (TableRestoreStatusList), "Marker" :: NullOrUndefined (String) } -> { "TableRestoreStatusDetails" :: NullOrUndefined (TableRestoreStatusList), "Marker" :: NullOrUndefined (String) }) -> TableRestoreStatusMessage
+newTableRestoreStatusMessage' :: ({ "TableRestoreStatusDetails" :: Maybe (TableRestoreStatusList), "Marker" :: Maybe (String) } -> { "TableRestoreStatusDetails" :: Maybe (TableRestoreStatusList), "Marker" :: Maybe (String) }) -> TableRestoreStatusMessage
 ```
 
 Constructs TableRestoreStatusMessage's fields from required parameters
@@ -7208,7 +7208,7 @@ Encode TableRestoreStatusType
 
 ``` purescript
 newtype Tag
-  = Tag { "Key" :: NullOrUndefined (String), "Value" :: NullOrUndefined (String) }
+  = Tag { "Key" :: Maybe (String), "Value" :: Maybe (String) }
 ```
 
 <p>A tag consisting of a name/value pair for a resource.</p>
@@ -7233,7 +7233,7 @@ Constructs Tag from required parameters
 #### `newTag'`
 
 ``` purescript
-newTag' :: ({ "Key" :: NullOrUndefined (String), "Value" :: NullOrUndefined (String) } -> { "Key" :: NullOrUndefined (String), "Value" :: NullOrUndefined (String) }) -> Tag
+newTag' :: ({ "Key" :: Maybe (String), "Value" :: Maybe (String) } -> { "Key" :: Maybe (String), "Value" :: Maybe (String) }) -> Tag
 ```
 
 Constructs Tag's fields from required parameters
@@ -7308,7 +7308,7 @@ Encode TagValueList
 
 ``` purescript
 newtype TaggedResource
-  = TaggedResource { "Tag" :: NullOrUndefined (Tag), "ResourceName" :: NullOrUndefined (String), "ResourceType" :: NullOrUndefined (String) }
+  = TaggedResource { "Tag" :: Maybe (Tag), "ResourceName" :: Maybe (String), "ResourceType" :: Maybe (String) }
 ```
 
 <p>A tag and its associated resource.</p>
@@ -7333,7 +7333,7 @@ Constructs TaggedResource from required parameters
 #### `newTaggedResource'`
 
 ``` purescript
-newTaggedResource' :: ({ "Tag" :: NullOrUndefined (Tag), "ResourceName" :: NullOrUndefined (String), "ResourceType" :: NullOrUndefined (String) } -> { "Tag" :: NullOrUndefined (Tag), "ResourceName" :: NullOrUndefined (String), "ResourceType" :: NullOrUndefined (String) }) -> TaggedResource
+newTaggedResource' :: ({ "Tag" :: Maybe (Tag), "ResourceName" :: Maybe (String), "ResourceType" :: Maybe (String) } -> { "Tag" :: Maybe (Tag), "ResourceName" :: Maybe (String), "ResourceType" :: Maybe (String) }) -> TaggedResource
 ```
 
 Constructs TaggedResource's fields from required parameters
@@ -7358,7 +7358,7 @@ Encode TaggedResourceList
 
 ``` purescript
 newtype TaggedResourceListMessage
-  = TaggedResourceListMessage { "TaggedResources" :: NullOrUndefined (TaggedResourceList), "Marker" :: NullOrUndefined (String) }
+  = TaggedResourceListMessage { "TaggedResources" :: Maybe (TaggedResourceList), "Marker" :: Maybe (String) }
 ```
 
 <p/>
@@ -7383,7 +7383,7 @@ Constructs TaggedResourceListMessage from required parameters
 #### `newTaggedResourceListMessage'`
 
 ``` purescript
-newTaggedResourceListMessage' :: ({ "TaggedResources" :: NullOrUndefined (TaggedResourceList), "Marker" :: NullOrUndefined (String) } -> { "TaggedResources" :: NullOrUndefined (TaggedResourceList), "Marker" :: NullOrUndefined (String) }) -> TaggedResourceListMessage
+newTaggedResourceListMessage' :: ({ "TaggedResources" :: Maybe (TaggedResourceList), "Marker" :: Maybe (String) } -> { "TaggedResources" :: Maybe (TaggedResourceList), "Marker" :: Maybe (String) }) -> TaggedResourceListMessage
 ```
 
 Constructs TaggedResourceListMessage's fields from required parameters
@@ -7480,7 +7480,7 @@ Encode VpcSecurityGroupIdList
 
 ``` purescript
 newtype VpcSecurityGroupMembership
-  = VpcSecurityGroupMembership { "VpcSecurityGroupId" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String) }
+  = VpcSecurityGroupMembership { "VpcSecurityGroupId" :: Maybe (String), "Status" :: Maybe (String) }
 ```
 
 <p>Describes the members of a VPC security group.</p>
@@ -7505,7 +7505,7 @@ Constructs VpcSecurityGroupMembership from required parameters
 #### `newVpcSecurityGroupMembership'`
 
 ``` purescript
-newVpcSecurityGroupMembership' :: ({ "VpcSecurityGroupId" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String) } -> { "VpcSecurityGroupId" :: NullOrUndefined (String), "Status" :: NullOrUndefined (String) }) -> VpcSecurityGroupMembership
+newVpcSecurityGroupMembership' :: ({ "VpcSecurityGroupId" :: Maybe (String), "Status" :: Maybe (String) } -> { "VpcSecurityGroupId" :: Maybe (String), "Status" :: Maybe (String) }) -> VpcSecurityGroupMembership
 ```
 
 Constructs VpcSecurityGroupMembership's fields from required parameters

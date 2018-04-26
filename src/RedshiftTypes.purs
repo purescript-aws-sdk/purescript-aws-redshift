@@ -5,7 +5,6 @@ import Prelude
 import Data.Foreign.Class (class Decode, class Encode)
 import Data.Foreign.Generic (defaultOptions, genericDecode, genericEncode)
 import Data.Foreign.Generic.Types (Options)
-import Data.Foreign.NullOrUndefined (NullOrUndefined(..))
 import Data.Generic.Rep (class Generic)
 import Data.Generic.Rep.Show (genericShow)
 import Data.Maybe (Maybe(..))
@@ -30,8 +29,8 @@ instance encodeAccessToSnapshotDeniedFault :: Encode AccessToSnapshotDeniedFault
 
 -- | <p>Describes an AWS customer account authorized to restore a snapshot.</p>
 newtype AccountWithRestoreAccess = AccountWithRestoreAccess 
-  { "AccountId" :: NullOrUndefined (String)
-  , "AccountAlias" :: NullOrUndefined (String)
+  { "AccountId" :: Maybe (String)
+  , "AccountAlias" :: Maybe (String)
   }
 derive instance newtypeAccountWithRestoreAccess :: Newtype AccountWithRestoreAccess _
 derive instance repGenericAccountWithRestoreAccess :: Generic AccountWithRestoreAccess _
@@ -41,12 +40,12 @@ instance encodeAccountWithRestoreAccess :: Encode AccountWithRestoreAccess where
 
 -- | Constructs AccountWithRestoreAccess from required parameters
 newAccountWithRestoreAccess :: AccountWithRestoreAccess
-newAccountWithRestoreAccess  = AccountWithRestoreAccess { "AccountAlias": (NullOrUndefined Nothing), "AccountId": (NullOrUndefined Nothing) }
+newAccountWithRestoreAccess  = AccountWithRestoreAccess { "AccountAlias": Nothing, "AccountId": Nothing }
 
 -- | Constructs AccountWithRestoreAccess's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAccountWithRestoreAccess' :: ( { "AccountId" :: NullOrUndefined (String) , "AccountAlias" :: NullOrUndefined (String) } -> {"AccountId" :: NullOrUndefined (String) , "AccountAlias" :: NullOrUndefined (String) } ) -> AccountWithRestoreAccess
-newAccountWithRestoreAccess'  customize = (AccountWithRestoreAccess <<< customize) { "AccountAlias": (NullOrUndefined Nothing), "AccountId": (NullOrUndefined Nothing) }
+newAccountWithRestoreAccess' :: ( { "AccountId" :: Maybe (String) , "AccountAlias" :: Maybe (String) } -> {"AccountId" :: Maybe (String) , "AccountAlias" :: Maybe (String) } ) -> AccountWithRestoreAccess
+newAccountWithRestoreAccess'  customize = (AccountWithRestoreAccess <<< customize) { "AccountAlias": Nothing, "AccountId": Nothing }
 
 
 
@@ -92,9 +91,9 @@ instance encodeAuthorizationQuotaExceededFault :: Encode AuthorizationQuotaExcee
 -- | <p/>
 newtype AuthorizeClusterSecurityGroupIngressMessage = AuthorizeClusterSecurityGroupIngressMessage 
   { "ClusterSecurityGroupName" :: (String)
-  , "CIDRIP" :: NullOrUndefined (String)
-  , "EC2SecurityGroupName" :: NullOrUndefined (String)
-  , "EC2SecurityGroupOwnerId" :: NullOrUndefined (String)
+  , "CIDRIP" :: Maybe (String)
+  , "EC2SecurityGroupName" :: Maybe (String)
+  , "EC2SecurityGroupOwnerId" :: Maybe (String)
   }
 derive instance newtypeAuthorizeClusterSecurityGroupIngressMessage :: Newtype AuthorizeClusterSecurityGroupIngressMessage _
 derive instance repGenericAuthorizeClusterSecurityGroupIngressMessage :: Generic AuthorizeClusterSecurityGroupIngressMessage _
@@ -104,17 +103,17 @@ instance encodeAuthorizeClusterSecurityGroupIngressMessage :: Encode AuthorizeCl
 
 -- | Constructs AuthorizeClusterSecurityGroupIngressMessage from required parameters
 newAuthorizeClusterSecurityGroupIngressMessage :: String -> AuthorizeClusterSecurityGroupIngressMessage
-newAuthorizeClusterSecurityGroupIngressMessage _ClusterSecurityGroupName = AuthorizeClusterSecurityGroupIngressMessage { "ClusterSecurityGroupName": _ClusterSecurityGroupName, "CIDRIP": (NullOrUndefined Nothing), "EC2SecurityGroupName": (NullOrUndefined Nothing), "EC2SecurityGroupOwnerId": (NullOrUndefined Nothing) }
+newAuthorizeClusterSecurityGroupIngressMessage _ClusterSecurityGroupName = AuthorizeClusterSecurityGroupIngressMessage { "ClusterSecurityGroupName": _ClusterSecurityGroupName, "CIDRIP": Nothing, "EC2SecurityGroupName": Nothing, "EC2SecurityGroupOwnerId": Nothing }
 
 -- | Constructs AuthorizeClusterSecurityGroupIngressMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAuthorizeClusterSecurityGroupIngressMessage' :: String -> ( { "ClusterSecurityGroupName" :: (String) , "CIDRIP" :: NullOrUndefined (String) , "EC2SecurityGroupName" :: NullOrUndefined (String) , "EC2SecurityGroupOwnerId" :: NullOrUndefined (String) } -> {"ClusterSecurityGroupName" :: (String) , "CIDRIP" :: NullOrUndefined (String) , "EC2SecurityGroupName" :: NullOrUndefined (String) , "EC2SecurityGroupOwnerId" :: NullOrUndefined (String) } ) -> AuthorizeClusterSecurityGroupIngressMessage
-newAuthorizeClusterSecurityGroupIngressMessage' _ClusterSecurityGroupName customize = (AuthorizeClusterSecurityGroupIngressMessage <<< customize) { "ClusterSecurityGroupName": _ClusterSecurityGroupName, "CIDRIP": (NullOrUndefined Nothing), "EC2SecurityGroupName": (NullOrUndefined Nothing), "EC2SecurityGroupOwnerId": (NullOrUndefined Nothing) }
+newAuthorizeClusterSecurityGroupIngressMessage' :: String -> ( { "ClusterSecurityGroupName" :: (String) , "CIDRIP" :: Maybe (String) , "EC2SecurityGroupName" :: Maybe (String) , "EC2SecurityGroupOwnerId" :: Maybe (String) } -> {"ClusterSecurityGroupName" :: (String) , "CIDRIP" :: Maybe (String) , "EC2SecurityGroupName" :: Maybe (String) , "EC2SecurityGroupOwnerId" :: Maybe (String) } ) -> AuthorizeClusterSecurityGroupIngressMessage
+newAuthorizeClusterSecurityGroupIngressMessage' _ClusterSecurityGroupName customize = (AuthorizeClusterSecurityGroupIngressMessage <<< customize) { "ClusterSecurityGroupName": _ClusterSecurityGroupName, "CIDRIP": Nothing, "EC2SecurityGroupName": Nothing, "EC2SecurityGroupOwnerId": Nothing }
 
 
 
 newtype AuthorizeClusterSecurityGroupIngressResult = AuthorizeClusterSecurityGroupIngressResult 
-  { "ClusterSecurityGroup" :: NullOrUndefined (ClusterSecurityGroup)
+  { "ClusterSecurityGroup" :: Maybe (ClusterSecurityGroup)
   }
 derive instance newtypeAuthorizeClusterSecurityGroupIngressResult :: Newtype AuthorizeClusterSecurityGroupIngressResult _
 derive instance repGenericAuthorizeClusterSecurityGroupIngressResult :: Generic AuthorizeClusterSecurityGroupIngressResult _
@@ -124,19 +123,19 @@ instance encodeAuthorizeClusterSecurityGroupIngressResult :: Encode AuthorizeClu
 
 -- | Constructs AuthorizeClusterSecurityGroupIngressResult from required parameters
 newAuthorizeClusterSecurityGroupIngressResult :: AuthorizeClusterSecurityGroupIngressResult
-newAuthorizeClusterSecurityGroupIngressResult  = AuthorizeClusterSecurityGroupIngressResult { "ClusterSecurityGroup": (NullOrUndefined Nothing) }
+newAuthorizeClusterSecurityGroupIngressResult  = AuthorizeClusterSecurityGroupIngressResult { "ClusterSecurityGroup": Nothing }
 
 -- | Constructs AuthorizeClusterSecurityGroupIngressResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAuthorizeClusterSecurityGroupIngressResult' :: ( { "ClusterSecurityGroup" :: NullOrUndefined (ClusterSecurityGroup) } -> {"ClusterSecurityGroup" :: NullOrUndefined (ClusterSecurityGroup) } ) -> AuthorizeClusterSecurityGroupIngressResult
-newAuthorizeClusterSecurityGroupIngressResult'  customize = (AuthorizeClusterSecurityGroupIngressResult <<< customize) { "ClusterSecurityGroup": (NullOrUndefined Nothing) }
+newAuthorizeClusterSecurityGroupIngressResult' :: ( { "ClusterSecurityGroup" :: Maybe (ClusterSecurityGroup) } -> {"ClusterSecurityGroup" :: Maybe (ClusterSecurityGroup) } ) -> AuthorizeClusterSecurityGroupIngressResult
+newAuthorizeClusterSecurityGroupIngressResult'  customize = (AuthorizeClusterSecurityGroupIngressResult <<< customize) { "ClusterSecurityGroup": Nothing }
 
 
 
 -- | <p/>
 newtype AuthorizeSnapshotAccessMessage = AuthorizeSnapshotAccessMessage 
   { "SnapshotIdentifier" :: (String)
-  , "SnapshotClusterIdentifier" :: NullOrUndefined (String)
+  , "SnapshotClusterIdentifier" :: Maybe (String)
   , "AccountWithRestoreAccess" :: (String)
   }
 derive instance newtypeAuthorizeSnapshotAccessMessage :: Newtype AuthorizeSnapshotAccessMessage _
@@ -147,17 +146,17 @@ instance encodeAuthorizeSnapshotAccessMessage :: Encode AuthorizeSnapshotAccessM
 
 -- | Constructs AuthorizeSnapshotAccessMessage from required parameters
 newAuthorizeSnapshotAccessMessage :: String -> String -> AuthorizeSnapshotAccessMessage
-newAuthorizeSnapshotAccessMessage _AccountWithRestoreAccess _SnapshotIdentifier = AuthorizeSnapshotAccessMessage { "AccountWithRestoreAccess": _AccountWithRestoreAccess, "SnapshotIdentifier": _SnapshotIdentifier, "SnapshotClusterIdentifier": (NullOrUndefined Nothing) }
+newAuthorizeSnapshotAccessMessage _AccountWithRestoreAccess _SnapshotIdentifier = AuthorizeSnapshotAccessMessage { "AccountWithRestoreAccess": _AccountWithRestoreAccess, "SnapshotIdentifier": _SnapshotIdentifier, "SnapshotClusterIdentifier": Nothing }
 
 -- | Constructs AuthorizeSnapshotAccessMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAuthorizeSnapshotAccessMessage' :: String -> String -> ( { "SnapshotIdentifier" :: (String) , "SnapshotClusterIdentifier" :: NullOrUndefined (String) , "AccountWithRestoreAccess" :: (String) } -> {"SnapshotIdentifier" :: (String) , "SnapshotClusterIdentifier" :: NullOrUndefined (String) , "AccountWithRestoreAccess" :: (String) } ) -> AuthorizeSnapshotAccessMessage
-newAuthorizeSnapshotAccessMessage' _AccountWithRestoreAccess _SnapshotIdentifier customize = (AuthorizeSnapshotAccessMessage <<< customize) { "AccountWithRestoreAccess": _AccountWithRestoreAccess, "SnapshotIdentifier": _SnapshotIdentifier, "SnapshotClusterIdentifier": (NullOrUndefined Nothing) }
+newAuthorizeSnapshotAccessMessage' :: String -> String -> ( { "SnapshotIdentifier" :: (String) , "SnapshotClusterIdentifier" :: Maybe (String) , "AccountWithRestoreAccess" :: (String) } -> {"SnapshotIdentifier" :: (String) , "SnapshotClusterIdentifier" :: Maybe (String) , "AccountWithRestoreAccess" :: (String) } ) -> AuthorizeSnapshotAccessMessage
+newAuthorizeSnapshotAccessMessage' _AccountWithRestoreAccess _SnapshotIdentifier customize = (AuthorizeSnapshotAccessMessage <<< customize) { "AccountWithRestoreAccess": _AccountWithRestoreAccess, "SnapshotIdentifier": _SnapshotIdentifier, "SnapshotClusterIdentifier": Nothing }
 
 
 
 newtype AuthorizeSnapshotAccessResult = AuthorizeSnapshotAccessResult 
-  { "Snapshot" :: NullOrUndefined (Snapshot)
+  { "Snapshot" :: Maybe (Snapshot)
   }
 derive instance newtypeAuthorizeSnapshotAccessResult :: Newtype AuthorizeSnapshotAccessResult _
 derive instance repGenericAuthorizeSnapshotAccessResult :: Generic AuthorizeSnapshotAccessResult _
@@ -167,18 +166,18 @@ instance encodeAuthorizeSnapshotAccessResult :: Encode AuthorizeSnapshotAccessRe
 
 -- | Constructs AuthorizeSnapshotAccessResult from required parameters
 newAuthorizeSnapshotAccessResult :: AuthorizeSnapshotAccessResult
-newAuthorizeSnapshotAccessResult  = AuthorizeSnapshotAccessResult { "Snapshot": (NullOrUndefined Nothing) }
+newAuthorizeSnapshotAccessResult  = AuthorizeSnapshotAccessResult { "Snapshot": Nothing }
 
 -- | Constructs AuthorizeSnapshotAccessResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAuthorizeSnapshotAccessResult' :: ( { "Snapshot" :: NullOrUndefined (Snapshot) } -> {"Snapshot" :: NullOrUndefined (Snapshot) } ) -> AuthorizeSnapshotAccessResult
-newAuthorizeSnapshotAccessResult'  customize = (AuthorizeSnapshotAccessResult <<< customize) { "Snapshot": (NullOrUndefined Nothing) }
+newAuthorizeSnapshotAccessResult' :: ( { "Snapshot" :: Maybe (Snapshot) } -> {"Snapshot" :: Maybe (Snapshot) } ) -> AuthorizeSnapshotAccessResult
+newAuthorizeSnapshotAccessResult'  customize = (AuthorizeSnapshotAccessResult <<< customize) { "Snapshot": Nothing }
 
 
 
 -- | <p>Describes an availability zone.</p>
 newtype AvailabilityZone = AvailabilityZone 
-  { "Name" :: NullOrUndefined (String)
+  { "Name" :: Maybe (String)
   }
 derive instance newtypeAvailabilityZone :: Newtype AvailabilityZone _
 derive instance repGenericAvailabilityZone :: Generic AvailabilityZone _
@@ -188,12 +187,12 @@ instance encodeAvailabilityZone :: Encode AvailabilityZone where encode = generi
 
 -- | Constructs AvailabilityZone from required parameters
 newAvailabilityZone :: AvailabilityZone
-newAvailabilityZone  = AvailabilityZone { "Name": (NullOrUndefined Nothing) }
+newAvailabilityZone  = AvailabilityZone { "Name": Nothing }
 
 -- | Constructs AvailabilityZone's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAvailabilityZone' :: ( { "Name" :: NullOrUndefined (String) } -> {"Name" :: NullOrUndefined (String) } ) -> AvailabilityZone
-newAvailabilityZone'  customize = (AvailabilityZone <<< customize) { "Name": (NullOrUndefined Nothing) }
+newAvailabilityZone' :: ( { "Name" :: Maybe (String) } -> {"Name" :: Maybe (String) } ) -> AvailabilityZone
+newAvailabilityZone'  customize = (AvailabilityZone <<< customize) { "Name": Nothing }
 
 
 
@@ -227,39 +226,39 @@ instance encodeBucketNotFoundFault :: Encode BucketNotFoundFault where encode = 
 
 -- | <p>Describes a cluster.</p>
 newtype Cluster = Cluster 
-  { "ClusterIdentifier" :: NullOrUndefined (String)
-  , "NodeType" :: NullOrUndefined (String)
-  , "ClusterStatus" :: NullOrUndefined (String)
-  , "ModifyStatus" :: NullOrUndefined (String)
-  , "MasterUsername" :: NullOrUndefined (String)
-  , "DBName" :: NullOrUndefined (String)
-  , "Endpoint" :: NullOrUndefined (Endpoint)
-  , "ClusterCreateTime" :: NullOrUndefined (TStamp)
-  , "AutomatedSnapshotRetentionPeriod" :: NullOrUndefined (Int)
-  , "ClusterSecurityGroups" :: NullOrUndefined (ClusterSecurityGroupMembershipList)
-  , "VpcSecurityGroups" :: NullOrUndefined (VpcSecurityGroupMembershipList)
-  , "ClusterParameterGroups" :: NullOrUndefined (ClusterParameterGroupStatusList)
-  , "ClusterSubnetGroupName" :: NullOrUndefined (String)
-  , "VpcId" :: NullOrUndefined (String)
-  , "AvailabilityZone" :: NullOrUndefined (String)
-  , "PreferredMaintenanceWindow" :: NullOrUndefined (String)
-  , "PendingModifiedValues" :: NullOrUndefined (PendingModifiedValues)
-  , "ClusterVersion" :: NullOrUndefined (String)
-  , "AllowVersionUpgrade" :: NullOrUndefined (Boolean)
-  , "NumberOfNodes" :: NullOrUndefined (Int)
-  , "PubliclyAccessible" :: NullOrUndefined (Boolean)
-  , "Encrypted" :: NullOrUndefined (Boolean)
-  , "RestoreStatus" :: NullOrUndefined (RestoreStatus)
-  , "HsmStatus" :: NullOrUndefined (HsmStatus)
-  , "ClusterSnapshotCopyStatus" :: NullOrUndefined (ClusterSnapshotCopyStatus)
-  , "ClusterPublicKey" :: NullOrUndefined (String)
-  , "ClusterNodes" :: NullOrUndefined (ClusterNodesList)
-  , "ElasticIpStatus" :: NullOrUndefined (ElasticIpStatus)
-  , "ClusterRevisionNumber" :: NullOrUndefined (String)
-  , "Tags" :: NullOrUndefined (TagList)
-  , "KmsKeyId" :: NullOrUndefined (String)
-  , "EnhancedVpcRouting" :: NullOrUndefined (Boolean)
-  , "IamRoles" :: NullOrUndefined (ClusterIamRoleList)
+  { "ClusterIdentifier" :: Maybe (String)
+  , "NodeType" :: Maybe (String)
+  , "ClusterStatus" :: Maybe (String)
+  , "ModifyStatus" :: Maybe (String)
+  , "MasterUsername" :: Maybe (String)
+  , "DBName" :: Maybe (String)
+  , "Endpoint" :: Maybe (Endpoint)
+  , "ClusterCreateTime" :: Maybe (TStamp)
+  , "AutomatedSnapshotRetentionPeriod" :: Maybe (Int)
+  , "ClusterSecurityGroups" :: Maybe (ClusterSecurityGroupMembershipList)
+  , "VpcSecurityGroups" :: Maybe (VpcSecurityGroupMembershipList)
+  , "ClusterParameterGroups" :: Maybe (ClusterParameterGroupStatusList)
+  , "ClusterSubnetGroupName" :: Maybe (String)
+  , "VpcId" :: Maybe (String)
+  , "AvailabilityZone" :: Maybe (String)
+  , "PreferredMaintenanceWindow" :: Maybe (String)
+  , "PendingModifiedValues" :: Maybe (PendingModifiedValues)
+  , "ClusterVersion" :: Maybe (String)
+  , "AllowVersionUpgrade" :: Maybe (Boolean)
+  , "NumberOfNodes" :: Maybe (Int)
+  , "PubliclyAccessible" :: Maybe (Boolean)
+  , "Encrypted" :: Maybe (Boolean)
+  , "RestoreStatus" :: Maybe (RestoreStatus)
+  , "HsmStatus" :: Maybe (HsmStatus)
+  , "ClusterSnapshotCopyStatus" :: Maybe (ClusterSnapshotCopyStatus)
+  , "ClusterPublicKey" :: Maybe (String)
+  , "ClusterNodes" :: Maybe (ClusterNodesList)
+  , "ElasticIpStatus" :: Maybe (ElasticIpStatus)
+  , "ClusterRevisionNumber" :: Maybe (String)
+  , "Tags" :: Maybe (TagList)
+  , "KmsKeyId" :: Maybe (String)
+  , "EnhancedVpcRouting" :: Maybe (Boolean)
+  , "IamRoles" :: Maybe (ClusterIamRoleList)
   }
 derive instance newtypeCluster :: Newtype Cluster _
 derive instance repGenericCluster :: Generic Cluster _
@@ -269,12 +268,12 @@ instance encodeCluster :: Encode Cluster where encode = genericEncode options
 
 -- | Constructs Cluster from required parameters
 newCluster :: Cluster
-newCluster  = Cluster { "AllowVersionUpgrade": (NullOrUndefined Nothing), "AutomatedSnapshotRetentionPeriod": (NullOrUndefined Nothing), "AvailabilityZone": (NullOrUndefined Nothing), "ClusterCreateTime": (NullOrUndefined Nothing), "ClusterIdentifier": (NullOrUndefined Nothing), "ClusterNodes": (NullOrUndefined Nothing), "ClusterParameterGroups": (NullOrUndefined Nothing), "ClusterPublicKey": (NullOrUndefined Nothing), "ClusterRevisionNumber": (NullOrUndefined Nothing), "ClusterSecurityGroups": (NullOrUndefined Nothing), "ClusterSnapshotCopyStatus": (NullOrUndefined Nothing), "ClusterStatus": (NullOrUndefined Nothing), "ClusterSubnetGroupName": (NullOrUndefined Nothing), "ClusterVersion": (NullOrUndefined Nothing), "DBName": (NullOrUndefined Nothing), "ElasticIpStatus": (NullOrUndefined Nothing), "Encrypted": (NullOrUndefined Nothing), "Endpoint": (NullOrUndefined Nothing), "EnhancedVpcRouting": (NullOrUndefined Nothing), "HsmStatus": (NullOrUndefined Nothing), "IamRoles": (NullOrUndefined Nothing), "KmsKeyId": (NullOrUndefined Nothing), "MasterUsername": (NullOrUndefined Nothing), "ModifyStatus": (NullOrUndefined Nothing), "NodeType": (NullOrUndefined Nothing), "NumberOfNodes": (NullOrUndefined Nothing), "PendingModifiedValues": (NullOrUndefined Nothing), "PreferredMaintenanceWindow": (NullOrUndefined Nothing), "PubliclyAccessible": (NullOrUndefined Nothing), "RestoreStatus": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing), "VpcId": (NullOrUndefined Nothing), "VpcSecurityGroups": (NullOrUndefined Nothing) }
+newCluster  = Cluster { "AllowVersionUpgrade": Nothing, "AutomatedSnapshotRetentionPeriod": Nothing, "AvailabilityZone": Nothing, "ClusterCreateTime": Nothing, "ClusterIdentifier": Nothing, "ClusterNodes": Nothing, "ClusterParameterGroups": Nothing, "ClusterPublicKey": Nothing, "ClusterRevisionNumber": Nothing, "ClusterSecurityGroups": Nothing, "ClusterSnapshotCopyStatus": Nothing, "ClusterStatus": Nothing, "ClusterSubnetGroupName": Nothing, "ClusterVersion": Nothing, "DBName": Nothing, "ElasticIpStatus": Nothing, "Encrypted": Nothing, "Endpoint": Nothing, "EnhancedVpcRouting": Nothing, "HsmStatus": Nothing, "IamRoles": Nothing, "KmsKeyId": Nothing, "MasterUsername": Nothing, "ModifyStatus": Nothing, "NodeType": Nothing, "NumberOfNodes": Nothing, "PendingModifiedValues": Nothing, "PreferredMaintenanceWindow": Nothing, "PubliclyAccessible": Nothing, "RestoreStatus": Nothing, "Tags": Nothing, "VpcId": Nothing, "VpcSecurityGroups": Nothing }
 
 -- | Constructs Cluster's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCluster' :: ( { "ClusterIdentifier" :: NullOrUndefined (String) , "NodeType" :: NullOrUndefined (String) , "ClusterStatus" :: NullOrUndefined (String) , "ModifyStatus" :: NullOrUndefined (String) , "MasterUsername" :: NullOrUndefined (String) , "DBName" :: NullOrUndefined (String) , "Endpoint" :: NullOrUndefined (Endpoint) , "ClusterCreateTime" :: NullOrUndefined (TStamp) , "AutomatedSnapshotRetentionPeriod" :: NullOrUndefined (Int) , "ClusterSecurityGroups" :: NullOrUndefined (ClusterSecurityGroupMembershipList) , "VpcSecurityGroups" :: NullOrUndefined (VpcSecurityGroupMembershipList) , "ClusterParameterGroups" :: NullOrUndefined (ClusterParameterGroupStatusList) , "ClusterSubnetGroupName" :: NullOrUndefined (String) , "VpcId" :: NullOrUndefined (String) , "AvailabilityZone" :: NullOrUndefined (String) , "PreferredMaintenanceWindow" :: NullOrUndefined (String) , "PendingModifiedValues" :: NullOrUndefined (PendingModifiedValues) , "ClusterVersion" :: NullOrUndefined (String) , "AllowVersionUpgrade" :: NullOrUndefined (Boolean) , "NumberOfNodes" :: NullOrUndefined (Int) , "PubliclyAccessible" :: NullOrUndefined (Boolean) , "Encrypted" :: NullOrUndefined (Boolean) , "RestoreStatus" :: NullOrUndefined (RestoreStatus) , "HsmStatus" :: NullOrUndefined (HsmStatus) , "ClusterSnapshotCopyStatus" :: NullOrUndefined (ClusterSnapshotCopyStatus) , "ClusterPublicKey" :: NullOrUndefined (String) , "ClusterNodes" :: NullOrUndefined (ClusterNodesList) , "ElasticIpStatus" :: NullOrUndefined (ElasticIpStatus) , "ClusterRevisionNumber" :: NullOrUndefined (String) , "Tags" :: NullOrUndefined (TagList) , "KmsKeyId" :: NullOrUndefined (String) , "EnhancedVpcRouting" :: NullOrUndefined (Boolean) , "IamRoles" :: NullOrUndefined (ClusterIamRoleList) } -> {"ClusterIdentifier" :: NullOrUndefined (String) , "NodeType" :: NullOrUndefined (String) , "ClusterStatus" :: NullOrUndefined (String) , "ModifyStatus" :: NullOrUndefined (String) , "MasterUsername" :: NullOrUndefined (String) , "DBName" :: NullOrUndefined (String) , "Endpoint" :: NullOrUndefined (Endpoint) , "ClusterCreateTime" :: NullOrUndefined (TStamp) , "AutomatedSnapshotRetentionPeriod" :: NullOrUndefined (Int) , "ClusterSecurityGroups" :: NullOrUndefined (ClusterSecurityGroupMembershipList) , "VpcSecurityGroups" :: NullOrUndefined (VpcSecurityGroupMembershipList) , "ClusterParameterGroups" :: NullOrUndefined (ClusterParameterGroupStatusList) , "ClusterSubnetGroupName" :: NullOrUndefined (String) , "VpcId" :: NullOrUndefined (String) , "AvailabilityZone" :: NullOrUndefined (String) , "PreferredMaintenanceWindow" :: NullOrUndefined (String) , "PendingModifiedValues" :: NullOrUndefined (PendingModifiedValues) , "ClusterVersion" :: NullOrUndefined (String) , "AllowVersionUpgrade" :: NullOrUndefined (Boolean) , "NumberOfNodes" :: NullOrUndefined (Int) , "PubliclyAccessible" :: NullOrUndefined (Boolean) , "Encrypted" :: NullOrUndefined (Boolean) , "RestoreStatus" :: NullOrUndefined (RestoreStatus) , "HsmStatus" :: NullOrUndefined (HsmStatus) , "ClusterSnapshotCopyStatus" :: NullOrUndefined (ClusterSnapshotCopyStatus) , "ClusterPublicKey" :: NullOrUndefined (String) , "ClusterNodes" :: NullOrUndefined (ClusterNodesList) , "ElasticIpStatus" :: NullOrUndefined (ElasticIpStatus) , "ClusterRevisionNumber" :: NullOrUndefined (String) , "Tags" :: NullOrUndefined (TagList) , "KmsKeyId" :: NullOrUndefined (String) , "EnhancedVpcRouting" :: NullOrUndefined (Boolean) , "IamRoles" :: NullOrUndefined (ClusterIamRoleList) } ) -> Cluster
-newCluster'  customize = (Cluster <<< customize) { "AllowVersionUpgrade": (NullOrUndefined Nothing), "AutomatedSnapshotRetentionPeriod": (NullOrUndefined Nothing), "AvailabilityZone": (NullOrUndefined Nothing), "ClusterCreateTime": (NullOrUndefined Nothing), "ClusterIdentifier": (NullOrUndefined Nothing), "ClusterNodes": (NullOrUndefined Nothing), "ClusterParameterGroups": (NullOrUndefined Nothing), "ClusterPublicKey": (NullOrUndefined Nothing), "ClusterRevisionNumber": (NullOrUndefined Nothing), "ClusterSecurityGroups": (NullOrUndefined Nothing), "ClusterSnapshotCopyStatus": (NullOrUndefined Nothing), "ClusterStatus": (NullOrUndefined Nothing), "ClusterSubnetGroupName": (NullOrUndefined Nothing), "ClusterVersion": (NullOrUndefined Nothing), "DBName": (NullOrUndefined Nothing), "ElasticIpStatus": (NullOrUndefined Nothing), "Encrypted": (NullOrUndefined Nothing), "Endpoint": (NullOrUndefined Nothing), "EnhancedVpcRouting": (NullOrUndefined Nothing), "HsmStatus": (NullOrUndefined Nothing), "IamRoles": (NullOrUndefined Nothing), "KmsKeyId": (NullOrUndefined Nothing), "MasterUsername": (NullOrUndefined Nothing), "ModifyStatus": (NullOrUndefined Nothing), "NodeType": (NullOrUndefined Nothing), "NumberOfNodes": (NullOrUndefined Nothing), "PendingModifiedValues": (NullOrUndefined Nothing), "PreferredMaintenanceWindow": (NullOrUndefined Nothing), "PubliclyAccessible": (NullOrUndefined Nothing), "RestoreStatus": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing), "VpcId": (NullOrUndefined Nothing), "VpcSecurityGroups": (NullOrUndefined Nothing) }
+newCluster' :: ( { "ClusterIdentifier" :: Maybe (String) , "NodeType" :: Maybe (String) , "ClusterStatus" :: Maybe (String) , "ModifyStatus" :: Maybe (String) , "MasterUsername" :: Maybe (String) , "DBName" :: Maybe (String) , "Endpoint" :: Maybe (Endpoint) , "ClusterCreateTime" :: Maybe (TStamp) , "AutomatedSnapshotRetentionPeriod" :: Maybe (Int) , "ClusterSecurityGroups" :: Maybe (ClusterSecurityGroupMembershipList) , "VpcSecurityGroups" :: Maybe (VpcSecurityGroupMembershipList) , "ClusterParameterGroups" :: Maybe (ClusterParameterGroupStatusList) , "ClusterSubnetGroupName" :: Maybe (String) , "VpcId" :: Maybe (String) , "AvailabilityZone" :: Maybe (String) , "PreferredMaintenanceWindow" :: Maybe (String) , "PendingModifiedValues" :: Maybe (PendingModifiedValues) , "ClusterVersion" :: Maybe (String) , "AllowVersionUpgrade" :: Maybe (Boolean) , "NumberOfNodes" :: Maybe (Int) , "PubliclyAccessible" :: Maybe (Boolean) , "Encrypted" :: Maybe (Boolean) , "RestoreStatus" :: Maybe (RestoreStatus) , "HsmStatus" :: Maybe (HsmStatus) , "ClusterSnapshotCopyStatus" :: Maybe (ClusterSnapshotCopyStatus) , "ClusterPublicKey" :: Maybe (String) , "ClusterNodes" :: Maybe (ClusterNodesList) , "ElasticIpStatus" :: Maybe (ElasticIpStatus) , "ClusterRevisionNumber" :: Maybe (String) , "Tags" :: Maybe (TagList) , "KmsKeyId" :: Maybe (String) , "EnhancedVpcRouting" :: Maybe (Boolean) , "IamRoles" :: Maybe (ClusterIamRoleList) } -> {"ClusterIdentifier" :: Maybe (String) , "NodeType" :: Maybe (String) , "ClusterStatus" :: Maybe (String) , "ModifyStatus" :: Maybe (String) , "MasterUsername" :: Maybe (String) , "DBName" :: Maybe (String) , "Endpoint" :: Maybe (Endpoint) , "ClusterCreateTime" :: Maybe (TStamp) , "AutomatedSnapshotRetentionPeriod" :: Maybe (Int) , "ClusterSecurityGroups" :: Maybe (ClusterSecurityGroupMembershipList) , "VpcSecurityGroups" :: Maybe (VpcSecurityGroupMembershipList) , "ClusterParameterGroups" :: Maybe (ClusterParameterGroupStatusList) , "ClusterSubnetGroupName" :: Maybe (String) , "VpcId" :: Maybe (String) , "AvailabilityZone" :: Maybe (String) , "PreferredMaintenanceWindow" :: Maybe (String) , "PendingModifiedValues" :: Maybe (PendingModifiedValues) , "ClusterVersion" :: Maybe (String) , "AllowVersionUpgrade" :: Maybe (Boolean) , "NumberOfNodes" :: Maybe (Int) , "PubliclyAccessible" :: Maybe (Boolean) , "Encrypted" :: Maybe (Boolean) , "RestoreStatus" :: Maybe (RestoreStatus) , "HsmStatus" :: Maybe (HsmStatus) , "ClusterSnapshotCopyStatus" :: Maybe (ClusterSnapshotCopyStatus) , "ClusterPublicKey" :: Maybe (String) , "ClusterNodes" :: Maybe (ClusterNodesList) , "ElasticIpStatus" :: Maybe (ElasticIpStatus) , "ClusterRevisionNumber" :: Maybe (String) , "Tags" :: Maybe (TagList) , "KmsKeyId" :: Maybe (String) , "EnhancedVpcRouting" :: Maybe (Boolean) , "IamRoles" :: Maybe (ClusterIamRoleList) } ) -> Cluster
+newCluster'  customize = (Cluster <<< customize) { "AllowVersionUpgrade": Nothing, "AutomatedSnapshotRetentionPeriod": Nothing, "AvailabilityZone": Nothing, "ClusterCreateTime": Nothing, "ClusterIdentifier": Nothing, "ClusterNodes": Nothing, "ClusterParameterGroups": Nothing, "ClusterPublicKey": Nothing, "ClusterRevisionNumber": Nothing, "ClusterSecurityGroups": Nothing, "ClusterSnapshotCopyStatus": Nothing, "ClusterStatus": Nothing, "ClusterSubnetGroupName": Nothing, "ClusterVersion": Nothing, "DBName": Nothing, "ElasticIpStatus": Nothing, "Encrypted": Nothing, "Endpoint": Nothing, "EnhancedVpcRouting": Nothing, "HsmStatus": Nothing, "IamRoles": Nothing, "KmsKeyId": Nothing, "MasterUsername": Nothing, "ModifyStatus": Nothing, "NodeType": Nothing, "NumberOfNodes": Nothing, "PendingModifiedValues": Nothing, "PreferredMaintenanceWindow": Nothing, "PubliclyAccessible": Nothing, "RestoreStatus": Nothing, "Tags": Nothing, "VpcId": Nothing, "VpcSecurityGroups": Nothing }
 
 
 
@@ -290,9 +289,9 @@ instance encodeClusterAlreadyExistsFault :: Encode ClusterAlreadyExistsFault whe
 
 -- | <p>Temporary credentials with authorization to log on to an Amazon Redshift database. </p>
 newtype ClusterCredentials = ClusterCredentials 
-  { "DbUser" :: NullOrUndefined (String)
-  , "DbPassword" :: NullOrUndefined (SensitiveString)
-  , "Expiration" :: NullOrUndefined (TStamp)
+  { "DbUser" :: Maybe (String)
+  , "DbPassword" :: Maybe (SensitiveString)
+  , "Expiration" :: Maybe (TStamp)
   }
 derive instance newtypeClusterCredentials :: Newtype ClusterCredentials _
 derive instance repGenericClusterCredentials :: Generic ClusterCredentials _
@@ -302,19 +301,19 @@ instance encodeClusterCredentials :: Encode ClusterCredentials where encode = ge
 
 -- | Constructs ClusterCredentials from required parameters
 newClusterCredentials :: ClusterCredentials
-newClusterCredentials  = ClusterCredentials { "DbPassword": (NullOrUndefined Nothing), "DbUser": (NullOrUndefined Nothing), "Expiration": (NullOrUndefined Nothing) }
+newClusterCredentials  = ClusterCredentials { "DbPassword": Nothing, "DbUser": Nothing, "Expiration": Nothing }
 
 -- | Constructs ClusterCredentials's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newClusterCredentials' :: ( { "DbUser" :: NullOrUndefined (String) , "DbPassword" :: NullOrUndefined (SensitiveString) , "Expiration" :: NullOrUndefined (TStamp) } -> {"DbUser" :: NullOrUndefined (String) , "DbPassword" :: NullOrUndefined (SensitiveString) , "Expiration" :: NullOrUndefined (TStamp) } ) -> ClusterCredentials
-newClusterCredentials'  customize = (ClusterCredentials <<< customize) { "DbPassword": (NullOrUndefined Nothing), "DbUser": (NullOrUndefined Nothing), "Expiration": (NullOrUndefined Nothing) }
+newClusterCredentials' :: ( { "DbUser" :: Maybe (String) , "DbPassword" :: Maybe (SensitiveString) , "Expiration" :: Maybe (TStamp) } -> {"DbUser" :: Maybe (String) , "DbPassword" :: Maybe (SensitiveString) , "Expiration" :: Maybe (TStamp) } ) -> ClusterCredentials
+newClusterCredentials'  customize = (ClusterCredentials <<< customize) { "DbPassword": Nothing, "DbUser": Nothing, "Expiration": Nothing }
 
 
 
 -- | <p>An AWS Identity and Access Management (IAM) role that can be used by the associated Amazon Redshift cluster to access other AWS services.</p>
 newtype ClusterIamRole = ClusterIamRole 
-  { "IamRoleArn" :: NullOrUndefined (String)
-  , "ApplyStatus" :: NullOrUndefined (String)
+  { "IamRoleArn" :: Maybe (String)
+  , "ApplyStatus" :: Maybe (String)
   }
 derive instance newtypeClusterIamRole :: Newtype ClusterIamRole _
 derive instance repGenericClusterIamRole :: Generic ClusterIamRole _
@@ -324,12 +323,12 @@ instance encodeClusterIamRole :: Encode ClusterIamRole where encode = genericEnc
 
 -- | Constructs ClusterIamRole from required parameters
 newClusterIamRole :: ClusterIamRole
-newClusterIamRole  = ClusterIamRole { "ApplyStatus": (NullOrUndefined Nothing), "IamRoleArn": (NullOrUndefined Nothing) }
+newClusterIamRole  = ClusterIamRole { "ApplyStatus": Nothing, "IamRoleArn": Nothing }
 
 -- | Constructs ClusterIamRole's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newClusterIamRole' :: ( { "IamRoleArn" :: NullOrUndefined (String) , "ApplyStatus" :: NullOrUndefined (String) } -> {"IamRoleArn" :: NullOrUndefined (String) , "ApplyStatus" :: NullOrUndefined (String) } ) -> ClusterIamRole
-newClusterIamRole'  customize = (ClusterIamRole <<< customize) { "ApplyStatus": (NullOrUndefined Nothing), "IamRoleArn": (NullOrUndefined Nothing) }
+newClusterIamRole' :: ( { "IamRoleArn" :: Maybe (String) , "ApplyStatus" :: Maybe (String) } -> {"IamRoleArn" :: Maybe (String) , "ApplyStatus" :: Maybe (String) } ) -> ClusterIamRole
+newClusterIamRole'  customize = (ClusterIamRole <<< customize) { "ApplyStatus": Nothing, "IamRoleArn": Nothing }
 
 
 
@@ -353,9 +352,9 @@ instance encodeClusterList :: Encode ClusterList where encode = genericEncode op
 
 -- | <p>The identifier of a node in a cluster.</p>
 newtype ClusterNode = ClusterNode 
-  { "NodeRole" :: NullOrUndefined (String)
-  , "PrivateIPAddress" :: NullOrUndefined (String)
-  , "PublicIPAddress" :: NullOrUndefined (String)
+  { "NodeRole" :: Maybe (String)
+  , "PrivateIPAddress" :: Maybe (String)
+  , "PublicIPAddress" :: Maybe (String)
   }
 derive instance newtypeClusterNode :: Newtype ClusterNode _
 derive instance repGenericClusterNode :: Generic ClusterNode _
@@ -365,12 +364,12 @@ instance encodeClusterNode :: Encode ClusterNode where encode = genericEncode op
 
 -- | Constructs ClusterNode from required parameters
 newClusterNode :: ClusterNode
-newClusterNode  = ClusterNode { "NodeRole": (NullOrUndefined Nothing), "PrivateIPAddress": (NullOrUndefined Nothing), "PublicIPAddress": (NullOrUndefined Nothing) }
+newClusterNode  = ClusterNode { "NodeRole": Nothing, "PrivateIPAddress": Nothing, "PublicIPAddress": Nothing }
 
 -- | Constructs ClusterNode's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newClusterNode' :: ( { "NodeRole" :: NullOrUndefined (String) , "PrivateIPAddress" :: NullOrUndefined (String) , "PublicIPAddress" :: NullOrUndefined (String) } -> {"NodeRole" :: NullOrUndefined (String) , "PrivateIPAddress" :: NullOrUndefined (String) , "PublicIPAddress" :: NullOrUndefined (String) } ) -> ClusterNode
-newClusterNode'  customize = (ClusterNode <<< customize) { "NodeRole": (NullOrUndefined Nothing), "PrivateIPAddress": (NullOrUndefined Nothing), "PublicIPAddress": (NullOrUndefined Nothing) }
+newClusterNode' :: ( { "NodeRole" :: Maybe (String) , "PrivateIPAddress" :: Maybe (String) , "PublicIPAddress" :: Maybe (String) } -> {"NodeRole" :: Maybe (String) , "PrivateIPAddress" :: Maybe (String) , "PublicIPAddress" :: Maybe (String) } ) -> ClusterNode
+newClusterNode'  customize = (ClusterNode <<< customize) { "NodeRole": Nothing, "PrivateIPAddress": Nothing, "PublicIPAddress": Nothing }
 
 
 
@@ -395,10 +394,10 @@ instance encodeClusterNotFoundFault :: Encode ClusterNotFoundFault where encode 
 
 -- | <p>Describes a parameter group.</p>
 newtype ClusterParameterGroup = ClusterParameterGroup 
-  { "ParameterGroupName" :: NullOrUndefined (String)
-  , "ParameterGroupFamily" :: NullOrUndefined (String)
-  , "Description" :: NullOrUndefined (String)
-  , "Tags" :: NullOrUndefined (TagList)
+  { "ParameterGroupName" :: Maybe (String)
+  , "ParameterGroupFamily" :: Maybe (String)
+  , "Description" :: Maybe (String)
+  , "Tags" :: Maybe (TagList)
   }
 derive instance newtypeClusterParameterGroup :: Newtype ClusterParameterGroup _
 derive instance repGenericClusterParameterGroup :: Generic ClusterParameterGroup _
@@ -408,12 +407,12 @@ instance encodeClusterParameterGroup :: Encode ClusterParameterGroup where encod
 
 -- | Constructs ClusterParameterGroup from required parameters
 newClusterParameterGroup :: ClusterParameterGroup
-newClusterParameterGroup  = ClusterParameterGroup { "Description": (NullOrUndefined Nothing), "ParameterGroupFamily": (NullOrUndefined Nothing), "ParameterGroupName": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newClusterParameterGroup  = ClusterParameterGroup { "Description": Nothing, "ParameterGroupFamily": Nothing, "ParameterGroupName": Nothing, "Tags": Nothing }
 
 -- | Constructs ClusterParameterGroup's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newClusterParameterGroup' :: ( { "ParameterGroupName" :: NullOrUndefined (String) , "ParameterGroupFamily" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "Tags" :: NullOrUndefined (TagList) } -> {"ParameterGroupName" :: NullOrUndefined (String) , "ParameterGroupFamily" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "Tags" :: NullOrUndefined (TagList) } ) -> ClusterParameterGroup
-newClusterParameterGroup'  customize = (ClusterParameterGroup <<< customize) { "Description": (NullOrUndefined Nothing), "ParameterGroupFamily": (NullOrUndefined Nothing), "ParameterGroupName": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newClusterParameterGroup' :: ( { "ParameterGroupName" :: Maybe (String) , "ParameterGroupFamily" :: Maybe (String) , "Description" :: Maybe (String) , "Tags" :: Maybe (TagList) } -> {"ParameterGroupName" :: Maybe (String) , "ParameterGroupFamily" :: Maybe (String) , "Description" :: Maybe (String) , "Tags" :: Maybe (TagList) } ) -> ClusterParameterGroup
+newClusterParameterGroup'  customize = (ClusterParameterGroup <<< customize) { "Description": Nothing, "ParameterGroupFamily": Nothing, "ParameterGroupName": Nothing, "Tags": Nothing }
 
 
 
@@ -429,8 +428,8 @@ instance encodeClusterParameterGroupAlreadyExistsFault :: Encode ClusterParamete
 
 -- | <p>Contains the output from the <a>DescribeClusterParameters</a> action. </p>
 newtype ClusterParameterGroupDetails = ClusterParameterGroupDetails 
-  { "Parameters" :: NullOrUndefined (ParametersList)
-  , "Marker" :: NullOrUndefined (String)
+  { "Parameters" :: Maybe (ParametersList)
+  , "Marker" :: Maybe (String)
   }
 derive instance newtypeClusterParameterGroupDetails :: Newtype ClusterParameterGroupDetails _
 derive instance repGenericClusterParameterGroupDetails :: Generic ClusterParameterGroupDetails _
@@ -440,19 +439,19 @@ instance encodeClusterParameterGroupDetails :: Encode ClusterParameterGroupDetai
 
 -- | Constructs ClusterParameterGroupDetails from required parameters
 newClusterParameterGroupDetails :: ClusterParameterGroupDetails
-newClusterParameterGroupDetails  = ClusterParameterGroupDetails { "Marker": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing) }
+newClusterParameterGroupDetails  = ClusterParameterGroupDetails { "Marker": Nothing, "Parameters": Nothing }
 
 -- | Constructs ClusterParameterGroupDetails's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newClusterParameterGroupDetails' :: ( { "Parameters" :: NullOrUndefined (ParametersList) , "Marker" :: NullOrUndefined (String) } -> {"Parameters" :: NullOrUndefined (ParametersList) , "Marker" :: NullOrUndefined (String) } ) -> ClusterParameterGroupDetails
-newClusterParameterGroupDetails'  customize = (ClusterParameterGroupDetails <<< customize) { "Marker": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing) }
+newClusterParameterGroupDetails' :: ( { "Parameters" :: Maybe (ParametersList) , "Marker" :: Maybe (String) } -> {"Parameters" :: Maybe (ParametersList) , "Marker" :: Maybe (String) } ) -> ClusterParameterGroupDetails
+newClusterParameterGroupDetails'  customize = (ClusterParameterGroupDetails <<< customize) { "Marker": Nothing, "Parameters": Nothing }
 
 
 
 -- | <p/>
 newtype ClusterParameterGroupNameMessage = ClusterParameterGroupNameMessage 
-  { "ParameterGroupName" :: NullOrUndefined (String)
-  , "ParameterGroupStatus" :: NullOrUndefined (String)
+  { "ParameterGroupName" :: Maybe (String)
+  , "ParameterGroupStatus" :: Maybe (String)
   }
 derive instance newtypeClusterParameterGroupNameMessage :: Newtype ClusterParameterGroupNameMessage _
 derive instance repGenericClusterParameterGroupNameMessage :: Generic ClusterParameterGroupNameMessage _
@@ -462,12 +461,12 @@ instance encodeClusterParameterGroupNameMessage :: Encode ClusterParameterGroupN
 
 -- | Constructs ClusterParameterGroupNameMessage from required parameters
 newClusterParameterGroupNameMessage :: ClusterParameterGroupNameMessage
-newClusterParameterGroupNameMessage  = ClusterParameterGroupNameMessage { "ParameterGroupName": (NullOrUndefined Nothing), "ParameterGroupStatus": (NullOrUndefined Nothing) }
+newClusterParameterGroupNameMessage  = ClusterParameterGroupNameMessage { "ParameterGroupName": Nothing, "ParameterGroupStatus": Nothing }
 
 -- | Constructs ClusterParameterGroupNameMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newClusterParameterGroupNameMessage' :: ( { "ParameterGroupName" :: NullOrUndefined (String) , "ParameterGroupStatus" :: NullOrUndefined (String) } -> {"ParameterGroupName" :: NullOrUndefined (String) , "ParameterGroupStatus" :: NullOrUndefined (String) } ) -> ClusterParameterGroupNameMessage
-newClusterParameterGroupNameMessage'  customize = (ClusterParameterGroupNameMessage <<< customize) { "ParameterGroupName": (NullOrUndefined Nothing), "ParameterGroupStatus": (NullOrUndefined Nothing) }
+newClusterParameterGroupNameMessage' :: ( { "ParameterGroupName" :: Maybe (String) , "ParameterGroupStatus" :: Maybe (String) } -> {"ParameterGroupName" :: Maybe (String) , "ParameterGroupStatus" :: Maybe (String) } ) -> ClusterParameterGroupNameMessage
+newClusterParameterGroupNameMessage'  customize = (ClusterParameterGroupNameMessage <<< customize) { "ParameterGroupName": Nothing, "ParameterGroupStatus": Nothing }
 
 
 
@@ -493,9 +492,9 @@ instance encodeClusterParameterGroupQuotaExceededFault :: Encode ClusterParamete
 
 -- | <p>Describes the status of a parameter group.</p>
 newtype ClusterParameterGroupStatus = ClusterParameterGroupStatus 
-  { "ParameterGroupName" :: NullOrUndefined (String)
-  , "ParameterApplyStatus" :: NullOrUndefined (String)
-  , "ClusterParameterStatusList" :: NullOrUndefined (ClusterParameterStatusList)
+  { "ParameterGroupName" :: Maybe (String)
+  , "ParameterApplyStatus" :: Maybe (String)
+  , "ClusterParameterStatusList" :: Maybe (ClusterParameterStatusList)
   }
 derive instance newtypeClusterParameterGroupStatus :: Newtype ClusterParameterGroupStatus _
 derive instance repGenericClusterParameterGroupStatus :: Generic ClusterParameterGroupStatus _
@@ -505,12 +504,12 @@ instance encodeClusterParameterGroupStatus :: Encode ClusterParameterGroupStatus
 
 -- | Constructs ClusterParameterGroupStatus from required parameters
 newClusterParameterGroupStatus :: ClusterParameterGroupStatus
-newClusterParameterGroupStatus  = ClusterParameterGroupStatus { "ClusterParameterStatusList": (NullOrUndefined Nothing), "ParameterApplyStatus": (NullOrUndefined Nothing), "ParameterGroupName": (NullOrUndefined Nothing) }
+newClusterParameterGroupStatus  = ClusterParameterGroupStatus { "ClusterParameterStatusList": Nothing, "ParameterApplyStatus": Nothing, "ParameterGroupName": Nothing }
 
 -- | Constructs ClusterParameterGroupStatus's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newClusterParameterGroupStatus' :: ( { "ParameterGroupName" :: NullOrUndefined (String) , "ParameterApplyStatus" :: NullOrUndefined (String) , "ClusterParameterStatusList" :: NullOrUndefined (ClusterParameterStatusList) } -> {"ParameterGroupName" :: NullOrUndefined (String) , "ParameterApplyStatus" :: NullOrUndefined (String) , "ClusterParameterStatusList" :: NullOrUndefined (ClusterParameterStatusList) } ) -> ClusterParameterGroupStatus
-newClusterParameterGroupStatus'  customize = (ClusterParameterGroupStatus <<< customize) { "ClusterParameterStatusList": (NullOrUndefined Nothing), "ParameterApplyStatus": (NullOrUndefined Nothing), "ParameterGroupName": (NullOrUndefined Nothing) }
+newClusterParameterGroupStatus' :: ( { "ParameterGroupName" :: Maybe (String) , "ParameterApplyStatus" :: Maybe (String) , "ClusterParameterStatusList" :: Maybe (ClusterParameterStatusList) } -> {"ParameterGroupName" :: Maybe (String) , "ParameterApplyStatus" :: Maybe (String) , "ClusterParameterStatusList" :: Maybe (ClusterParameterStatusList) } ) -> ClusterParameterGroupStatus
+newClusterParameterGroupStatus'  customize = (ClusterParameterGroupStatus <<< customize) { "ClusterParameterStatusList": Nothing, "ParameterApplyStatus": Nothing, "ParameterGroupName": Nothing }
 
 
 
@@ -525,8 +524,8 @@ instance encodeClusterParameterGroupStatusList :: Encode ClusterParameterGroupSt
 
 -- | <p>Contains the output from the <a>DescribeClusterParameterGroups</a> action. </p>
 newtype ClusterParameterGroupsMessage = ClusterParameterGroupsMessage 
-  { "Marker" :: NullOrUndefined (String)
-  , "ParameterGroups" :: NullOrUndefined (ParameterGroupList)
+  { "Marker" :: Maybe (String)
+  , "ParameterGroups" :: Maybe (ParameterGroupList)
   }
 derive instance newtypeClusterParameterGroupsMessage :: Newtype ClusterParameterGroupsMessage _
 derive instance repGenericClusterParameterGroupsMessage :: Generic ClusterParameterGroupsMessage _
@@ -536,20 +535,20 @@ instance encodeClusterParameterGroupsMessage :: Encode ClusterParameterGroupsMes
 
 -- | Constructs ClusterParameterGroupsMessage from required parameters
 newClusterParameterGroupsMessage :: ClusterParameterGroupsMessage
-newClusterParameterGroupsMessage  = ClusterParameterGroupsMessage { "Marker": (NullOrUndefined Nothing), "ParameterGroups": (NullOrUndefined Nothing) }
+newClusterParameterGroupsMessage  = ClusterParameterGroupsMessage { "Marker": Nothing, "ParameterGroups": Nothing }
 
 -- | Constructs ClusterParameterGroupsMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newClusterParameterGroupsMessage' :: ( { "Marker" :: NullOrUndefined (String) , "ParameterGroups" :: NullOrUndefined (ParameterGroupList) } -> {"Marker" :: NullOrUndefined (String) , "ParameterGroups" :: NullOrUndefined (ParameterGroupList) } ) -> ClusterParameterGroupsMessage
-newClusterParameterGroupsMessage'  customize = (ClusterParameterGroupsMessage <<< customize) { "Marker": (NullOrUndefined Nothing), "ParameterGroups": (NullOrUndefined Nothing) }
+newClusterParameterGroupsMessage' :: ( { "Marker" :: Maybe (String) , "ParameterGroups" :: Maybe (ParameterGroupList) } -> {"Marker" :: Maybe (String) , "ParameterGroups" :: Maybe (ParameterGroupList) } ) -> ClusterParameterGroupsMessage
+newClusterParameterGroupsMessage'  customize = (ClusterParameterGroupsMessage <<< customize) { "Marker": Nothing, "ParameterGroups": Nothing }
 
 
 
 -- | <p>Describes the status of a parameter group.</p>
 newtype ClusterParameterStatus = ClusterParameterStatus 
-  { "ParameterName" :: NullOrUndefined (String)
-  , "ParameterApplyStatus" :: NullOrUndefined (String)
-  , "ParameterApplyErrorDescription" :: NullOrUndefined (String)
+  { "ParameterName" :: Maybe (String)
+  , "ParameterApplyStatus" :: Maybe (String)
+  , "ParameterApplyErrorDescription" :: Maybe (String)
   }
 derive instance newtypeClusterParameterStatus :: Newtype ClusterParameterStatus _
 derive instance repGenericClusterParameterStatus :: Generic ClusterParameterStatus _
@@ -559,12 +558,12 @@ instance encodeClusterParameterStatus :: Encode ClusterParameterStatus where enc
 
 -- | Constructs ClusterParameterStatus from required parameters
 newClusterParameterStatus :: ClusterParameterStatus
-newClusterParameterStatus  = ClusterParameterStatus { "ParameterApplyErrorDescription": (NullOrUndefined Nothing), "ParameterApplyStatus": (NullOrUndefined Nothing), "ParameterName": (NullOrUndefined Nothing) }
+newClusterParameterStatus  = ClusterParameterStatus { "ParameterApplyErrorDescription": Nothing, "ParameterApplyStatus": Nothing, "ParameterName": Nothing }
 
 -- | Constructs ClusterParameterStatus's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newClusterParameterStatus' :: ( { "ParameterName" :: NullOrUndefined (String) , "ParameterApplyStatus" :: NullOrUndefined (String) , "ParameterApplyErrorDescription" :: NullOrUndefined (String) } -> {"ParameterName" :: NullOrUndefined (String) , "ParameterApplyStatus" :: NullOrUndefined (String) , "ParameterApplyErrorDescription" :: NullOrUndefined (String) } ) -> ClusterParameterStatus
-newClusterParameterStatus'  customize = (ClusterParameterStatus <<< customize) { "ParameterApplyErrorDescription": (NullOrUndefined Nothing), "ParameterApplyStatus": (NullOrUndefined Nothing), "ParameterName": (NullOrUndefined Nothing) }
+newClusterParameterStatus' :: ( { "ParameterName" :: Maybe (String) , "ParameterApplyStatus" :: Maybe (String) , "ParameterApplyErrorDescription" :: Maybe (String) } -> {"ParameterName" :: Maybe (String) , "ParameterApplyStatus" :: Maybe (String) , "ParameterApplyErrorDescription" :: Maybe (String) } ) -> ClusterParameterStatus
+newClusterParameterStatus'  customize = (ClusterParameterStatus <<< customize) { "ParameterApplyErrorDescription": Nothing, "ParameterApplyStatus": Nothing, "ParameterName": Nothing }
 
 
 
@@ -589,11 +588,11 @@ instance encodeClusterQuotaExceededFault :: Encode ClusterQuotaExceededFault whe
 
 -- | <p>Describes a security group.</p>
 newtype ClusterSecurityGroup = ClusterSecurityGroup 
-  { "ClusterSecurityGroupName" :: NullOrUndefined (String)
-  , "Description" :: NullOrUndefined (String)
-  , "EC2SecurityGroups" :: NullOrUndefined (EC2SecurityGroupList)
-  , "IPRanges" :: NullOrUndefined (IPRangeList)
-  , "Tags" :: NullOrUndefined (TagList)
+  { "ClusterSecurityGroupName" :: Maybe (String)
+  , "Description" :: Maybe (String)
+  , "EC2SecurityGroups" :: Maybe (EC2SecurityGroupList)
+  , "IPRanges" :: Maybe (IPRangeList)
+  , "Tags" :: Maybe (TagList)
   }
 derive instance newtypeClusterSecurityGroup :: Newtype ClusterSecurityGroup _
 derive instance repGenericClusterSecurityGroup :: Generic ClusterSecurityGroup _
@@ -603,12 +602,12 @@ instance encodeClusterSecurityGroup :: Encode ClusterSecurityGroup where encode 
 
 -- | Constructs ClusterSecurityGroup from required parameters
 newClusterSecurityGroup :: ClusterSecurityGroup
-newClusterSecurityGroup  = ClusterSecurityGroup { "ClusterSecurityGroupName": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "EC2SecurityGroups": (NullOrUndefined Nothing), "IPRanges": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newClusterSecurityGroup  = ClusterSecurityGroup { "ClusterSecurityGroupName": Nothing, "Description": Nothing, "EC2SecurityGroups": Nothing, "IPRanges": Nothing, "Tags": Nothing }
 
 -- | Constructs ClusterSecurityGroup's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newClusterSecurityGroup' :: ( { "ClusterSecurityGroupName" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "EC2SecurityGroups" :: NullOrUndefined (EC2SecurityGroupList) , "IPRanges" :: NullOrUndefined (IPRangeList) , "Tags" :: NullOrUndefined (TagList) } -> {"ClusterSecurityGroupName" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "EC2SecurityGroups" :: NullOrUndefined (EC2SecurityGroupList) , "IPRanges" :: NullOrUndefined (IPRangeList) , "Tags" :: NullOrUndefined (TagList) } ) -> ClusterSecurityGroup
-newClusterSecurityGroup'  customize = (ClusterSecurityGroup <<< customize) { "ClusterSecurityGroupName": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "EC2SecurityGroups": (NullOrUndefined Nothing), "IPRanges": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newClusterSecurityGroup' :: ( { "ClusterSecurityGroupName" :: Maybe (String) , "Description" :: Maybe (String) , "EC2SecurityGroups" :: Maybe (EC2SecurityGroupList) , "IPRanges" :: Maybe (IPRangeList) , "Tags" :: Maybe (TagList) } -> {"ClusterSecurityGroupName" :: Maybe (String) , "Description" :: Maybe (String) , "EC2SecurityGroups" :: Maybe (EC2SecurityGroupList) , "IPRanges" :: Maybe (IPRangeList) , "Tags" :: Maybe (TagList) } ) -> ClusterSecurityGroup
+newClusterSecurityGroup'  customize = (ClusterSecurityGroup <<< customize) { "ClusterSecurityGroupName": Nothing, "Description": Nothing, "EC2SecurityGroups": Nothing, "IPRanges": Nothing, "Tags": Nothing }
 
 
 
@@ -624,8 +623,8 @@ instance encodeClusterSecurityGroupAlreadyExistsFault :: Encode ClusterSecurityG
 
 -- | <p>Describes a cluster security group.</p>
 newtype ClusterSecurityGroupMembership = ClusterSecurityGroupMembership 
-  { "ClusterSecurityGroupName" :: NullOrUndefined (String)
-  , "Status" :: NullOrUndefined (String)
+  { "ClusterSecurityGroupName" :: Maybe (String)
+  , "Status" :: Maybe (String)
   }
 derive instance newtypeClusterSecurityGroupMembership :: Newtype ClusterSecurityGroupMembership _
 derive instance repGenericClusterSecurityGroupMembership :: Generic ClusterSecurityGroupMembership _
@@ -635,12 +634,12 @@ instance encodeClusterSecurityGroupMembership :: Encode ClusterSecurityGroupMemb
 
 -- | Constructs ClusterSecurityGroupMembership from required parameters
 newClusterSecurityGroupMembership :: ClusterSecurityGroupMembership
-newClusterSecurityGroupMembership  = ClusterSecurityGroupMembership { "ClusterSecurityGroupName": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newClusterSecurityGroupMembership  = ClusterSecurityGroupMembership { "ClusterSecurityGroupName": Nothing, "Status": Nothing }
 
 -- | Constructs ClusterSecurityGroupMembership's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newClusterSecurityGroupMembership' :: ( { "ClusterSecurityGroupName" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (String) } -> {"ClusterSecurityGroupName" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (String) } ) -> ClusterSecurityGroupMembership
-newClusterSecurityGroupMembership'  customize = (ClusterSecurityGroupMembership <<< customize) { "ClusterSecurityGroupName": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newClusterSecurityGroupMembership' :: ( { "ClusterSecurityGroupName" :: Maybe (String) , "Status" :: Maybe (String) } -> {"ClusterSecurityGroupName" :: Maybe (String) , "Status" :: Maybe (String) } ) -> ClusterSecurityGroupMembership
+newClusterSecurityGroupMembership'  customize = (ClusterSecurityGroupMembership <<< customize) { "ClusterSecurityGroupName": Nothing, "Status": Nothing }
 
 
 
@@ -655,8 +654,8 @@ instance encodeClusterSecurityGroupMembershipList :: Encode ClusterSecurityGroup
 
 -- | <p/>
 newtype ClusterSecurityGroupMessage = ClusterSecurityGroupMessage 
-  { "Marker" :: NullOrUndefined (String)
-  , "ClusterSecurityGroups" :: NullOrUndefined (ClusterSecurityGroups)
+  { "Marker" :: Maybe (String)
+  , "ClusterSecurityGroups" :: Maybe (ClusterSecurityGroups)
   }
 derive instance newtypeClusterSecurityGroupMessage :: Newtype ClusterSecurityGroupMessage _
 derive instance repGenericClusterSecurityGroupMessage :: Generic ClusterSecurityGroupMessage _
@@ -666,12 +665,12 @@ instance encodeClusterSecurityGroupMessage :: Encode ClusterSecurityGroupMessage
 
 -- | Constructs ClusterSecurityGroupMessage from required parameters
 newClusterSecurityGroupMessage :: ClusterSecurityGroupMessage
-newClusterSecurityGroupMessage  = ClusterSecurityGroupMessage { "ClusterSecurityGroups": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newClusterSecurityGroupMessage  = ClusterSecurityGroupMessage { "ClusterSecurityGroups": Nothing, "Marker": Nothing }
 
 -- | Constructs ClusterSecurityGroupMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newClusterSecurityGroupMessage' :: ( { "Marker" :: NullOrUndefined (String) , "ClusterSecurityGroups" :: NullOrUndefined (ClusterSecurityGroups) } -> {"Marker" :: NullOrUndefined (String) , "ClusterSecurityGroups" :: NullOrUndefined (ClusterSecurityGroups) } ) -> ClusterSecurityGroupMessage
-newClusterSecurityGroupMessage'  customize = (ClusterSecurityGroupMessage <<< customize) { "ClusterSecurityGroups": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newClusterSecurityGroupMessage' :: ( { "Marker" :: Maybe (String) , "ClusterSecurityGroups" :: Maybe (ClusterSecurityGroups) } -> {"Marker" :: Maybe (String) , "ClusterSecurityGroups" :: Maybe (ClusterSecurityGroups) } ) -> ClusterSecurityGroupMessage
+newClusterSecurityGroupMessage'  customize = (ClusterSecurityGroupMessage <<< customize) { "ClusterSecurityGroups": Nothing, "Marker": Nothing }
 
 
 
@@ -725,9 +724,9 @@ instance encodeClusterSnapshotAlreadyExistsFault :: Encode ClusterSnapshotAlread
 
 -- | <p>Returns the destination region and retention period that are configured for cross-region snapshot copy.</p>
 newtype ClusterSnapshotCopyStatus = ClusterSnapshotCopyStatus 
-  { "DestinationRegion" :: NullOrUndefined (String)
-  , "RetentionPeriod" :: NullOrUndefined (Number)
-  , "SnapshotCopyGrantName" :: NullOrUndefined (String)
+  { "DestinationRegion" :: Maybe (String)
+  , "RetentionPeriod" :: Maybe (Number)
+  , "SnapshotCopyGrantName" :: Maybe (String)
   }
 derive instance newtypeClusterSnapshotCopyStatus :: Newtype ClusterSnapshotCopyStatus _
 derive instance repGenericClusterSnapshotCopyStatus :: Generic ClusterSnapshotCopyStatus _
@@ -737,12 +736,12 @@ instance encodeClusterSnapshotCopyStatus :: Encode ClusterSnapshotCopyStatus whe
 
 -- | Constructs ClusterSnapshotCopyStatus from required parameters
 newClusterSnapshotCopyStatus :: ClusterSnapshotCopyStatus
-newClusterSnapshotCopyStatus  = ClusterSnapshotCopyStatus { "DestinationRegion": (NullOrUndefined Nothing), "RetentionPeriod": (NullOrUndefined Nothing), "SnapshotCopyGrantName": (NullOrUndefined Nothing) }
+newClusterSnapshotCopyStatus  = ClusterSnapshotCopyStatus { "DestinationRegion": Nothing, "RetentionPeriod": Nothing, "SnapshotCopyGrantName": Nothing }
 
 -- | Constructs ClusterSnapshotCopyStatus's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newClusterSnapshotCopyStatus' :: ( { "DestinationRegion" :: NullOrUndefined (String) , "RetentionPeriod" :: NullOrUndefined (Number) , "SnapshotCopyGrantName" :: NullOrUndefined (String) } -> {"DestinationRegion" :: NullOrUndefined (String) , "RetentionPeriod" :: NullOrUndefined (Number) , "SnapshotCopyGrantName" :: NullOrUndefined (String) } ) -> ClusterSnapshotCopyStatus
-newClusterSnapshotCopyStatus'  customize = (ClusterSnapshotCopyStatus <<< customize) { "DestinationRegion": (NullOrUndefined Nothing), "RetentionPeriod": (NullOrUndefined Nothing), "SnapshotCopyGrantName": (NullOrUndefined Nothing) }
+newClusterSnapshotCopyStatus' :: ( { "DestinationRegion" :: Maybe (String) , "RetentionPeriod" :: Maybe (Number) , "SnapshotCopyGrantName" :: Maybe (String) } -> {"DestinationRegion" :: Maybe (String) , "RetentionPeriod" :: Maybe (Number) , "SnapshotCopyGrantName" :: Maybe (String) } ) -> ClusterSnapshotCopyStatus
+newClusterSnapshotCopyStatus'  customize = (ClusterSnapshotCopyStatus <<< customize) { "DestinationRegion": Nothing, "RetentionPeriod": Nothing, "SnapshotCopyGrantName": Nothing }
 
 
 
@@ -768,12 +767,12 @@ instance encodeClusterSnapshotQuotaExceededFault :: Encode ClusterSnapshotQuotaE
 
 -- | <p>Describes a subnet group.</p>
 newtype ClusterSubnetGroup = ClusterSubnetGroup 
-  { "ClusterSubnetGroupName" :: NullOrUndefined (String)
-  , "Description" :: NullOrUndefined (String)
-  , "VpcId" :: NullOrUndefined (String)
-  , "SubnetGroupStatus" :: NullOrUndefined (String)
-  , "Subnets" :: NullOrUndefined (SubnetList)
-  , "Tags" :: NullOrUndefined (TagList)
+  { "ClusterSubnetGroupName" :: Maybe (String)
+  , "Description" :: Maybe (String)
+  , "VpcId" :: Maybe (String)
+  , "SubnetGroupStatus" :: Maybe (String)
+  , "Subnets" :: Maybe (SubnetList)
+  , "Tags" :: Maybe (TagList)
   }
 derive instance newtypeClusterSubnetGroup :: Newtype ClusterSubnetGroup _
 derive instance repGenericClusterSubnetGroup :: Generic ClusterSubnetGroup _
@@ -783,12 +782,12 @@ instance encodeClusterSubnetGroup :: Encode ClusterSubnetGroup where encode = ge
 
 -- | Constructs ClusterSubnetGroup from required parameters
 newClusterSubnetGroup :: ClusterSubnetGroup
-newClusterSubnetGroup  = ClusterSubnetGroup { "ClusterSubnetGroupName": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "SubnetGroupStatus": (NullOrUndefined Nothing), "Subnets": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing), "VpcId": (NullOrUndefined Nothing) }
+newClusterSubnetGroup  = ClusterSubnetGroup { "ClusterSubnetGroupName": Nothing, "Description": Nothing, "SubnetGroupStatus": Nothing, "Subnets": Nothing, "Tags": Nothing, "VpcId": Nothing }
 
 -- | Constructs ClusterSubnetGroup's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newClusterSubnetGroup' :: ( { "ClusterSubnetGroupName" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "VpcId" :: NullOrUndefined (String) , "SubnetGroupStatus" :: NullOrUndefined (String) , "Subnets" :: NullOrUndefined (SubnetList) , "Tags" :: NullOrUndefined (TagList) } -> {"ClusterSubnetGroupName" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "VpcId" :: NullOrUndefined (String) , "SubnetGroupStatus" :: NullOrUndefined (String) , "Subnets" :: NullOrUndefined (SubnetList) , "Tags" :: NullOrUndefined (TagList) } ) -> ClusterSubnetGroup
-newClusterSubnetGroup'  customize = (ClusterSubnetGroup <<< customize) { "ClusterSubnetGroupName": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "SubnetGroupStatus": (NullOrUndefined Nothing), "Subnets": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing), "VpcId": (NullOrUndefined Nothing) }
+newClusterSubnetGroup' :: ( { "ClusterSubnetGroupName" :: Maybe (String) , "Description" :: Maybe (String) , "VpcId" :: Maybe (String) , "SubnetGroupStatus" :: Maybe (String) , "Subnets" :: Maybe (SubnetList) , "Tags" :: Maybe (TagList) } -> {"ClusterSubnetGroupName" :: Maybe (String) , "Description" :: Maybe (String) , "VpcId" :: Maybe (String) , "SubnetGroupStatus" :: Maybe (String) , "Subnets" :: Maybe (SubnetList) , "Tags" :: Maybe (TagList) } ) -> ClusterSubnetGroup
+newClusterSubnetGroup'  customize = (ClusterSubnetGroup <<< customize) { "ClusterSubnetGroupName": Nothing, "Description": Nothing, "SubnetGroupStatus": Nothing, "Subnets": Nothing, "Tags": Nothing, "VpcId": Nothing }
 
 
 
@@ -804,8 +803,8 @@ instance encodeClusterSubnetGroupAlreadyExistsFault :: Encode ClusterSubnetGroup
 
 -- | <p>Contains the output from the <a>DescribeClusterSubnetGroups</a> action. </p>
 newtype ClusterSubnetGroupMessage = ClusterSubnetGroupMessage 
-  { "Marker" :: NullOrUndefined (String)
-  , "ClusterSubnetGroups" :: NullOrUndefined (ClusterSubnetGroups)
+  { "Marker" :: Maybe (String)
+  , "ClusterSubnetGroups" :: Maybe (ClusterSubnetGroups)
   }
 derive instance newtypeClusterSubnetGroupMessage :: Newtype ClusterSubnetGroupMessage _
 derive instance repGenericClusterSubnetGroupMessage :: Generic ClusterSubnetGroupMessage _
@@ -815,12 +814,12 @@ instance encodeClusterSubnetGroupMessage :: Encode ClusterSubnetGroupMessage whe
 
 -- | Constructs ClusterSubnetGroupMessage from required parameters
 newClusterSubnetGroupMessage :: ClusterSubnetGroupMessage
-newClusterSubnetGroupMessage  = ClusterSubnetGroupMessage { "ClusterSubnetGroups": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newClusterSubnetGroupMessage  = ClusterSubnetGroupMessage { "ClusterSubnetGroups": Nothing, "Marker": Nothing }
 
 -- | Constructs ClusterSubnetGroupMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newClusterSubnetGroupMessage' :: ( { "Marker" :: NullOrUndefined (String) , "ClusterSubnetGroups" :: NullOrUndefined (ClusterSubnetGroups) } -> {"Marker" :: NullOrUndefined (String) , "ClusterSubnetGroups" :: NullOrUndefined (ClusterSubnetGroups) } ) -> ClusterSubnetGroupMessage
-newClusterSubnetGroupMessage'  customize = (ClusterSubnetGroupMessage <<< customize) { "ClusterSubnetGroups": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newClusterSubnetGroupMessage' :: ( { "Marker" :: Maybe (String) , "ClusterSubnetGroups" :: Maybe (ClusterSubnetGroups) } -> {"Marker" :: Maybe (String) , "ClusterSubnetGroups" :: Maybe (ClusterSubnetGroups) } ) -> ClusterSubnetGroupMessage
+newClusterSubnetGroupMessage'  customize = (ClusterSubnetGroupMessage <<< customize) { "ClusterSubnetGroups": Nothing, "Marker": Nothing }
 
 
 
@@ -865,9 +864,9 @@ instance encodeClusterSubnetQuotaExceededFault :: Encode ClusterSubnetQuotaExcee
 
 -- | <p>Describes a cluster version, including the parameter group family and description of the version.</p>
 newtype ClusterVersion = ClusterVersion 
-  { "ClusterVersion" :: NullOrUndefined (String)
-  , "ClusterParameterGroupFamily" :: NullOrUndefined (String)
-  , "Description" :: NullOrUndefined (String)
+  { "ClusterVersion" :: Maybe (String)
+  , "ClusterParameterGroupFamily" :: Maybe (String)
+  , "Description" :: Maybe (String)
   }
 derive instance newtypeClusterVersion :: Newtype ClusterVersion _
 derive instance repGenericClusterVersion :: Generic ClusterVersion _
@@ -877,12 +876,12 @@ instance encodeClusterVersion :: Encode ClusterVersion where encode = genericEnc
 
 -- | Constructs ClusterVersion from required parameters
 newClusterVersion :: ClusterVersion
-newClusterVersion  = ClusterVersion { "ClusterParameterGroupFamily": (NullOrUndefined Nothing), "ClusterVersion": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing) }
+newClusterVersion  = ClusterVersion { "ClusterParameterGroupFamily": Nothing, "ClusterVersion": Nothing, "Description": Nothing }
 
 -- | Constructs ClusterVersion's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newClusterVersion' :: ( { "ClusterVersion" :: NullOrUndefined (String) , "ClusterParameterGroupFamily" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) } -> {"ClusterVersion" :: NullOrUndefined (String) , "ClusterParameterGroupFamily" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) } ) -> ClusterVersion
-newClusterVersion'  customize = (ClusterVersion <<< customize) { "ClusterParameterGroupFamily": (NullOrUndefined Nothing), "ClusterVersion": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing) }
+newClusterVersion' :: ( { "ClusterVersion" :: Maybe (String) , "ClusterParameterGroupFamily" :: Maybe (String) , "Description" :: Maybe (String) } -> {"ClusterVersion" :: Maybe (String) , "ClusterParameterGroupFamily" :: Maybe (String) , "Description" :: Maybe (String) } ) -> ClusterVersion
+newClusterVersion'  customize = (ClusterVersion <<< customize) { "ClusterParameterGroupFamily": Nothing, "ClusterVersion": Nothing, "Description": Nothing }
 
 
 
@@ -897,8 +896,8 @@ instance encodeClusterVersionList :: Encode ClusterVersionList where encode = ge
 
 -- | <p>Contains the output from the <a>DescribeClusterVersions</a> action. </p>
 newtype ClusterVersionsMessage = ClusterVersionsMessage 
-  { "Marker" :: NullOrUndefined (String)
-  , "ClusterVersions" :: NullOrUndefined (ClusterVersionList)
+  { "Marker" :: Maybe (String)
+  , "ClusterVersions" :: Maybe (ClusterVersionList)
   }
 derive instance newtypeClusterVersionsMessage :: Newtype ClusterVersionsMessage _
 derive instance repGenericClusterVersionsMessage :: Generic ClusterVersionsMessage _
@@ -908,19 +907,19 @@ instance encodeClusterVersionsMessage :: Encode ClusterVersionsMessage where enc
 
 -- | Constructs ClusterVersionsMessage from required parameters
 newClusterVersionsMessage :: ClusterVersionsMessage
-newClusterVersionsMessage  = ClusterVersionsMessage { "ClusterVersions": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newClusterVersionsMessage  = ClusterVersionsMessage { "ClusterVersions": Nothing, "Marker": Nothing }
 
 -- | Constructs ClusterVersionsMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newClusterVersionsMessage' :: ( { "Marker" :: NullOrUndefined (String) , "ClusterVersions" :: NullOrUndefined (ClusterVersionList) } -> {"Marker" :: NullOrUndefined (String) , "ClusterVersions" :: NullOrUndefined (ClusterVersionList) } ) -> ClusterVersionsMessage
-newClusterVersionsMessage'  customize = (ClusterVersionsMessage <<< customize) { "ClusterVersions": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newClusterVersionsMessage' :: ( { "Marker" :: Maybe (String) , "ClusterVersions" :: Maybe (ClusterVersionList) } -> {"Marker" :: Maybe (String) , "ClusterVersions" :: Maybe (ClusterVersionList) } ) -> ClusterVersionsMessage
+newClusterVersionsMessage'  customize = (ClusterVersionsMessage <<< customize) { "ClusterVersions": Nothing, "Marker": Nothing }
 
 
 
 -- | <p>Contains the output from the <a>DescribeClusters</a> action. </p>
 newtype ClustersMessage = ClustersMessage 
-  { "Marker" :: NullOrUndefined (String)
-  , "Clusters" :: NullOrUndefined (ClusterList)
+  { "Marker" :: Maybe (String)
+  , "Clusters" :: Maybe (ClusterList)
   }
 derive instance newtypeClustersMessage :: Newtype ClustersMessage _
 derive instance repGenericClustersMessage :: Generic ClustersMessage _
@@ -930,19 +929,19 @@ instance encodeClustersMessage :: Encode ClustersMessage where encode = genericE
 
 -- | Constructs ClustersMessage from required parameters
 newClustersMessage :: ClustersMessage
-newClustersMessage  = ClustersMessage { "Clusters": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newClustersMessage  = ClustersMessage { "Clusters": Nothing, "Marker": Nothing }
 
 -- | Constructs ClustersMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newClustersMessage' :: ( { "Marker" :: NullOrUndefined (String) , "Clusters" :: NullOrUndefined (ClusterList) } -> {"Marker" :: NullOrUndefined (String) , "Clusters" :: NullOrUndefined (ClusterList) } ) -> ClustersMessage
-newClustersMessage'  customize = (ClustersMessage <<< customize) { "Clusters": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newClustersMessage' :: ( { "Marker" :: Maybe (String) , "Clusters" :: Maybe (ClusterList) } -> {"Marker" :: Maybe (String) , "Clusters" :: Maybe (ClusterList) } ) -> ClustersMessage
+newClustersMessage'  customize = (ClustersMessage <<< customize) { "Clusters": Nothing, "Marker": Nothing }
 
 
 
 -- | <p/>
 newtype CopyClusterSnapshotMessage = CopyClusterSnapshotMessage 
   { "SourceSnapshotIdentifier" :: (String)
-  , "SourceSnapshotClusterIdentifier" :: NullOrUndefined (String)
+  , "SourceSnapshotClusterIdentifier" :: Maybe (String)
   , "TargetSnapshotIdentifier" :: (String)
   }
 derive instance newtypeCopyClusterSnapshotMessage :: Newtype CopyClusterSnapshotMessage _
@@ -953,17 +952,17 @@ instance encodeCopyClusterSnapshotMessage :: Encode CopyClusterSnapshotMessage w
 
 -- | Constructs CopyClusterSnapshotMessage from required parameters
 newCopyClusterSnapshotMessage :: String -> String -> CopyClusterSnapshotMessage
-newCopyClusterSnapshotMessage _SourceSnapshotIdentifier _TargetSnapshotIdentifier = CopyClusterSnapshotMessage { "SourceSnapshotIdentifier": _SourceSnapshotIdentifier, "TargetSnapshotIdentifier": _TargetSnapshotIdentifier, "SourceSnapshotClusterIdentifier": (NullOrUndefined Nothing) }
+newCopyClusterSnapshotMessage _SourceSnapshotIdentifier _TargetSnapshotIdentifier = CopyClusterSnapshotMessage { "SourceSnapshotIdentifier": _SourceSnapshotIdentifier, "TargetSnapshotIdentifier": _TargetSnapshotIdentifier, "SourceSnapshotClusterIdentifier": Nothing }
 
 -- | Constructs CopyClusterSnapshotMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCopyClusterSnapshotMessage' :: String -> String -> ( { "SourceSnapshotIdentifier" :: (String) , "SourceSnapshotClusterIdentifier" :: NullOrUndefined (String) , "TargetSnapshotIdentifier" :: (String) } -> {"SourceSnapshotIdentifier" :: (String) , "SourceSnapshotClusterIdentifier" :: NullOrUndefined (String) , "TargetSnapshotIdentifier" :: (String) } ) -> CopyClusterSnapshotMessage
-newCopyClusterSnapshotMessage' _SourceSnapshotIdentifier _TargetSnapshotIdentifier customize = (CopyClusterSnapshotMessage <<< customize) { "SourceSnapshotIdentifier": _SourceSnapshotIdentifier, "TargetSnapshotIdentifier": _TargetSnapshotIdentifier, "SourceSnapshotClusterIdentifier": (NullOrUndefined Nothing) }
+newCopyClusterSnapshotMessage' :: String -> String -> ( { "SourceSnapshotIdentifier" :: (String) , "SourceSnapshotClusterIdentifier" :: Maybe (String) , "TargetSnapshotIdentifier" :: (String) } -> {"SourceSnapshotIdentifier" :: (String) , "SourceSnapshotClusterIdentifier" :: Maybe (String) , "TargetSnapshotIdentifier" :: (String) } ) -> CopyClusterSnapshotMessage
+newCopyClusterSnapshotMessage' _SourceSnapshotIdentifier _TargetSnapshotIdentifier customize = (CopyClusterSnapshotMessage <<< customize) { "SourceSnapshotIdentifier": _SourceSnapshotIdentifier, "TargetSnapshotIdentifier": _TargetSnapshotIdentifier, "SourceSnapshotClusterIdentifier": Nothing }
 
 
 
 newtype CopyClusterSnapshotResult = CopyClusterSnapshotResult 
-  { "Snapshot" :: NullOrUndefined (Snapshot)
+  { "Snapshot" :: Maybe (Snapshot)
   }
 derive instance newtypeCopyClusterSnapshotResult :: Newtype CopyClusterSnapshotResult _
 derive instance repGenericCopyClusterSnapshotResult :: Generic CopyClusterSnapshotResult _
@@ -973,12 +972,12 @@ instance encodeCopyClusterSnapshotResult :: Encode CopyClusterSnapshotResult whe
 
 -- | Constructs CopyClusterSnapshotResult from required parameters
 newCopyClusterSnapshotResult :: CopyClusterSnapshotResult
-newCopyClusterSnapshotResult  = CopyClusterSnapshotResult { "Snapshot": (NullOrUndefined Nothing) }
+newCopyClusterSnapshotResult  = CopyClusterSnapshotResult { "Snapshot": Nothing }
 
 -- | Constructs CopyClusterSnapshotResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCopyClusterSnapshotResult' :: ( { "Snapshot" :: NullOrUndefined (Snapshot) } -> {"Snapshot" :: NullOrUndefined (Snapshot) } ) -> CopyClusterSnapshotResult
-newCopyClusterSnapshotResult'  customize = (CopyClusterSnapshotResult <<< customize) { "Snapshot": (NullOrUndefined Nothing) }
+newCopyClusterSnapshotResult' :: ( { "Snapshot" :: Maybe (Snapshot) } -> {"Snapshot" :: Maybe (Snapshot) } ) -> CopyClusterSnapshotResult
+newCopyClusterSnapshotResult'  customize = (CopyClusterSnapshotResult <<< customize) { "Snapshot": Nothing }
 
 
 
@@ -994,33 +993,33 @@ instance encodeCopyToRegionDisabledFault :: Encode CopyToRegionDisabledFault whe
 
 -- | <p/>
 newtype CreateClusterMessage = CreateClusterMessage 
-  { "DBName" :: NullOrUndefined (String)
+  { "DBName" :: Maybe (String)
   , "ClusterIdentifier" :: (String)
-  , "ClusterType" :: NullOrUndefined (String)
+  , "ClusterType" :: Maybe (String)
   , "NodeType" :: (String)
   , "MasterUsername" :: (String)
   , "MasterUserPassword" :: (String)
-  , "ClusterSecurityGroups" :: NullOrUndefined (ClusterSecurityGroupNameList)
-  , "VpcSecurityGroupIds" :: NullOrUndefined (VpcSecurityGroupIdList)
-  , "ClusterSubnetGroupName" :: NullOrUndefined (String)
-  , "AvailabilityZone" :: NullOrUndefined (String)
-  , "PreferredMaintenanceWindow" :: NullOrUndefined (String)
-  , "ClusterParameterGroupName" :: NullOrUndefined (String)
-  , "AutomatedSnapshotRetentionPeriod" :: NullOrUndefined (IntegerOptional)
-  , "Port" :: NullOrUndefined (IntegerOptional)
-  , "ClusterVersion" :: NullOrUndefined (String)
-  , "AllowVersionUpgrade" :: NullOrUndefined (BooleanOptional)
-  , "NumberOfNodes" :: NullOrUndefined (IntegerOptional)
-  , "PubliclyAccessible" :: NullOrUndefined (BooleanOptional)
-  , "Encrypted" :: NullOrUndefined (BooleanOptional)
-  , "HsmClientCertificateIdentifier" :: NullOrUndefined (String)
-  , "HsmConfigurationIdentifier" :: NullOrUndefined (String)
-  , "ElasticIp" :: NullOrUndefined (String)
-  , "Tags" :: NullOrUndefined (TagList)
-  , "KmsKeyId" :: NullOrUndefined (String)
-  , "EnhancedVpcRouting" :: NullOrUndefined (BooleanOptional)
-  , "AdditionalInfo" :: NullOrUndefined (String)
-  , "IamRoles" :: NullOrUndefined (IamRoleArnList)
+  , "ClusterSecurityGroups" :: Maybe (ClusterSecurityGroupNameList)
+  , "VpcSecurityGroupIds" :: Maybe (VpcSecurityGroupIdList)
+  , "ClusterSubnetGroupName" :: Maybe (String)
+  , "AvailabilityZone" :: Maybe (String)
+  , "PreferredMaintenanceWindow" :: Maybe (String)
+  , "ClusterParameterGroupName" :: Maybe (String)
+  , "AutomatedSnapshotRetentionPeriod" :: Maybe (IntegerOptional)
+  , "Port" :: Maybe (IntegerOptional)
+  , "ClusterVersion" :: Maybe (String)
+  , "AllowVersionUpgrade" :: Maybe (BooleanOptional)
+  , "NumberOfNodes" :: Maybe (IntegerOptional)
+  , "PubliclyAccessible" :: Maybe (BooleanOptional)
+  , "Encrypted" :: Maybe (BooleanOptional)
+  , "HsmClientCertificateIdentifier" :: Maybe (String)
+  , "HsmConfigurationIdentifier" :: Maybe (String)
+  , "ElasticIp" :: Maybe (String)
+  , "Tags" :: Maybe (TagList)
+  , "KmsKeyId" :: Maybe (String)
+  , "EnhancedVpcRouting" :: Maybe (BooleanOptional)
+  , "AdditionalInfo" :: Maybe (String)
+  , "IamRoles" :: Maybe (IamRoleArnList)
   }
 derive instance newtypeCreateClusterMessage :: Newtype CreateClusterMessage _
 derive instance repGenericCreateClusterMessage :: Generic CreateClusterMessage _
@@ -1030,12 +1029,12 @@ instance encodeCreateClusterMessage :: Encode CreateClusterMessage where encode 
 
 -- | Constructs CreateClusterMessage from required parameters
 newCreateClusterMessage :: String -> String -> String -> String -> CreateClusterMessage
-newCreateClusterMessage _ClusterIdentifier _MasterUserPassword _MasterUsername _NodeType = CreateClusterMessage { "ClusterIdentifier": _ClusterIdentifier, "MasterUserPassword": _MasterUserPassword, "MasterUsername": _MasterUsername, "NodeType": _NodeType, "AdditionalInfo": (NullOrUndefined Nothing), "AllowVersionUpgrade": (NullOrUndefined Nothing), "AutomatedSnapshotRetentionPeriod": (NullOrUndefined Nothing), "AvailabilityZone": (NullOrUndefined Nothing), "ClusterParameterGroupName": (NullOrUndefined Nothing), "ClusterSecurityGroups": (NullOrUndefined Nothing), "ClusterSubnetGroupName": (NullOrUndefined Nothing), "ClusterType": (NullOrUndefined Nothing), "ClusterVersion": (NullOrUndefined Nothing), "DBName": (NullOrUndefined Nothing), "ElasticIp": (NullOrUndefined Nothing), "Encrypted": (NullOrUndefined Nothing), "EnhancedVpcRouting": (NullOrUndefined Nothing), "HsmClientCertificateIdentifier": (NullOrUndefined Nothing), "HsmConfigurationIdentifier": (NullOrUndefined Nothing), "IamRoles": (NullOrUndefined Nothing), "KmsKeyId": (NullOrUndefined Nothing), "NumberOfNodes": (NullOrUndefined Nothing), "Port": (NullOrUndefined Nothing), "PreferredMaintenanceWindow": (NullOrUndefined Nothing), "PubliclyAccessible": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing), "VpcSecurityGroupIds": (NullOrUndefined Nothing) }
+newCreateClusterMessage _ClusterIdentifier _MasterUserPassword _MasterUsername _NodeType = CreateClusterMessage { "ClusterIdentifier": _ClusterIdentifier, "MasterUserPassword": _MasterUserPassword, "MasterUsername": _MasterUsername, "NodeType": _NodeType, "AdditionalInfo": Nothing, "AllowVersionUpgrade": Nothing, "AutomatedSnapshotRetentionPeriod": Nothing, "AvailabilityZone": Nothing, "ClusterParameterGroupName": Nothing, "ClusterSecurityGroups": Nothing, "ClusterSubnetGroupName": Nothing, "ClusterType": Nothing, "ClusterVersion": Nothing, "DBName": Nothing, "ElasticIp": Nothing, "Encrypted": Nothing, "EnhancedVpcRouting": Nothing, "HsmClientCertificateIdentifier": Nothing, "HsmConfigurationIdentifier": Nothing, "IamRoles": Nothing, "KmsKeyId": Nothing, "NumberOfNodes": Nothing, "Port": Nothing, "PreferredMaintenanceWindow": Nothing, "PubliclyAccessible": Nothing, "Tags": Nothing, "VpcSecurityGroupIds": Nothing }
 
 -- | Constructs CreateClusterMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateClusterMessage' :: String -> String -> String -> String -> ( { "DBName" :: NullOrUndefined (String) , "ClusterIdentifier" :: (String) , "ClusterType" :: NullOrUndefined (String) , "NodeType" :: (String) , "MasterUsername" :: (String) , "MasterUserPassword" :: (String) , "ClusterSecurityGroups" :: NullOrUndefined (ClusterSecurityGroupNameList) , "VpcSecurityGroupIds" :: NullOrUndefined (VpcSecurityGroupIdList) , "ClusterSubnetGroupName" :: NullOrUndefined (String) , "AvailabilityZone" :: NullOrUndefined (String) , "PreferredMaintenanceWindow" :: NullOrUndefined (String) , "ClusterParameterGroupName" :: NullOrUndefined (String) , "AutomatedSnapshotRetentionPeriod" :: NullOrUndefined (IntegerOptional) , "Port" :: NullOrUndefined (IntegerOptional) , "ClusterVersion" :: NullOrUndefined (String) , "AllowVersionUpgrade" :: NullOrUndefined (BooleanOptional) , "NumberOfNodes" :: NullOrUndefined (IntegerOptional) , "PubliclyAccessible" :: NullOrUndefined (BooleanOptional) , "Encrypted" :: NullOrUndefined (BooleanOptional) , "HsmClientCertificateIdentifier" :: NullOrUndefined (String) , "HsmConfigurationIdentifier" :: NullOrUndefined (String) , "ElasticIp" :: NullOrUndefined (String) , "Tags" :: NullOrUndefined (TagList) , "KmsKeyId" :: NullOrUndefined (String) , "EnhancedVpcRouting" :: NullOrUndefined (BooleanOptional) , "AdditionalInfo" :: NullOrUndefined (String) , "IamRoles" :: NullOrUndefined (IamRoleArnList) } -> {"DBName" :: NullOrUndefined (String) , "ClusterIdentifier" :: (String) , "ClusterType" :: NullOrUndefined (String) , "NodeType" :: (String) , "MasterUsername" :: (String) , "MasterUserPassword" :: (String) , "ClusterSecurityGroups" :: NullOrUndefined (ClusterSecurityGroupNameList) , "VpcSecurityGroupIds" :: NullOrUndefined (VpcSecurityGroupIdList) , "ClusterSubnetGroupName" :: NullOrUndefined (String) , "AvailabilityZone" :: NullOrUndefined (String) , "PreferredMaintenanceWindow" :: NullOrUndefined (String) , "ClusterParameterGroupName" :: NullOrUndefined (String) , "AutomatedSnapshotRetentionPeriod" :: NullOrUndefined (IntegerOptional) , "Port" :: NullOrUndefined (IntegerOptional) , "ClusterVersion" :: NullOrUndefined (String) , "AllowVersionUpgrade" :: NullOrUndefined (BooleanOptional) , "NumberOfNodes" :: NullOrUndefined (IntegerOptional) , "PubliclyAccessible" :: NullOrUndefined (BooleanOptional) , "Encrypted" :: NullOrUndefined (BooleanOptional) , "HsmClientCertificateIdentifier" :: NullOrUndefined (String) , "HsmConfigurationIdentifier" :: NullOrUndefined (String) , "ElasticIp" :: NullOrUndefined (String) , "Tags" :: NullOrUndefined (TagList) , "KmsKeyId" :: NullOrUndefined (String) , "EnhancedVpcRouting" :: NullOrUndefined (BooleanOptional) , "AdditionalInfo" :: NullOrUndefined (String) , "IamRoles" :: NullOrUndefined (IamRoleArnList) } ) -> CreateClusterMessage
-newCreateClusterMessage' _ClusterIdentifier _MasterUserPassword _MasterUsername _NodeType customize = (CreateClusterMessage <<< customize) { "ClusterIdentifier": _ClusterIdentifier, "MasterUserPassword": _MasterUserPassword, "MasterUsername": _MasterUsername, "NodeType": _NodeType, "AdditionalInfo": (NullOrUndefined Nothing), "AllowVersionUpgrade": (NullOrUndefined Nothing), "AutomatedSnapshotRetentionPeriod": (NullOrUndefined Nothing), "AvailabilityZone": (NullOrUndefined Nothing), "ClusterParameterGroupName": (NullOrUndefined Nothing), "ClusterSecurityGroups": (NullOrUndefined Nothing), "ClusterSubnetGroupName": (NullOrUndefined Nothing), "ClusterType": (NullOrUndefined Nothing), "ClusterVersion": (NullOrUndefined Nothing), "DBName": (NullOrUndefined Nothing), "ElasticIp": (NullOrUndefined Nothing), "Encrypted": (NullOrUndefined Nothing), "EnhancedVpcRouting": (NullOrUndefined Nothing), "HsmClientCertificateIdentifier": (NullOrUndefined Nothing), "HsmConfigurationIdentifier": (NullOrUndefined Nothing), "IamRoles": (NullOrUndefined Nothing), "KmsKeyId": (NullOrUndefined Nothing), "NumberOfNodes": (NullOrUndefined Nothing), "Port": (NullOrUndefined Nothing), "PreferredMaintenanceWindow": (NullOrUndefined Nothing), "PubliclyAccessible": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing), "VpcSecurityGroupIds": (NullOrUndefined Nothing) }
+newCreateClusterMessage' :: String -> String -> String -> String -> ( { "DBName" :: Maybe (String) , "ClusterIdentifier" :: (String) , "ClusterType" :: Maybe (String) , "NodeType" :: (String) , "MasterUsername" :: (String) , "MasterUserPassword" :: (String) , "ClusterSecurityGroups" :: Maybe (ClusterSecurityGroupNameList) , "VpcSecurityGroupIds" :: Maybe (VpcSecurityGroupIdList) , "ClusterSubnetGroupName" :: Maybe (String) , "AvailabilityZone" :: Maybe (String) , "PreferredMaintenanceWindow" :: Maybe (String) , "ClusterParameterGroupName" :: Maybe (String) , "AutomatedSnapshotRetentionPeriod" :: Maybe (IntegerOptional) , "Port" :: Maybe (IntegerOptional) , "ClusterVersion" :: Maybe (String) , "AllowVersionUpgrade" :: Maybe (BooleanOptional) , "NumberOfNodes" :: Maybe (IntegerOptional) , "PubliclyAccessible" :: Maybe (BooleanOptional) , "Encrypted" :: Maybe (BooleanOptional) , "HsmClientCertificateIdentifier" :: Maybe (String) , "HsmConfigurationIdentifier" :: Maybe (String) , "ElasticIp" :: Maybe (String) , "Tags" :: Maybe (TagList) , "KmsKeyId" :: Maybe (String) , "EnhancedVpcRouting" :: Maybe (BooleanOptional) , "AdditionalInfo" :: Maybe (String) , "IamRoles" :: Maybe (IamRoleArnList) } -> {"DBName" :: Maybe (String) , "ClusterIdentifier" :: (String) , "ClusterType" :: Maybe (String) , "NodeType" :: (String) , "MasterUsername" :: (String) , "MasterUserPassword" :: (String) , "ClusterSecurityGroups" :: Maybe (ClusterSecurityGroupNameList) , "VpcSecurityGroupIds" :: Maybe (VpcSecurityGroupIdList) , "ClusterSubnetGroupName" :: Maybe (String) , "AvailabilityZone" :: Maybe (String) , "PreferredMaintenanceWindow" :: Maybe (String) , "ClusterParameterGroupName" :: Maybe (String) , "AutomatedSnapshotRetentionPeriod" :: Maybe (IntegerOptional) , "Port" :: Maybe (IntegerOptional) , "ClusterVersion" :: Maybe (String) , "AllowVersionUpgrade" :: Maybe (BooleanOptional) , "NumberOfNodes" :: Maybe (IntegerOptional) , "PubliclyAccessible" :: Maybe (BooleanOptional) , "Encrypted" :: Maybe (BooleanOptional) , "HsmClientCertificateIdentifier" :: Maybe (String) , "HsmConfigurationIdentifier" :: Maybe (String) , "ElasticIp" :: Maybe (String) , "Tags" :: Maybe (TagList) , "KmsKeyId" :: Maybe (String) , "EnhancedVpcRouting" :: Maybe (BooleanOptional) , "AdditionalInfo" :: Maybe (String) , "IamRoles" :: Maybe (IamRoleArnList) } ) -> CreateClusterMessage
+newCreateClusterMessage' _ClusterIdentifier _MasterUserPassword _MasterUsername _NodeType customize = (CreateClusterMessage <<< customize) { "ClusterIdentifier": _ClusterIdentifier, "MasterUserPassword": _MasterUserPassword, "MasterUsername": _MasterUsername, "NodeType": _NodeType, "AdditionalInfo": Nothing, "AllowVersionUpgrade": Nothing, "AutomatedSnapshotRetentionPeriod": Nothing, "AvailabilityZone": Nothing, "ClusterParameterGroupName": Nothing, "ClusterSecurityGroups": Nothing, "ClusterSubnetGroupName": Nothing, "ClusterType": Nothing, "ClusterVersion": Nothing, "DBName": Nothing, "ElasticIp": Nothing, "Encrypted": Nothing, "EnhancedVpcRouting": Nothing, "HsmClientCertificateIdentifier": Nothing, "HsmConfigurationIdentifier": Nothing, "IamRoles": Nothing, "KmsKeyId": Nothing, "NumberOfNodes": Nothing, "Port": Nothing, "PreferredMaintenanceWindow": Nothing, "PubliclyAccessible": Nothing, "Tags": Nothing, "VpcSecurityGroupIds": Nothing }
 
 
 
@@ -1044,7 +1043,7 @@ newtype CreateClusterParameterGroupMessage = CreateClusterParameterGroupMessage
   { "ParameterGroupName" :: (String)
   , "ParameterGroupFamily" :: (String)
   , "Description" :: (String)
-  , "Tags" :: NullOrUndefined (TagList)
+  , "Tags" :: Maybe (TagList)
   }
 derive instance newtypeCreateClusterParameterGroupMessage :: Newtype CreateClusterParameterGroupMessage _
 derive instance repGenericCreateClusterParameterGroupMessage :: Generic CreateClusterParameterGroupMessage _
@@ -1054,17 +1053,17 @@ instance encodeCreateClusterParameterGroupMessage :: Encode CreateClusterParamet
 
 -- | Constructs CreateClusterParameterGroupMessage from required parameters
 newCreateClusterParameterGroupMessage :: String -> String -> String -> CreateClusterParameterGroupMessage
-newCreateClusterParameterGroupMessage _Description _ParameterGroupFamily _ParameterGroupName = CreateClusterParameterGroupMessage { "Description": _Description, "ParameterGroupFamily": _ParameterGroupFamily, "ParameterGroupName": _ParameterGroupName, "Tags": (NullOrUndefined Nothing) }
+newCreateClusterParameterGroupMessage _Description _ParameterGroupFamily _ParameterGroupName = CreateClusterParameterGroupMessage { "Description": _Description, "ParameterGroupFamily": _ParameterGroupFamily, "ParameterGroupName": _ParameterGroupName, "Tags": Nothing }
 
 -- | Constructs CreateClusterParameterGroupMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateClusterParameterGroupMessage' :: String -> String -> String -> ( { "ParameterGroupName" :: (String) , "ParameterGroupFamily" :: (String) , "Description" :: (String) , "Tags" :: NullOrUndefined (TagList) } -> {"ParameterGroupName" :: (String) , "ParameterGroupFamily" :: (String) , "Description" :: (String) , "Tags" :: NullOrUndefined (TagList) } ) -> CreateClusterParameterGroupMessage
-newCreateClusterParameterGroupMessage' _Description _ParameterGroupFamily _ParameterGroupName customize = (CreateClusterParameterGroupMessage <<< customize) { "Description": _Description, "ParameterGroupFamily": _ParameterGroupFamily, "ParameterGroupName": _ParameterGroupName, "Tags": (NullOrUndefined Nothing) }
+newCreateClusterParameterGroupMessage' :: String -> String -> String -> ( { "ParameterGroupName" :: (String) , "ParameterGroupFamily" :: (String) , "Description" :: (String) , "Tags" :: Maybe (TagList) } -> {"ParameterGroupName" :: (String) , "ParameterGroupFamily" :: (String) , "Description" :: (String) , "Tags" :: Maybe (TagList) } ) -> CreateClusterParameterGroupMessage
+newCreateClusterParameterGroupMessage' _Description _ParameterGroupFamily _ParameterGroupName customize = (CreateClusterParameterGroupMessage <<< customize) { "Description": _Description, "ParameterGroupFamily": _ParameterGroupFamily, "ParameterGroupName": _ParameterGroupName, "Tags": Nothing }
 
 
 
 newtype CreateClusterParameterGroupResult = CreateClusterParameterGroupResult 
-  { "ClusterParameterGroup" :: NullOrUndefined (ClusterParameterGroup)
+  { "ClusterParameterGroup" :: Maybe (ClusterParameterGroup)
   }
 derive instance newtypeCreateClusterParameterGroupResult :: Newtype CreateClusterParameterGroupResult _
 derive instance repGenericCreateClusterParameterGroupResult :: Generic CreateClusterParameterGroupResult _
@@ -1074,17 +1073,17 @@ instance encodeCreateClusterParameterGroupResult :: Encode CreateClusterParamete
 
 -- | Constructs CreateClusterParameterGroupResult from required parameters
 newCreateClusterParameterGroupResult :: CreateClusterParameterGroupResult
-newCreateClusterParameterGroupResult  = CreateClusterParameterGroupResult { "ClusterParameterGroup": (NullOrUndefined Nothing) }
+newCreateClusterParameterGroupResult  = CreateClusterParameterGroupResult { "ClusterParameterGroup": Nothing }
 
 -- | Constructs CreateClusterParameterGroupResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateClusterParameterGroupResult' :: ( { "ClusterParameterGroup" :: NullOrUndefined (ClusterParameterGroup) } -> {"ClusterParameterGroup" :: NullOrUndefined (ClusterParameterGroup) } ) -> CreateClusterParameterGroupResult
-newCreateClusterParameterGroupResult'  customize = (CreateClusterParameterGroupResult <<< customize) { "ClusterParameterGroup": (NullOrUndefined Nothing) }
+newCreateClusterParameterGroupResult' :: ( { "ClusterParameterGroup" :: Maybe (ClusterParameterGroup) } -> {"ClusterParameterGroup" :: Maybe (ClusterParameterGroup) } ) -> CreateClusterParameterGroupResult
+newCreateClusterParameterGroupResult'  customize = (CreateClusterParameterGroupResult <<< customize) { "ClusterParameterGroup": Nothing }
 
 
 
 newtype CreateClusterResult = CreateClusterResult 
-  { "Cluster" :: NullOrUndefined (Cluster)
+  { "Cluster" :: Maybe (Cluster)
   }
 derive instance newtypeCreateClusterResult :: Newtype CreateClusterResult _
 derive instance repGenericCreateClusterResult :: Generic CreateClusterResult _
@@ -1094,12 +1093,12 @@ instance encodeCreateClusterResult :: Encode CreateClusterResult where encode = 
 
 -- | Constructs CreateClusterResult from required parameters
 newCreateClusterResult :: CreateClusterResult
-newCreateClusterResult  = CreateClusterResult { "Cluster": (NullOrUndefined Nothing) }
+newCreateClusterResult  = CreateClusterResult { "Cluster": Nothing }
 
 -- | Constructs CreateClusterResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateClusterResult' :: ( { "Cluster" :: NullOrUndefined (Cluster) } -> {"Cluster" :: NullOrUndefined (Cluster) } ) -> CreateClusterResult
-newCreateClusterResult'  customize = (CreateClusterResult <<< customize) { "Cluster": (NullOrUndefined Nothing) }
+newCreateClusterResult' :: ( { "Cluster" :: Maybe (Cluster) } -> {"Cluster" :: Maybe (Cluster) } ) -> CreateClusterResult
+newCreateClusterResult'  customize = (CreateClusterResult <<< customize) { "Cluster": Nothing }
 
 
 
@@ -1107,7 +1106,7 @@ newCreateClusterResult'  customize = (CreateClusterResult <<< customize) { "Clus
 newtype CreateClusterSecurityGroupMessage = CreateClusterSecurityGroupMessage 
   { "ClusterSecurityGroupName" :: (String)
   , "Description" :: (String)
-  , "Tags" :: NullOrUndefined (TagList)
+  , "Tags" :: Maybe (TagList)
   }
 derive instance newtypeCreateClusterSecurityGroupMessage :: Newtype CreateClusterSecurityGroupMessage _
 derive instance repGenericCreateClusterSecurityGroupMessage :: Generic CreateClusterSecurityGroupMessage _
@@ -1117,17 +1116,17 @@ instance encodeCreateClusterSecurityGroupMessage :: Encode CreateClusterSecurity
 
 -- | Constructs CreateClusterSecurityGroupMessage from required parameters
 newCreateClusterSecurityGroupMessage :: String -> String -> CreateClusterSecurityGroupMessage
-newCreateClusterSecurityGroupMessage _ClusterSecurityGroupName _Description = CreateClusterSecurityGroupMessage { "ClusterSecurityGroupName": _ClusterSecurityGroupName, "Description": _Description, "Tags": (NullOrUndefined Nothing) }
+newCreateClusterSecurityGroupMessage _ClusterSecurityGroupName _Description = CreateClusterSecurityGroupMessage { "ClusterSecurityGroupName": _ClusterSecurityGroupName, "Description": _Description, "Tags": Nothing }
 
 -- | Constructs CreateClusterSecurityGroupMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateClusterSecurityGroupMessage' :: String -> String -> ( { "ClusterSecurityGroupName" :: (String) , "Description" :: (String) , "Tags" :: NullOrUndefined (TagList) } -> {"ClusterSecurityGroupName" :: (String) , "Description" :: (String) , "Tags" :: NullOrUndefined (TagList) } ) -> CreateClusterSecurityGroupMessage
-newCreateClusterSecurityGroupMessage' _ClusterSecurityGroupName _Description customize = (CreateClusterSecurityGroupMessage <<< customize) { "ClusterSecurityGroupName": _ClusterSecurityGroupName, "Description": _Description, "Tags": (NullOrUndefined Nothing) }
+newCreateClusterSecurityGroupMessage' :: String -> String -> ( { "ClusterSecurityGroupName" :: (String) , "Description" :: (String) , "Tags" :: Maybe (TagList) } -> {"ClusterSecurityGroupName" :: (String) , "Description" :: (String) , "Tags" :: Maybe (TagList) } ) -> CreateClusterSecurityGroupMessage
+newCreateClusterSecurityGroupMessage' _ClusterSecurityGroupName _Description customize = (CreateClusterSecurityGroupMessage <<< customize) { "ClusterSecurityGroupName": _ClusterSecurityGroupName, "Description": _Description, "Tags": Nothing }
 
 
 
 newtype CreateClusterSecurityGroupResult = CreateClusterSecurityGroupResult 
-  { "ClusterSecurityGroup" :: NullOrUndefined (ClusterSecurityGroup)
+  { "ClusterSecurityGroup" :: Maybe (ClusterSecurityGroup)
   }
 derive instance newtypeCreateClusterSecurityGroupResult :: Newtype CreateClusterSecurityGroupResult _
 derive instance repGenericCreateClusterSecurityGroupResult :: Generic CreateClusterSecurityGroupResult _
@@ -1137,12 +1136,12 @@ instance encodeCreateClusterSecurityGroupResult :: Encode CreateClusterSecurityG
 
 -- | Constructs CreateClusterSecurityGroupResult from required parameters
 newCreateClusterSecurityGroupResult :: CreateClusterSecurityGroupResult
-newCreateClusterSecurityGroupResult  = CreateClusterSecurityGroupResult { "ClusterSecurityGroup": (NullOrUndefined Nothing) }
+newCreateClusterSecurityGroupResult  = CreateClusterSecurityGroupResult { "ClusterSecurityGroup": Nothing }
 
 -- | Constructs CreateClusterSecurityGroupResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateClusterSecurityGroupResult' :: ( { "ClusterSecurityGroup" :: NullOrUndefined (ClusterSecurityGroup) } -> {"ClusterSecurityGroup" :: NullOrUndefined (ClusterSecurityGroup) } ) -> CreateClusterSecurityGroupResult
-newCreateClusterSecurityGroupResult'  customize = (CreateClusterSecurityGroupResult <<< customize) { "ClusterSecurityGroup": (NullOrUndefined Nothing) }
+newCreateClusterSecurityGroupResult' :: ( { "ClusterSecurityGroup" :: Maybe (ClusterSecurityGroup) } -> {"ClusterSecurityGroup" :: Maybe (ClusterSecurityGroup) } ) -> CreateClusterSecurityGroupResult
+newCreateClusterSecurityGroupResult'  customize = (CreateClusterSecurityGroupResult <<< customize) { "ClusterSecurityGroup": Nothing }
 
 
 
@@ -1150,7 +1149,7 @@ newCreateClusterSecurityGroupResult'  customize = (CreateClusterSecurityGroupRes
 newtype CreateClusterSnapshotMessage = CreateClusterSnapshotMessage 
   { "SnapshotIdentifier" :: (String)
   , "ClusterIdentifier" :: (String)
-  , "Tags" :: NullOrUndefined (TagList)
+  , "Tags" :: Maybe (TagList)
   }
 derive instance newtypeCreateClusterSnapshotMessage :: Newtype CreateClusterSnapshotMessage _
 derive instance repGenericCreateClusterSnapshotMessage :: Generic CreateClusterSnapshotMessage _
@@ -1160,17 +1159,17 @@ instance encodeCreateClusterSnapshotMessage :: Encode CreateClusterSnapshotMessa
 
 -- | Constructs CreateClusterSnapshotMessage from required parameters
 newCreateClusterSnapshotMessage :: String -> String -> CreateClusterSnapshotMessage
-newCreateClusterSnapshotMessage _ClusterIdentifier _SnapshotIdentifier = CreateClusterSnapshotMessage { "ClusterIdentifier": _ClusterIdentifier, "SnapshotIdentifier": _SnapshotIdentifier, "Tags": (NullOrUndefined Nothing) }
+newCreateClusterSnapshotMessage _ClusterIdentifier _SnapshotIdentifier = CreateClusterSnapshotMessage { "ClusterIdentifier": _ClusterIdentifier, "SnapshotIdentifier": _SnapshotIdentifier, "Tags": Nothing }
 
 -- | Constructs CreateClusterSnapshotMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateClusterSnapshotMessage' :: String -> String -> ( { "SnapshotIdentifier" :: (String) , "ClusterIdentifier" :: (String) , "Tags" :: NullOrUndefined (TagList) } -> {"SnapshotIdentifier" :: (String) , "ClusterIdentifier" :: (String) , "Tags" :: NullOrUndefined (TagList) } ) -> CreateClusterSnapshotMessage
-newCreateClusterSnapshotMessage' _ClusterIdentifier _SnapshotIdentifier customize = (CreateClusterSnapshotMessage <<< customize) { "ClusterIdentifier": _ClusterIdentifier, "SnapshotIdentifier": _SnapshotIdentifier, "Tags": (NullOrUndefined Nothing) }
+newCreateClusterSnapshotMessage' :: String -> String -> ( { "SnapshotIdentifier" :: (String) , "ClusterIdentifier" :: (String) , "Tags" :: Maybe (TagList) } -> {"SnapshotIdentifier" :: (String) , "ClusterIdentifier" :: (String) , "Tags" :: Maybe (TagList) } ) -> CreateClusterSnapshotMessage
+newCreateClusterSnapshotMessage' _ClusterIdentifier _SnapshotIdentifier customize = (CreateClusterSnapshotMessage <<< customize) { "ClusterIdentifier": _ClusterIdentifier, "SnapshotIdentifier": _SnapshotIdentifier, "Tags": Nothing }
 
 
 
 newtype CreateClusterSnapshotResult = CreateClusterSnapshotResult 
-  { "Snapshot" :: NullOrUndefined (Snapshot)
+  { "Snapshot" :: Maybe (Snapshot)
   }
 derive instance newtypeCreateClusterSnapshotResult :: Newtype CreateClusterSnapshotResult _
 derive instance repGenericCreateClusterSnapshotResult :: Generic CreateClusterSnapshotResult _
@@ -1180,12 +1179,12 @@ instance encodeCreateClusterSnapshotResult :: Encode CreateClusterSnapshotResult
 
 -- | Constructs CreateClusterSnapshotResult from required parameters
 newCreateClusterSnapshotResult :: CreateClusterSnapshotResult
-newCreateClusterSnapshotResult  = CreateClusterSnapshotResult { "Snapshot": (NullOrUndefined Nothing) }
+newCreateClusterSnapshotResult  = CreateClusterSnapshotResult { "Snapshot": Nothing }
 
 -- | Constructs CreateClusterSnapshotResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateClusterSnapshotResult' :: ( { "Snapshot" :: NullOrUndefined (Snapshot) } -> {"Snapshot" :: NullOrUndefined (Snapshot) } ) -> CreateClusterSnapshotResult
-newCreateClusterSnapshotResult'  customize = (CreateClusterSnapshotResult <<< customize) { "Snapshot": (NullOrUndefined Nothing) }
+newCreateClusterSnapshotResult' :: ( { "Snapshot" :: Maybe (Snapshot) } -> {"Snapshot" :: Maybe (Snapshot) } ) -> CreateClusterSnapshotResult
+newCreateClusterSnapshotResult'  customize = (CreateClusterSnapshotResult <<< customize) { "Snapshot": Nothing }
 
 
 
@@ -1194,7 +1193,7 @@ newtype CreateClusterSubnetGroupMessage = CreateClusterSubnetGroupMessage
   { "ClusterSubnetGroupName" :: (String)
   , "Description" :: (String)
   , "SubnetIds" :: (SubnetIdentifierList)
-  , "Tags" :: NullOrUndefined (TagList)
+  , "Tags" :: Maybe (TagList)
   }
 derive instance newtypeCreateClusterSubnetGroupMessage :: Newtype CreateClusterSubnetGroupMessage _
 derive instance repGenericCreateClusterSubnetGroupMessage :: Generic CreateClusterSubnetGroupMessage _
@@ -1204,17 +1203,17 @@ instance encodeCreateClusterSubnetGroupMessage :: Encode CreateClusterSubnetGrou
 
 -- | Constructs CreateClusterSubnetGroupMessage from required parameters
 newCreateClusterSubnetGroupMessage :: String -> String -> SubnetIdentifierList -> CreateClusterSubnetGroupMessage
-newCreateClusterSubnetGroupMessage _ClusterSubnetGroupName _Description _SubnetIds = CreateClusterSubnetGroupMessage { "ClusterSubnetGroupName": _ClusterSubnetGroupName, "Description": _Description, "SubnetIds": _SubnetIds, "Tags": (NullOrUndefined Nothing) }
+newCreateClusterSubnetGroupMessage _ClusterSubnetGroupName _Description _SubnetIds = CreateClusterSubnetGroupMessage { "ClusterSubnetGroupName": _ClusterSubnetGroupName, "Description": _Description, "SubnetIds": _SubnetIds, "Tags": Nothing }
 
 -- | Constructs CreateClusterSubnetGroupMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateClusterSubnetGroupMessage' :: String -> String -> SubnetIdentifierList -> ( { "ClusterSubnetGroupName" :: (String) , "Description" :: (String) , "SubnetIds" :: (SubnetIdentifierList) , "Tags" :: NullOrUndefined (TagList) } -> {"ClusterSubnetGroupName" :: (String) , "Description" :: (String) , "SubnetIds" :: (SubnetIdentifierList) , "Tags" :: NullOrUndefined (TagList) } ) -> CreateClusterSubnetGroupMessage
-newCreateClusterSubnetGroupMessage' _ClusterSubnetGroupName _Description _SubnetIds customize = (CreateClusterSubnetGroupMessage <<< customize) { "ClusterSubnetGroupName": _ClusterSubnetGroupName, "Description": _Description, "SubnetIds": _SubnetIds, "Tags": (NullOrUndefined Nothing) }
+newCreateClusterSubnetGroupMessage' :: String -> String -> SubnetIdentifierList -> ( { "ClusterSubnetGroupName" :: (String) , "Description" :: (String) , "SubnetIds" :: (SubnetIdentifierList) , "Tags" :: Maybe (TagList) } -> {"ClusterSubnetGroupName" :: (String) , "Description" :: (String) , "SubnetIds" :: (SubnetIdentifierList) , "Tags" :: Maybe (TagList) } ) -> CreateClusterSubnetGroupMessage
+newCreateClusterSubnetGroupMessage' _ClusterSubnetGroupName _Description _SubnetIds customize = (CreateClusterSubnetGroupMessage <<< customize) { "ClusterSubnetGroupName": _ClusterSubnetGroupName, "Description": _Description, "SubnetIds": _SubnetIds, "Tags": Nothing }
 
 
 
 newtype CreateClusterSubnetGroupResult = CreateClusterSubnetGroupResult 
-  { "ClusterSubnetGroup" :: NullOrUndefined (ClusterSubnetGroup)
+  { "ClusterSubnetGroup" :: Maybe (ClusterSubnetGroup)
   }
 derive instance newtypeCreateClusterSubnetGroupResult :: Newtype CreateClusterSubnetGroupResult _
 derive instance repGenericCreateClusterSubnetGroupResult :: Generic CreateClusterSubnetGroupResult _
@@ -1224,12 +1223,12 @@ instance encodeCreateClusterSubnetGroupResult :: Encode CreateClusterSubnetGroup
 
 -- | Constructs CreateClusterSubnetGroupResult from required parameters
 newCreateClusterSubnetGroupResult :: CreateClusterSubnetGroupResult
-newCreateClusterSubnetGroupResult  = CreateClusterSubnetGroupResult { "ClusterSubnetGroup": (NullOrUndefined Nothing) }
+newCreateClusterSubnetGroupResult  = CreateClusterSubnetGroupResult { "ClusterSubnetGroup": Nothing }
 
 -- | Constructs CreateClusterSubnetGroupResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateClusterSubnetGroupResult' :: ( { "ClusterSubnetGroup" :: NullOrUndefined (ClusterSubnetGroup) } -> {"ClusterSubnetGroup" :: NullOrUndefined (ClusterSubnetGroup) } ) -> CreateClusterSubnetGroupResult
-newCreateClusterSubnetGroupResult'  customize = (CreateClusterSubnetGroupResult <<< customize) { "ClusterSubnetGroup": (NullOrUndefined Nothing) }
+newCreateClusterSubnetGroupResult' :: ( { "ClusterSubnetGroup" :: Maybe (ClusterSubnetGroup) } -> {"ClusterSubnetGroup" :: Maybe (ClusterSubnetGroup) } ) -> CreateClusterSubnetGroupResult
+newCreateClusterSubnetGroupResult'  customize = (CreateClusterSubnetGroupResult <<< customize) { "ClusterSubnetGroup": Nothing }
 
 
 
@@ -1237,12 +1236,12 @@ newCreateClusterSubnetGroupResult'  customize = (CreateClusterSubnetGroupResult 
 newtype CreateEventSubscriptionMessage = CreateEventSubscriptionMessage 
   { "SubscriptionName" :: (String)
   , "SnsTopicArn" :: (String)
-  , "SourceType" :: NullOrUndefined (String)
-  , "SourceIds" :: NullOrUndefined (SourceIdsList)
-  , "EventCategories" :: NullOrUndefined (EventCategoriesList)
-  , "Severity" :: NullOrUndefined (String)
-  , "Enabled" :: NullOrUndefined (BooleanOptional)
-  , "Tags" :: NullOrUndefined (TagList)
+  , "SourceType" :: Maybe (String)
+  , "SourceIds" :: Maybe (SourceIdsList)
+  , "EventCategories" :: Maybe (EventCategoriesList)
+  , "Severity" :: Maybe (String)
+  , "Enabled" :: Maybe (BooleanOptional)
+  , "Tags" :: Maybe (TagList)
   }
 derive instance newtypeCreateEventSubscriptionMessage :: Newtype CreateEventSubscriptionMessage _
 derive instance repGenericCreateEventSubscriptionMessage :: Generic CreateEventSubscriptionMessage _
@@ -1252,17 +1251,17 @@ instance encodeCreateEventSubscriptionMessage :: Encode CreateEventSubscriptionM
 
 -- | Constructs CreateEventSubscriptionMessage from required parameters
 newCreateEventSubscriptionMessage :: String -> String -> CreateEventSubscriptionMessage
-newCreateEventSubscriptionMessage _SnsTopicArn _SubscriptionName = CreateEventSubscriptionMessage { "SnsTopicArn": _SnsTopicArn, "SubscriptionName": _SubscriptionName, "Enabled": (NullOrUndefined Nothing), "EventCategories": (NullOrUndefined Nothing), "Severity": (NullOrUndefined Nothing), "SourceIds": (NullOrUndefined Nothing), "SourceType": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newCreateEventSubscriptionMessage _SnsTopicArn _SubscriptionName = CreateEventSubscriptionMessage { "SnsTopicArn": _SnsTopicArn, "SubscriptionName": _SubscriptionName, "Enabled": Nothing, "EventCategories": Nothing, "Severity": Nothing, "SourceIds": Nothing, "SourceType": Nothing, "Tags": Nothing }
 
 -- | Constructs CreateEventSubscriptionMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateEventSubscriptionMessage' :: String -> String -> ( { "SubscriptionName" :: (String) , "SnsTopicArn" :: (String) , "SourceType" :: NullOrUndefined (String) , "SourceIds" :: NullOrUndefined (SourceIdsList) , "EventCategories" :: NullOrUndefined (EventCategoriesList) , "Severity" :: NullOrUndefined (String) , "Enabled" :: NullOrUndefined (BooleanOptional) , "Tags" :: NullOrUndefined (TagList) } -> {"SubscriptionName" :: (String) , "SnsTopicArn" :: (String) , "SourceType" :: NullOrUndefined (String) , "SourceIds" :: NullOrUndefined (SourceIdsList) , "EventCategories" :: NullOrUndefined (EventCategoriesList) , "Severity" :: NullOrUndefined (String) , "Enabled" :: NullOrUndefined (BooleanOptional) , "Tags" :: NullOrUndefined (TagList) } ) -> CreateEventSubscriptionMessage
-newCreateEventSubscriptionMessage' _SnsTopicArn _SubscriptionName customize = (CreateEventSubscriptionMessage <<< customize) { "SnsTopicArn": _SnsTopicArn, "SubscriptionName": _SubscriptionName, "Enabled": (NullOrUndefined Nothing), "EventCategories": (NullOrUndefined Nothing), "Severity": (NullOrUndefined Nothing), "SourceIds": (NullOrUndefined Nothing), "SourceType": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newCreateEventSubscriptionMessage' :: String -> String -> ( { "SubscriptionName" :: (String) , "SnsTopicArn" :: (String) , "SourceType" :: Maybe (String) , "SourceIds" :: Maybe (SourceIdsList) , "EventCategories" :: Maybe (EventCategoriesList) , "Severity" :: Maybe (String) , "Enabled" :: Maybe (BooleanOptional) , "Tags" :: Maybe (TagList) } -> {"SubscriptionName" :: (String) , "SnsTopicArn" :: (String) , "SourceType" :: Maybe (String) , "SourceIds" :: Maybe (SourceIdsList) , "EventCategories" :: Maybe (EventCategoriesList) , "Severity" :: Maybe (String) , "Enabled" :: Maybe (BooleanOptional) , "Tags" :: Maybe (TagList) } ) -> CreateEventSubscriptionMessage
+newCreateEventSubscriptionMessage' _SnsTopicArn _SubscriptionName customize = (CreateEventSubscriptionMessage <<< customize) { "SnsTopicArn": _SnsTopicArn, "SubscriptionName": _SubscriptionName, "Enabled": Nothing, "EventCategories": Nothing, "Severity": Nothing, "SourceIds": Nothing, "SourceType": Nothing, "Tags": Nothing }
 
 
 
 newtype CreateEventSubscriptionResult = CreateEventSubscriptionResult 
-  { "EventSubscription" :: NullOrUndefined (EventSubscription)
+  { "EventSubscription" :: Maybe (EventSubscription)
   }
 derive instance newtypeCreateEventSubscriptionResult :: Newtype CreateEventSubscriptionResult _
 derive instance repGenericCreateEventSubscriptionResult :: Generic CreateEventSubscriptionResult _
@@ -1272,19 +1271,19 @@ instance encodeCreateEventSubscriptionResult :: Encode CreateEventSubscriptionRe
 
 -- | Constructs CreateEventSubscriptionResult from required parameters
 newCreateEventSubscriptionResult :: CreateEventSubscriptionResult
-newCreateEventSubscriptionResult  = CreateEventSubscriptionResult { "EventSubscription": (NullOrUndefined Nothing) }
+newCreateEventSubscriptionResult  = CreateEventSubscriptionResult { "EventSubscription": Nothing }
 
 -- | Constructs CreateEventSubscriptionResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateEventSubscriptionResult' :: ( { "EventSubscription" :: NullOrUndefined (EventSubscription) } -> {"EventSubscription" :: NullOrUndefined (EventSubscription) } ) -> CreateEventSubscriptionResult
-newCreateEventSubscriptionResult'  customize = (CreateEventSubscriptionResult <<< customize) { "EventSubscription": (NullOrUndefined Nothing) }
+newCreateEventSubscriptionResult' :: ( { "EventSubscription" :: Maybe (EventSubscription) } -> {"EventSubscription" :: Maybe (EventSubscription) } ) -> CreateEventSubscriptionResult
+newCreateEventSubscriptionResult'  customize = (CreateEventSubscriptionResult <<< customize) { "EventSubscription": Nothing }
 
 
 
 -- | <p/>
 newtype CreateHsmClientCertificateMessage = CreateHsmClientCertificateMessage 
   { "HsmClientCertificateIdentifier" :: (String)
-  , "Tags" :: NullOrUndefined (TagList)
+  , "Tags" :: Maybe (TagList)
   }
 derive instance newtypeCreateHsmClientCertificateMessage :: Newtype CreateHsmClientCertificateMessage _
 derive instance repGenericCreateHsmClientCertificateMessage :: Generic CreateHsmClientCertificateMessage _
@@ -1294,17 +1293,17 @@ instance encodeCreateHsmClientCertificateMessage :: Encode CreateHsmClientCertif
 
 -- | Constructs CreateHsmClientCertificateMessage from required parameters
 newCreateHsmClientCertificateMessage :: String -> CreateHsmClientCertificateMessage
-newCreateHsmClientCertificateMessage _HsmClientCertificateIdentifier = CreateHsmClientCertificateMessage { "HsmClientCertificateIdentifier": _HsmClientCertificateIdentifier, "Tags": (NullOrUndefined Nothing) }
+newCreateHsmClientCertificateMessage _HsmClientCertificateIdentifier = CreateHsmClientCertificateMessage { "HsmClientCertificateIdentifier": _HsmClientCertificateIdentifier, "Tags": Nothing }
 
 -- | Constructs CreateHsmClientCertificateMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateHsmClientCertificateMessage' :: String -> ( { "HsmClientCertificateIdentifier" :: (String) , "Tags" :: NullOrUndefined (TagList) } -> {"HsmClientCertificateIdentifier" :: (String) , "Tags" :: NullOrUndefined (TagList) } ) -> CreateHsmClientCertificateMessage
-newCreateHsmClientCertificateMessage' _HsmClientCertificateIdentifier customize = (CreateHsmClientCertificateMessage <<< customize) { "HsmClientCertificateIdentifier": _HsmClientCertificateIdentifier, "Tags": (NullOrUndefined Nothing) }
+newCreateHsmClientCertificateMessage' :: String -> ( { "HsmClientCertificateIdentifier" :: (String) , "Tags" :: Maybe (TagList) } -> {"HsmClientCertificateIdentifier" :: (String) , "Tags" :: Maybe (TagList) } ) -> CreateHsmClientCertificateMessage
+newCreateHsmClientCertificateMessage' _HsmClientCertificateIdentifier customize = (CreateHsmClientCertificateMessage <<< customize) { "HsmClientCertificateIdentifier": _HsmClientCertificateIdentifier, "Tags": Nothing }
 
 
 
 newtype CreateHsmClientCertificateResult = CreateHsmClientCertificateResult 
-  { "HsmClientCertificate" :: NullOrUndefined (HsmClientCertificate)
+  { "HsmClientCertificate" :: Maybe (HsmClientCertificate)
   }
 derive instance newtypeCreateHsmClientCertificateResult :: Newtype CreateHsmClientCertificateResult _
 derive instance repGenericCreateHsmClientCertificateResult :: Generic CreateHsmClientCertificateResult _
@@ -1314,12 +1313,12 @@ instance encodeCreateHsmClientCertificateResult :: Encode CreateHsmClientCertifi
 
 -- | Constructs CreateHsmClientCertificateResult from required parameters
 newCreateHsmClientCertificateResult :: CreateHsmClientCertificateResult
-newCreateHsmClientCertificateResult  = CreateHsmClientCertificateResult { "HsmClientCertificate": (NullOrUndefined Nothing) }
+newCreateHsmClientCertificateResult  = CreateHsmClientCertificateResult { "HsmClientCertificate": Nothing }
 
 -- | Constructs CreateHsmClientCertificateResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateHsmClientCertificateResult' :: ( { "HsmClientCertificate" :: NullOrUndefined (HsmClientCertificate) } -> {"HsmClientCertificate" :: NullOrUndefined (HsmClientCertificate) } ) -> CreateHsmClientCertificateResult
-newCreateHsmClientCertificateResult'  customize = (CreateHsmClientCertificateResult <<< customize) { "HsmClientCertificate": (NullOrUndefined Nothing) }
+newCreateHsmClientCertificateResult' :: ( { "HsmClientCertificate" :: Maybe (HsmClientCertificate) } -> {"HsmClientCertificate" :: Maybe (HsmClientCertificate) } ) -> CreateHsmClientCertificateResult
+newCreateHsmClientCertificateResult'  customize = (CreateHsmClientCertificateResult <<< customize) { "HsmClientCertificate": Nothing }
 
 
 
@@ -1331,7 +1330,7 @@ newtype CreateHsmConfigurationMessage = CreateHsmConfigurationMessage
   , "HsmPartitionName" :: (String)
   , "HsmPartitionPassword" :: (String)
   , "HsmServerPublicCertificate" :: (String)
-  , "Tags" :: NullOrUndefined (TagList)
+  , "Tags" :: Maybe (TagList)
   }
 derive instance newtypeCreateHsmConfigurationMessage :: Newtype CreateHsmConfigurationMessage _
 derive instance repGenericCreateHsmConfigurationMessage :: Generic CreateHsmConfigurationMessage _
@@ -1341,17 +1340,17 @@ instance encodeCreateHsmConfigurationMessage :: Encode CreateHsmConfigurationMes
 
 -- | Constructs CreateHsmConfigurationMessage from required parameters
 newCreateHsmConfigurationMessage :: String -> String -> String -> String -> String -> String -> CreateHsmConfigurationMessage
-newCreateHsmConfigurationMessage _Description _HsmConfigurationIdentifier _HsmIpAddress _HsmPartitionName _HsmPartitionPassword _HsmServerPublicCertificate = CreateHsmConfigurationMessage { "Description": _Description, "HsmConfigurationIdentifier": _HsmConfigurationIdentifier, "HsmIpAddress": _HsmIpAddress, "HsmPartitionName": _HsmPartitionName, "HsmPartitionPassword": _HsmPartitionPassword, "HsmServerPublicCertificate": _HsmServerPublicCertificate, "Tags": (NullOrUndefined Nothing) }
+newCreateHsmConfigurationMessage _Description _HsmConfigurationIdentifier _HsmIpAddress _HsmPartitionName _HsmPartitionPassword _HsmServerPublicCertificate = CreateHsmConfigurationMessage { "Description": _Description, "HsmConfigurationIdentifier": _HsmConfigurationIdentifier, "HsmIpAddress": _HsmIpAddress, "HsmPartitionName": _HsmPartitionName, "HsmPartitionPassword": _HsmPartitionPassword, "HsmServerPublicCertificate": _HsmServerPublicCertificate, "Tags": Nothing }
 
 -- | Constructs CreateHsmConfigurationMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateHsmConfigurationMessage' :: String -> String -> String -> String -> String -> String -> ( { "HsmConfigurationIdentifier" :: (String) , "Description" :: (String) , "HsmIpAddress" :: (String) , "HsmPartitionName" :: (String) , "HsmPartitionPassword" :: (String) , "HsmServerPublicCertificate" :: (String) , "Tags" :: NullOrUndefined (TagList) } -> {"HsmConfigurationIdentifier" :: (String) , "Description" :: (String) , "HsmIpAddress" :: (String) , "HsmPartitionName" :: (String) , "HsmPartitionPassword" :: (String) , "HsmServerPublicCertificate" :: (String) , "Tags" :: NullOrUndefined (TagList) } ) -> CreateHsmConfigurationMessage
-newCreateHsmConfigurationMessage' _Description _HsmConfigurationIdentifier _HsmIpAddress _HsmPartitionName _HsmPartitionPassword _HsmServerPublicCertificate customize = (CreateHsmConfigurationMessage <<< customize) { "Description": _Description, "HsmConfigurationIdentifier": _HsmConfigurationIdentifier, "HsmIpAddress": _HsmIpAddress, "HsmPartitionName": _HsmPartitionName, "HsmPartitionPassword": _HsmPartitionPassword, "HsmServerPublicCertificate": _HsmServerPublicCertificate, "Tags": (NullOrUndefined Nothing) }
+newCreateHsmConfigurationMessage' :: String -> String -> String -> String -> String -> String -> ( { "HsmConfigurationIdentifier" :: (String) , "Description" :: (String) , "HsmIpAddress" :: (String) , "HsmPartitionName" :: (String) , "HsmPartitionPassword" :: (String) , "HsmServerPublicCertificate" :: (String) , "Tags" :: Maybe (TagList) } -> {"HsmConfigurationIdentifier" :: (String) , "Description" :: (String) , "HsmIpAddress" :: (String) , "HsmPartitionName" :: (String) , "HsmPartitionPassword" :: (String) , "HsmServerPublicCertificate" :: (String) , "Tags" :: Maybe (TagList) } ) -> CreateHsmConfigurationMessage
+newCreateHsmConfigurationMessage' _Description _HsmConfigurationIdentifier _HsmIpAddress _HsmPartitionName _HsmPartitionPassword _HsmServerPublicCertificate customize = (CreateHsmConfigurationMessage <<< customize) { "Description": _Description, "HsmConfigurationIdentifier": _HsmConfigurationIdentifier, "HsmIpAddress": _HsmIpAddress, "HsmPartitionName": _HsmPartitionName, "HsmPartitionPassword": _HsmPartitionPassword, "HsmServerPublicCertificate": _HsmServerPublicCertificate, "Tags": Nothing }
 
 
 
 newtype CreateHsmConfigurationResult = CreateHsmConfigurationResult 
-  { "HsmConfiguration" :: NullOrUndefined (HsmConfiguration)
+  { "HsmConfiguration" :: Maybe (HsmConfiguration)
   }
 derive instance newtypeCreateHsmConfigurationResult :: Newtype CreateHsmConfigurationResult _
 derive instance repGenericCreateHsmConfigurationResult :: Generic CreateHsmConfigurationResult _
@@ -1361,20 +1360,20 @@ instance encodeCreateHsmConfigurationResult :: Encode CreateHsmConfigurationResu
 
 -- | Constructs CreateHsmConfigurationResult from required parameters
 newCreateHsmConfigurationResult :: CreateHsmConfigurationResult
-newCreateHsmConfigurationResult  = CreateHsmConfigurationResult { "HsmConfiguration": (NullOrUndefined Nothing) }
+newCreateHsmConfigurationResult  = CreateHsmConfigurationResult { "HsmConfiguration": Nothing }
 
 -- | Constructs CreateHsmConfigurationResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateHsmConfigurationResult' :: ( { "HsmConfiguration" :: NullOrUndefined (HsmConfiguration) } -> {"HsmConfiguration" :: NullOrUndefined (HsmConfiguration) } ) -> CreateHsmConfigurationResult
-newCreateHsmConfigurationResult'  customize = (CreateHsmConfigurationResult <<< customize) { "HsmConfiguration": (NullOrUndefined Nothing) }
+newCreateHsmConfigurationResult' :: ( { "HsmConfiguration" :: Maybe (HsmConfiguration) } -> {"HsmConfiguration" :: Maybe (HsmConfiguration) } ) -> CreateHsmConfigurationResult
+newCreateHsmConfigurationResult'  customize = (CreateHsmConfigurationResult <<< customize) { "HsmConfiguration": Nothing }
 
 
 
 -- | <p>The result of the <code>CreateSnapshotCopyGrant</code> action.</p>
 newtype CreateSnapshotCopyGrantMessage = CreateSnapshotCopyGrantMessage 
   { "SnapshotCopyGrantName" :: (String)
-  , "KmsKeyId" :: NullOrUndefined (String)
-  , "Tags" :: NullOrUndefined (TagList)
+  , "KmsKeyId" :: Maybe (String)
+  , "Tags" :: Maybe (TagList)
   }
 derive instance newtypeCreateSnapshotCopyGrantMessage :: Newtype CreateSnapshotCopyGrantMessage _
 derive instance repGenericCreateSnapshotCopyGrantMessage :: Generic CreateSnapshotCopyGrantMessage _
@@ -1384,17 +1383,17 @@ instance encodeCreateSnapshotCopyGrantMessage :: Encode CreateSnapshotCopyGrantM
 
 -- | Constructs CreateSnapshotCopyGrantMessage from required parameters
 newCreateSnapshotCopyGrantMessage :: String -> CreateSnapshotCopyGrantMessage
-newCreateSnapshotCopyGrantMessage _SnapshotCopyGrantName = CreateSnapshotCopyGrantMessage { "SnapshotCopyGrantName": _SnapshotCopyGrantName, "KmsKeyId": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newCreateSnapshotCopyGrantMessage _SnapshotCopyGrantName = CreateSnapshotCopyGrantMessage { "SnapshotCopyGrantName": _SnapshotCopyGrantName, "KmsKeyId": Nothing, "Tags": Nothing }
 
 -- | Constructs CreateSnapshotCopyGrantMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateSnapshotCopyGrantMessage' :: String -> ( { "SnapshotCopyGrantName" :: (String) , "KmsKeyId" :: NullOrUndefined (String) , "Tags" :: NullOrUndefined (TagList) } -> {"SnapshotCopyGrantName" :: (String) , "KmsKeyId" :: NullOrUndefined (String) , "Tags" :: NullOrUndefined (TagList) } ) -> CreateSnapshotCopyGrantMessage
-newCreateSnapshotCopyGrantMessage' _SnapshotCopyGrantName customize = (CreateSnapshotCopyGrantMessage <<< customize) { "SnapshotCopyGrantName": _SnapshotCopyGrantName, "KmsKeyId": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newCreateSnapshotCopyGrantMessage' :: String -> ( { "SnapshotCopyGrantName" :: (String) , "KmsKeyId" :: Maybe (String) , "Tags" :: Maybe (TagList) } -> {"SnapshotCopyGrantName" :: (String) , "KmsKeyId" :: Maybe (String) , "Tags" :: Maybe (TagList) } ) -> CreateSnapshotCopyGrantMessage
+newCreateSnapshotCopyGrantMessage' _SnapshotCopyGrantName customize = (CreateSnapshotCopyGrantMessage <<< customize) { "SnapshotCopyGrantName": _SnapshotCopyGrantName, "KmsKeyId": Nothing, "Tags": Nothing }
 
 
 
 newtype CreateSnapshotCopyGrantResult = CreateSnapshotCopyGrantResult 
-  { "SnapshotCopyGrant" :: NullOrUndefined (SnapshotCopyGrant)
+  { "SnapshotCopyGrant" :: Maybe (SnapshotCopyGrant)
   }
 derive instance newtypeCreateSnapshotCopyGrantResult :: Newtype CreateSnapshotCopyGrantResult _
 derive instance repGenericCreateSnapshotCopyGrantResult :: Generic CreateSnapshotCopyGrantResult _
@@ -1404,12 +1403,12 @@ instance encodeCreateSnapshotCopyGrantResult :: Encode CreateSnapshotCopyGrantRe
 
 -- | Constructs CreateSnapshotCopyGrantResult from required parameters
 newCreateSnapshotCopyGrantResult :: CreateSnapshotCopyGrantResult
-newCreateSnapshotCopyGrantResult  = CreateSnapshotCopyGrantResult { "SnapshotCopyGrant": (NullOrUndefined Nothing) }
+newCreateSnapshotCopyGrantResult  = CreateSnapshotCopyGrantResult { "SnapshotCopyGrant": Nothing }
 
 -- | Constructs CreateSnapshotCopyGrantResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateSnapshotCopyGrantResult' :: ( { "SnapshotCopyGrant" :: NullOrUndefined (SnapshotCopyGrant) } -> {"SnapshotCopyGrant" :: NullOrUndefined (SnapshotCopyGrant) } ) -> CreateSnapshotCopyGrantResult
-newCreateSnapshotCopyGrantResult'  customize = (CreateSnapshotCopyGrantResult <<< customize) { "SnapshotCopyGrant": (NullOrUndefined Nothing) }
+newCreateSnapshotCopyGrantResult' :: ( { "SnapshotCopyGrant" :: Maybe (SnapshotCopyGrant) } -> {"SnapshotCopyGrant" :: Maybe (SnapshotCopyGrant) } ) -> CreateSnapshotCopyGrantResult
+newCreateSnapshotCopyGrantResult'  customize = (CreateSnapshotCopyGrantResult <<< customize) { "SnapshotCopyGrant": Nothing }
 
 
 
@@ -1446,9 +1445,9 @@ instance encodeDbGroupList :: Encode DbGroupList where encode = genericEncode op
 
 -- | <p>Describes the default cluster parameters for a parameter group family.</p>
 newtype DefaultClusterParameters = DefaultClusterParameters 
-  { "ParameterGroupFamily" :: NullOrUndefined (String)
-  , "Marker" :: NullOrUndefined (String)
-  , "Parameters" :: NullOrUndefined (ParametersList)
+  { "ParameterGroupFamily" :: Maybe (String)
+  , "Marker" :: Maybe (String)
+  , "Parameters" :: Maybe (ParametersList)
   }
 derive instance newtypeDefaultClusterParameters :: Newtype DefaultClusterParameters _
 derive instance repGenericDefaultClusterParameters :: Generic DefaultClusterParameters _
@@ -1458,20 +1457,20 @@ instance encodeDefaultClusterParameters :: Encode DefaultClusterParameters where
 
 -- | Constructs DefaultClusterParameters from required parameters
 newDefaultClusterParameters :: DefaultClusterParameters
-newDefaultClusterParameters  = DefaultClusterParameters { "Marker": (NullOrUndefined Nothing), "ParameterGroupFamily": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing) }
+newDefaultClusterParameters  = DefaultClusterParameters { "Marker": Nothing, "ParameterGroupFamily": Nothing, "Parameters": Nothing }
 
 -- | Constructs DefaultClusterParameters's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDefaultClusterParameters' :: ( { "ParameterGroupFamily" :: NullOrUndefined (String) , "Marker" :: NullOrUndefined (String) , "Parameters" :: NullOrUndefined (ParametersList) } -> {"ParameterGroupFamily" :: NullOrUndefined (String) , "Marker" :: NullOrUndefined (String) , "Parameters" :: NullOrUndefined (ParametersList) } ) -> DefaultClusterParameters
-newDefaultClusterParameters'  customize = (DefaultClusterParameters <<< customize) { "Marker": (NullOrUndefined Nothing), "ParameterGroupFamily": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing) }
+newDefaultClusterParameters' :: ( { "ParameterGroupFamily" :: Maybe (String) , "Marker" :: Maybe (String) , "Parameters" :: Maybe (ParametersList) } -> {"ParameterGroupFamily" :: Maybe (String) , "Marker" :: Maybe (String) , "Parameters" :: Maybe (ParametersList) } ) -> DefaultClusterParameters
+newDefaultClusterParameters'  customize = (DefaultClusterParameters <<< customize) { "Marker": Nothing, "ParameterGroupFamily": Nothing, "Parameters": Nothing }
 
 
 
 -- | <p/>
 newtype DeleteClusterMessage = DeleteClusterMessage 
   { "ClusterIdentifier" :: (String)
-  , "SkipFinalClusterSnapshot" :: NullOrUndefined (Boolean)
-  , "FinalClusterSnapshotIdentifier" :: NullOrUndefined (String)
+  , "SkipFinalClusterSnapshot" :: Maybe (Boolean)
+  , "FinalClusterSnapshotIdentifier" :: Maybe (String)
   }
 derive instance newtypeDeleteClusterMessage :: Newtype DeleteClusterMessage _
 derive instance repGenericDeleteClusterMessage :: Generic DeleteClusterMessage _
@@ -1481,12 +1480,12 @@ instance encodeDeleteClusterMessage :: Encode DeleteClusterMessage where encode 
 
 -- | Constructs DeleteClusterMessage from required parameters
 newDeleteClusterMessage :: String -> DeleteClusterMessage
-newDeleteClusterMessage _ClusterIdentifier = DeleteClusterMessage { "ClusterIdentifier": _ClusterIdentifier, "FinalClusterSnapshotIdentifier": (NullOrUndefined Nothing), "SkipFinalClusterSnapshot": (NullOrUndefined Nothing) }
+newDeleteClusterMessage _ClusterIdentifier = DeleteClusterMessage { "ClusterIdentifier": _ClusterIdentifier, "FinalClusterSnapshotIdentifier": Nothing, "SkipFinalClusterSnapshot": Nothing }
 
 -- | Constructs DeleteClusterMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteClusterMessage' :: String -> ( { "ClusterIdentifier" :: (String) , "SkipFinalClusterSnapshot" :: NullOrUndefined (Boolean) , "FinalClusterSnapshotIdentifier" :: NullOrUndefined (String) } -> {"ClusterIdentifier" :: (String) , "SkipFinalClusterSnapshot" :: NullOrUndefined (Boolean) , "FinalClusterSnapshotIdentifier" :: NullOrUndefined (String) } ) -> DeleteClusterMessage
-newDeleteClusterMessage' _ClusterIdentifier customize = (DeleteClusterMessage <<< customize) { "ClusterIdentifier": _ClusterIdentifier, "FinalClusterSnapshotIdentifier": (NullOrUndefined Nothing), "SkipFinalClusterSnapshot": (NullOrUndefined Nothing) }
+newDeleteClusterMessage' :: String -> ( { "ClusterIdentifier" :: (String) , "SkipFinalClusterSnapshot" :: Maybe (Boolean) , "FinalClusterSnapshotIdentifier" :: Maybe (String) } -> {"ClusterIdentifier" :: (String) , "SkipFinalClusterSnapshot" :: Maybe (Boolean) , "FinalClusterSnapshotIdentifier" :: Maybe (String) } ) -> DeleteClusterMessage
+newDeleteClusterMessage' _ClusterIdentifier customize = (DeleteClusterMessage <<< customize) { "ClusterIdentifier": _ClusterIdentifier, "FinalClusterSnapshotIdentifier": Nothing, "SkipFinalClusterSnapshot": Nothing }
 
 
 
@@ -1512,7 +1511,7 @@ newDeleteClusterParameterGroupMessage' _ParameterGroupName customize = (DeleteCl
 
 
 newtype DeleteClusterResult = DeleteClusterResult 
-  { "Cluster" :: NullOrUndefined (Cluster)
+  { "Cluster" :: Maybe (Cluster)
   }
 derive instance newtypeDeleteClusterResult :: Newtype DeleteClusterResult _
 derive instance repGenericDeleteClusterResult :: Generic DeleteClusterResult _
@@ -1522,12 +1521,12 @@ instance encodeDeleteClusterResult :: Encode DeleteClusterResult where encode = 
 
 -- | Constructs DeleteClusterResult from required parameters
 newDeleteClusterResult :: DeleteClusterResult
-newDeleteClusterResult  = DeleteClusterResult { "Cluster": (NullOrUndefined Nothing) }
+newDeleteClusterResult  = DeleteClusterResult { "Cluster": Nothing }
 
 -- | Constructs DeleteClusterResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteClusterResult' :: ( { "Cluster" :: NullOrUndefined (Cluster) } -> {"Cluster" :: NullOrUndefined (Cluster) } ) -> DeleteClusterResult
-newDeleteClusterResult'  customize = (DeleteClusterResult <<< customize) { "Cluster": (NullOrUndefined Nothing) }
+newDeleteClusterResult' :: ( { "Cluster" :: Maybe (Cluster) } -> {"Cluster" :: Maybe (Cluster) } ) -> DeleteClusterResult
+newDeleteClusterResult'  customize = (DeleteClusterResult <<< customize) { "Cluster": Nothing }
 
 
 
@@ -1555,7 +1554,7 @@ newDeleteClusterSecurityGroupMessage' _ClusterSecurityGroupName customize = (Del
 -- | <p/>
 newtype DeleteClusterSnapshotMessage = DeleteClusterSnapshotMessage 
   { "SnapshotIdentifier" :: (String)
-  , "SnapshotClusterIdentifier" :: NullOrUndefined (String)
+  , "SnapshotClusterIdentifier" :: Maybe (String)
   }
 derive instance newtypeDeleteClusterSnapshotMessage :: Newtype DeleteClusterSnapshotMessage _
 derive instance repGenericDeleteClusterSnapshotMessage :: Generic DeleteClusterSnapshotMessage _
@@ -1565,17 +1564,17 @@ instance encodeDeleteClusterSnapshotMessage :: Encode DeleteClusterSnapshotMessa
 
 -- | Constructs DeleteClusterSnapshotMessage from required parameters
 newDeleteClusterSnapshotMessage :: String -> DeleteClusterSnapshotMessage
-newDeleteClusterSnapshotMessage _SnapshotIdentifier = DeleteClusterSnapshotMessage { "SnapshotIdentifier": _SnapshotIdentifier, "SnapshotClusterIdentifier": (NullOrUndefined Nothing) }
+newDeleteClusterSnapshotMessage _SnapshotIdentifier = DeleteClusterSnapshotMessage { "SnapshotIdentifier": _SnapshotIdentifier, "SnapshotClusterIdentifier": Nothing }
 
 -- | Constructs DeleteClusterSnapshotMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteClusterSnapshotMessage' :: String -> ( { "SnapshotIdentifier" :: (String) , "SnapshotClusterIdentifier" :: NullOrUndefined (String) } -> {"SnapshotIdentifier" :: (String) , "SnapshotClusterIdentifier" :: NullOrUndefined (String) } ) -> DeleteClusterSnapshotMessage
-newDeleteClusterSnapshotMessage' _SnapshotIdentifier customize = (DeleteClusterSnapshotMessage <<< customize) { "SnapshotIdentifier": _SnapshotIdentifier, "SnapshotClusterIdentifier": (NullOrUndefined Nothing) }
+newDeleteClusterSnapshotMessage' :: String -> ( { "SnapshotIdentifier" :: (String) , "SnapshotClusterIdentifier" :: Maybe (String) } -> {"SnapshotIdentifier" :: (String) , "SnapshotClusterIdentifier" :: Maybe (String) } ) -> DeleteClusterSnapshotMessage
+newDeleteClusterSnapshotMessage' _SnapshotIdentifier customize = (DeleteClusterSnapshotMessage <<< customize) { "SnapshotIdentifier": _SnapshotIdentifier, "SnapshotClusterIdentifier": Nothing }
 
 
 
 newtype DeleteClusterSnapshotResult = DeleteClusterSnapshotResult 
-  { "Snapshot" :: NullOrUndefined (Snapshot)
+  { "Snapshot" :: Maybe (Snapshot)
   }
 derive instance newtypeDeleteClusterSnapshotResult :: Newtype DeleteClusterSnapshotResult _
 derive instance repGenericDeleteClusterSnapshotResult :: Generic DeleteClusterSnapshotResult _
@@ -1585,12 +1584,12 @@ instance encodeDeleteClusterSnapshotResult :: Encode DeleteClusterSnapshotResult
 
 -- | Constructs DeleteClusterSnapshotResult from required parameters
 newDeleteClusterSnapshotResult :: DeleteClusterSnapshotResult
-newDeleteClusterSnapshotResult  = DeleteClusterSnapshotResult { "Snapshot": (NullOrUndefined Nothing) }
+newDeleteClusterSnapshotResult  = DeleteClusterSnapshotResult { "Snapshot": Nothing }
 
 -- | Constructs DeleteClusterSnapshotResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteClusterSnapshotResult' :: ( { "Snapshot" :: NullOrUndefined (Snapshot) } -> {"Snapshot" :: NullOrUndefined (Snapshot) } ) -> DeleteClusterSnapshotResult
-newDeleteClusterSnapshotResult'  customize = (DeleteClusterSnapshotResult <<< customize) { "Snapshot": (NullOrUndefined Nothing) }
+newDeleteClusterSnapshotResult' :: ( { "Snapshot" :: Maybe (Snapshot) } -> {"Snapshot" :: Maybe (Snapshot) } ) -> DeleteClusterSnapshotResult
+newDeleteClusterSnapshotResult'  customize = (DeleteClusterSnapshotResult <<< customize) { "Snapshot": Nothing }
 
 
 
@@ -1743,11 +1742,11 @@ instance encodeDependentServiceUnavailableFault :: Encode DependentServiceUnavai
 
 -- | <p/>
 newtype DescribeClusterParameterGroupsMessage = DescribeClusterParameterGroupsMessage 
-  { "ParameterGroupName" :: NullOrUndefined (String)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
-  , "TagKeys" :: NullOrUndefined (TagKeyList)
-  , "TagValues" :: NullOrUndefined (TagValueList)
+  { "ParameterGroupName" :: Maybe (String)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
+  , "TagKeys" :: Maybe (TagKeyList)
+  , "TagValues" :: Maybe (TagValueList)
   }
 derive instance newtypeDescribeClusterParameterGroupsMessage :: Newtype DescribeClusterParameterGroupsMessage _
 derive instance repGenericDescribeClusterParameterGroupsMessage :: Generic DescribeClusterParameterGroupsMessage _
@@ -1757,21 +1756,21 @@ instance encodeDescribeClusterParameterGroupsMessage :: Encode DescribeClusterPa
 
 -- | Constructs DescribeClusterParameterGroupsMessage from required parameters
 newDescribeClusterParameterGroupsMessage :: DescribeClusterParameterGroupsMessage
-newDescribeClusterParameterGroupsMessage  = DescribeClusterParameterGroupsMessage { "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "ParameterGroupName": (NullOrUndefined Nothing), "TagKeys": (NullOrUndefined Nothing), "TagValues": (NullOrUndefined Nothing) }
+newDescribeClusterParameterGroupsMessage  = DescribeClusterParameterGroupsMessage { "Marker": Nothing, "MaxRecords": Nothing, "ParameterGroupName": Nothing, "TagKeys": Nothing, "TagValues": Nothing }
 
 -- | Constructs DescribeClusterParameterGroupsMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeClusterParameterGroupsMessage' :: ( { "ParameterGroupName" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) , "TagKeys" :: NullOrUndefined (TagKeyList) , "TagValues" :: NullOrUndefined (TagValueList) } -> {"ParameterGroupName" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) , "TagKeys" :: NullOrUndefined (TagKeyList) , "TagValues" :: NullOrUndefined (TagValueList) } ) -> DescribeClusterParameterGroupsMessage
-newDescribeClusterParameterGroupsMessage'  customize = (DescribeClusterParameterGroupsMessage <<< customize) { "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "ParameterGroupName": (NullOrUndefined Nothing), "TagKeys": (NullOrUndefined Nothing), "TagValues": (NullOrUndefined Nothing) }
+newDescribeClusterParameterGroupsMessage' :: ( { "ParameterGroupName" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) , "TagKeys" :: Maybe (TagKeyList) , "TagValues" :: Maybe (TagValueList) } -> {"ParameterGroupName" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) , "TagKeys" :: Maybe (TagKeyList) , "TagValues" :: Maybe (TagValueList) } ) -> DescribeClusterParameterGroupsMessage
+newDescribeClusterParameterGroupsMessage'  customize = (DescribeClusterParameterGroupsMessage <<< customize) { "Marker": Nothing, "MaxRecords": Nothing, "ParameterGroupName": Nothing, "TagKeys": Nothing, "TagValues": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeClusterParametersMessage = DescribeClusterParametersMessage 
   { "ParameterGroupName" :: (String)
-  , "Source" :: NullOrUndefined (String)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
+  , "Source" :: Maybe (String)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
   }
 derive instance newtypeDescribeClusterParametersMessage :: Newtype DescribeClusterParametersMessage _
 derive instance repGenericDescribeClusterParametersMessage :: Generic DescribeClusterParametersMessage _
@@ -1781,22 +1780,22 @@ instance encodeDescribeClusterParametersMessage :: Encode DescribeClusterParamet
 
 -- | Constructs DescribeClusterParametersMessage from required parameters
 newDescribeClusterParametersMessage :: String -> DescribeClusterParametersMessage
-newDescribeClusterParametersMessage _ParameterGroupName = DescribeClusterParametersMessage { "ParameterGroupName": _ParameterGroupName, "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "Source": (NullOrUndefined Nothing) }
+newDescribeClusterParametersMessage _ParameterGroupName = DescribeClusterParametersMessage { "ParameterGroupName": _ParameterGroupName, "Marker": Nothing, "MaxRecords": Nothing, "Source": Nothing }
 
 -- | Constructs DescribeClusterParametersMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeClusterParametersMessage' :: String -> ( { "ParameterGroupName" :: (String) , "Source" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } -> {"ParameterGroupName" :: (String) , "Source" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } ) -> DescribeClusterParametersMessage
-newDescribeClusterParametersMessage' _ParameterGroupName customize = (DescribeClusterParametersMessage <<< customize) { "ParameterGroupName": _ParameterGroupName, "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "Source": (NullOrUndefined Nothing) }
+newDescribeClusterParametersMessage' :: String -> ( { "ParameterGroupName" :: (String) , "Source" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } -> {"ParameterGroupName" :: (String) , "Source" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } ) -> DescribeClusterParametersMessage
+newDescribeClusterParametersMessage' _ParameterGroupName customize = (DescribeClusterParametersMessage <<< customize) { "ParameterGroupName": _ParameterGroupName, "Marker": Nothing, "MaxRecords": Nothing, "Source": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeClusterSecurityGroupsMessage = DescribeClusterSecurityGroupsMessage 
-  { "ClusterSecurityGroupName" :: NullOrUndefined (String)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
-  , "TagKeys" :: NullOrUndefined (TagKeyList)
-  , "TagValues" :: NullOrUndefined (TagValueList)
+  { "ClusterSecurityGroupName" :: Maybe (String)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
+  , "TagKeys" :: Maybe (TagKeyList)
+  , "TagValues" :: Maybe (TagValueList)
   }
 derive instance newtypeDescribeClusterSecurityGroupsMessage :: Newtype DescribeClusterSecurityGroupsMessage _
 derive instance repGenericDescribeClusterSecurityGroupsMessage :: Generic DescribeClusterSecurityGroupsMessage _
@@ -1806,27 +1805,27 @@ instance encodeDescribeClusterSecurityGroupsMessage :: Encode DescribeClusterSec
 
 -- | Constructs DescribeClusterSecurityGroupsMessage from required parameters
 newDescribeClusterSecurityGroupsMessage :: DescribeClusterSecurityGroupsMessage
-newDescribeClusterSecurityGroupsMessage  = DescribeClusterSecurityGroupsMessage { "ClusterSecurityGroupName": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "TagKeys": (NullOrUndefined Nothing), "TagValues": (NullOrUndefined Nothing) }
+newDescribeClusterSecurityGroupsMessage  = DescribeClusterSecurityGroupsMessage { "ClusterSecurityGroupName": Nothing, "Marker": Nothing, "MaxRecords": Nothing, "TagKeys": Nothing, "TagValues": Nothing }
 
 -- | Constructs DescribeClusterSecurityGroupsMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeClusterSecurityGroupsMessage' :: ( { "ClusterSecurityGroupName" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) , "TagKeys" :: NullOrUndefined (TagKeyList) , "TagValues" :: NullOrUndefined (TagValueList) } -> {"ClusterSecurityGroupName" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) , "TagKeys" :: NullOrUndefined (TagKeyList) , "TagValues" :: NullOrUndefined (TagValueList) } ) -> DescribeClusterSecurityGroupsMessage
-newDescribeClusterSecurityGroupsMessage'  customize = (DescribeClusterSecurityGroupsMessage <<< customize) { "ClusterSecurityGroupName": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "TagKeys": (NullOrUndefined Nothing), "TagValues": (NullOrUndefined Nothing) }
+newDescribeClusterSecurityGroupsMessage' :: ( { "ClusterSecurityGroupName" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) , "TagKeys" :: Maybe (TagKeyList) , "TagValues" :: Maybe (TagValueList) } -> {"ClusterSecurityGroupName" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) , "TagKeys" :: Maybe (TagKeyList) , "TagValues" :: Maybe (TagValueList) } ) -> DescribeClusterSecurityGroupsMessage
+newDescribeClusterSecurityGroupsMessage'  customize = (DescribeClusterSecurityGroupsMessage <<< customize) { "ClusterSecurityGroupName": Nothing, "Marker": Nothing, "MaxRecords": Nothing, "TagKeys": Nothing, "TagValues": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeClusterSnapshotsMessage = DescribeClusterSnapshotsMessage 
-  { "ClusterIdentifier" :: NullOrUndefined (String)
-  , "SnapshotIdentifier" :: NullOrUndefined (String)
-  , "SnapshotType" :: NullOrUndefined (String)
-  , "StartTime" :: NullOrUndefined (TStamp)
-  , "EndTime" :: NullOrUndefined (TStamp)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
-  , "OwnerAccount" :: NullOrUndefined (String)
-  , "TagKeys" :: NullOrUndefined (TagKeyList)
-  , "TagValues" :: NullOrUndefined (TagValueList)
+  { "ClusterIdentifier" :: Maybe (String)
+  , "SnapshotIdentifier" :: Maybe (String)
+  , "SnapshotType" :: Maybe (String)
+  , "StartTime" :: Maybe (TStamp)
+  , "EndTime" :: Maybe (TStamp)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
+  , "OwnerAccount" :: Maybe (String)
+  , "TagKeys" :: Maybe (TagKeyList)
+  , "TagValues" :: Maybe (TagValueList)
   }
 derive instance newtypeDescribeClusterSnapshotsMessage :: Newtype DescribeClusterSnapshotsMessage _
 derive instance repGenericDescribeClusterSnapshotsMessage :: Generic DescribeClusterSnapshotsMessage _
@@ -1836,22 +1835,22 @@ instance encodeDescribeClusterSnapshotsMessage :: Encode DescribeClusterSnapshot
 
 -- | Constructs DescribeClusterSnapshotsMessage from required parameters
 newDescribeClusterSnapshotsMessage :: DescribeClusterSnapshotsMessage
-newDescribeClusterSnapshotsMessage  = DescribeClusterSnapshotsMessage { "ClusterIdentifier": (NullOrUndefined Nothing), "EndTime": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "OwnerAccount": (NullOrUndefined Nothing), "SnapshotIdentifier": (NullOrUndefined Nothing), "SnapshotType": (NullOrUndefined Nothing), "StartTime": (NullOrUndefined Nothing), "TagKeys": (NullOrUndefined Nothing), "TagValues": (NullOrUndefined Nothing) }
+newDescribeClusterSnapshotsMessage  = DescribeClusterSnapshotsMessage { "ClusterIdentifier": Nothing, "EndTime": Nothing, "Marker": Nothing, "MaxRecords": Nothing, "OwnerAccount": Nothing, "SnapshotIdentifier": Nothing, "SnapshotType": Nothing, "StartTime": Nothing, "TagKeys": Nothing, "TagValues": Nothing }
 
 -- | Constructs DescribeClusterSnapshotsMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeClusterSnapshotsMessage' :: ( { "ClusterIdentifier" :: NullOrUndefined (String) , "SnapshotIdentifier" :: NullOrUndefined (String) , "SnapshotType" :: NullOrUndefined (String) , "StartTime" :: NullOrUndefined (TStamp) , "EndTime" :: NullOrUndefined (TStamp) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) , "OwnerAccount" :: NullOrUndefined (String) , "TagKeys" :: NullOrUndefined (TagKeyList) , "TagValues" :: NullOrUndefined (TagValueList) } -> {"ClusterIdentifier" :: NullOrUndefined (String) , "SnapshotIdentifier" :: NullOrUndefined (String) , "SnapshotType" :: NullOrUndefined (String) , "StartTime" :: NullOrUndefined (TStamp) , "EndTime" :: NullOrUndefined (TStamp) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) , "OwnerAccount" :: NullOrUndefined (String) , "TagKeys" :: NullOrUndefined (TagKeyList) , "TagValues" :: NullOrUndefined (TagValueList) } ) -> DescribeClusterSnapshotsMessage
-newDescribeClusterSnapshotsMessage'  customize = (DescribeClusterSnapshotsMessage <<< customize) { "ClusterIdentifier": (NullOrUndefined Nothing), "EndTime": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "OwnerAccount": (NullOrUndefined Nothing), "SnapshotIdentifier": (NullOrUndefined Nothing), "SnapshotType": (NullOrUndefined Nothing), "StartTime": (NullOrUndefined Nothing), "TagKeys": (NullOrUndefined Nothing), "TagValues": (NullOrUndefined Nothing) }
+newDescribeClusterSnapshotsMessage' :: ( { "ClusterIdentifier" :: Maybe (String) , "SnapshotIdentifier" :: Maybe (String) , "SnapshotType" :: Maybe (String) , "StartTime" :: Maybe (TStamp) , "EndTime" :: Maybe (TStamp) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) , "OwnerAccount" :: Maybe (String) , "TagKeys" :: Maybe (TagKeyList) , "TagValues" :: Maybe (TagValueList) } -> {"ClusterIdentifier" :: Maybe (String) , "SnapshotIdentifier" :: Maybe (String) , "SnapshotType" :: Maybe (String) , "StartTime" :: Maybe (TStamp) , "EndTime" :: Maybe (TStamp) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) , "OwnerAccount" :: Maybe (String) , "TagKeys" :: Maybe (TagKeyList) , "TagValues" :: Maybe (TagValueList) } ) -> DescribeClusterSnapshotsMessage
+newDescribeClusterSnapshotsMessage'  customize = (DescribeClusterSnapshotsMessage <<< customize) { "ClusterIdentifier": Nothing, "EndTime": Nothing, "Marker": Nothing, "MaxRecords": Nothing, "OwnerAccount": Nothing, "SnapshotIdentifier": Nothing, "SnapshotType": Nothing, "StartTime": Nothing, "TagKeys": Nothing, "TagValues": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeClusterSubnetGroupsMessage = DescribeClusterSubnetGroupsMessage 
-  { "ClusterSubnetGroupName" :: NullOrUndefined (String)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
-  , "TagKeys" :: NullOrUndefined (TagKeyList)
-  , "TagValues" :: NullOrUndefined (TagValueList)
+  { "ClusterSubnetGroupName" :: Maybe (String)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
+  , "TagKeys" :: Maybe (TagKeyList)
+  , "TagValues" :: Maybe (TagValueList)
   }
 derive instance newtypeDescribeClusterSubnetGroupsMessage :: Newtype DescribeClusterSubnetGroupsMessage _
 derive instance repGenericDescribeClusterSubnetGroupsMessage :: Generic DescribeClusterSubnetGroupsMessage _
@@ -1861,21 +1860,21 @@ instance encodeDescribeClusterSubnetGroupsMessage :: Encode DescribeClusterSubne
 
 -- | Constructs DescribeClusterSubnetGroupsMessage from required parameters
 newDescribeClusterSubnetGroupsMessage :: DescribeClusterSubnetGroupsMessage
-newDescribeClusterSubnetGroupsMessage  = DescribeClusterSubnetGroupsMessage { "ClusterSubnetGroupName": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "TagKeys": (NullOrUndefined Nothing), "TagValues": (NullOrUndefined Nothing) }
+newDescribeClusterSubnetGroupsMessage  = DescribeClusterSubnetGroupsMessage { "ClusterSubnetGroupName": Nothing, "Marker": Nothing, "MaxRecords": Nothing, "TagKeys": Nothing, "TagValues": Nothing }
 
 -- | Constructs DescribeClusterSubnetGroupsMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeClusterSubnetGroupsMessage' :: ( { "ClusterSubnetGroupName" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) , "TagKeys" :: NullOrUndefined (TagKeyList) , "TagValues" :: NullOrUndefined (TagValueList) } -> {"ClusterSubnetGroupName" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) , "TagKeys" :: NullOrUndefined (TagKeyList) , "TagValues" :: NullOrUndefined (TagValueList) } ) -> DescribeClusterSubnetGroupsMessage
-newDescribeClusterSubnetGroupsMessage'  customize = (DescribeClusterSubnetGroupsMessage <<< customize) { "ClusterSubnetGroupName": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "TagKeys": (NullOrUndefined Nothing), "TagValues": (NullOrUndefined Nothing) }
+newDescribeClusterSubnetGroupsMessage' :: ( { "ClusterSubnetGroupName" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) , "TagKeys" :: Maybe (TagKeyList) , "TagValues" :: Maybe (TagValueList) } -> {"ClusterSubnetGroupName" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) , "TagKeys" :: Maybe (TagKeyList) , "TagValues" :: Maybe (TagValueList) } ) -> DescribeClusterSubnetGroupsMessage
+newDescribeClusterSubnetGroupsMessage'  customize = (DescribeClusterSubnetGroupsMessage <<< customize) { "ClusterSubnetGroupName": Nothing, "Marker": Nothing, "MaxRecords": Nothing, "TagKeys": Nothing, "TagValues": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeClusterVersionsMessage = DescribeClusterVersionsMessage 
-  { "ClusterVersion" :: NullOrUndefined (String)
-  , "ClusterParameterGroupFamily" :: NullOrUndefined (String)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
+  { "ClusterVersion" :: Maybe (String)
+  , "ClusterParameterGroupFamily" :: Maybe (String)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
   }
 derive instance newtypeDescribeClusterVersionsMessage :: Newtype DescribeClusterVersionsMessage _
 derive instance repGenericDescribeClusterVersionsMessage :: Generic DescribeClusterVersionsMessage _
@@ -1885,22 +1884,22 @@ instance encodeDescribeClusterVersionsMessage :: Encode DescribeClusterVersionsM
 
 -- | Constructs DescribeClusterVersionsMessage from required parameters
 newDescribeClusterVersionsMessage :: DescribeClusterVersionsMessage
-newDescribeClusterVersionsMessage  = DescribeClusterVersionsMessage { "ClusterParameterGroupFamily": (NullOrUndefined Nothing), "ClusterVersion": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing) }
+newDescribeClusterVersionsMessage  = DescribeClusterVersionsMessage { "ClusterParameterGroupFamily": Nothing, "ClusterVersion": Nothing, "Marker": Nothing, "MaxRecords": Nothing }
 
 -- | Constructs DescribeClusterVersionsMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeClusterVersionsMessage' :: ( { "ClusterVersion" :: NullOrUndefined (String) , "ClusterParameterGroupFamily" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } -> {"ClusterVersion" :: NullOrUndefined (String) , "ClusterParameterGroupFamily" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } ) -> DescribeClusterVersionsMessage
-newDescribeClusterVersionsMessage'  customize = (DescribeClusterVersionsMessage <<< customize) { "ClusterParameterGroupFamily": (NullOrUndefined Nothing), "ClusterVersion": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing) }
+newDescribeClusterVersionsMessage' :: ( { "ClusterVersion" :: Maybe (String) , "ClusterParameterGroupFamily" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } -> {"ClusterVersion" :: Maybe (String) , "ClusterParameterGroupFamily" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } ) -> DescribeClusterVersionsMessage
+newDescribeClusterVersionsMessage'  customize = (DescribeClusterVersionsMessage <<< customize) { "ClusterParameterGroupFamily": Nothing, "ClusterVersion": Nothing, "Marker": Nothing, "MaxRecords": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeClustersMessage = DescribeClustersMessage 
-  { "ClusterIdentifier" :: NullOrUndefined (String)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
-  , "TagKeys" :: NullOrUndefined (TagKeyList)
-  , "TagValues" :: NullOrUndefined (TagValueList)
+  { "ClusterIdentifier" :: Maybe (String)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
+  , "TagKeys" :: Maybe (TagKeyList)
+  , "TagValues" :: Maybe (TagValueList)
   }
 derive instance newtypeDescribeClustersMessage :: Newtype DescribeClustersMessage _
 derive instance repGenericDescribeClustersMessage :: Generic DescribeClustersMessage _
@@ -1910,20 +1909,20 @@ instance encodeDescribeClustersMessage :: Encode DescribeClustersMessage where e
 
 -- | Constructs DescribeClustersMessage from required parameters
 newDescribeClustersMessage :: DescribeClustersMessage
-newDescribeClustersMessage  = DescribeClustersMessage { "ClusterIdentifier": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "TagKeys": (NullOrUndefined Nothing), "TagValues": (NullOrUndefined Nothing) }
+newDescribeClustersMessage  = DescribeClustersMessage { "ClusterIdentifier": Nothing, "Marker": Nothing, "MaxRecords": Nothing, "TagKeys": Nothing, "TagValues": Nothing }
 
 -- | Constructs DescribeClustersMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeClustersMessage' :: ( { "ClusterIdentifier" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) , "TagKeys" :: NullOrUndefined (TagKeyList) , "TagValues" :: NullOrUndefined (TagValueList) } -> {"ClusterIdentifier" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) , "TagKeys" :: NullOrUndefined (TagKeyList) , "TagValues" :: NullOrUndefined (TagValueList) } ) -> DescribeClustersMessage
-newDescribeClustersMessage'  customize = (DescribeClustersMessage <<< customize) { "ClusterIdentifier": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "TagKeys": (NullOrUndefined Nothing), "TagValues": (NullOrUndefined Nothing) }
+newDescribeClustersMessage' :: ( { "ClusterIdentifier" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) , "TagKeys" :: Maybe (TagKeyList) , "TagValues" :: Maybe (TagValueList) } -> {"ClusterIdentifier" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) , "TagKeys" :: Maybe (TagKeyList) , "TagValues" :: Maybe (TagValueList) } ) -> DescribeClustersMessage
+newDescribeClustersMessage'  customize = (DescribeClustersMessage <<< customize) { "ClusterIdentifier": Nothing, "Marker": Nothing, "MaxRecords": Nothing, "TagKeys": Nothing, "TagValues": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeDefaultClusterParametersMessage = DescribeDefaultClusterParametersMessage 
   { "ParameterGroupFamily" :: (String)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
   }
 derive instance newtypeDescribeDefaultClusterParametersMessage :: Newtype DescribeDefaultClusterParametersMessage _
 derive instance repGenericDescribeDefaultClusterParametersMessage :: Generic DescribeDefaultClusterParametersMessage _
@@ -1933,17 +1932,17 @@ instance encodeDescribeDefaultClusterParametersMessage :: Encode DescribeDefault
 
 -- | Constructs DescribeDefaultClusterParametersMessage from required parameters
 newDescribeDefaultClusterParametersMessage :: String -> DescribeDefaultClusterParametersMessage
-newDescribeDefaultClusterParametersMessage _ParameterGroupFamily = DescribeDefaultClusterParametersMessage { "ParameterGroupFamily": _ParameterGroupFamily, "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing) }
+newDescribeDefaultClusterParametersMessage _ParameterGroupFamily = DescribeDefaultClusterParametersMessage { "ParameterGroupFamily": _ParameterGroupFamily, "Marker": Nothing, "MaxRecords": Nothing }
 
 -- | Constructs DescribeDefaultClusterParametersMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeDefaultClusterParametersMessage' :: String -> ( { "ParameterGroupFamily" :: (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } -> {"ParameterGroupFamily" :: (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } ) -> DescribeDefaultClusterParametersMessage
-newDescribeDefaultClusterParametersMessage' _ParameterGroupFamily customize = (DescribeDefaultClusterParametersMessage <<< customize) { "ParameterGroupFamily": _ParameterGroupFamily, "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing) }
+newDescribeDefaultClusterParametersMessage' :: String -> ( { "ParameterGroupFamily" :: (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } -> {"ParameterGroupFamily" :: (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } ) -> DescribeDefaultClusterParametersMessage
+newDescribeDefaultClusterParametersMessage' _ParameterGroupFamily customize = (DescribeDefaultClusterParametersMessage <<< customize) { "ParameterGroupFamily": _ParameterGroupFamily, "Marker": Nothing, "MaxRecords": Nothing }
 
 
 
 newtype DescribeDefaultClusterParametersResult = DescribeDefaultClusterParametersResult 
-  { "DefaultClusterParameters" :: NullOrUndefined (DefaultClusterParameters)
+  { "DefaultClusterParameters" :: Maybe (DefaultClusterParameters)
   }
 derive instance newtypeDescribeDefaultClusterParametersResult :: Newtype DescribeDefaultClusterParametersResult _
 derive instance repGenericDescribeDefaultClusterParametersResult :: Generic DescribeDefaultClusterParametersResult _
@@ -1953,18 +1952,18 @@ instance encodeDescribeDefaultClusterParametersResult :: Encode DescribeDefaultC
 
 -- | Constructs DescribeDefaultClusterParametersResult from required parameters
 newDescribeDefaultClusterParametersResult :: DescribeDefaultClusterParametersResult
-newDescribeDefaultClusterParametersResult  = DescribeDefaultClusterParametersResult { "DefaultClusterParameters": (NullOrUndefined Nothing) }
+newDescribeDefaultClusterParametersResult  = DescribeDefaultClusterParametersResult { "DefaultClusterParameters": Nothing }
 
 -- | Constructs DescribeDefaultClusterParametersResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeDefaultClusterParametersResult' :: ( { "DefaultClusterParameters" :: NullOrUndefined (DefaultClusterParameters) } -> {"DefaultClusterParameters" :: NullOrUndefined (DefaultClusterParameters) } ) -> DescribeDefaultClusterParametersResult
-newDescribeDefaultClusterParametersResult'  customize = (DescribeDefaultClusterParametersResult <<< customize) { "DefaultClusterParameters": (NullOrUndefined Nothing) }
+newDescribeDefaultClusterParametersResult' :: ( { "DefaultClusterParameters" :: Maybe (DefaultClusterParameters) } -> {"DefaultClusterParameters" :: Maybe (DefaultClusterParameters) } ) -> DescribeDefaultClusterParametersResult
+newDescribeDefaultClusterParametersResult'  customize = (DescribeDefaultClusterParametersResult <<< customize) { "DefaultClusterParameters": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeEventCategoriesMessage = DescribeEventCategoriesMessage 
-  { "SourceType" :: NullOrUndefined (String)
+  { "SourceType" :: Maybe (String)
   }
 derive instance newtypeDescribeEventCategoriesMessage :: Newtype DescribeEventCategoriesMessage _
 derive instance repGenericDescribeEventCategoriesMessage :: Generic DescribeEventCategoriesMessage _
@@ -1974,22 +1973,22 @@ instance encodeDescribeEventCategoriesMessage :: Encode DescribeEventCategoriesM
 
 -- | Constructs DescribeEventCategoriesMessage from required parameters
 newDescribeEventCategoriesMessage :: DescribeEventCategoriesMessage
-newDescribeEventCategoriesMessage  = DescribeEventCategoriesMessage { "SourceType": (NullOrUndefined Nothing) }
+newDescribeEventCategoriesMessage  = DescribeEventCategoriesMessage { "SourceType": Nothing }
 
 -- | Constructs DescribeEventCategoriesMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeEventCategoriesMessage' :: ( { "SourceType" :: NullOrUndefined (String) } -> {"SourceType" :: NullOrUndefined (String) } ) -> DescribeEventCategoriesMessage
-newDescribeEventCategoriesMessage'  customize = (DescribeEventCategoriesMessage <<< customize) { "SourceType": (NullOrUndefined Nothing) }
+newDescribeEventCategoriesMessage' :: ( { "SourceType" :: Maybe (String) } -> {"SourceType" :: Maybe (String) } ) -> DescribeEventCategoriesMessage
+newDescribeEventCategoriesMessage'  customize = (DescribeEventCategoriesMessage <<< customize) { "SourceType": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeEventSubscriptionsMessage = DescribeEventSubscriptionsMessage 
-  { "SubscriptionName" :: NullOrUndefined (String)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
-  , "TagKeys" :: NullOrUndefined (TagKeyList)
-  , "TagValues" :: NullOrUndefined (TagValueList)
+  { "SubscriptionName" :: Maybe (String)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
+  , "TagKeys" :: Maybe (TagKeyList)
+  , "TagValues" :: Maybe (TagValueList)
   }
 derive instance newtypeDescribeEventSubscriptionsMessage :: Newtype DescribeEventSubscriptionsMessage _
 derive instance repGenericDescribeEventSubscriptionsMessage :: Generic DescribeEventSubscriptionsMessage _
@@ -1999,24 +1998,24 @@ instance encodeDescribeEventSubscriptionsMessage :: Encode DescribeEventSubscrip
 
 -- | Constructs DescribeEventSubscriptionsMessage from required parameters
 newDescribeEventSubscriptionsMessage :: DescribeEventSubscriptionsMessage
-newDescribeEventSubscriptionsMessage  = DescribeEventSubscriptionsMessage { "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "SubscriptionName": (NullOrUndefined Nothing), "TagKeys": (NullOrUndefined Nothing), "TagValues": (NullOrUndefined Nothing) }
+newDescribeEventSubscriptionsMessage  = DescribeEventSubscriptionsMessage { "Marker": Nothing, "MaxRecords": Nothing, "SubscriptionName": Nothing, "TagKeys": Nothing, "TagValues": Nothing }
 
 -- | Constructs DescribeEventSubscriptionsMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeEventSubscriptionsMessage' :: ( { "SubscriptionName" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) , "TagKeys" :: NullOrUndefined (TagKeyList) , "TagValues" :: NullOrUndefined (TagValueList) } -> {"SubscriptionName" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) , "TagKeys" :: NullOrUndefined (TagKeyList) , "TagValues" :: NullOrUndefined (TagValueList) } ) -> DescribeEventSubscriptionsMessage
-newDescribeEventSubscriptionsMessage'  customize = (DescribeEventSubscriptionsMessage <<< customize) { "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "SubscriptionName": (NullOrUndefined Nothing), "TagKeys": (NullOrUndefined Nothing), "TagValues": (NullOrUndefined Nothing) }
+newDescribeEventSubscriptionsMessage' :: ( { "SubscriptionName" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) , "TagKeys" :: Maybe (TagKeyList) , "TagValues" :: Maybe (TagValueList) } -> {"SubscriptionName" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) , "TagKeys" :: Maybe (TagKeyList) , "TagValues" :: Maybe (TagValueList) } ) -> DescribeEventSubscriptionsMessage
+newDescribeEventSubscriptionsMessage'  customize = (DescribeEventSubscriptionsMessage <<< customize) { "Marker": Nothing, "MaxRecords": Nothing, "SubscriptionName": Nothing, "TagKeys": Nothing, "TagValues": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeEventsMessage = DescribeEventsMessage 
-  { "SourceIdentifier" :: NullOrUndefined (String)
-  , "SourceType" :: NullOrUndefined (SourceType)
-  , "StartTime" :: NullOrUndefined (TStamp)
-  , "EndTime" :: NullOrUndefined (TStamp)
-  , "Duration" :: NullOrUndefined (IntegerOptional)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
+  { "SourceIdentifier" :: Maybe (String)
+  , "SourceType" :: Maybe (SourceType)
+  , "StartTime" :: Maybe (TStamp)
+  , "EndTime" :: Maybe (TStamp)
+  , "Duration" :: Maybe (IntegerOptional)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
   }
 derive instance newtypeDescribeEventsMessage :: Newtype DescribeEventsMessage _
 derive instance repGenericDescribeEventsMessage :: Generic DescribeEventsMessage _
@@ -2026,22 +2025,22 @@ instance encodeDescribeEventsMessage :: Encode DescribeEventsMessage where encod
 
 -- | Constructs DescribeEventsMessage from required parameters
 newDescribeEventsMessage :: DescribeEventsMessage
-newDescribeEventsMessage  = DescribeEventsMessage { "Duration": (NullOrUndefined Nothing), "EndTime": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "SourceIdentifier": (NullOrUndefined Nothing), "SourceType": (NullOrUndefined Nothing), "StartTime": (NullOrUndefined Nothing) }
+newDescribeEventsMessage  = DescribeEventsMessage { "Duration": Nothing, "EndTime": Nothing, "Marker": Nothing, "MaxRecords": Nothing, "SourceIdentifier": Nothing, "SourceType": Nothing, "StartTime": Nothing }
 
 -- | Constructs DescribeEventsMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeEventsMessage' :: ( { "SourceIdentifier" :: NullOrUndefined (String) , "SourceType" :: NullOrUndefined (SourceType) , "StartTime" :: NullOrUndefined (TStamp) , "EndTime" :: NullOrUndefined (TStamp) , "Duration" :: NullOrUndefined (IntegerOptional) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } -> {"SourceIdentifier" :: NullOrUndefined (String) , "SourceType" :: NullOrUndefined (SourceType) , "StartTime" :: NullOrUndefined (TStamp) , "EndTime" :: NullOrUndefined (TStamp) , "Duration" :: NullOrUndefined (IntegerOptional) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } ) -> DescribeEventsMessage
-newDescribeEventsMessage'  customize = (DescribeEventsMessage <<< customize) { "Duration": (NullOrUndefined Nothing), "EndTime": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "SourceIdentifier": (NullOrUndefined Nothing), "SourceType": (NullOrUndefined Nothing), "StartTime": (NullOrUndefined Nothing) }
+newDescribeEventsMessage' :: ( { "SourceIdentifier" :: Maybe (String) , "SourceType" :: Maybe (SourceType) , "StartTime" :: Maybe (TStamp) , "EndTime" :: Maybe (TStamp) , "Duration" :: Maybe (IntegerOptional) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } -> {"SourceIdentifier" :: Maybe (String) , "SourceType" :: Maybe (SourceType) , "StartTime" :: Maybe (TStamp) , "EndTime" :: Maybe (TStamp) , "Duration" :: Maybe (IntegerOptional) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } ) -> DescribeEventsMessage
+newDescribeEventsMessage'  customize = (DescribeEventsMessage <<< customize) { "Duration": Nothing, "EndTime": Nothing, "Marker": Nothing, "MaxRecords": Nothing, "SourceIdentifier": Nothing, "SourceType": Nothing, "StartTime": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeHsmClientCertificatesMessage = DescribeHsmClientCertificatesMessage 
-  { "HsmClientCertificateIdentifier" :: NullOrUndefined (String)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
-  , "TagKeys" :: NullOrUndefined (TagKeyList)
-  , "TagValues" :: NullOrUndefined (TagValueList)
+  { "HsmClientCertificateIdentifier" :: Maybe (String)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
+  , "TagKeys" :: Maybe (TagKeyList)
+  , "TagValues" :: Maybe (TagValueList)
   }
 derive instance newtypeDescribeHsmClientCertificatesMessage :: Newtype DescribeHsmClientCertificatesMessage _
 derive instance repGenericDescribeHsmClientCertificatesMessage :: Generic DescribeHsmClientCertificatesMessage _
@@ -2051,22 +2050,22 @@ instance encodeDescribeHsmClientCertificatesMessage :: Encode DescribeHsmClientC
 
 -- | Constructs DescribeHsmClientCertificatesMessage from required parameters
 newDescribeHsmClientCertificatesMessage :: DescribeHsmClientCertificatesMessage
-newDescribeHsmClientCertificatesMessage  = DescribeHsmClientCertificatesMessage { "HsmClientCertificateIdentifier": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "TagKeys": (NullOrUndefined Nothing), "TagValues": (NullOrUndefined Nothing) }
+newDescribeHsmClientCertificatesMessage  = DescribeHsmClientCertificatesMessage { "HsmClientCertificateIdentifier": Nothing, "Marker": Nothing, "MaxRecords": Nothing, "TagKeys": Nothing, "TagValues": Nothing }
 
 -- | Constructs DescribeHsmClientCertificatesMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeHsmClientCertificatesMessage' :: ( { "HsmClientCertificateIdentifier" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) , "TagKeys" :: NullOrUndefined (TagKeyList) , "TagValues" :: NullOrUndefined (TagValueList) } -> {"HsmClientCertificateIdentifier" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) , "TagKeys" :: NullOrUndefined (TagKeyList) , "TagValues" :: NullOrUndefined (TagValueList) } ) -> DescribeHsmClientCertificatesMessage
-newDescribeHsmClientCertificatesMessage'  customize = (DescribeHsmClientCertificatesMessage <<< customize) { "HsmClientCertificateIdentifier": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "TagKeys": (NullOrUndefined Nothing), "TagValues": (NullOrUndefined Nothing) }
+newDescribeHsmClientCertificatesMessage' :: ( { "HsmClientCertificateIdentifier" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) , "TagKeys" :: Maybe (TagKeyList) , "TagValues" :: Maybe (TagValueList) } -> {"HsmClientCertificateIdentifier" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) , "TagKeys" :: Maybe (TagKeyList) , "TagValues" :: Maybe (TagValueList) } ) -> DescribeHsmClientCertificatesMessage
+newDescribeHsmClientCertificatesMessage'  customize = (DescribeHsmClientCertificatesMessage <<< customize) { "HsmClientCertificateIdentifier": Nothing, "Marker": Nothing, "MaxRecords": Nothing, "TagKeys": Nothing, "TagValues": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeHsmConfigurationsMessage = DescribeHsmConfigurationsMessage 
-  { "HsmConfigurationIdentifier" :: NullOrUndefined (String)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
-  , "TagKeys" :: NullOrUndefined (TagKeyList)
-  , "TagValues" :: NullOrUndefined (TagValueList)
+  { "HsmConfigurationIdentifier" :: Maybe (String)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
+  , "TagKeys" :: Maybe (TagKeyList)
+  , "TagValues" :: Maybe (TagValueList)
   }
 derive instance newtypeDescribeHsmConfigurationsMessage :: Newtype DescribeHsmConfigurationsMessage _
 derive instance repGenericDescribeHsmConfigurationsMessage :: Generic DescribeHsmConfigurationsMessage _
@@ -2076,12 +2075,12 @@ instance encodeDescribeHsmConfigurationsMessage :: Encode DescribeHsmConfigurati
 
 -- | Constructs DescribeHsmConfigurationsMessage from required parameters
 newDescribeHsmConfigurationsMessage :: DescribeHsmConfigurationsMessage
-newDescribeHsmConfigurationsMessage  = DescribeHsmConfigurationsMessage { "HsmConfigurationIdentifier": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "TagKeys": (NullOrUndefined Nothing), "TagValues": (NullOrUndefined Nothing) }
+newDescribeHsmConfigurationsMessage  = DescribeHsmConfigurationsMessage { "HsmConfigurationIdentifier": Nothing, "Marker": Nothing, "MaxRecords": Nothing, "TagKeys": Nothing, "TagValues": Nothing }
 
 -- | Constructs DescribeHsmConfigurationsMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeHsmConfigurationsMessage' :: ( { "HsmConfigurationIdentifier" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) , "TagKeys" :: NullOrUndefined (TagKeyList) , "TagValues" :: NullOrUndefined (TagValueList) } -> {"HsmConfigurationIdentifier" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) , "TagKeys" :: NullOrUndefined (TagKeyList) , "TagValues" :: NullOrUndefined (TagValueList) } ) -> DescribeHsmConfigurationsMessage
-newDescribeHsmConfigurationsMessage'  customize = (DescribeHsmConfigurationsMessage <<< customize) { "HsmConfigurationIdentifier": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "TagKeys": (NullOrUndefined Nothing), "TagValues": (NullOrUndefined Nothing) }
+newDescribeHsmConfigurationsMessage' :: ( { "HsmConfigurationIdentifier" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) , "TagKeys" :: Maybe (TagKeyList) , "TagValues" :: Maybe (TagValueList) } -> {"HsmConfigurationIdentifier" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) , "TagKeys" :: Maybe (TagKeyList) , "TagValues" :: Maybe (TagValueList) } ) -> DescribeHsmConfigurationsMessage
+newDescribeHsmConfigurationsMessage'  customize = (DescribeHsmConfigurationsMessage <<< customize) { "HsmConfigurationIdentifier": Nothing, "Marker": Nothing, "MaxRecords": Nothing, "TagKeys": Nothing, "TagValues": Nothing }
 
 
 
@@ -2108,10 +2107,10 @@ newDescribeLoggingStatusMessage' _ClusterIdentifier customize = (DescribeLogging
 
 -- | <p/>
 newtype DescribeOrderableClusterOptionsMessage = DescribeOrderableClusterOptionsMessage 
-  { "ClusterVersion" :: NullOrUndefined (String)
-  , "NodeType" :: NullOrUndefined (String)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
+  { "ClusterVersion" :: Maybe (String)
+  , "NodeType" :: Maybe (String)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
   }
 derive instance newtypeDescribeOrderableClusterOptionsMessage :: Newtype DescribeOrderableClusterOptionsMessage _
 derive instance repGenericDescribeOrderableClusterOptionsMessage :: Generic DescribeOrderableClusterOptionsMessage _
@@ -2121,20 +2120,20 @@ instance encodeDescribeOrderableClusterOptionsMessage :: Encode DescribeOrderabl
 
 -- | Constructs DescribeOrderableClusterOptionsMessage from required parameters
 newDescribeOrderableClusterOptionsMessage :: DescribeOrderableClusterOptionsMessage
-newDescribeOrderableClusterOptionsMessage  = DescribeOrderableClusterOptionsMessage { "ClusterVersion": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "NodeType": (NullOrUndefined Nothing) }
+newDescribeOrderableClusterOptionsMessage  = DescribeOrderableClusterOptionsMessage { "ClusterVersion": Nothing, "Marker": Nothing, "MaxRecords": Nothing, "NodeType": Nothing }
 
 -- | Constructs DescribeOrderableClusterOptionsMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeOrderableClusterOptionsMessage' :: ( { "ClusterVersion" :: NullOrUndefined (String) , "NodeType" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } -> {"ClusterVersion" :: NullOrUndefined (String) , "NodeType" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } ) -> DescribeOrderableClusterOptionsMessage
-newDescribeOrderableClusterOptionsMessage'  customize = (DescribeOrderableClusterOptionsMessage <<< customize) { "ClusterVersion": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "NodeType": (NullOrUndefined Nothing) }
+newDescribeOrderableClusterOptionsMessage' :: ( { "ClusterVersion" :: Maybe (String) , "NodeType" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } -> {"ClusterVersion" :: Maybe (String) , "NodeType" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } ) -> DescribeOrderableClusterOptionsMessage
+newDescribeOrderableClusterOptionsMessage'  customize = (DescribeOrderableClusterOptionsMessage <<< customize) { "ClusterVersion": Nothing, "Marker": Nothing, "MaxRecords": Nothing, "NodeType": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeReservedNodeOfferingsMessage = DescribeReservedNodeOfferingsMessage 
-  { "ReservedNodeOfferingId" :: NullOrUndefined (String)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
+  { "ReservedNodeOfferingId" :: Maybe (String)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
   }
 derive instance newtypeDescribeReservedNodeOfferingsMessage :: Newtype DescribeReservedNodeOfferingsMessage _
 derive instance repGenericDescribeReservedNodeOfferingsMessage :: Generic DescribeReservedNodeOfferingsMessage _
@@ -2144,20 +2143,20 @@ instance encodeDescribeReservedNodeOfferingsMessage :: Encode DescribeReservedNo
 
 -- | Constructs DescribeReservedNodeOfferingsMessage from required parameters
 newDescribeReservedNodeOfferingsMessage :: DescribeReservedNodeOfferingsMessage
-newDescribeReservedNodeOfferingsMessage  = DescribeReservedNodeOfferingsMessage { "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "ReservedNodeOfferingId": (NullOrUndefined Nothing) }
+newDescribeReservedNodeOfferingsMessage  = DescribeReservedNodeOfferingsMessage { "Marker": Nothing, "MaxRecords": Nothing, "ReservedNodeOfferingId": Nothing }
 
 -- | Constructs DescribeReservedNodeOfferingsMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeReservedNodeOfferingsMessage' :: ( { "ReservedNodeOfferingId" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } -> {"ReservedNodeOfferingId" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } ) -> DescribeReservedNodeOfferingsMessage
-newDescribeReservedNodeOfferingsMessage'  customize = (DescribeReservedNodeOfferingsMessage <<< customize) { "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "ReservedNodeOfferingId": (NullOrUndefined Nothing) }
+newDescribeReservedNodeOfferingsMessage' :: ( { "ReservedNodeOfferingId" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } -> {"ReservedNodeOfferingId" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } ) -> DescribeReservedNodeOfferingsMessage
+newDescribeReservedNodeOfferingsMessage'  customize = (DescribeReservedNodeOfferingsMessage <<< customize) { "Marker": Nothing, "MaxRecords": Nothing, "ReservedNodeOfferingId": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeReservedNodesMessage = DescribeReservedNodesMessage 
-  { "ReservedNodeId" :: NullOrUndefined (String)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
+  { "ReservedNodeId" :: Maybe (String)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
   }
 derive instance newtypeDescribeReservedNodesMessage :: Newtype DescribeReservedNodesMessage _
 derive instance repGenericDescribeReservedNodesMessage :: Generic DescribeReservedNodesMessage _
@@ -2167,12 +2166,12 @@ instance encodeDescribeReservedNodesMessage :: Encode DescribeReservedNodesMessa
 
 -- | Constructs DescribeReservedNodesMessage from required parameters
 newDescribeReservedNodesMessage :: DescribeReservedNodesMessage
-newDescribeReservedNodesMessage  = DescribeReservedNodesMessage { "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "ReservedNodeId": (NullOrUndefined Nothing) }
+newDescribeReservedNodesMessage  = DescribeReservedNodesMessage { "Marker": Nothing, "MaxRecords": Nothing, "ReservedNodeId": Nothing }
 
 -- | Constructs DescribeReservedNodesMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeReservedNodesMessage' :: ( { "ReservedNodeId" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } -> {"ReservedNodeId" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } ) -> DescribeReservedNodesMessage
-newDescribeReservedNodesMessage'  customize = (DescribeReservedNodesMessage <<< customize) { "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "ReservedNodeId": (NullOrUndefined Nothing) }
+newDescribeReservedNodesMessage' :: ( { "ReservedNodeId" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } -> {"ReservedNodeId" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } ) -> DescribeReservedNodesMessage
+newDescribeReservedNodesMessage'  customize = (DescribeReservedNodesMessage <<< customize) { "Marker": Nothing, "MaxRecords": Nothing, "ReservedNodeId": Nothing }
 
 
 
@@ -2199,11 +2198,11 @@ newDescribeResizeMessage' _ClusterIdentifier customize = (DescribeResizeMessage 
 
 -- | <p>The result of the <code>DescribeSnapshotCopyGrants</code> action.</p>
 newtype DescribeSnapshotCopyGrantsMessage = DescribeSnapshotCopyGrantsMessage 
-  { "SnapshotCopyGrantName" :: NullOrUndefined (String)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
-  , "TagKeys" :: NullOrUndefined (TagKeyList)
-  , "TagValues" :: NullOrUndefined (TagValueList)
+  { "SnapshotCopyGrantName" :: Maybe (String)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
+  , "TagKeys" :: Maybe (TagKeyList)
+  , "TagValues" :: Maybe (TagValueList)
   }
 derive instance newtypeDescribeSnapshotCopyGrantsMessage :: Newtype DescribeSnapshotCopyGrantsMessage _
 derive instance repGenericDescribeSnapshotCopyGrantsMessage :: Generic DescribeSnapshotCopyGrantsMessage _
@@ -2213,21 +2212,21 @@ instance encodeDescribeSnapshotCopyGrantsMessage :: Encode DescribeSnapshotCopyG
 
 -- | Constructs DescribeSnapshotCopyGrantsMessage from required parameters
 newDescribeSnapshotCopyGrantsMessage :: DescribeSnapshotCopyGrantsMessage
-newDescribeSnapshotCopyGrantsMessage  = DescribeSnapshotCopyGrantsMessage { "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "SnapshotCopyGrantName": (NullOrUndefined Nothing), "TagKeys": (NullOrUndefined Nothing), "TagValues": (NullOrUndefined Nothing) }
+newDescribeSnapshotCopyGrantsMessage  = DescribeSnapshotCopyGrantsMessage { "Marker": Nothing, "MaxRecords": Nothing, "SnapshotCopyGrantName": Nothing, "TagKeys": Nothing, "TagValues": Nothing }
 
 -- | Constructs DescribeSnapshotCopyGrantsMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeSnapshotCopyGrantsMessage' :: ( { "SnapshotCopyGrantName" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) , "TagKeys" :: NullOrUndefined (TagKeyList) , "TagValues" :: NullOrUndefined (TagValueList) } -> {"SnapshotCopyGrantName" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) , "TagKeys" :: NullOrUndefined (TagKeyList) , "TagValues" :: NullOrUndefined (TagValueList) } ) -> DescribeSnapshotCopyGrantsMessage
-newDescribeSnapshotCopyGrantsMessage'  customize = (DescribeSnapshotCopyGrantsMessage <<< customize) { "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "SnapshotCopyGrantName": (NullOrUndefined Nothing), "TagKeys": (NullOrUndefined Nothing), "TagValues": (NullOrUndefined Nothing) }
+newDescribeSnapshotCopyGrantsMessage' :: ( { "SnapshotCopyGrantName" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) , "TagKeys" :: Maybe (TagKeyList) , "TagValues" :: Maybe (TagValueList) } -> {"SnapshotCopyGrantName" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) , "TagKeys" :: Maybe (TagKeyList) , "TagValues" :: Maybe (TagValueList) } ) -> DescribeSnapshotCopyGrantsMessage
+newDescribeSnapshotCopyGrantsMessage'  customize = (DescribeSnapshotCopyGrantsMessage <<< customize) { "Marker": Nothing, "MaxRecords": Nothing, "SnapshotCopyGrantName": Nothing, "TagKeys": Nothing, "TagValues": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeTableRestoreStatusMessage = DescribeTableRestoreStatusMessage 
-  { "ClusterIdentifier" :: NullOrUndefined (String)
-  , "TableRestoreRequestId" :: NullOrUndefined (String)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
+  { "ClusterIdentifier" :: Maybe (String)
+  , "TableRestoreRequestId" :: Maybe (String)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
   }
 derive instance newtypeDescribeTableRestoreStatusMessage :: Newtype DescribeTableRestoreStatusMessage _
 derive instance repGenericDescribeTableRestoreStatusMessage :: Generic DescribeTableRestoreStatusMessage _
@@ -2237,23 +2236,23 @@ instance encodeDescribeTableRestoreStatusMessage :: Encode DescribeTableRestoreS
 
 -- | Constructs DescribeTableRestoreStatusMessage from required parameters
 newDescribeTableRestoreStatusMessage :: DescribeTableRestoreStatusMessage
-newDescribeTableRestoreStatusMessage  = DescribeTableRestoreStatusMessage { "ClusterIdentifier": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "TableRestoreRequestId": (NullOrUndefined Nothing) }
+newDescribeTableRestoreStatusMessage  = DescribeTableRestoreStatusMessage { "ClusterIdentifier": Nothing, "Marker": Nothing, "MaxRecords": Nothing, "TableRestoreRequestId": Nothing }
 
 -- | Constructs DescribeTableRestoreStatusMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeTableRestoreStatusMessage' :: ( { "ClusterIdentifier" :: NullOrUndefined (String) , "TableRestoreRequestId" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } -> {"ClusterIdentifier" :: NullOrUndefined (String) , "TableRestoreRequestId" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) } ) -> DescribeTableRestoreStatusMessage
-newDescribeTableRestoreStatusMessage'  customize = (DescribeTableRestoreStatusMessage <<< customize) { "ClusterIdentifier": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "TableRestoreRequestId": (NullOrUndefined Nothing) }
+newDescribeTableRestoreStatusMessage' :: ( { "ClusterIdentifier" :: Maybe (String) , "TableRestoreRequestId" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } -> {"ClusterIdentifier" :: Maybe (String) , "TableRestoreRequestId" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) } ) -> DescribeTableRestoreStatusMessage
+newDescribeTableRestoreStatusMessage'  customize = (DescribeTableRestoreStatusMessage <<< customize) { "ClusterIdentifier": Nothing, "Marker": Nothing, "MaxRecords": Nothing, "TableRestoreRequestId": Nothing }
 
 
 
 -- | <p/>
 newtype DescribeTagsMessage = DescribeTagsMessage 
-  { "ResourceName" :: NullOrUndefined (String)
-  , "ResourceType" :: NullOrUndefined (String)
-  , "MaxRecords" :: NullOrUndefined (IntegerOptional)
-  , "Marker" :: NullOrUndefined (String)
-  , "TagKeys" :: NullOrUndefined (TagKeyList)
-  , "TagValues" :: NullOrUndefined (TagValueList)
+  { "ResourceName" :: Maybe (String)
+  , "ResourceType" :: Maybe (String)
+  , "MaxRecords" :: Maybe (IntegerOptional)
+  , "Marker" :: Maybe (String)
+  , "TagKeys" :: Maybe (TagKeyList)
+  , "TagValues" :: Maybe (TagValueList)
   }
 derive instance newtypeDescribeTagsMessage :: Newtype DescribeTagsMessage _
 derive instance repGenericDescribeTagsMessage :: Generic DescribeTagsMessage _
@@ -2263,12 +2262,12 @@ instance encodeDescribeTagsMessage :: Encode DescribeTagsMessage where encode = 
 
 -- | Constructs DescribeTagsMessage from required parameters
 newDescribeTagsMessage :: DescribeTagsMessage
-newDescribeTagsMessage  = DescribeTagsMessage { "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "ResourceName": (NullOrUndefined Nothing), "ResourceType": (NullOrUndefined Nothing), "TagKeys": (NullOrUndefined Nothing), "TagValues": (NullOrUndefined Nothing) }
+newDescribeTagsMessage  = DescribeTagsMessage { "Marker": Nothing, "MaxRecords": Nothing, "ResourceName": Nothing, "ResourceType": Nothing, "TagKeys": Nothing, "TagValues": Nothing }
 
 -- | Constructs DescribeTagsMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeTagsMessage' :: ( { "ResourceName" :: NullOrUndefined (String) , "ResourceType" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) , "TagKeys" :: NullOrUndefined (TagKeyList) , "TagValues" :: NullOrUndefined (TagValueList) } -> {"ResourceName" :: NullOrUndefined (String) , "ResourceType" :: NullOrUndefined (String) , "MaxRecords" :: NullOrUndefined (IntegerOptional) , "Marker" :: NullOrUndefined (String) , "TagKeys" :: NullOrUndefined (TagKeyList) , "TagValues" :: NullOrUndefined (TagValueList) } ) -> DescribeTagsMessage
-newDescribeTagsMessage'  customize = (DescribeTagsMessage <<< customize) { "Marker": (NullOrUndefined Nothing), "MaxRecords": (NullOrUndefined Nothing), "ResourceName": (NullOrUndefined Nothing), "ResourceType": (NullOrUndefined Nothing), "TagKeys": (NullOrUndefined Nothing), "TagValues": (NullOrUndefined Nothing) }
+newDescribeTagsMessage' :: ( { "ResourceName" :: Maybe (String) , "ResourceType" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) , "TagKeys" :: Maybe (TagKeyList) , "TagValues" :: Maybe (TagValueList) } -> {"ResourceName" :: Maybe (String) , "ResourceType" :: Maybe (String) , "MaxRecords" :: Maybe (IntegerOptional) , "Marker" :: Maybe (String) , "TagKeys" :: Maybe (TagKeyList) , "TagValues" :: Maybe (TagValueList) } ) -> DescribeTagsMessage
+newDescribeTagsMessage'  customize = (DescribeTagsMessage <<< customize) { "Marker": Nothing, "MaxRecords": Nothing, "ResourceName": Nothing, "ResourceType": Nothing, "TagKeys": Nothing, "TagValues": Nothing }
 
 
 
@@ -2315,7 +2314,7 @@ newDisableSnapshotCopyMessage' _ClusterIdentifier customize = (DisableSnapshotCo
 
 
 newtype DisableSnapshotCopyResult = DisableSnapshotCopyResult 
-  { "Cluster" :: NullOrUndefined (Cluster)
+  { "Cluster" :: Maybe (Cluster)
   }
 derive instance newtypeDisableSnapshotCopyResult :: Newtype DisableSnapshotCopyResult _
 derive instance repGenericDisableSnapshotCopyResult :: Generic DisableSnapshotCopyResult _
@@ -2325,12 +2324,12 @@ instance encodeDisableSnapshotCopyResult :: Encode DisableSnapshotCopyResult whe
 
 -- | Constructs DisableSnapshotCopyResult from required parameters
 newDisableSnapshotCopyResult :: DisableSnapshotCopyResult
-newDisableSnapshotCopyResult  = DisableSnapshotCopyResult { "Cluster": (NullOrUndefined Nothing) }
+newDisableSnapshotCopyResult  = DisableSnapshotCopyResult { "Cluster": Nothing }
 
 -- | Constructs DisableSnapshotCopyResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDisableSnapshotCopyResult' :: ( { "Cluster" :: NullOrUndefined (Cluster) } -> {"Cluster" :: NullOrUndefined (Cluster) } ) -> DisableSnapshotCopyResult
-newDisableSnapshotCopyResult'  customize = (DisableSnapshotCopyResult <<< customize) { "Cluster": (NullOrUndefined Nothing) }
+newDisableSnapshotCopyResult' :: ( { "Cluster" :: Maybe (Cluster) } -> {"Cluster" :: Maybe (Cluster) } ) -> DisableSnapshotCopyResult
+newDisableSnapshotCopyResult'  customize = (DisableSnapshotCopyResult <<< customize) { "Cluster": Nothing }
 
 
 
@@ -2345,10 +2344,10 @@ instance encodeDoubleOptional :: Encode DoubleOptional where encode = genericEnc
 
 -- | <p>Describes an Amazon EC2 security group.</p>
 newtype EC2SecurityGroup = EC2SecurityGroup 
-  { "Status" :: NullOrUndefined (String)
-  , "EC2SecurityGroupName" :: NullOrUndefined (String)
-  , "EC2SecurityGroupOwnerId" :: NullOrUndefined (String)
-  , "Tags" :: NullOrUndefined (TagList)
+  { "Status" :: Maybe (String)
+  , "EC2SecurityGroupName" :: Maybe (String)
+  , "EC2SecurityGroupOwnerId" :: Maybe (String)
+  , "Tags" :: Maybe (TagList)
   }
 derive instance newtypeEC2SecurityGroup :: Newtype EC2SecurityGroup _
 derive instance repGenericEC2SecurityGroup :: Generic EC2SecurityGroup _
@@ -2358,12 +2357,12 @@ instance encodeEC2SecurityGroup :: Encode EC2SecurityGroup where encode = generi
 
 -- | Constructs EC2SecurityGroup from required parameters
 newEC2SecurityGroup :: EC2SecurityGroup
-newEC2SecurityGroup  = EC2SecurityGroup { "EC2SecurityGroupName": (NullOrUndefined Nothing), "EC2SecurityGroupOwnerId": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newEC2SecurityGroup  = EC2SecurityGroup { "EC2SecurityGroupName": Nothing, "EC2SecurityGroupOwnerId": Nothing, "Status": Nothing, "Tags": Nothing }
 
 -- | Constructs EC2SecurityGroup's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEC2SecurityGroup' :: ( { "Status" :: NullOrUndefined (String) , "EC2SecurityGroupName" :: NullOrUndefined (String) , "EC2SecurityGroupOwnerId" :: NullOrUndefined (String) , "Tags" :: NullOrUndefined (TagList) } -> {"Status" :: NullOrUndefined (String) , "EC2SecurityGroupName" :: NullOrUndefined (String) , "EC2SecurityGroupOwnerId" :: NullOrUndefined (String) , "Tags" :: NullOrUndefined (TagList) } ) -> EC2SecurityGroup
-newEC2SecurityGroup'  customize = (EC2SecurityGroup <<< customize) { "EC2SecurityGroupName": (NullOrUndefined Nothing), "EC2SecurityGroupOwnerId": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newEC2SecurityGroup' :: ( { "Status" :: Maybe (String) , "EC2SecurityGroupName" :: Maybe (String) , "EC2SecurityGroupOwnerId" :: Maybe (String) , "Tags" :: Maybe (TagList) } -> {"Status" :: Maybe (String) , "EC2SecurityGroupName" :: Maybe (String) , "EC2SecurityGroupOwnerId" :: Maybe (String) , "Tags" :: Maybe (TagList) } ) -> EC2SecurityGroup
+newEC2SecurityGroup'  customize = (EC2SecurityGroup <<< customize) { "EC2SecurityGroupName": Nothing, "EC2SecurityGroupOwnerId": Nothing, "Status": Nothing, "Tags": Nothing }
 
 
 
@@ -2378,8 +2377,8 @@ instance encodeEC2SecurityGroupList :: Encode EC2SecurityGroupList where encode 
 
 -- | <p>Describes the status of the elastic IP (EIP) address.</p>
 newtype ElasticIpStatus = ElasticIpStatus 
-  { "ElasticIp" :: NullOrUndefined (String)
-  , "Status" :: NullOrUndefined (String)
+  { "ElasticIp" :: Maybe (String)
+  , "Status" :: Maybe (String)
   }
 derive instance newtypeElasticIpStatus :: Newtype ElasticIpStatus _
 derive instance repGenericElasticIpStatus :: Generic ElasticIpStatus _
@@ -2389,12 +2388,12 @@ instance encodeElasticIpStatus :: Encode ElasticIpStatus where encode = genericE
 
 -- | Constructs ElasticIpStatus from required parameters
 newElasticIpStatus :: ElasticIpStatus
-newElasticIpStatus  = ElasticIpStatus { "ElasticIp": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newElasticIpStatus  = ElasticIpStatus { "ElasticIp": Nothing, "Status": Nothing }
 
 -- | Constructs ElasticIpStatus's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newElasticIpStatus' :: ( { "ElasticIp" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (String) } -> {"ElasticIp" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (String) } ) -> ElasticIpStatus
-newElasticIpStatus'  customize = (ElasticIpStatus <<< customize) { "ElasticIp": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newElasticIpStatus' :: ( { "ElasticIp" :: Maybe (String) , "Status" :: Maybe (String) } -> {"ElasticIp" :: Maybe (String) , "Status" :: Maybe (String) } ) -> ElasticIpStatus
+newElasticIpStatus'  customize = (ElasticIpStatus <<< customize) { "ElasticIp": Nothing, "Status": Nothing }
 
 
 
@@ -2402,7 +2401,7 @@ newElasticIpStatus'  customize = (ElasticIpStatus <<< customize) { "ElasticIp": 
 newtype EnableLoggingMessage = EnableLoggingMessage 
   { "ClusterIdentifier" :: (String)
   , "BucketName" :: (String)
-  , "S3KeyPrefix" :: NullOrUndefined (String)
+  , "S3KeyPrefix" :: Maybe (String)
   }
 derive instance newtypeEnableLoggingMessage :: Newtype EnableLoggingMessage _
 derive instance repGenericEnableLoggingMessage :: Generic EnableLoggingMessage _
@@ -2412,12 +2411,12 @@ instance encodeEnableLoggingMessage :: Encode EnableLoggingMessage where encode 
 
 -- | Constructs EnableLoggingMessage from required parameters
 newEnableLoggingMessage :: String -> String -> EnableLoggingMessage
-newEnableLoggingMessage _BucketName _ClusterIdentifier = EnableLoggingMessage { "BucketName": _BucketName, "ClusterIdentifier": _ClusterIdentifier, "S3KeyPrefix": (NullOrUndefined Nothing) }
+newEnableLoggingMessage _BucketName _ClusterIdentifier = EnableLoggingMessage { "BucketName": _BucketName, "ClusterIdentifier": _ClusterIdentifier, "S3KeyPrefix": Nothing }
 
 -- | Constructs EnableLoggingMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEnableLoggingMessage' :: String -> String -> ( { "ClusterIdentifier" :: (String) , "BucketName" :: (String) , "S3KeyPrefix" :: NullOrUndefined (String) } -> {"ClusterIdentifier" :: (String) , "BucketName" :: (String) , "S3KeyPrefix" :: NullOrUndefined (String) } ) -> EnableLoggingMessage
-newEnableLoggingMessage' _BucketName _ClusterIdentifier customize = (EnableLoggingMessage <<< customize) { "BucketName": _BucketName, "ClusterIdentifier": _ClusterIdentifier, "S3KeyPrefix": (NullOrUndefined Nothing) }
+newEnableLoggingMessage' :: String -> String -> ( { "ClusterIdentifier" :: (String) , "BucketName" :: (String) , "S3KeyPrefix" :: Maybe (String) } -> {"ClusterIdentifier" :: (String) , "BucketName" :: (String) , "S3KeyPrefix" :: Maybe (String) } ) -> EnableLoggingMessage
+newEnableLoggingMessage' _BucketName _ClusterIdentifier customize = (EnableLoggingMessage <<< customize) { "BucketName": _BucketName, "ClusterIdentifier": _ClusterIdentifier, "S3KeyPrefix": Nothing }
 
 
 
@@ -2425,8 +2424,8 @@ newEnableLoggingMessage' _BucketName _ClusterIdentifier customize = (EnableLoggi
 newtype EnableSnapshotCopyMessage = EnableSnapshotCopyMessage 
   { "ClusterIdentifier" :: (String)
   , "DestinationRegion" :: (String)
-  , "RetentionPeriod" :: NullOrUndefined (IntegerOptional)
-  , "SnapshotCopyGrantName" :: NullOrUndefined (String)
+  , "RetentionPeriod" :: Maybe (IntegerOptional)
+  , "SnapshotCopyGrantName" :: Maybe (String)
   }
 derive instance newtypeEnableSnapshotCopyMessage :: Newtype EnableSnapshotCopyMessage _
 derive instance repGenericEnableSnapshotCopyMessage :: Generic EnableSnapshotCopyMessage _
@@ -2436,17 +2435,17 @@ instance encodeEnableSnapshotCopyMessage :: Encode EnableSnapshotCopyMessage whe
 
 -- | Constructs EnableSnapshotCopyMessage from required parameters
 newEnableSnapshotCopyMessage :: String -> String -> EnableSnapshotCopyMessage
-newEnableSnapshotCopyMessage _ClusterIdentifier _DestinationRegion = EnableSnapshotCopyMessage { "ClusterIdentifier": _ClusterIdentifier, "DestinationRegion": _DestinationRegion, "RetentionPeriod": (NullOrUndefined Nothing), "SnapshotCopyGrantName": (NullOrUndefined Nothing) }
+newEnableSnapshotCopyMessage _ClusterIdentifier _DestinationRegion = EnableSnapshotCopyMessage { "ClusterIdentifier": _ClusterIdentifier, "DestinationRegion": _DestinationRegion, "RetentionPeriod": Nothing, "SnapshotCopyGrantName": Nothing }
 
 -- | Constructs EnableSnapshotCopyMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEnableSnapshotCopyMessage' :: String -> String -> ( { "ClusterIdentifier" :: (String) , "DestinationRegion" :: (String) , "RetentionPeriod" :: NullOrUndefined (IntegerOptional) , "SnapshotCopyGrantName" :: NullOrUndefined (String) } -> {"ClusterIdentifier" :: (String) , "DestinationRegion" :: (String) , "RetentionPeriod" :: NullOrUndefined (IntegerOptional) , "SnapshotCopyGrantName" :: NullOrUndefined (String) } ) -> EnableSnapshotCopyMessage
-newEnableSnapshotCopyMessage' _ClusterIdentifier _DestinationRegion customize = (EnableSnapshotCopyMessage <<< customize) { "ClusterIdentifier": _ClusterIdentifier, "DestinationRegion": _DestinationRegion, "RetentionPeriod": (NullOrUndefined Nothing), "SnapshotCopyGrantName": (NullOrUndefined Nothing) }
+newEnableSnapshotCopyMessage' :: String -> String -> ( { "ClusterIdentifier" :: (String) , "DestinationRegion" :: (String) , "RetentionPeriod" :: Maybe (IntegerOptional) , "SnapshotCopyGrantName" :: Maybe (String) } -> {"ClusterIdentifier" :: (String) , "DestinationRegion" :: (String) , "RetentionPeriod" :: Maybe (IntegerOptional) , "SnapshotCopyGrantName" :: Maybe (String) } ) -> EnableSnapshotCopyMessage
+newEnableSnapshotCopyMessage' _ClusterIdentifier _DestinationRegion customize = (EnableSnapshotCopyMessage <<< customize) { "ClusterIdentifier": _ClusterIdentifier, "DestinationRegion": _DestinationRegion, "RetentionPeriod": Nothing, "SnapshotCopyGrantName": Nothing }
 
 
 
 newtype EnableSnapshotCopyResult = EnableSnapshotCopyResult 
-  { "Cluster" :: NullOrUndefined (Cluster)
+  { "Cluster" :: Maybe (Cluster)
   }
 derive instance newtypeEnableSnapshotCopyResult :: Newtype EnableSnapshotCopyResult _
 derive instance repGenericEnableSnapshotCopyResult :: Generic EnableSnapshotCopyResult _
@@ -2456,19 +2455,19 @@ instance encodeEnableSnapshotCopyResult :: Encode EnableSnapshotCopyResult where
 
 -- | Constructs EnableSnapshotCopyResult from required parameters
 newEnableSnapshotCopyResult :: EnableSnapshotCopyResult
-newEnableSnapshotCopyResult  = EnableSnapshotCopyResult { "Cluster": (NullOrUndefined Nothing) }
+newEnableSnapshotCopyResult  = EnableSnapshotCopyResult { "Cluster": Nothing }
 
 -- | Constructs EnableSnapshotCopyResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEnableSnapshotCopyResult' :: ( { "Cluster" :: NullOrUndefined (Cluster) } -> {"Cluster" :: NullOrUndefined (Cluster) } ) -> EnableSnapshotCopyResult
-newEnableSnapshotCopyResult'  customize = (EnableSnapshotCopyResult <<< customize) { "Cluster": (NullOrUndefined Nothing) }
+newEnableSnapshotCopyResult' :: ( { "Cluster" :: Maybe (Cluster) } -> {"Cluster" :: Maybe (Cluster) } ) -> EnableSnapshotCopyResult
+newEnableSnapshotCopyResult'  customize = (EnableSnapshotCopyResult <<< customize) { "Cluster": Nothing }
 
 
 
 -- | <p>Describes a connection endpoint.</p>
 newtype Endpoint = Endpoint 
-  { "Address" :: NullOrUndefined (String)
-  , "Port" :: NullOrUndefined (Int)
+  { "Address" :: Maybe (String)
+  , "Port" :: Maybe (Int)
   }
 derive instance newtypeEndpoint :: Newtype Endpoint _
 derive instance repGenericEndpoint :: Generic Endpoint _
@@ -2478,24 +2477,24 @@ instance encodeEndpoint :: Encode Endpoint where encode = genericEncode options
 
 -- | Constructs Endpoint from required parameters
 newEndpoint :: Endpoint
-newEndpoint  = Endpoint { "Address": (NullOrUndefined Nothing), "Port": (NullOrUndefined Nothing) }
+newEndpoint  = Endpoint { "Address": Nothing, "Port": Nothing }
 
 -- | Constructs Endpoint's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEndpoint' :: ( { "Address" :: NullOrUndefined (String) , "Port" :: NullOrUndefined (Int) } -> {"Address" :: NullOrUndefined (String) , "Port" :: NullOrUndefined (Int) } ) -> Endpoint
-newEndpoint'  customize = (Endpoint <<< customize) { "Address": (NullOrUndefined Nothing), "Port": (NullOrUndefined Nothing) }
+newEndpoint' :: ( { "Address" :: Maybe (String) , "Port" :: Maybe (Int) } -> {"Address" :: Maybe (String) , "Port" :: Maybe (Int) } ) -> Endpoint
+newEndpoint'  customize = (Endpoint <<< customize) { "Address": Nothing, "Port": Nothing }
 
 
 
 -- | <p>Describes an event.</p>
 newtype Event = Event 
-  { "SourceIdentifier" :: NullOrUndefined (String)
-  , "SourceType" :: NullOrUndefined (SourceType)
-  , "Message" :: NullOrUndefined (String)
-  , "EventCategories" :: NullOrUndefined (EventCategoriesList)
-  , "Severity" :: NullOrUndefined (String)
-  , "Date" :: NullOrUndefined (TStamp)
-  , "EventId" :: NullOrUndefined (String)
+  { "SourceIdentifier" :: Maybe (String)
+  , "SourceType" :: Maybe (SourceType)
+  , "Message" :: Maybe (String)
+  , "EventCategories" :: Maybe (EventCategoriesList)
+  , "Severity" :: Maybe (String)
+  , "Date" :: Maybe (TStamp)
+  , "EventId" :: Maybe (String)
   }
 derive instance newtypeEvent :: Newtype Event _
 derive instance repGenericEvent :: Generic Event _
@@ -2505,12 +2504,12 @@ instance encodeEvent :: Encode Event where encode = genericEncode options
 
 -- | Constructs Event from required parameters
 newEvent :: Event
-newEvent  = Event { "Date": (NullOrUndefined Nothing), "EventCategories": (NullOrUndefined Nothing), "EventId": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing), "Severity": (NullOrUndefined Nothing), "SourceIdentifier": (NullOrUndefined Nothing), "SourceType": (NullOrUndefined Nothing) }
+newEvent  = Event { "Date": Nothing, "EventCategories": Nothing, "EventId": Nothing, "Message": Nothing, "Severity": Nothing, "SourceIdentifier": Nothing, "SourceType": Nothing }
 
 -- | Constructs Event's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEvent' :: ( { "SourceIdentifier" :: NullOrUndefined (String) , "SourceType" :: NullOrUndefined (SourceType) , "Message" :: NullOrUndefined (String) , "EventCategories" :: NullOrUndefined (EventCategoriesList) , "Severity" :: NullOrUndefined (String) , "Date" :: NullOrUndefined (TStamp) , "EventId" :: NullOrUndefined (String) } -> {"SourceIdentifier" :: NullOrUndefined (String) , "SourceType" :: NullOrUndefined (SourceType) , "Message" :: NullOrUndefined (String) , "EventCategories" :: NullOrUndefined (EventCategoriesList) , "Severity" :: NullOrUndefined (String) , "Date" :: NullOrUndefined (TStamp) , "EventId" :: NullOrUndefined (String) } ) -> Event
-newEvent'  customize = (Event <<< customize) { "Date": (NullOrUndefined Nothing), "EventCategories": (NullOrUndefined Nothing), "EventId": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing), "Severity": (NullOrUndefined Nothing), "SourceIdentifier": (NullOrUndefined Nothing), "SourceType": (NullOrUndefined Nothing) }
+newEvent' :: ( { "SourceIdentifier" :: Maybe (String) , "SourceType" :: Maybe (SourceType) , "Message" :: Maybe (String) , "EventCategories" :: Maybe (EventCategoriesList) , "Severity" :: Maybe (String) , "Date" :: Maybe (TStamp) , "EventId" :: Maybe (String) } -> {"SourceIdentifier" :: Maybe (String) , "SourceType" :: Maybe (SourceType) , "Message" :: Maybe (String) , "EventCategories" :: Maybe (EventCategoriesList) , "Severity" :: Maybe (String) , "Date" :: Maybe (TStamp) , "EventId" :: Maybe (String) } ) -> Event
+newEvent'  customize = (Event <<< customize) { "Date": Nothing, "EventCategories": Nothing, "EventId": Nothing, "Message": Nothing, "Severity": Nothing, "SourceIdentifier": Nothing, "SourceType": Nothing }
 
 
 
@@ -2525,8 +2524,8 @@ instance encodeEventCategoriesList :: Encode EventCategoriesList where encode = 
 
 -- | <p>Describes event categories.</p>
 newtype EventCategoriesMap = EventCategoriesMap 
-  { "SourceType" :: NullOrUndefined (String)
-  , "Events" :: NullOrUndefined (EventInfoMapList)
+  { "SourceType" :: Maybe (String)
+  , "Events" :: Maybe (EventInfoMapList)
   }
 derive instance newtypeEventCategoriesMap :: Newtype EventCategoriesMap _
 derive instance repGenericEventCategoriesMap :: Generic EventCategoriesMap _
@@ -2536,12 +2535,12 @@ instance encodeEventCategoriesMap :: Encode EventCategoriesMap where encode = ge
 
 -- | Constructs EventCategoriesMap from required parameters
 newEventCategoriesMap :: EventCategoriesMap
-newEventCategoriesMap  = EventCategoriesMap { "Events": (NullOrUndefined Nothing), "SourceType": (NullOrUndefined Nothing) }
+newEventCategoriesMap  = EventCategoriesMap { "Events": Nothing, "SourceType": Nothing }
 
 -- | Constructs EventCategoriesMap's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEventCategoriesMap' :: ( { "SourceType" :: NullOrUndefined (String) , "Events" :: NullOrUndefined (EventInfoMapList) } -> {"SourceType" :: NullOrUndefined (String) , "Events" :: NullOrUndefined (EventInfoMapList) } ) -> EventCategoriesMap
-newEventCategoriesMap'  customize = (EventCategoriesMap <<< customize) { "Events": (NullOrUndefined Nothing), "SourceType": (NullOrUndefined Nothing) }
+newEventCategoriesMap' :: ( { "SourceType" :: Maybe (String) , "Events" :: Maybe (EventInfoMapList) } -> {"SourceType" :: Maybe (String) , "Events" :: Maybe (EventInfoMapList) } ) -> EventCategoriesMap
+newEventCategoriesMap'  customize = (EventCategoriesMap <<< customize) { "Events": Nothing, "SourceType": Nothing }
 
 
 
@@ -2556,7 +2555,7 @@ instance encodeEventCategoriesMapList :: Encode EventCategoriesMapList where enc
 
 -- | <p/>
 newtype EventCategoriesMessage = EventCategoriesMessage 
-  { "EventCategoriesMapList" :: NullOrUndefined (EventCategoriesMapList)
+  { "EventCategoriesMapList" :: Maybe (EventCategoriesMapList)
   }
 derive instance newtypeEventCategoriesMessage :: Newtype EventCategoriesMessage _
 derive instance repGenericEventCategoriesMessage :: Generic EventCategoriesMessage _
@@ -2566,21 +2565,21 @@ instance encodeEventCategoriesMessage :: Encode EventCategoriesMessage where enc
 
 -- | Constructs EventCategoriesMessage from required parameters
 newEventCategoriesMessage :: EventCategoriesMessage
-newEventCategoriesMessage  = EventCategoriesMessage { "EventCategoriesMapList": (NullOrUndefined Nothing) }
+newEventCategoriesMessage  = EventCategoriesMessage { "EventCategoriesMapList": Nothing }
 
 -- | Constructs EventCategoriesMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEventCategoriesMessage' :: ( { "EventCategoriesMapList" :: NullOrUndefined (EventCategoriesMapList) } -> {"EventCategoriesMapList" :: NullOrUndefined (EventCategoriesMapList) } ) -> EventCategoriesMessage
-newEventCategoriesMessage'  customize = (EventCategoriesMessage <<< customize) { "EventCategoriesMapList": (NullOrUndefined Nothing) }
+newEventCategoriesMessage' :: ( { "EventCategoriesMapList" :: Maybe (EventCategoriesMapList) } -> {"EventCategoriesMapList" :: Maybe (EventCategoriesMapList) } ) -> EventCategoriesMessage
+newEventCategoriesMessage'  customize = (EventCategoriesMessage <<< customize) { "EventCategoriesMapList": Nothing }
 
 
 
 -- | <p>Describes event information.</p>
 newtype EventInfoMap = EventInfoMap 
-  { "EventId" :: NullOrUndefined (String)
-  , "EventCategories" :: NullOrUndefined (EventCategoriesList)
-  , "EventDescription" :: NullOrUndefined (String)
-  , "Severity" :: NullOrUndefined (String)
+  { "EventId" :: Maybe (String)
+  , "EventCategories" :: Maybe (EventCategoriesList)
+  , "EventDescription" :: Maybe (String)
+  , "Severity" :: Maybe (String)
   }
 derive instance newtypeEventInfoMap :: Newtype EventInfoMap _
 derive instance repGenericEventInfoMap :: Generic EventInfoMap _
@@ -2590,12 +2589,12 @@ instance encodeEventInfoMap :: Encode EventInfoMap where encode = genericEncode 
 
 -- | Constructs EventInfoMap from required parameters
 newEventInfoMap :: EventInfoMap
-newEventInfoMap  = EventInfoMap { "EventCategories": (NullOrUndefined Nothing), "EventDescription": (NullOrUndefined Nothing), "EventId": (NullOrUndefined Nothing), "Severity": (NullOrUndefined Nothing) }
+newEventInfoMap  = EventInfoMap { "EventCategories": Nothing, "EventDescription": Nothing, "EventId": Nothing, "Severity": Nothing }
 
 -- | Constructs EventInfoMap's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEventInfoMap' :: ( { "EventId" :: NullOrUndefined (String) , "EventCategories" :: NullOrUndefined (EventCategoriesList) , "EventDescription" :: NullOrUndefined (String) , "Severity" :: NullOrUndefined (String) } -> {"EventId" :: NullOrUndefined (String) , "EventCategories" :: NullOrUndefined (EventCategoriesList) , "EventDescription" :: NullOrUndefined (String) , "Severity" :: NullOrUndefined (String) } ) -> EventInfoMap
-newEventInfoMap'  customize = (EventInfoMap <<< customize) { "EventCategories": (NullOrUndefined Nothing), "EventDescription": (NullOrUndefined Nothing), "EventId": (NullOrUndefined Nothing), "Severity": (NullOrUndefined Nothing) }
+newEventInfoMap' :: ( { "EventId" :: Maybe (String) , "EventCategories" :: Maybe (EventCategoriesList) , "EventDescription" :: Maybe (String) , "Severity" :: Maybe (String) } -> {"EventId" :: Maybe (String) , "EventCategories" :: Maybe (EventCategoriesList) , "EventDescription" :: Maybe (String) , "Severity" :: Maybe (String) } ) -> EventInfoMap
+newEventInfoMap'  customize = (EventInfoMap <<< customize) { "EventCategories": Nothing, "EventDescription": Nothing, "EventId": Nothing, "Severity": Nothing }
 
 
 
@@ -2619,17 +2618,17 @@ instance encodeEventList :: Encode EventList where encode = genericEncode option
 
 -- | <p>Describes event subscriptions.</p>
 newtype EventSubscription = EventSubscription 
-  { "CustomerAwsId" :: NullOrUndefined (String)
-  , "CustSubscriptionId" :: NullOrUndefined (String)
-  , "SnsTopicArn" :: NullOrUndefined (String)
-  , "Status" :: NullOrUndefined (String)
-  , "SubscriptionCreationTime" :: NullOrUndefined (TStamp)
-  , "SourceType" :: NullOrUndefined (String)
-  , "SourceIdsList" :: NullOrUndefined (SourceIdsList)
-  , "EventCategoriesList" :: NullOrUndefined (EventCategoriesList)
-  , "Severity" :: NullOrUndefined (String)
-  , "Enabled" :: NullOrUndefined (Boolean)
-  , "Tags" :: NullOrUndefined (TagList)
+  { "CustomerAwsId" :: Maybe (String)
+  , "CustSubscriptionId" :: Maybe (String)
+  , "SnsTopicArn" :: Maybe (String)
+  , "Status" :: Maybe (String)
+  , "SubscriptionCreationTime" :: Maybe (TStamp)
+  , "SourceType" :: Maybe (String)
+  , "SourceIdsList" :: Maybe (SourceIdsList)
+  , "EventCategoriesList" :: Maybe (EventCategoriesList)
+  , "Severity" :: Maybe (String)
+  , "Enabled" :: Maybe (Boolean)
+  , "Tags" :: Maybe (TagList)
   }
 derive instance newtypeEventSubscription :: Newtype EventSubscription _
 derive instance repGenericEventSubscription :: Generic EventSubscription _
@@ -2639,12 +2638,12 @@ instance encodeEventSubscription :: Encode EventSubscription where encode = gene
 
 -- | Constructs EventSubscription from required parameters
 newEventSubscription :: EventSubscription
-newEventSubscription  = EventSubscription { "CustSubscriptionId": (NullOrUndefined Nothing), "CustomerAwsId": (NullOrUndefined Nothing), "Enabled": (NullOrUndefined Nothing), "EventCategoriesList": (NullOrUndefined Nothing), "Severity": (NullOrUndefined Nothing), "SnsTopicArn": (NullOrUndefined Nothing), "SourceIdsList": (NullOrUndefined Nothing), "SourceType": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "SubscriptionCreationTime": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newEventSubscription  = EventSubscription { "CustSubscriptionId": Nothing, "CustomerAwsId": Nothing, "Enabled": Nothing, "EventCategoriesList": Nothing, "Severity": Nothing, "SnsTopicArn": Nothing, "SourceIdsList": Nothing, "SourceType": Nothing, "Status": Nothing, "SubscriptionCreationTime": Nothing, "Tags": Nothing }
 
 -- | Constructs EventSubscription's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEventSubscription' :: ( { "CustomerAwsId" :: NullOrUndefined (String) , "CustSubscriptionId" :: NullOrUndefined (String) , "SnsTopicArn" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (String) , "SubscriptionCreationTime" :: NullOrUndefined (TStamp) , "SourceType" :: NullOrUndefined (String) , "SourceIdsList" :: NullOrUndefined (SourceIdsList) , "EventCategoriesList" :: NullOrUndefined (EventCategoriesList) , "Severity" :: NullOrUndefined (String) , "Enabled" :: NullOrUndefined (Boolean) , "Tags" :: NullOrUndefined (TagList) } -> {"CustomerAwsId" :: NullOrUndefined (String) , "CustSubscriptionId" :: NullOrUndefined (String) , "SnsTopicArn" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (String) , "SubscriptionCreationTime" :: NullOrUndefined (TStamp) , "SourceType" :: NullOrUndefined (String) , "SourceIdsList" :: NullOrUndefined (SourceIdsList) , "EventCategoriesList" :: NullOrUndefined (EventCategoriesList) , "Severity" :: NullOrUndefined (String) , "Enabled" :: NullOrUndefined (Boolean) , "Tags" :: NullOrUndefined (TagList) } ) -> EventSubscription
-newEventSubscription'  customize = (EventSubscription <<< customize) { "CustSubscriptionId": (NullOrUndefined Nothing), "CustomerAwsId": (NullOrUndefined Nothing), "Enabled": (NullOrUndefined Nothing), "EventCategoriesList": (NullOrUndefined Nothing), "Severity": (NullOrUndefined Nothing), "SnsTopicArn": (NullOrUndefined Nothing), "SourceIdsList": (NullOrUndefined Nothing), "SourceType": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "SubscriptionCreationTime": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newEventSubscription' :: ( { "CustomerAwsId" :: Maybe (String) , "CustSubscriptionId" :: Maybe (String) , "SnsTopicArn" :: Maybe (String) , "Status" :: Maybe (String) , "SubscriptionCreationTime" :: Maybe (TStamp) , "SourceType" :: Maybe (String) , "SourceIdsList" :: Maybe (SourceIdsList) , "EventCategoriesList" :: Maybe (EventCategoriesList) , "Severity" :: Maybe (String) , "Enabled" :: Maybe (Boolean) , "Tags" :: Maybe (TagList) } -> {"CustomerAwsId" :: Maybe (String) , "CustSubscriptionId" :: Maybe (String) , "SnsTopicArn" :: Maybe (String) , "Status" :: Maybe (String) , "SubscriptionCreationTime" :: Maybe (TStamp) , "SourceType" :: Maybe (String) , "SourceIdsList" :: Maybe (SourceIdsList) , "EventCategoriesList" :: Maybe (EventCategoriesList) , "Severity" :: Maybe (String) , "Enabled" :: Maybe (Boolean) , "Tags" :: Maybe (TagList) } ) -> EventSubscription
+newEventSubscription'  customize = (EventSubscription <<< customize) { "CustSubscriptionId": Nothing, "CustomerAwsId": Nothing, "Enabled": Nothing, "EventCategoriesList": Nothing, "Severity": Nothing, "SnsTopicArn": Nothing, "SourceIdsList": Nothing, "SourceType": Nothing, "Status": Nothing, "SubscriptionCreationTime": Nothing, "Tags": Nothing }
 
 
 
@@ -2669,8 +2668,8 @@ instance encodeEventSubscriptionsList :: Encode EventSubscriptionsList where enc
 
 -- | <p/>
 newtype EventSubscriptionsMessage = EventSubscriptionsMessage 
-  { "Marker" :: NullOrUndefined (String)
-  , "EventSubscriptionsList" :: NullOrUndefined (EventSubscriptionsList)
+  { "Marker" :: Maybe (String)
+  , "EventSubscriptionsList" :: Maybe (EventSubscriptionsList)
   }
 derive instance newtypeEventSubscriptionsMessage :: Newtype EventSubscriptionsMessage _
 derive instance repGenericEventSubscriptionsMessage :: Generic EventSubscriptionsMessage _
@@ -2680,19 +2679,19 @@ instance encodeEventSubscriptionsMessage :: Encode EventSubscriptionsMessage whe
 
 -- | Constructs EventSubscriptionsMessage from required parameters
 newEventSubscriptionsMessage :: EventSubscriptionsMessage
-newEventSubscriptionsMessage  = EventSubscriptionsMessage { "EventSubscriptionsList": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newEventSubscriptionsMessage  = EventSubscriptionsMessage { "EventSubscriptionsList": Nothing, "Marker": Nothing }
 
 -- | Constructs EventSubscriptionsMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEventSubscriptionsMessage' :: ( { "Marker" :: NullOrUndefined (String) , "EventSubscriptionsList" :: NullOrUndefined (EventSubscriptionsList) } -> {"Marker" :: NullOrUndefined (String) , "EventSubscriptionsList" :: NullOrUndefined (EventSubscriptionsList) } ) -> EventSubscriptionsMessage
-newEventSubscriptionsMessage'  customize = (EventSubscriptionsMessage <<< customize) { "EventSubscriptionsList": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newEventSubscriptionsMessage' :: ( { "Marker" :: Maybe (String) , "EventSubscriptionsList" :: Maybe (EventSubscriptionsList) } -> {"Marker" :: Maybe (String) , "EventSubscriptionsList" :: Maybe (EventSubscriptionsList) } ) -> EventSubscriptionsMessage
+newEventSubscriptionsMessage'  customize = (EventSubscriptionsMessage <<< customize) { "EventSubscriptionsList": Nothing, "Marker": Nothing }
 
 
 
 -- | <p/>
 newtype EventsMessage = EventsMessage 
-  { "Marker" :: NullOrUndefined (String)
-  , "Events" :: NullOrUndefined (EventList)
+  { "Marker" :: Maybe (String)
+  , "Events" :: Maybe (EventList)
   }
 derive instance newtypeEventsMessage :: Newtype EventsMessage _
 derive instance repGenericEventsMessage :: Generic EventsMessage _
@@ -2702,23 +2701,23 @@ instance encodeEventsMessage :: Encode EventsMessage where encode = genericEncod
 
 -- | Constructs EventsMessage from required parameters
 newEventsMessage :: EventsMessage
-newEventsMessage  = EventsMessage { "Events": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newEventsMessage  = EventsMessage { "Events": Nothing, "Marker": Nothing }
 
 -- | Constructs EventsMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEventsMessage' :: ( { "Marker" :: NullOrUndefined (String) , "Events" :: NullOrUndefined (EventList) } -> {"Marker" :: NullOrUndefined (String) , "Events" :: NullOrUndefined (EventList) } ) -> EventsMessage
-newEventsMessage'  customize = (EventsMessage <<< customize) { "Events": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newEventsMessage' :: ( { "Marker" :: Maybe (String) , "Events" :: Maybe (EventList) } -> {"Marker" :: Maybe (String) , "Events" :: Maybe (EventList) } ) -> EventsMessage
+newEventsMessage'  customize = (EventsMessage <<< customize) { "Events": Nothing, "Marker": Nothing }
 
 
 
 -- | <p>The request parameters to get cluster credentials.</p>
 newtype GetClusterCredentialsMessage = GetClusterCredentialsMessage 
   { "DbUser" :: (String)
-  , "DbName" :: NullOrUndefined (String)
+  , "DbName" :: Maybe (String)
   , "ClusterIdentifier" :: (String)
-  , "DurationSeconds" :: NullOrUndefined (IntegerOptional)
-  , "AutoCreate" :: NullOrUndefined (BooleanOptional)
-  , "DbGroups" :: NullOrUndefined (DbGroupList)
+  , "DurationSeconds" :: Maybe (IntegerOptional)
+  , "AutoCreate" :: Maybe (BooleanOptional)
+  , "DbGroups" :: Maybe (DbGroupList)
   }
 derive instance newtypeGetClusterCredentialsMessage :: Newtype GetClusterCredentialsMessage _
 derive instance repGenericGetClusterCredentialsMessage :: Generic GetClusterCredentialsMessage _
@@ -2728,20 +2727,20 @@ instance encodeGetClusterCredentialsMessage :: Encode GetClusterCredentialsMessa
 
 -- | Constructs GetClusterCredentialsMessage from required parameters
 newGetClusterCredentialsMessage :: String -> String -> GetClusterCredentialsMessage
-newGetClusterCredentialsMessage _ClusterIdentifier _DbUser = GetClusterCredentialsMessage { "ClusterIdentifier": _ClusterIdentifier, "DbUser": _DbUser, "AutoCreate": (NullOrUndefined Nothing), "DbGroups": (NullOrUndefined Nothing), "DbName": (NullOrUndefined Nothing), "DurationSeconds": (NullOrUndefined Nothing) }
+newGetClusterCredentialsMessage _ClusterIdentifier _DbUser = GetClusterCredentialsMessage { "ClusterIdentifier": _ClusterIdentifier, "DbUser": _DbUser, "AutoCreate": Nothing, "DbGroups": Nothing, "DbName": Nothing, "DurationSeconds": Nothing }
 
 -- | Constructs GetClusterCredentialsMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetClusterCredentialsMessage' :: String -> String -> ( { "DbUser" :: (String) , "DbName" :: NullOrUndefined (String) , "ClusterIdentifier" :: (String) , "DurationSeconds" :: NullOrUndefined (IntegerOptional) , "AutoCreate" :: NullOrUndefined (BooleanOptional) , "DbGroups" :: NullOrUndefined (DbGroupList) } -> {"DbUser" :: (String) , "DbName" :: NullOrUndefined (String) , "ClusterIdentifier" :: (String) , "DurationSeconds" :: NullOrUndefined (IntegerOptional) , "AutoCreate" :: NullOrUndefined (BooleanOptional) , "DbGroups" :: NullOrUndefined (DbGroupList) } ) -> GetClusterCredentialsMessage
-newGetClusterCredentialsMessage' _ClusterIdentifier _DbUser customize = (GetClusterCredentialsMessage <<< customize) { "ClusterIdentifier": _ClusterIdentifier, "DbUser": _DbUser, "AutoCreate": (NullOrUndefined Nothing), "DbGroups": (NullOrUndefined Nothing), "DbName": (NullOrUndefined Nothing), "DurationSeconds": (NullOrUndefined Nothing) }
+newGetClusterCredentialsMessage' :: String -> String -> ( { "DbUser" :: (String) , "DbName" :: Maybe (String) , "ClusterIdentifier" :: (String) , "DurationSeconds" :: Maybe (IntegerOptional) , "AutoCreate" :: Maybe (BooleanOptional) , "DbGroups" :: Maybe (DbGroupList) } -> {"DbUser" :: (String) , "DbName" :: Maybe (String) , "ClusterIdentifier" :: (String) , "DurationSeconds" :: Maybe (IntegerOptional) , "AutoCreate" :: Maybe (BooleanOptional) , "DbGroups" :: Maybe (DbGroupList) } ) -> GetClusterCredentialsMessage
+newGetClusterCredentialsMessage' _ClusterIdentifier _DbUser customize = (GetClusterCredentialsMessage <<< customize) { "ClusterIdentifier": _ClusterIdentifier, "DbUser": _DbUser, "AutoCreate": Nothing, "DbGroups": Nothing, "DbName": Nothing, "DurationSeconds": Nothing }
 
 
 
 -- | <p>Returns information about an HSM client certificate. The certificate is stored in a secure Hardware Storage Module (HSM), and used by the Amazon Redshift cluster to encrypt data files.</p>
 newtype HsmClientCertificate = HsmClientCertificate 
-  { "HsmClientCertificateIdentifier" :: NullOrUndefined (String)
-  , "HsmClientCertificatePublicKey" :: NullOrUndefined (String)
-  , "Tags" :: NullOrUndefined (TagList)
+  { "HsmClientCertificateIdentifier" :: Maybe (String)
+  , "HsmClientCertificatePublicKey" :: Maybe (String)
+  , "Tags" :: Maybe (TagList)
   }
 derive instance newtypeHsmClientCertificate :: Newtype HsmClientCertificate _
 derive instance repGenericHsmClientCertificate :: Generic HsmClientCertificate _
@@ -2751,12 +2750,12 @@ instance encodeHsmClientCertificate :: Encode HsmClientCertificate where encode 
 
 -- | Constructs HsmClientCertificate from required parameters
 newHsmClientCertificate :: HsmClientCertificate
-newHsmClientCertificate  = HsmClientCertificate { "HsmClientCertificateIdentifier": (NullOrUndefined Nothing), "HsmClientCertificatePublicKey": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newHsmClientCertificate  = HsmClientCertificate { "HsmClientCertificateIdentifier": Nothing, "HsmClientCertificatePublicKey": Nothing, "Tags": Nothing }
 
 -- | Constructs HsmClientCertificate's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newHsmClientCertificate' :: ( { "HsmClientCertificateIdentifier" :: NullOrUndefined (String) , "HsmClientCertificatePublicKey" :: NullOrUndefined (String) , "Tags" :: NullOrUndefined (TagList) } -> {"HsmClientCertificateIdentifier" :: NullOrUndefined (String) , "HsmClientCertificatePublicKey" :: NullOrUndefined (String) , "Tags" :: NullOrUndefined (TagList) } ) -> HsmClientCertificate
-newHsmClientCertificate'  customize = (HsmClientCertificate <<< customize) { "HsmClientCertificateIdentifier": (NullOrUndefined Nothing), "HsmClientCertificatePublicKey": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newHsmClientCertificate' :: ( { "HsmClientCertificateIdentifier" :: Maybe (String) , "HsmClientCertificatePublicKey" :: Maybe (String) , "Tags" :: Maybe (TagList) } -> {"HsmClientCertificateIdentifier" :: Maybe (String) , "HsmClientCertificatePublicKey" :: Maybe (String) , "Tags" :: Maybe (TagList) } ) -> HsmClientCertificate
+newHsmClientCertificate'  customize = (HsmClientCertificate <<< customize) { "HsmClientCertificateIdentifier": Nothing, "HsmClientCertificatePublicKey": Nothing, "Tags": Nothing }
 
 
 
@@ -2781,8 +2780,8 @@ instance encodeHsmClientCertificateList :: Encode HsmClientCertificateList where
 
 -- | <p/>
 newtype HsmClientCertificateMessage = HsmClientCertificateMessage 
-  { "Marker" :: NullOrUndefined (String)
-  , "HsmClientCertificates" :: NullOrUndefined (HsmClientCertificateList)
+  { "Marker" :: Maybe (String)
+  , "HsmClientCertificates" :: Maybe (HsmClientCertificateList)
   }
 derive instance newtypeHsmClientCertificateMessage :: Newtype HsmClientCertificateMessage _
 derive instance repGenericHsmClientCertificateMessage :: Generic HsmClientCertificateMessage _
@@ -2792,12 +2791,12 @@ instance encodeHsmClientCertificateMessage :: Encode HsmClientCertificateMessage
 
 -- | Constructs HsmClientCertificateMessage from required parameters
 newHsmClientCertificateMessage :: HsmClientCertificateMessage
-newHsmClientCertificateMessage  = HsmClientCertificateMessage { "HsmClientCertificates": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newHsmClientCertificateMessage  = HsmClientCertificateMessage { "HsmClientCertificates": Nothing, "Marker": Nothing }
 
 -- | Constructs HsmClientCertificateMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newHsmClientCertificateMessage' :: ( { "Marker" :: NullOrUndefined (String) , "HsmClientCertificates" :: NullOrUndefined (HsmClientCertificateList) } -> {"Marker" :: NullOrUndefined (String) , "HsmClientCertificates" :: NullOrUndefined (HsmClientCertificateList) } ) -> HsmClientCertificateMessage
-newHsmClientCertificateMessage'  customize = (HsmClientCertificateMessage <<< customize) { "HsmClientCertificates": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newHsmClientCertificateMessage' :: ( { "Marker" :: Maybe (String) , "HsmClientCertificates" :: Maybe (HsmClientCertificateList) } -> {"Marker" :: Maybe (String) , "HsmClientCertificates" :: Maybe (HsmClientCertificateList) } ) -> HsmClientCertificateMessage
+newHsmClientCertificateMessage'  customize = (HsmClientCertificateMessage <<< customize) { "HsmClientCertificates": Nothing, "Marker": Nothing }
 
 
 
@@ -2823,11 +2822,11 @@ instance encodeHsmClientCertificateQuotaExceededFault :: Encode HsmClientCertifi
 
 -- | <p>Returns information about an HSM configuration, which is an object that describes to Amazon Redshift clusters the information they require to connect to an HSM where they can store database encryption keys.</p>
 newtype HsmConfiguration = HsmConfiguration 
-  { "HsmConfigurationIdentifier" :: NullOrUndefined (String)
-  , "Description" :: NullOrUndefined (String)
-  , "HsmIpAddress" :: NullOrUndefined (String)
-  , "HsmPartitionName" :: NullOrUndefined (String)
-  , "Tags" :: NullOrUndefined (TagList)
+  { "HsmConfigurationIdentifier" :: Maybe (String)
+  , "Description" :: Maybe (String)
+  , "HsmIpAddress" :: Maybe (String)
+  , "HsmPartitionName" :: Maybe (String)
+  , "Tags" :: Maybe (TagList)
   }
 derive instance newtypeHsmConfiguration :: Newtype HsmConfiguration _
 derive instance repGenericHsmConfiguration :: Generic HsmConfiguration _
@@ -2837,12 +2836,12 @@ instance encodeHsmConfiguration :: Encode HsmConfiguration where encode = generi
 
 -- | Constructs HsmConfiguration from required parameters
 newHsmConfiguration :: HsmConfiguration
-newHsmConfiguration  = HsmConfiguration { "Description": (NullOrUndefined Nothing), "HsmConfigurationIdentifier": (NullOrUndefined Nothing), "HsmIpAddress": (NullOrUndefined Nothing), "HsmPartitionName": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newHsmConfiguration  = HsmConfiguration { "Description": Nothing, "HsmConfigurationIdentifier": Nothing, "HsmIpAddress": Nothing, "HsmPartitionName": Nothing, "Tags": Nothing }
 
 -- | Constructs HsmConfiguration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newHsmConfiguration' :: ( { "HsmConfigurationIdentifier" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "HsmIpAddress" :: NullOrUndefined (String) , "HsmPartitionName" :: NullOrUndefined (String) , "Tags" :: NullOrUndefined (TagList) } -> {"HsmConfigurationIdentifier" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "HsmIpAddress" :: NullOrUndefined (String) , "HsmPartitionName" :: NullOrUndefined (String) , "Tags" :: NullOrUndefined (TagList) } ) -> HsmConfiguration
-newHsmConfiguration'  customize = (HsmConfiguration <<< customize) { "Description": (NullOrUndefined Nothing), "HsmConfigurationIdentifier": (NullOrUndefined Nothing), "HsmIpAddress": (NullOrUndefined Nothing), "HsmPartitionName": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newHsmConfiguration' :: ( { "HsmConfigurationIdentifier" :: Maybe (String) , "Description" :: Maybe (String) , "HsmIpAddress" :: Maybe (String) , "HsmPartitionName" :: Maybe (String) , "Tags" :: Maybe (TagList) } -> {"HsmConfigurationIdentifier" :: Maybe (String) , "Description" :: Maybe (String) , "HsmIpAddress" :: Maybe (String) , "HsmPartitionName" :: Maybe (String) , "Tags" :: Maybe (TagList) } ) -> HsmConfiguration
+newHsmConfiguration'  customize = (HsmConfiguration <<< customize) { "Description": Nothing, "HsmConfigurationIdentifier": Nothing, "HsmIpAddress": Nothing, "HsmPartitionName": Nothing, "Tags": Nothing }
 
 
 
@@ -2867,8 +2866,8 @@ instance encodeHsmConfigurationList :: Encode HsmConfigurationList where encode 
 
 -- | <p/>
 newtype HsmConfigurationMessage = HsmConfigurationMessage 
-  { "Marker" :: NullOrUndefined (String)
-  , "HsmConfigurations" :: NullOrUndefined (HsmConfigurationList)
+  { "Marker" :: Maybe (String)
+  , "HsmConfigurations" :: Maybe (HsmConfigurationList)
   }
 derive instance newtypeHsmConfigurationMessage :: Newtype HsmConfigurationMessage _
 derive instance repGenericHsmConfigurationMessage :: Generic HsmConfigurationMessage _
@@ -2878,12 +2877,12 @@ instance encodeHsmConfigurationMessage :: Encode HsmConfigurationMessage where e
 
 -- | Constructs HsmConfigurationMessage from required parameters
 newHsmConfigurationMessage :: HsmConfigurationMessage
-newHsmConfigurationMessage  = HsmConfigurationMessage { "HsmConfigurations": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newHsmConfigurationMessage  = HsmConfigurationMessage { "HsmConfigurations": Nothing, "Marker": Nothing }
 
 -- | Constructs HsmConfigurationMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newHsmConfigurationMessage' :: ( { "Marker" :: NullOrUndefined (String) , "HsmConfigurations" :: NullOrUndefined (HsmConfigurationList) } -> {"Marker" :: NullOrUndefined (String) , "HsmConfigurations" :: NullOrUndefined (HsmConfigurationList) } ) -> HsmConfigurationMessage
-newHsmConfigurationMessage'  customize = (HsmConfigurationMessage <<< customize) { "HsmConfigurations": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing) }
+newHsmConfigurationMessage' :: ( { "Marker" :: Maybe (String) , "HsmConfigurations" :: Maybe (HsmConfigurationList) } -> {"Marker" :: Maybe (String) , "HsmConfigurations" :: Maybe (HsmConfigurationList) } ) -> HsmConfigurationMessage
+newHsmConfigurationMessage'  customize = (HsmConfigurationMessage <<< customize) { "HsmConfigurations": Nothing, "Marker": Nothing }
 
 
 
@@ -2909,9 +2908,9 @@ instance encodeHsmConfigurationQuotaExceededFault :: Encode HsmConfigurationQuot
 
 -- | <p>Describes the status of changes to HSM settings.</p>
 newtype HsmStatus = HsmStatus 
-  { "HsmClientCertificateIdentifier" :: NullOrUndefined (String)
-  , "HsmConfigurationIdentifier" :: NullOrUndefined (String)
-  , "Status" :: NullOrUndefined (String)
+  { "HsmClientCertificateIdentifier" :: Maybe (String)
+  , "HsmConfigurationIdentifier" :: Maybe (String)
+  , "Status" :: Maybe (String)
   }
 derive instance newtypeHsmStatus :: Newtype HsmStatus _
 derive instance repGenericHsmStatus :: Generic HsmStatus _
@@ -2921,20 +2920,20 @@ instance encodeHsmStatus :: Encode HsmStatus where encode = genericEncode option
 
 -- | Constructs HsmStatus from required parameters
 newHsmStatus :: HsmStatus
-newHsmStatus  = HsmStatus { "HsmClientCertificateIdentifier": (NullOrUndefined Nothing), "HsmConfigurationIdentifier": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newHsmStatus  = HsmStatus { "HsmClientCertificateIdentifier": Nothing, "HsmConfigurationIdentifier": Nothing, "Status": Nothing }
 
 -- | Constructs HsmStatus's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newHsmStatus' :: ( { "HsmClientCertificateIdentifier" :: NullOrUndefined (String) , "HsmConfigurationIdentifier" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (String) } -> {"HsmClientCertificateIdentifier" :: NullOrUndefined (String) , "HsmConfigurationIdentifier" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (String) } ) -> HsmStatus
-newHsmStatus'  customize = (HsmStatus <<< customize) { "HsmClientCertificateIdentifier": (NullOrUndefined Nothing), "HsmConfigurationIdentifier": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newHsmStatus' :: ( { "HsmClientCertificateIdentifier" :: Maybe (String) , "HsmConfigurationIdentifier" :: Maybe (String) , "Status" :: Maybe (String) } -> {"HsmClientCertificateIdentifier" :: Maybe (String) , "HsmConfigurationIdentifier" :: Maybe (String) , "Status" :: Maybe (String) } ) -> HsmStatus
+newHsmStatus'  customize = (HsmStatus <<< customize) { "HsmClientCertificateIdentifier": Nothing, "HsmConfigurationIdentifier": Nothing, "Status": Nothing }
 
 
 
 -- | <p>Describes an IP range used in a security group.</p>
 newtype IPRange = IPRange 
-  { "Status" :: NullOrUndefined (String)
-  , "CIDRIP" :: NullOrUndefined (String)
-  , "Tags" :: NullOrUndefined (TagList)
+  { "Status" :: Maybe (String)
+  , "CIDRIP" :: Maybe (String)
+  , "Tags" :: Maybe (TagList)
   }
 derive instance newtypeIPRange :: Newtype IPRange _
 derive instance repGenericIPRange :: Generic IPRange _
@@ -2944,12 +2943,12 @@ instance encodeIPRange :: Encode IPRange where encode = genericEncode options
 
 -- | Constructs IPRange from required parameters
 newIPRange :: IPRange
-newIPRange  = IPRange { "CIDRIP": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newIPRange  = IPRange { "CIDRIP": Nothing, "Status": Nothing, "Tags": Nothing }
 
 -- | Constructs IPRange's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newIPRange' :: ( { "Status" :: NullOrUndefined (String) , "CIDRIP" :: NullOrUndefined (String) , "Tags" :: NullOrUndefined (TagList) } -> {"Status" :: NullOrUndefined (String) , "CIDRIP" :: NullOrUndefined (String) , "Tags" :: NullOrUndefined (TagList) } ) -> IPRange
-newIPRange'  customize = (IPRange <<< customize) { "CIDRIP": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newIPRange' :: ( { "Status" :: Maybe (String) , "CIDRIP" :: Maybe (String) , "Tags" :: Maybe (TagList) } -> {"Status" :: Maybe (String) , "CIDRIP" :: Maybe (String) , "Tags" :: Maybe (TagList) } ) -> IPRange
+newIPRange'  customize = (IPRange <<< customize) { "CIDRIP": Nothing, "Status": Nothing, "Tags": Nothing }
 
 
 
@@ -3239,12 +3238,12 @@ instance encodeLimitExceededFault :: Encode LimitExceededFault where encode = ge
 
 -- | <p>Describes the status of logging for a cluster.</p>
 newtype LoggingStatus = LoggingStatus 
-  { "LoggingEnabled" :: NullOrUndefined (Boolean)
-  , "BucketName" :: NullOrUndefined (String)
-  , "S3KeyPrefix" :: NullOrUndefined (String)
-  , "LastSuccessfulDeliveryTime" :: NullOrUndefined (TStamp)
-  , "LastFailureTime" :: NullOrUndefined (TStamp)
-  , "LastFailureMessage" :: NullOrUndefined (String)
+  { "LoggingEnabled" :: Maybe (Boolean)
+  , "BucketName" :: Maybe (String)
+  , "S3KeyPrefix" :: Maybe (String)
+  , "LastSuccessfulDeliveryTime" :: Maybe (TStamp)
+  , "LastFailureTime" :: Maybe (TStamp)
+  , "LastFailureMessage" :: Maybe (String)
   }
 derive instance newtypeLoggingStatus :: Newtype LoggingStatus _
 derive instance repGenericLoggingStatus :: Generic LoggingStatus _
@@ -3254,12 +3253,12 @@ instance encodeLoggingStatus :: Encode LoggingStatus where encode = genericEncod
 
 -- | Constructs LoggingStatus from required parameters
 newLoggingStatus :: LoggingStatus
-newLoggingStatus  = LoggingStatus { "BucketName": (NullOrUndefined Nothing), "LastFailureMessage": (NullOrUndefined Nothing), "LastFailureTime": (NullOrUndefined Nothing), "LastSuccessfulDeliveryTime": (NullOrUndefined Nothing), "LoggingEnabled": (NullOrUndefined Nothing), "S3KeyPrefix": (NullOrUndefined Nothing) }
+newLoggingStatus  = LoggingStatus { "BucketName": Nothing, "LastFailureMessage": Nothing, "LastFailureTime": Nothing, "LastSuccessfulDeliveryTime": Nothing, "LoggingEnabled": Nothing, "S3KeyPrefix": Nothing }
 
 -- | Constructs LoggingStatus's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newLoggingStatus' :: ( { "LoggingEnabled" :: NullOrUndefined (Boolean) , "BucketName" :: NullOrUndefined (String) , "S3KeyPrefix" :: NullOrUndefined (String) , "LastSuccessfulDeliveryTime" :: NullOrUndefined (TStamp) , "LastFailureTime" :: NullOrUndefined (TStamp) , "LastFailureMessage" :: NullOrUndefined (String) } -> {"LoggingEnabled" :: NullOrUndefined (Boolean) , "BucketName" :: NullOrUndefined (String) , "S3KeyPrefix" :: NullOrUndefined (String) , "LastSuccessfulDeliveryTime" :: NullOrUndefined (TStamp) , "LastFailureTime" :: NullOrUndefined (TStamp) , "LastFailureMessage" :: NullOrUndefined (String) } ) -> LoggingStatus
-newLoggingStatus'  customize = (LoggingStatus <<< customize) { "BucketName": (NullOrUndefined Nothing), "LastFailureMessage": (NullOrUndefined Nothing), "LastFailureTime": (NullOrUndefined Nothing), "LastSuccessfulDeliveryTime": (NullOrUndefined Nothing), "LoggingEnabled": (NullOrUndefined Nothing), "S3KeyPrefix": (NullOrUndefined Nothing) }
+newLoggingStatus' :: ( { "LoggingEnabled" :: Maybe (Boolean) , "BucketName" :: Maybe (String) , "S3KeyPrefix" :: Maybe (String) , "LastSuccessfulDeliveryTime" :: Maybe (TStamp) , "LastFailureTime" :: Maybe (TStamp) , "LastFailureMessage" :: Maybe (String) } -> {"LoggingEnabled" :: Maybe (Boolean) , "BucketName" :: Maybe (String) , "S3KeyPrefix" :: Maybe (String) , "LastSuccessfulDeliveryTime" :: Maybe (TStamp) , "LastFailureTime" :: Maybe (TStamp) , "LastFailureMessage" :: Maybe (String) } ) -> LoggingStatus
+newLoggingStatus'  customize = (LoggingStatus <<< customize) { "BucketName": Nothing, "LastFailureMessage": Nothing, "LastFailureTime": Nothing, "LastSuccessfulDeliveryTime": Nothing, "LoggingEnabled": Nothing, "S3KeyPrefix": Nothing }
 
 
 
@@ -3275,8 +3274,8 @@ instance encodeLongOptional :: Encode LongOptional where encode = genericEncode 
 -- | <p/>
 newtype ModifyClusterIamRolesMessage = ModifyClusterIamRolesMessage 
   { "ClusterIdentifier" :: (String)
-  , "AddIamRoles" :: NullOrUndefined (IamRoleArnList)
-  , "RemoveIamRoles" :: NullOrUndefined (IamRoleArnList)
+  , "AddIamRoles" :: Maybe (IamRoleArnList)
+  , "RemoveIamRoles" :: Maybe (IamRoleArnList)
   }
 derive instance newtypeModifyClusterIamRolesMessage :: Newtype ModifyClusterIamRolesMessage _
 derive instance repGenericModifyClusterIamRolesMessage :: Generic ModifyClusterIamRolesMessage _
@@ -3286,17 +3285,17 @@ instance encodeModifyClusterIamRolesMessage :: Encode ModifyClusterIamRolesMessa
 
 -- | Constructs ModifyClusterIamRolesMessage from required parameters
 newModifyClusterIamRolesMessage :: String -> ModifyClusterIamRolesMessage
-newModifyClusterIamRolesMessage _ClusterIdentifier = ModifyClusterIamRolesMessage { "ClusterIdentifier": _ClusterIdentifier, "AddIamRoles": (NullOrUndefined Nothing), "RemoveIamRoles": (NullOrUndefined Nothing) }
+newModifyClusterIamRolesMessage _ClusterIdentifier = ModifyClusterIamRolesMessage { "ClusterIdentifier": _ClusterIdentifier, "AddIamRoles": Nothing, "RemoveIamRoles": Nothing }
 
 -- | Constructs ModifyClusterIamRolesMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifyClusterIamRolesMessage' :: String -> ( { "ClusterIdentifier" :: (String) , "AddIamRoles" :: NullOrUndefined (IamRoleArnList) , "RemoveIamRoles" :: NullOrUndefined (IamRoleArnList) } -> {"ClusterIdentifier" :: (String) , "AddIamRoles" :: NullOrUndefined (IamRoleArnList) , "RemoveIamRoles" :: NullOrUndefined (IamRoleArnList) } ) -> ModifyClusterIamRolesMessage
-newModifyClusterIamRolesMessage' _ClusterIdentifier customize = (ModifyClusterIamRolesMessage <<< customize) { "ClusterIdentifier": _ClusterIdentifier, "AddIamRoles": (NullOrUndefined Nothing), "RemoveIamRoles": (NullOrUndefined Nothing) }
+newModifyClusterIamRolesMessage' :: String -> ( { "ClusterIdentifier" :: (String) , "AddIamRoles" :: Maybe (IamRoleArnList) , "RemoveIamRoles" :: Maybe (IamRoleArnList) } -> {"ClusterIdentifier" :: (String) , "AddIamRoles" :: Maybe (IamRoleArnList) , "RemoveIamRoles" :: Maybe (IamRoleArnList) } ) -> ModifyClusterIamRolesMessage
+newModifyClusterIamRolesMessage' _ClusterIdentifier customize = (ModifyClusterIamRolesMessage <<< customize) { "ClusterIdentifier": _ClusterIdentifier, "AddIamRoles": Nothing, "RemoveIamRoles": Nothing }
 
 
 
 newtype ModifyClusterIamRolesResult = ModifyClusterIamRolesResult 
-  { "Cluster" :: NullOrUndefined (Cluster)
+  { "Cluster" :: Maybe (Cluster)
   }
 derive instance newtypeModifyClusterIamRolesResult :: Newtype ModifyClusterIamRolesResult _
 derive instance repGenericModifyClusterIamRolesResult :: Generic ModifyClusterIamRolesResult _
@@ -3306,35 +3305,35 @@ instance encodeModifyClusterIamRolesResult :: Encode ModifyClusterIamRolesResult
 
 -- | Constructs ModifyClusterIamRolesResult from required parameters
 newModifyClusterIamRolesResult :: ModifyClusterIamRolesResult
-newModifyClusterIamRolesResult  = ModifyClusterIamRolesResult { "Cluster": (NullOrUndefined Nothing) }
+newModifyClusterIamRolesResult  = ModifyClusterIamRolesResult { "Cluster": Nothing }
 
 -- | Constructs ModifyClusterIamRolesResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifyClusterIamRolesResult' :: ( { "Cluster" :: NullOrUndefined (Cluster) } -> {"Cluster" :: NullOrUndefined (Cluster) } ) -> ModifyClusterIamRolesResult
-newModifyClusterIamRolesResult'  customize = (ModifyClusterIamRolesResult <<< customize) { "Cluster": (NullOrUndefined Nothing) }
+newModifyClusterIamRolesResult' :: ( { "Cluster" :: Maybe (Cluster) } -> {"Cluster" :: Maybe (Cluster) } ) -> ModifyClusterIamRolesResult
+newModifyClusterIamRolesResult'  customize = (ModifyClusterIamRolesResult <<< customize) { "Cluster": Nothing }
 
 
 
 -- | <p/>
 newtype ModifyClusterMessage = ModifyClusterMessage 
   { "ClusterIdentifier" :: (String)
-  , "ClusterType" :: NullOrUndefined (String)
-  , "NodeType" :: NullOrUndefined (String)
-  , "NumberOfNodes" :: NullOrUndefined (IntegerOptional)
-  , "ClusterSecurityGroups" :: NullOrUndefined (ClusterSecurityGroupNameList)
-  , "VpcSecurityGroupIds" :: NullOrUndefined (VpcSecurityGroupIdList)
-  , "MasterUserPassword" :: NullOrUndefined (String)
-  , "ClusterParameterGroupName" :: NullOrUndefined (String)
-  , "AutomatedSnapshotRetentionPeriod" :: NullOrUndefined (IntegerOptional)
-  , "PreferredMaintenanceWindow" :: NullOrUndefined (String)
-  , "ClusterVersion" :: NullOrUndefined (String)
-  , "AllowVersionUpgrade" :: NullOrUndefined (BooleanOptional)
-  , "HsmClientCertificateIdentifier" :: NullOrUndefined (String)
-  , "HsmConfigurationIdentifier" :: NullOrUndefined (String)
-  , "NewClusterIdentifier" :: NullOrUndefined (String)
-  , "PubliclyAccessible" :: NullOrUndefined (BooleanOptional)
-  , "ElasticIp" :: NullOrUndefined (String)
-  , "EnhancedVpcRouting" :: NullOrUndefined (BooleanOptional)
+  , "ClusterType" :: Maybe (String)
+  , "NodeType" :: Maybe (String)
+  , "NumberOfNodes" :: Maybe (IntegerOptional)
+  , "ClusterSecurityGroups" :: Maybe (ClusterSecurityGroupNameList)
+  , "VpcSecurityGroupIds" :: Maybe (VpcSecurityGroupIdList)
+  , "MasterUserPassword" :: Maybe (String)
+  , "ClusterParameterGroupName" :: Maybe (String)
+  , "AutomatedSnapshotRetentionPeriod" :: Maybe (IntegerOptional)
+  , "PreferredMaintenanceWindow" :: Maybe (String)
+  , "ClusterVersion" :: Maybe (String)
+  , "AllowVersionUpgrade" :: Maybe (BooleanOptional)
+  , "HsmClientCertificateIdentifier" :: Maybe (String)
+  , "HsmConfigurationIdentifier" :: Maybe (String)
+  , "NewClusterIdentifier" :: Maybe (String)
+  , "PubliclyAccessible" :: Maybe (BooleanOptional)
+  , "ElasticIp" :: Maybe (String)
+  , "EnhancedVpcRouting" :: Maybe (BooleanOptional)
   }
 derive instance newtypeModifyClusterMessage :: Newtype ModifyClusterMessage _
 derive instance repGenericModifyClusterMessage :: Generic ModifyClusterMessage _
@@ -3344,12 +3343,12 @@ instance encodeModifyClusterMessage :: Encode ModifyClusterMessage where encode 
 
 -- | Constructs ModifyClusterMessage from required parameters
 newModifyClusterMessage :: String -> ModifyClusterMessage
-newModifyClusterMessage _ClusterIdentifier = ModifyClusterMessage { "ClusterIdentifier": _ClusterIdentifier, "AllowVersionUpgrade": (NullOrUndefined Nothing), "AutomatedSnapshotRetentionPeriod": (NullOrUndefined Nothing), "ClusterParameterGroupName": (NullOrUndefined Nothing), "ClusterSecurityGroups": (NullOrUndefined Nothing), "ClusterType": (NullOrUndefined Nothing), "ClusterVersion": (NullOrUndefined Nothing), "ElasticIp": (NullOrUndefined Nothing), "EnhancedVpcRouting": (NullOrUndefined Nothing), "HsmClientCertificateIdentifier": (NullOrUndefined Nothing), "HsmConfigurationIdentifier": (NullOrUndefined Nothing), "MasterUserPassword": (NullOrUndefined Nothing), "NewClusterIdentifier": (NullOrUndefined Nothing), "NodeType": (NullOrUndefined Nothing), "NumberOfNodes": (NullOrUndefined Nothing), "PreferredMaintenanceWindow": (NullOrUndefined Nothing), "PubliclyAccessible": (NullOrUndefined Nothing), "VpcSecurityGroupIds": (NullOrUndefined Nothing) }
+newModifyClusterMessage _ClusterIdentifier = ModifyClusterMessage { "ClusterIdentifier": _ClusterIdentifier, "AllowVersionUpgrade": Nothing, "AutomatedSnapshotRetentionPeriod": Nothing, "ClusterParameterGroupName": Nothing, "ClusterSecurityGroups": Nothing, "ClusterType": Nothing, "ClusterVersion": Nothing, "ElasticIp": Nothing, "EnhancedVpcRouting": Nothing, "HsmClientCertificateIdentifier": Nothing, "HsmConfigurationIdentifier": Nothing, "MasterUserPassword": Nothing, "NewClusterIdentifier": Nothing, "NodeType": Nothing, "NumberOfNodes": Nothing, "PreferredMaintenanceWindow": Nothing, "PubliclyAccessible": Nothing, "VpcSecurityGroupIds": Nothing }
 
 -- | Constructs ModifyClusterMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifyClusterMessage' :: String -> ( { "ClusterIdentifier" :: (String) , "ClusterType" :: NullOrUndefined (String) , "NodeType" :: NullOrUndefined (String) , "NumberOfNodes" :: NullOrUndefined (IntegerOptional) , "ClusterSecurityGroups" :: NullOrUndefined (ClusterSecurityGroupNameList) , "VpcSecurityGroupIds" :: NullOrUndefined (VpcSecurityGroupIdList) , "MasterUserPassword" :: NullOrUndefined (String) , "ClusterParameterGroupName" :: NullOrUndefined (String) , "AutomatedSnapshotRetentionPeriod" :: NullOrUndefined (IntegerOptional) , "PreferredMaintenanceWindow" :: NullOrUndefined (String) , "ClusterVersion" :: NullOrUndefined (String) , "AllowVersionUpgrade" :: NullOrUndefined (BooleanOptional) , "HsmClientCertificateIdentifier" :: NullOrUndefined (String) , "HsmConfigurationIdentifier" :: NullOrUndefined (String) , "NewClusterIdentifier" :: NullOrUndefined (String) , "PubliclyAccessible" :: NullOrUndefined (BooleanOptional) , "ElasticIp" :: NullOrUndefined (String) , "EnhancedVpcRouting" :: NullOrUndefined (BooleanOptional) } -> {"ClusterIdentifier" :: (String) , "ClusterType" :: NullOrUndefined (String) , "NodeType" :: NullOrUndefined (String) , "NumberOfNodes" :: NullOrUndefined (IntegerOptional) , "ClusterSecurityGroups" :: NullOrUndefined (ClusterSecurityGroupNameList) , "VpcSecurityGroupIds" :: NullOrUndefined (VpcSecurityGroupIdList) , "MasterUserPassword" :: NullOrUndefined (String) , "ClusterParameterGroupName" :: NullOrUndefined (String) , "AutomatedSnapshotRetentionPeriod" :: NullOrUndefined (IntegerOptional) , "PreferredMaintenanceWindow" :: NullOrUndefined (String) , "ClusterVersion" :: NullOrUndefined (String) , "AllowVersionUpgrade" :: NullOrUndefined (BooleanOptional) , "HsmClientCertificateIdentifier" :: NullOrUndefined (String) , "HsmConfigurationIdentifier" :: NullOrUndefined (String) , "NewClusterIdentifier" :: NullOrUndefined (String) , "PubliclyAccessible" :: NullOrUndefined (BooleanOptional) , "ElasticIp" :: NullOrUndefined (String) , "EnhancedVpcRouting" :: NullOrUndefined (BooleanOptional) } ) -> ModifyClusterMessage
-newModifyClusterMessage' _ClusterIdentifier customize = (ModifyClusterMessage <<< customize) { "ClusterIdentifier": _ClusterIdentifier, "AllowVersionUpgrade": (NullOrUndefined Nothing), "AutomatedSnapshotRetentionPeriod": (NullOrUndefined Nothing), "ClusterParameterGroupName": (NullOrUndefined Nothing), "ClusterSecurityGroups": (NullOrUndefined Nothing), "ClusterType": (NullOrUndefined Nothing), "ClusterVersion": (NullOrUndefined Nothing), "ElasticIp": (NullOrUndefined Nothing), "EnhancedVpcRouting": (NullOrUndefined Nothing), "HsmClientCertificateIdentifier": (NullOrUndefined Nothing), "HsmConfigurationIdentifier": (NullOrUndefined Nothing), "MasterUserPassword": (NullOrUndefined Nothing), "NewClusterIdentifier": (NullOrUndefined Nothing), "NodeType": (NullOrUndefined Nothing), "NumberOfNodes": (NullOrUndefined Nothing), "PreferredMaintenanceWindow": (NullOrUndefined Nothing), "PubliclyAccessible": (NullOrUndefined Nothing), "VpcSecurityGroupIds": (NullOrUndefined Nothing) }
+newModifyClusterMessage' :: String -> ( { "ClusterIdentifier" :: (String) , "ClusterType" :: Maybe (String) , "NodeType" :: Maybe (String) , "NumberOfNodes" :: Maybe (IntegerOptional) , "ClusterSecurityGroups" :: Maybe (ClusterSecurityGroupNameList) , "VpcSecurityGroupIds" :: Maybe (VpcSecurityGroupIdList) , "MasterUserPassword" :: Maybe (String) , "ClusterParameterGroupName" :: Maybe (String) , "AutomatedSnapshotRetentionPeriod" :: Maybe (IntegerOptional) , "PreferredMaintenanceWindow" :: Maybe (String) , "ClusterVersion" :: Maybe (String) , "AllowVersionUpgrade" :: Maybe (BooleanOptional) , "HsmClientCertificateIdentifier" :: Maybe (String) , "HsmConfigurationIdentifier" :: Maybe (String) , "NewClusterIdentifier" :: Maybe (String) , "PubliclyAccessible" :: Maybe (BooleanOptional) , "ElasticIp" :: Maybe (String) , "EnhancedVpcRouting" :: Maybe (BooleanOptional) } -> {"ClusterIdentifier" :: (String) , "ClusterType" :: Maybe (String) , "NodeType" :: Maybe (String) , "NumberOfNodes" :: Maybe (IntegerOptional) , "ClusterSecurityGroups" :: Maybe (ClusterSecurityGroupNameList) , "VpcSecurityGroupIds" :: Maybe (VpcSecurityGroupIdList) , "MasterUserPassword" :: Maybe (String) , "ClusterParameterGroupName" :: Maybe (String) , "AutomatedSnapshotRetentionPeriod" :: Maybe (IntegerOptional) , "PreferredMaintenanceWindow" :: Maybe (String) , "ClusterVersion" :: Maybe (String) , "AllowVersionUpgrade" :: Maybe (BooleanOptional) , "HsmClientCertificateIdentifier" :: Maybe (String) , "HsmConfigurationIdentifier" :: Maybe (String) , "NewClusterIdentifier" :: Maybe (String) , "PubliclyAccessible" :: Maybe (BooleanOptional) , "ElasticIp" :: Maybe (String) , "EnhancedVpcRouting" :: Maybe (BooleanOptional) } ) -> ModifyClusterMessage
+newModifyClusterMessage' _ClusterIdentifier customize = (ModifyClusterMessage <<< customize) { "ClusterIdentifier": _ClusterIdentifier, "AllowVersionUpgrade": Nothing, "AutomatedSnapshotRetentionPeriod": Nothing, "ClusterParameterGroupName": Nothing, "ClusterSecurityGroups": Nothing, "ClusterType": Nothing, "ClusterVersion": Nothing, "ElasticIp": Nothing, "EnhancedVpcRouting": Nothing, "HsmClientCertificateIdentifier": Nothing, "HsmConfigurationIdentifier": Nothing, "MasterUserPassword": Nothing, "NewClusterIdentifier": Nothing, "NodeType": Nothing, "NumberOfNodes": Nothing, "PreferredMaintenanceWindow": Nothing, "PubliclyAccessible": Nothing, "VpcSecurityGroupIds": Nothing }
 
 
 
@@ -3376,7 +3375,7 @@ newModifyClusterParameterGroupMessage' _ParameterGroupName _Parameters customize
 
 
 newtype ModifyClusterResult = ModifyClusterResult 
-  { "Cluster" :: NullOrUndefined (Cluster)
+  { "Cluster" :: Maybe (Cluster)
   }
 derive instance newtypeModifyClusterResult :: Newtype ModifyClusterResult _
 derive instance repGenericModifyClusterResult :: Generic ModifyClusterResult _
@@ -3386,19 +3385,19 @@ instance encodeModifyClusterResult :: Encode ModifyClusterResult where encode = 
 
 -- | Constructs ModifyClusterResult from required parameters
 newModifyClusterResult :: ModifyClusterResult
-newModifyClusterResult  = ModifyClusterResult { "Cluster": (NullOrUndefined Nothing) }
+newModifyClusterResult  = ModifyClusterResult { "Cluster": Nothing }
 
 -- | Constructs ModifyClusterResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifyClusterResult' :: ( { "Cluster" :: NullOrUndefined (Cluster) } -> {"Cluster" :: NullOrUndefined (Cluster) } ) -> ModifyClusterResult
-newModifyClusterResult'  customize = (ModifyClusterResult <<< customize) { "Cluster": (NullOrUndefined Nothing) }
+newModifyClusterResult' :: ( { "Cluster" :: Maybe (Cluster) } -> {"Cluster" :: Maybe (Cluster) } ) -> ModifyClusterResult
+newModifyClusterResult'  customize = (ModifyClusterResult <<< customize) { "Cluster": Nothing }
 
 
 
 -- | <p/>
 newtype ModifyClusterSubnetGroupMessage = ModifyClusterSubnetGroupMessage 
   { "ClusterSubnetGroupName" :: (String)
-  , "Description" :: NullOrUndefined (String)
+  , "Description" :: Maybe (String)
   , "SubnetIds" :: (SubnetIdentifierList)
   }
 derive instance newtypeModifyClusterSubnetGroupMessage :: Newtype ModifyClusterSubnetGroupMessage _
@@ -3409,17 +3408,17 @@ instance encodeModifyClusterSubnetGroupMessage :: Encode ModifyClusterSubnetGrou
 
 -- | Constructs ModifyClusterSubnetGroupMessage from required parameters
 newModifyClusterSubnetGroupMessage :: String -> SubnetIdentifierList -> ModifyClusterSubnetGroupMessage
-newModifyClusterSubnetGroupMessage _ClusterSubnetGroupName _SubnetIds = ModifyClusterSubnetGroupMessage { "ClusterSubnetGroupName": _ClusterSubnetGroupName, "SubnetIds": _SubnetIds, "Description": (NullOrUndefined Nothing) }
+newModifyClusterSubnetGroupMessage _ClusterSubnetGroupName _SubnetIds = ModifyClusterSubnetGroupMessage { "ClusterSubnetGroupName": _ClusterSubnetGroupName, "SubnetIds": _SubnetIds, "Description": Nothing }
 
 -- | Constructs ModifyClusterSubnetGroupMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifyClusterSubnetGroupMessage' :: String -> SubnetIdentifierList -> ( { "ClusterSubnetGroupName" :: (String) , "Description" :: NullOrUndefined (String) , "SubnetIds" :: (SubnetIdentifierList) } -> {"ClusterSubnetGroupName" :: (String) , "Description" :: NullOrUndefined (String) , "SubnetIds" :: (SubnetIdentifierList) } ) -> ModifyClusterSubnetGroupMessage
-newModifyClusterSubnetGroupMessage' _ClusterSubnetGroupName _SubnetIds customize = (ModifyClusterSubnetGroupMessage <<< customize) { "ClusterSubnetGroupName": _ClusterSubnetGroupName, "SubnetIds": _SubnetIds, "Description": (NullOrUndefined Nothing) }
+newModifyClusterSubnetGroupMessage' :: String -> SubnetIdentifierList -> ( { "ClusterSubnetGroupName" :: (String) , "Description" :: Maybe (String) , "SubnetIds" :: (SubnetIdentifierList) } -> {"ClusterSubnetGroupName" :: (String) , "Description" :: Maybe (String) , "SubnetIds" :: (SubnetIdentifierList) } ) -> ModifyClusterSubnetGroupMessage
+newModifyClusterSubnetGroupMessage' _ClusterSubnetGroupName _SubnetIds customize = (ModifyClusterSubnetGroupMessage <<< customize) { "ClusterSubnetGroupName": _ClusterSubnetGroupName, "SubnetIds": _SubnetIds, "Description": Nothing }
 
 
 
 newtype ModifyClusterSubnetGroupResult = ModifyClusterSubnetGroupResult 
-  { "ClusterSubnetGroup" :: NullOrUndefined (ClusterSubnetGroup)
+  { "ClusterSubnetGroup" :: Maybe (ClusterSubnetGroup)
   }
 derive instance newtypeModifyClusterSubnetGroupResult :: Newtype ModifyClusterSubnetGroupResult _
 derive instance repGenericModifyClusterSubnetGroupResult :: Generic ModifyClusterSubnetGroupResult _
@@ -3429,24 +3428,24 @@ instance encodeModifyClusterSubnetGroupResult :: Encode ModifyClusterSubnetGroup
 
 -- | Constructs ModifyClusterSubnetGroupResult from required parameters
 newModifyClusterSubnetGroupResult :: ModifyClusterSubnetGroupResult
-newModifyClusterSubnetGroupResult  = ModifyClusterSubnetGroupResult { "ClusterSubnetGroup": (NullOrUndefined Nothing) }
+newModifyClusterSubnetGroupResult  = ModifyClusterSubnetGroupResult { "ClusterSubnetGroup": Nothing }
 
 -- | Constructs ModifyClusterSubnetGroupResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifyClusterSubnetGroupResult' :: ( { "ClusterSubnetGroup" :: NullOrUndefined (ClusterSubnetGroup) } -> {"ClusterSubnetGroup" :: NullOrUndefined (ClusterSubnetGroup) } ) -> ModifyClusterSubnetGroupResult
-newModifyClusterSubnetGroupResult'  customize = (ModifyClusterSubnetGroupResult <<< customize) { "ClusterSubnetGroup": (NullOrUndefined Nothing) }
+newModifyClusterSubnetGroupResult' :: ( { "ClusterSubnetGroup" :: Maybe (ClusterSubnetGroup) } -> {"ClusterSubnetGroup" :: Maybe (ClusterSubnetGroup) } ) -> ModifyClusterSubnetGroupResult
+newModifyClusterSubnetGroupResult'  customize = (ModifyClusterSubnetGroupResult <<< customize) { "ClusterSubnetGroup": Nothing }
 
 
 
 -- | <p/>
 newtype ModifyEventSubscriptionMessage = ModifyEventSubscriptionMessage 
   { "SubscriptionName" :: (String)
-  , "SnsTopicArn" :: NullOrUndefined (String)
-  , "SourceType" :: NullOrUndefined (String)
-  , "SourceIds" :: NullOrUndefined (SourceIdsList)
-  , "EventCategories" :: NullOrUndefined (EventCategoriesList)
-  , "Severity" :: NullOrUndefined (String)
-  , "Enabled" :: NullOrUndefined (BooleanOptional)
+  , "SnsTopicArn" :: Maybe (String)
+  , "SourceType" :: Maybe (String)
+  , "SourceIds" :: Maybe (SourceIdsList)
+  , "EventCategories" :: Maybe (EventCategoriesList)
+  , "Severity" :: Maybe (String)
+  , "Enabled" :: Maybe (BooleanOptional)
   }
 derive instance newtypeModifyEventSubscriptionMessage :: Newtype ModifyEventSubscriptionMessage _
 derive instance repGenericModifyEventSubscriptionMessage :: Generic ModifyEventSubscriptionMessage _
@@ -3456,17 +3455,17 @@ instance encodeModifyEventSubscriptionMessage :: Encode ModifyEventSubscriptionM
 
 -- | Constructs ModifyEventSubscriptionMessage from required parameters
 newModifyEventSubscriptionMessage :: String -> ModifyEventSubscriptionMessage
-newModifyEventSubscriptionMessage _SubscriptionName = ModifyEventSubscriptionMessage { "SubscriptionName": _SubscriptionName, "Enabled": (NullOrUndefined Nothing), "EventCategories": (NullOrUndefined Nothing), "Severity": (NullOrUndefined Nothing), "SnsTopicArn": (NullOrUndefined Nothing), "SourceIds": (NullOrUndefined Nothing), "SourceType": (NullOrUndefined Nothing) }
+newModifyEventSubscriptionMessage _SubscriptionName = ModifyEventSubscriptionMessage { "SubscriptionName": _SubscriptionName, "Enabled": Nothing, "EventCategories": Nothing, "Severity": Nothing, "SnsTopicArn": Nothing, "SourceIds": Nothing, "SourceType": Nothing }
 
 -- | Constructs ModifyEventSubscriptionMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifyEventSubscriptionMessage' :: String -> ( { "SubscriptionName" :: (String) , "SnsTopicArn" :: NullOrUndefined (String) , "SourceType" :: NullOrUndefined (String) , "SourceIds" :: NullOrUndefined (SourceIdsList) , "EventCategories" :: NullOrUndefined (EventCategoriesList) , "Severity" :: NullOrUndefined (String) , "Enabled" :: NullOrUndefined (BooleanOptional) } -> {"SubscriptionName" :: (String) , "SnsTopicArn" :: NullOrUndefined (String) , "SourceType" :: NullOrUndefined (String) , "SourceIds" :: NullOrUndefined (SourceIdsList) , "EventCategories" :: NullOrUndefined (EventCategoriesList) , "Severity" :: NullOrUndefined (String) , "Enabled" :: NullOrUndefined (BooleanOptional) } ) -> ModifyEventSubscriptionMessage
-newModifyEventSubscriptionMessage' _SubscriptionName customize = (ModifyEventSubscriptionMessage <<< customize) { "SubscriptionName": _SubscriptionName, "Enabled": (NullOrUndefined Nothing), "EventCategories": (NullOrUndefined Nothing), "Severity": (NullOrUndefined Nothing), "SnsTopicArn": (NullOrUndefined Nothing), "SourceIds": (NullOrUndefined Nothing), "SourceType": (NullOrUndefined Nothing) }
+newModifyEventSubscriptionMessage' :: String -> ( { "SubscriptionName" :: (String) , "SnsTopicArn" :: Maybe (String) , "SourceType" :: Maybe (String) , "SourceIds" :: Maybe (SourceIdsList) , "EventCategories" :: Maybe (EventCategoriesList) , "Severity" :: Maybe (String) , "Enabled" :: Maybe (BooleanOptional) } -> {"SubscriptionName" :: (String) , "SnsTopicArn" :: Maybe (String) , "SourceType" :: Maybe (String) , "SourceIds" :: Maybe (SourceIdsList) , "EventCategories" :: Maybe (EventCategoriesList) , "Severity" :: Maybe (String) , "Enabled" :: Maybe (BooleanOptional) } ) -> ModifyEventSubscriptionMessage
+newModifyEventSubscriptionMessage' _SubscriptionName customize = (ModifyEventSubscriptionMessage <<< customize) { "SubscriptionName": _SubscriptionName, "Enabled": Nothing, "EventCategories": Nothing, "Severity": Nothing, "SnsTopicArn": Nothing, "SourceIds": Nothing, "SourceType": Nothing }
 
 
 
 newtype ModifyEventSubscriptionResult = ModifyEventSubscriptionResult 
-  { "EventSubscription" :: NullOrUndefined (EventSubscription)
+  { "EventSubscription" :: Maybe (EventSubscription)
   }
 derive instance newtypeModifyEventSubscriptionResult :: Newtype ModifyEventSubscriptionResult _
 derive instance repGenericModifyEventSubscriptionResult :: Generic ModifyEventSubscriptionResult _
@@ -3476,12 +3475,12 @@ instance encodeModifyEventSubscriptionResult :: Encode ModifyEventSubscriptionRe
 
 -- | Constructs ModifyEventSubscriptionResult from required parameters
 newModifyEventSubscriptionResult :: ModifyEventSubscriptionResult
-newModifyEventSubscriptionResult  = ModifyEventSubscriptionResult { "EventSubscription": (NullOrUndefined Nothing) }
+newModifyEventSubscriptionResult  = ModifyEventSubscriptionResult { "EventSubscription": Nothing }
 
 -- | Constructs ModifyEventSubscriptionResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifyEventSubscriptionResult' :: ( { "EventSubscription" :: NullOrUndefined (EventSubscription) } -> {"EventSubscription" :: NullOrUndefined (EventSubscription) } ) -> ModifyEventSubscriptionResult
-newModifyEventSubscriptionResult'  customize = (ModifyEventSubscriptionResult <<< customize) { "EventSubscription": (NullOrUndefined Nothing) }
+newModifyEventSubscriptionResult' :: ( { "EventSubscription" :: Maybe (EventSubscription) } -> {"EventSubscription" :: Maybe (EventSubscription) } ) -> ModifyEventSubscriptionResult
+newModifyEventSubscriptionResult'  customize = (ModifyEventSubscriptionResult <<< customize) { "EventSubscription": Nothing }
 
 
 
@@ -3508,7 +3507,7 @@ newModifySnapshotCopyRetentionPeriodMessage' _ClusterIdentifier _RetentionPeriod
 
 
 newtype ModifySnapshotCopyRetentionPeriodResult = ModifySnapshotCopyRetentionPeriodResult 
-  { "Cluster" :: NullOrUndefined (Cluster)
+  { "Cluster" :: Maybe (Cluster)
   }
 derive instance newtypeModifySnapshotCopyRetentionPeriodResult :: Newtype ModifySnapshotCopyRetentionPeriodResult _
 derive instance repGenericModifySnapshotCopyRetentionPeriodResult :: Generic ModifySnapshotCopyRetentionPeriodResult _
@@ -3518,12 +3517,12 @@ instance encodeModifySnapshotCopyRetentionPeriodResult :: Encode ModifySnapshotC
 
 -- | Constructs ModifySnapshotCopyRetentionPeriodResult from required parameters
 newModifySnapshotCopyRetentionPeriodResult :: ModifySnapshotCopyRetentionPeriodResult
-newModifySnapshotCopyRetentionPeriodResult  = ModifySnapshotCopyRetentionPeriodResult { "Cluster": (NullOrUndefined Nothing) }
+newModifySnapshotCopyRetentionPeriodResult  = ModifySnapshotCopyRetentionPeriodResult { "Cluster": Nothing }
 
 -- | Constructs ModifySnapshotCopyRetentionPeriodResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifySnapshotCopyRetentionPeriodResult' :: ( { "Cluster" :: NullOrUndefined (Cluster) } -> {"Cluster" :: NullOrUndefined (Cluster) } ) -> ModifySnapshotCopyRetentionPeriodResult
-newModifySnapshotCopyRetentionPeriodResult'  customize = (ModifySnapshotCopyRetentionPeriodResult <<< customize) { "Cluster": (NullOrUndefined Nothing) }
+newModifySnapshotCopyRetentionPeriodResult' :: ( { "Cluster" :: Maybe (Cluster) } -> {"Cluster" :: Maybe (Cluster) } ) -> ModifySnapshotCopyRetentionPeriodResult
+newModifySnapshotCopyRetentionPeriodResult'  customize = (ModifySnapshotCopyRetentionPeriodResult <<< customize) { "Cluster": Nothing }
 
 
 
@@ -3549,10 +3548,10 @@ instance encodeNumberOfNodesQuotaExceededFault :: Encode NumberOfNodesQuotaExcee
 
 -- | <p>Describes an orderable cluster option.</p>
 newtype OrderableClusterOption = OrderableClusterOption 
-  { "ClusterVersion" :: NullOrUndefined (String)
-  , "ClusterType" :: NullOrUndefined (String)
-  , "NodeType" :: NullOrUndefined (String)
-  , "AvailabilityZones" :: NullOrUndefined (AvailabilityZoneList)
+  { "ClusterVersion" :: Maybe (String)
+  , "ClusterType" :: Maybe (String)
+  , "NodeType" :: Maybe (String)
+  , "AvailabilityZones" :: Maybe (AvailabilityZoneList)
   }
 derive instance newtypeOrderableClusterOption :: Newtype OrderableClusterOption _
 derive instance repGenericOrderableClusterOption :: Generic OrderableClusterOption _
@@ -3562,12 +3561,12 @@ instance encodeOrderableClusterOption :: Encode OrderableClusterOption where enc
 
 -- | Constructs OrderableClusterOption from required parameters
 newOrderableClusterOption :: OrderableClusterOption
-newOrderableClusterOption  = OrderableClusterOption { "AvailabilityZones": (NullOrUndefined Nothing), "ClusterType": (NullOrUndefined Nothing), "ClusterVersion": (NullOrUndefined Nothing), "NodeType": (NullOrUndefined Nothing) }
+newOrderableClusterOption  = OrderableClusterOption { "AvailabilityZones": Nothing, "ClusterType": Nothing, "ClusterVersion": Nothing, "NodeType": Nothing }
 
 -- | Constructs OrderableClusterOption's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newOrderableClusterOption' :: ( { "ClusterVersion" :: NullOrUndefined (String) , "ClusterType" :: NullOrUndefined (String) , "NodeType" :: NullOrUndefined (String) , "AvailabilityZones" :: NullOrUndefined (AvailabilityZoneList) } -> {"ClusterVersion" :: NullOrUndefined (String) , "ClusterType" :: NullOrUndefined (String) , "NodeType" :: NullOrUndefined (String) , "AvailabilityZones" :: NullOrUndefined (AvailabilityZoneList) } ) -> OrderableClusterOption
-newOrderableClusterOption'  customize = (OrderableClusterOption <<< customize) { "AvailabilityZones": (NullOrUndefined Nothing), "ClusterType": (NullOrUndefined Nothing), "ClusterVersion": (NullOrUndefined Nothing), "NodeType": (NullOrUndefined Nothing) }
+newOrderableClusterOption' :: ( { "ClusterVersion" :: Maybe (String) , "ClusterType" :: Maybe (String) , "NodeType" :: Maybe (String) , "AvailabilityZones" :: Maybe (AvailabilityZoneList) } -> {"ClusterVersion" :: Maybe (String) , "ClusterType" :: Maybe (String) , "NodeType" :: Maybe (String) , "AvailabilityZones" :: Maybe (AvailabilityZoneList) } ) -> OrderableClusterOption
+newOrderableClusterOption'  customize = (OrderableClusterOption <<< customize) { "AvailabilityZones": Nothing, "ClusterType": Nothing, "ClusterVersion": Nothing, "NodeType": Nothing }
 
 
 
@@ -3582,8 +3581,8 @@ instance encodeOrderableClusterOptionsList :: Encode OrderableClusterOptionsList
 
 -- | <p>Contains the output from the <a>DescribeOrderableClusterOptions</a> action. </p>
 newtype OrderableClusterOptionsMessage = OrderableClusterOptionsMessage 
-  { "OrderableClusterOptions" :: NullOrUndefined (OrderableClusterOptionsList)
-  , "Marker" :: NullOrUndefined (String)
+  { "OrderableClusterOptions" :: Maybe (OrderableClusterOptionsList)
+  , "Marker" :: Maybe (String)
   }
 derive instance newtypeOrderableClusterOptionsMessage :: Newtype OrderableClusterOptionsMessage _
 derive instance repGenericOrderableClusterOptionsMessage :: Generic OrderableClusterOptionsMessage _
@@ -3593,26 +3592,26 @@ instance encodeOrderableClusterOptionsMessage :: Encode OrderableClusterOptionsM
 
 -- | Constructs OrderableClusterOptionsMessage from required parameters
 newOrderableClusterOptionsMessage :: OrderableClusterOptionsMessage
-newOrderableClusterOptionsMessage  = OrderableClusterOptionsMessage { "Marker": (NullOrUndefined Nothing), "OrderableClusterOptions": (NullOrUndefined Nothing) }
+newOrderableClusterOptionsMessage  = OrderableClusterOptionsMessage { "Marker": Nothing, "OrderableClusterOptions": Nothing }
 
 -- | Constructs OrderableClusterOptionsMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newOrderableClusterOptionsMessage' :: ( { "OrderableClusterOptions" :: NullOrUndefined (OrderableClusterOptionsList) , "Marker" :: NullOrUndefined (String) } -> {"OrderableClusterOptions" :: NullOrUndefined (OrderableClusterOptionsList) , "Marker" :: NullOrUndefined (String) } ) -> OrderableClusterOptionsMessage
-newOrderableClusterOptionsMessage'  customize = (OrderableClusterOptionsMessage <<< customize) { "Marker": (NullOrUndefined Nothing), "OrderableClusterOptions": (NullOrUndefined Nothing) }
+newOrderableClusterOptionsMessage' :: ( { "OrderableClusterOptions" :: Maybe (OrderableClusterOptionsList) , "Marker" :: Maybe (String) } -> {"OrderableClusterOptions" :: Maybe (OrderableClusterOptionsList) , "Marker" :: Maybe (String) } ) -> OrderableClusterOptionsMessage
+newOrderableClusterOptionsMessage'  customize = (OrderableClusterOptionsMessage <<< customize) { "Marker": Nothing, "OrderableClusterOptions": Nothing }
 
 
 
 -- | <p>Describes a parameter in a cluster parameter group.</p>
 newtype Parameter = Parameter 
-  { "ParameterName" :: NullOrUndefined (String)
-  , "ParameterValue" :: NullOrUndefined (String)
-  , "Description" :: NullOrUndefined (String)
-  , "Source" :: NullOrUndefined (String)
-  , "DataType" :: NullOrUndefined (String)
-  , "AllowedValues" :: NullOrUndefined (String)
-  , "ApplyType" :: NullOrUndefined (ParameterApplyType)
-  , "IsModifiable" :: NullOrUndefined (Boolean)
-  , "MinimumEngineVersion" :: NullOrUndefined (String)
+  { "ParameterName" :: Maybe (String)
+  , "ParameterValue" :: Maybe (String)
+  , "Description" :: Maybe (String)
+  , "Source" :: Maybe (String)
+  , "DataType" :: Maybe (String)
+  , "AllowedValues" :: Maybe (String)
+  , "ApplyType" :: Maybe (ParameterApplyType)
+  , "IsModifiable" :: Maybe (Boolean)
+  , "MinimumEngineVersion" :: Maybe (String)
   }
 derive instance newtypeParameter :: Newtype Parameter _
 derive instance repGenericParameter :: Generic Parameter _
@@ -3622,12 +3621,12 @@ instance encodeParameter :: Encode Parameter where encode = genericEncode option
 
 -- | Constructs Parameter from required parameters
 newParameter :: Parameter
-newParameter  = Parameter { "AllowedValues": (NullOrUndefined Nothing), "ApplyType": (NullOrUndefined Nothing), "DataType": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "IsModifiable": (NullOrUndefined Nothing), "MinimumEngineVersion": (NullOrUndefined Nothing), "ParameterName": (NullOrUndefined Nothing), "ParameterValue": (NullOrUndefined Nothing), "Source": (NullOrUndefined Nothing) }
+newParameter  = Parameter { "AllowedValues": Nothing, "ApplyType": Nothing, "DataType": Nothing, "Description": Nothing, "IsModifiable": Nothing, "MinimumEngineVersion": Nothing, "ParameterName": Nothing, "ParameterValue": Nothing, "Source": Nothing }
 
 -- | Constructs Parameter's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newParameter' :: ( { "ParameterName" :: NullOrUndefined (String) , "ParameterValue" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "Source" :: NullOrUndefined (String) , "DataType" :: NullOrUndefined (String) , "AllowedValues" :: NullOrUndefined (String) , "ApplyType" :: NullOrUndefined (ParameterApplyType) , "IsModifiable" :: NullOrUndefined (Boolean) , "MinimumEngineVersion" :: NullOrUndefined (String) } -> {"ParameterName" :: NullOrUndefined (String) , "ParameterValue" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "Source" :: NullOrUndefined (String) , "DataType" :: NullOrUndefined (String) , "AllowedValues" :: NullOrUndefined (String) , "ApplyType" :: NullOrUndefined (ParameterApplyType) , "IsModifiable" :: NullOrUndefined (Boolean) , "MinimumEngineVersion" :: NullOrUndefined (String) } ) -> Parameter
-newParameter'  customize = (Parameter <<< customize) { "AllowedValues": (NullOrUndefined Nothing), "ApplyType": (NullOrUndefined Nothing), "DataType": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "IsModifiable": (NullOrUndefined Nothing), "MinimumEngineVersion": (NullOrUndefined Nothing), "ParameterName": (NullOrUndefined Nothing), "ParameterValue": (NullOrUndefined Nothing), "Source": (NullOrUndefined Nothing) }
+newParameter' :: ( { "ParameterName" :: Maybe (String) , "ParameterValue" :: Maybe (String) , "Description" :: Maybe (String) , "Source" :: Maybe (String) , "DataType" :: Maybe (String) , "AllowedValues" :: Maybe (String) , "ApplyType" :: Maybe (ParameterApplyType) , "IsModifiable" :: Maybe (Boolean) , "MinimumEngineVersion" :: Maybe (String) } -> {"ParameterName" :: Maybe (String) , "ParameterValue" :: Maybe (String) , "Description" :: Maybe (String) , "Source" :: Maybe (String) , "DataType" :: Maybe (String) , "AllowedValues" :: Maybe (String) , "ApplyType" :: Maybe (ParameterApplyType) , "IsModifiable" :: Maybe (Boolean) , "MinimumEngineVersion" :: Maybe (String) } ) -> Parameter
+newParameter'  customize = (Parameter <<< customize) { "AllowedValues": Nothing, "ApplyType": Nothing, "DataType": Nothing, "Description": Nothing, "IsModifiable": Nothing, "MinimumEngineVersion": Nothing, "ParameterName": Nothing, "ParameterValue": Nothing, "Source": Nothing }
 
 
 
@@ -3660,15 +3659,15 @@ instance encodeParametersList :: Encode ParametersList where encode = genericEnc
 
 -- | <p>Describes cluster attributes that are in a pending state. A change to one or more the attributes was requested and is in progress or will be applied.</p>
 newtype PendingModifiedValues = PendingModifiedValues 
-  { "MasterUserPassword" :: NullOrUndefined (String)
-  , "NodeType" :: NullOrUndefined (String)
-  , "NumberOfNodes" :: NullOrUndefined (IntegerOptional)
-  , "ClusterType" :: NullOrUndefined (String)
-  , "ClusterVersion" :: NullOrUndefined (String)
-  , "AutomatedSnapshotRetentionPeriod" :: NullOrUndefined (IntegerOptional)
-  , "ClusterIdentifier" :: NullOrUndefined (String)
-  , "PubliclyAccessible" :: NullOrUndefined (BooleanOptional)
-  , "EnhancedVpcRouting" :: NullOrUndefined (BooleanOptional)
+  { "MasterUserPassword" :: Maybe (String)
+  , "NodeType" :: Maybe (String)
+  , "NumberOfNodes" :: Maybe (IntegerOptional)
+  , "ClusterType" :: Maybe (String)
+  , "ClusterVersion" :: Maybe (String)
+  , "AutomatedSnapshotRetentionPeriod" :: Maybe (IntegerOptional)
+  , "ClusterIdentifier" :: Maybe (String)
+  , "PubliclyAccessible" :: Maybe (BooleanOptional)
+  , "EnhancedVpcRouting" :: Maybe (BooleanOptional)
   }
 derive instance newtypePendingModifiedValues :: Newtype PendingModifiedValues _
 derive instance repGenericPendingModifiedValues :: Generic PendingModifiedValues _
@@ -3678,19 +3677,19 @@ instance encodePendingModifiedValues :: Encode PendingModifiedValues where encod
 
 -- | Constructs PendingModifiedValues from required parameters
 newPendingModifiedValues :: PendingModifiedValues
-newPendingModifiedValues  = PendingModifiedValues { "AutomatedSnapshotRetentionPeriod": (NullOrUndefined Nothing), "ClusterIdentifier": (NullOrUndefined Nothing), "ClusterType": (NullOrUndefined Nothing), "ClusterVersion": (NullOrUndefined Nothing), "EnhancedVpcRouting": (NullOrUndefined Nothing), "MasterUserPassword": (NullOrUndefined Nothing), "NodeType": (NullOrUndefined Nothing), "NumberOfNodes": (NullOrUndefined Nothing), "PubliclyAccessible": (NullOrUndefined Nothing) }
+newPendingModifiedValues  = PendingModifiedValues { "AutomatedSnapshotRetentionPeriod": Nothing, "ClusterIdentifier": Nothing, "ClusterType": Nothing, "ClusterVersion": Nothing, "EnhancedVpcRouting": Nothing, "MasterUserPassword": Nothing, "NodeType": Nothing, "NumberOfNodes": Nothing, "PubliclyAccessible": Nothing }
 
 -- | Constructs PendingModifiedValues's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPendingModifiedValues' :: ( { "MasterUserPassword" :: NullOrUndefined (String) , "NodeType" :: NullOrUndefined (String) , "NumberOfNodes" :: NullOrUndefined (IntegerOptional) , "ClusterType" :: NullOrUndefined (String) , "ClusterVersion" :: NullOrUndefined (String) , "AutomatedSnapshotRetentionPeriod" :: NullOrUndefined (IntegerOptional) , "ClusterIdentifier" :: NullOrUndefined (String) , "PubliclyAccessible" :: NullOrUndefined (BooleanOptional) , "EnhancedVpcRouting" :: NullOrUndefined (BooleanOptional) } -> {"MasterUserPassword" :: NullOrUndefined (String) , "NodeType" :: NullOrUndefined (String) , "NumberOfNodes" :: NullOrUndefined (IntegerOptional) , "ClusterType" :: NullOrUndefined (String) , "ClusterVersion" :: NullOrUndefined (String) , "AutomatedSnapshotRetentionPeriod" :: NullOrUndefined (IntegerOptional) , "ClusterIdentifier" :: NullOrUndefined (String) , "PubliclyAccessible" :: NullOrUndefined (BooleanOptional) , "EnhancedVpcRouting" :: NullOrUndefined (BooleanOptional) } ) -> PendingModifiedValues
-newPendingModifiedValues'  customize = (PendingModifiedValues <<< customize) { "AutomatedSnapshotRetentionPeriod": (NullOrUndefined Nothing), "ClusterIdentifier": (NullOrUndefined Nothing), "ClusterType": (NullOrUndefined Nothing), "ClusterVersion": (NullOrUndefined Nothing), "EnhancedVpcRouting": (NullOrUndefined Nothing), "MasterUserPassword": (NullOrUndefined Nothing), "NodeType": (NullOrUndefined Nothing), "NumberOfNodes": (NullOrUndefined Nothing), "PubliclyAccessible": (NullOrUndefined Nothing) }
+newPendingModifiedValues' :: ( { "MasterUserPassword" :: Maybe (String) , "NodeType" :: Maybe (String) , "NumberOfNodes" :: Maybe (IntegerOptional) , "ClusterType" :: Maybe (String) , "ClusterVersion" :: Maybe (String) , "AutomatedSnapshotRetentionPeriod" :: Maybe (IntegerOptional) , "ClusterIdentifier" :: Maybe (String) , "PubliclyAccessible" :: Maybe (BooleanOptional) , "EnhancedVpcRouting" :: Maybe (BooleanOptional) } -> {"MasterUserPassword" :: Maybe (String) , "NodeType" :: Maybe (String) , "NumberOfNodes" :: Maybe (IntegerOptional) , "ClusterType" :: Maybe (String) , "ClusterVersion" :: Maybe (String) , "AutomatedSnapshotRetentionPeriod" :: Maybe (IntegerOptional) , "ClusterIdentifier" :: Maybe (String) , "PubliclyAccessible" :: Maybe (BooleanOptional) , "EnhancedVpcRouting" :: Maybe (BooleanOptional) } ) -> PendingModifiedValues
+newPendingModifiedValues'  customize = (PendingModifiedValues <<< customize) { "AutomatedSnapshotRetentionPeriod": Nothing, "ClusterIdentifier": Nothing, "ClusterType": Nothing, "ClusterVersion": Nothing, "EnhancedVpcRouting": Nothing, "MasterUserPassword": Nothing, "NodeType": Nothing, "NumberOfNodes": Nothing, "PubliclyAccessible": Nothing }
 
 
 
 -- | <p/>
 newtype PurchaseReservedNodeOfferingMessage = PurchaseReservedNodeOfferingMessage 
   { "ReservedNodeOfferingId" :: (String)
-  , "NodeCount" :: NullOrUndefined (IntegerOptional)
+  , "NodeCount" :: Maybe (IntegerOptional)
   }
 derive instance newtypePurchaseReservedNodeOfferingMessage :: Newtype PurchaseReservedNodeOfferingMessage _
 derive instance repGenericPurchaseReservedNodeOfferingMessage :: Generic PurchaseReservedNodeOfferingMessage _
@@ -3700,17 +3699,17 @@ instance encodePurchaseReservedNodeOfferingMessage :: Encode PurchaseReservedNod
 
 -- | Constructs PurchaseReservedNodeOfferingMessage from required parameters
 newPurchaseReservedNodeOfferingMessage :: String -> PurchaseReservedNodeOfferingMessage
-newPurchaseReservedNodeOfferingMessage _ReservedNodeOfferingId = PurchaseReservedNodeOfferingMessage { "ReservedNodeOfferingId": _ReservedNodeOfferingId, "NodeCount": (NullOrUndefined Nothing) }
+newPurchaseReservedNodeOfferingMessage _ReservedNodeOfferingId = PurchaseReservedNodeOfferingMessage { "ReservedNodeOfferingId": _ReservedNodeOfferingId, "NodeCount": Nothing }
 
 -- | Constructs PurchaseReservedNodeOfferingMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPurchaseReservedNodeOfferingMessage' :: String -> ( { "ReservedNodeOfferingId" :: (String) , "NodeCount" :: NullOrUndefined (IntegerOptional) } -> {"ReservedNodeOfferingId" :: (String) , "NodeCount" :: NullOrUndefined (IntegerOptional) } ) -> PurchaseReservedNodeOfferingMessage
-newPurchaseReservedNodeOfferingMessage' _ReservedNodeOfferingId customize = (PurchaseReservedNodeOfferingMessage <<< customize) { "ReservedNodeOfferingId": _ReservedNodeOfferingId, "NodeCount": (NullOrUndefined Nothing) }
+newPurchaseReservedNodeOfferingMessage' :: String -> ( { "ReservedNodeOfferingId" :: (String) , "NodeCount" :: Maybe (IntegerOptional) } -> {"ReservedNodeOfferingId" :: (String) , "NodeCount" :: Maybe (IntegerOptional) } ) -> PurchaseReservedNodeOfferingMessage
+newPurchaseReservedNodeOfferingMessage' _ReservedNodeOfferingId customize = (PurchaseReservedNodeOfferingMessage <<< customize) { "ReservedNodeOfferingId": _ReservedNodeOfferingId, "NodeCount": Nothing }
 
 
 
 newtype PurchaseReservedNodeOfferingResult = PurchaseReservedNodeOfferingResult 
-  { "ReservedNode" :: NullOrUndefined (ReservedNode)
+  { "ReservedNode" :: Maybe (ReservedNode)
   }
 derive instance newtypePurchaseReservedNodeOfferingResult :: Newtype PurchaseReservedNodeOfferingResult _
 derive instance repGenericPurchaseReservedNodeOfferingResult :: Generic PurchaseReservedNodeOfferingResult _
@@ -3720,12 +3719,12 @@ instance encodePurchaseReservedNodeOfferingResult :: Encode PurchaseReservedNode
 
 -- | Constructs PurchaseReservedNodeOfferingResult from required parameters
 newPurchaseReservedNodeOfferingResult :: PurchaseReservedNodeOfferingResult
-newPurchaseReservedNodeOfferingResult  = PurchaseReservedNodeOfferingResult { "ReservedNode": (NullOrUndefined Nothing) }
+newPurchaseReservedNodeOfferingResult  = PurchaseReservedNodeOfferingResult { "ReservedNode": Nothing }
 
 -- | Constructs PurchaseReservedNodeOfferingResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPurchaseReservedNodeOfferingResult' :: ( { "ReservedNode" :: NullOrUndefined (ReservedNode) } -> {"ReservedNode" :: NullOrUndefined (ReservedNode) } ) -> PurchaseReservedNodeOfferingResult
-newPurchaseReservedNodeOfferingResult'  customize = (PurchaseReservedNodeOfferingResult <<< customize) { "ReservedNode": (NullOrUndefined Nothing) }
+newPurchaseReservedNodeOfferingResult' :: ( { "ReservedNode" :: Maybe (ReservedNode) } -> {"ReservedNode" :: Maybe (ReservedNode) } ) -> PurchaseReservedNodeOfferingResult
+newPurchaseReservedNodeOfferingResult'  customize = (PurchaseReservedNodeOfferingResult <<< customize) { "ReservedNode": Nothing }
 
 
 
@@ -3751,7 +3750,7 @@ newRebootClusterMessage' _ClusterIdentifier customize = (RebootClusterMessage <<
 
 
 newtype RebootClusterResult = RebootClusterResult 
-  { "Cluster" :: NullOrUndefined (Cluster)
+  { "Cluster" :: Maybe (Cluster)
   }
 derive instance newtypeRebootClusterResult :: Newtype RebootClusterResult _
 derive instance repGenericRebootClusterResult :: Generic RebootClusterResult _
@@ -3761,19 +3760,19 @@ instance encodeRebootClusterResult :: Encode RebootClusterResult where encode = 
 
 -- | Constructs RebootClusterResult from required parameters
 newRebootClusterResult :: RebootClusterResult
-newRebootClusterResult  = RebootClusterResult { "Cluster": (NullOrUndefined Nothing) }
+newRebootClusterResult  = RebootClusterResult { "Cluster": Nothing }
 
 -- | Constructs RebootClusterResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRebootClusterResult' :: ( { "Cluster" :: NullOrUndefined (Cluster) } -> {"Cluster" :: NullOrUndefined (Cluster) } ) -> RebootClusterResult
-newRebootClusterResult'  customize = (RebootClusterResult <<< customize) { "Cluster": (NullOrUndefined Nothing) }
+newRebootClusterResult' :: ( { "Cluster" :: Maybe (Cluster) } -> {"Cluster" :: Maybe (Cluster) } ) -> RebootClusterResult
+newRebootClusterResult'  customize = (RebootClusterResult <<< customize) { "Cluster": Nothing }
 
 
 
 -- | <p>Describes a recurring charge.</p>
 newtype RecurringCharge = RecurringCharge 
-  { "RecurringChargeAmount" :: NullOrUndefined (Number)
-  , "RecurringChargeFrequency" :: NullOrUndefined (String)
+  { "RecurringChargeAmount" :: Maybe (Number)
+  , "RecurringChargeFrequency" :: Maybe (String)
   }
 derive instance newtypeRecurringCharge :: Newtype RecurringCharge _
 derive instance repGenericRecurringCharge :: Generic RecurringCharge _
@@ -3783,12 +3782,12 @@ instance encodeRecurringCharge :: Encode RecurringCharge where encode = genericE
 
 -- | Constructs RecurringCharge from required parameters
 newRecurringCharge :: RecurringCharge
-newRecurringCharge  = RecurringCharge { "RecurringChargeAmount": (NullOrUndefined Nothing), "RecurringChargeFrequency": (NullOrUndefined Nothing) }
+newRecurringCharge  = RecurringCharge { "RecurringChargeAmount": Nothing, "RecurringChargeFrequency": Nothing }
 
 -- | Constructs RecurringCharge's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRecurringCharge' :: ( { "RecurringChargeAmount" :: NullOrUndefined (Number) , "RecurringChargeFrequency" :: NullOrUndefined (String) } -> {"RecurringChargeAmount" :: NullOrUndefined (Number) , "RecurringChargeFrequency" :: NullOrUndefined (String) } ) -> RecurringCharge
-newRecurringCharge'  customize = (RecurringCharge <<< customize) { "RecurringChargeAmount": (NullOrUndefined Nothing), "RecurringChargeFrequency": (NullOrUndefined Nothing) }
+newRecurringCharge' :: ( { "RecurringChargeAmount" :: Maybe (Number) , "RecurringChargeFrequency" :: Maybe (String) } -> {"RecurringChargeAmount" :: Maybe (Number) , "RecurringChargeFrequency" :: Maybe (String) } ) -> RecurringCharge
+newRecurringCharge'  customize = (RecurringCharge <<< customize) { "RecurringChargeAmount": Nothing, "RecurringChargeFrequency": Nothing }
 
 
 
@@ -3803,18 +3802,18 @@ instance encodeRecurringChargeList :: Encode RecurringChargeList where encode = 
 
 -- | <p>Describes a reserved node. You can call the <a>DescribeReservedNodeOfferings</a> API to obtain the available reserved node offerings. </p>
 newtype ReservedNode = ReservedNode 
-  { "ReservedNodeId" :: NullOrUndefined (String)
-  , "ReservedNodeOfferingId" :: NullOrUndefined (String)
-  , "NodeType" :: NullOrUndefined (String)
-  , "StartTime" :: NullOrUndefined (TStamp)
-  , "Duration" :: NullOrUndefined (Int)
-  , "FixedPrice" :: NullOrUndefined (Number)
-  , "UsagePrice" :: NullOrUndefined (Number)
-  , "CurrencyCode" :: NullOrUndefined (String)
-  , "NodeCount" :: NullOrUndefined (Int)
-  , "State" :: NullOrUndefined (String)
-  , "OfferingType" :: NullOrUndefined (String)
-  , "RecurringCharges" :: NullOrUndefined (RecurringChargeList)
+  { "ReservedNodeId" :: Maybe (String)
+  , "ReservedNodeOfferingId" :: Maybe (String)
+  , "NodeType" :: Maybe (String)
+  , "StartTime" :: Maybe (TStamp)
+  , "Duration" :: Maybe (Int)
+  , "FixedPrice" :: Maybe (Number)
+  , "UsagePrice" :: Maybe (Number)
+  , "CurrencyCode" :: Maybe (String)
+  , "NodeCount" :: Maybe (Int)
+  , "State" :: Maybe (String)
+  , "OfferingType" :: Maybe (String)
+  , "RecurringCharges" :: Maybe (RecurringChargeList)
   }
 derive instance newtypeReservedNode :: Newtype ReservedNode _
 derive instance repGenericReservedNode :: Generic ReservedNode _
@@ -3824,12 +3823,12 @@ instance encodeReservedNode :: Encode ReservedNode where encode = genericEncode 
 
 -- | Constructs ReservedNode from required parameters
 newReservedNode :: ReservedNode
-newReservedNode  = ReservedNode { "CurrencyCode": (NullOrUndefined Nothing), "Duration": (NullOrUndefined Nothing), "FixedPrice": (NullOrUndefined Nothing), "NodeCount": (NullOrUndefined Nothing), "NodeType": (NullOrUndefined Nothing), "OfferingType": (NullOrUndefined Nothing), "RecurringCharges": (NullOrUndefined Nothing), "ReservedNodeId": (NullOrUndefined Nothing), "ReservedNodeOfferingId": (NullOrUndefined Nothing), "StartTime": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing), "UsagePrice": (NullOrUndefined Nothing) }
+newReservedNode  = ReservedNode { "CurrencyCode": Nothing, "Duration": Nothing, "FixedPrice": Nothing, "NodeCount": Nothing, "NodeType": Nothing, "OfferingType": Nothing, "RecurringCharges": Nothing, "ReservedNodeId": Nothing, "ReservedNodeOfferingId": Nothing, "StartTime": Nothing, "State": Nothing, "UsagePrice": Nothing }
 
 -- | Constructs ReservedNode's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newReservedNode' :: ( { "ReservedNodeId" :: NullOrUndefined (String) , "ReservedNodeOfferingId" :: NullOrUndefined (String) , "NodeType" :: NullOrUndefined (String) , "StartTime" :: NullOrUndefined (TStamp) , "Duration" :: NullOrUndefined (Int) , "FixedPrice" :: NullOrUndefined (Number) , "UsagePrice" :: NullOrUndefined (Number) , "CurrencyCode" :: NullOrUndefined (String) , "NodeCount" :: NullOrUndefined (Int) , "State" :: NullOrUndefined (String) , "OfferingType" :: NullOrUndefined (String) , "RecurringCharges" :: NullOrUndefined (RecurringChargeList) } -> {"ReservedNodeId" :: NullOrUndefined (String) , "ReservedNodeOfferingId" :: NullOrUndefined (String) , "NodeType" :: NullOrUndefined (String) , "StartTime" :: NullOrUndefined (TStamp) , "Duration" :: NullOrUndefined (Int) , "FixedPrice" :: NullOrUndefined (Number) , "UsagePrice" :: NullOrUndefined (Number) , "CurrencyCode" :: NullOrUndefined (String) , "NodeCount" :: NullOrUndefined (Int) , "State" :: NullOrUndefined (String) , "OfferingType" :: NullOrUndefined (String) , "RecurringCharges" :: NullOrUndefined (RecurringChargeList) } ) -> ReservedNode
-newReservedNode'  customize = (ReservedNode <<< customize) { "CurrencyCode": (NullOrUndefined Nothing), "Duration": (NullOrUndefined Nothing), "FixedPrice": (NullOrUndefined Nothing), "NodeCount": (NullOrUndefined Nothing), "NodeType": (NullOrUndefined Nothing), "OfferingType": (NullOrUndefined Nothing), "RecurringCharges": (NullOrUndefined Nothing), "ReservedNodeId": (NullOrUndefined Nothing), "ReservedNodeOfferingId": (NullOrUndefined Nothing), "StartTime": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing), "UsagePrice": (NullOrUndefined Nothing) }
+newReservedNode' :: ( { "ReservedNodeId" :: Maybe (String) , "ReservedNodeOfferingId" :: Maybe (String) , "NodeType" :: Maybe (String) , "StartTime" :: Maybe (TStamp) , "Duration" :: Maybe (Int) , "FixedPrice" :: Maybe (Number) , "UsagePrice" :: Maybe (Number) , "CurrencyCode" :: Maybe (String) , "NodeCount" :: Maybe (Int) , "State" :: Maybe (String) , "OfferingType" :: Maybe (String) , "RecurringCharges" :: Maybe (RecurringChargeList) } -> {"ReservedNodeId" :: Maybe (String) , "ReservedNodeOfferingId" :: Maybe (String) , "NodeType" :: Maybe (String) , "StartTime" :: Maybe (TStamp) , "Duration" :: Maybe (Int) , "FixedPrice" :: Maybe (Number) , "UsagePrice" :: Maybe (Number) , "CurrencyCode" :: Maybe (String) , "NodeCount" :: Maybe (Int) , "State" :: Maybe (String) , "OfferingType" :: Maybe (String) , "RecurringCharges" :: Maybe (RecurringChargeList) } ) -> ReservedNode
+newReservedNode'  customize = (ReservedNode <<< customize) { "CurrencyCode": Nothing, "Duration": Nothing, "FixedPrice": Nothing, "NodeCount": Nothing, "NodeType": Nothing, "OfferingType": Nothing, "RecurringCharges": Nothing, "ReservedNodeId": Nothing, "ReservedNodeOfferingId": Nothing, "StartTime": Nothing, "State": Nothing, "UsagePrice": Nothing }
 
 
 
@@ -3864,14 +3863,14 @@ instance encodeReservedNodeNotFoundFault :: Encode ReservedNodeNotFoundFault whe
 
 -- | <p>Describes a reserved node offering.</p>
 newtype ReservedNodeOffering = ReservedNodeOffering 
-  { "ReservedNodeOfferingId" :: NullOrUndefined (String)
-  , "NodeType" :: NullOrUndefined (String)
-  , "Duration" :: NullOrUndefined (Int)
-  , "FixedPrice" :: NullOrUndefined (Number)
-  , "UsagePrice" :: NullOrUndefined (Number)
-  , "CurrencyCode" :: NullOrUndefined (String)
-  , "OfferingType" :: NullOrUndefined (String)
-  , "RecurringCharges" :: NullOrUndefined (RecurringChargeList)
+  { "ReservedNodeOfferingId" :: Maybe (String)
+  , "NodeType" :: Maybe (String)
+  , "Duration" :: Maybe (Int)
+  , "FixedPrice" :: Maybe (Number)
+  , "UsagePrice" :: Maybe (Number)
+  , "CurrencyCode" :: Maybe (String)
+  , "OfferingType" :: Maybe (String)
+  , "RecurringCharges" :: Maybe (RecurringChargeList)
   }
 derive instance newtypeReservedNodeOffering :: Newtype ReservedNodeOffering _
 derive instance repGenericReservedNodeOffering :: Generic ReservedNodeOffering _
@@ -3881,12 +3880,12 @@ instance encodeReservedNodeOffering :: Encode ReservedNodeOffering where encode 
 
 -- | Constructs ReservedNodeOffering from required parameters
 newReservedNodeOffering :: ReservedNodeOffering
-newReservedNodeOffering  = ReservedNodeOffering { "CurrencyCode": (NullOrUndefined Nothing), "Duration": (NullOrUndefined Nothing), "FixedPrice": (NullOrUndefined Nothing), "NodeType": (NullOrUndefined Nothing), "OfferingType": (NullOrUndefined Nothing), "RecurringCharges": (NullOrUndefined Nothing), "ReservedNodeOfferingId": (NullOrUndefined Nothing), "UsagePrice": (NullOrUndefined Nothing) }
+newReservedNodeOffering  = ReservedNodeOffering { "CurrencyCode": Nothing, "Duration": Nothing, "FixedPrice": Nothing, "NodeType": Nothing, "OfferingType": Nothing, "RecurringCharges": Nothing, "ReservedNodeOfferingId": Nothing, "UsagePrice": Nothing }
 
 -- | Constructs ReservedNodeOffering's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newReservedNodeOffering' :: ( { "ReservedNodeOfferingId" :: NullOrUndefined (String) , "NodeType" :: NullOrUndefined (String) , "Duration" :: NullOrUndefined (Int) , "FixedPrice" :: NullOrUndefined (Number) , "UsagePrice" :: NullOrUndefined (Number) , "CurrencyCode" :: NullOrUndefined (String) , "OfferingType" :: NullOrUndefined (String) , "RecurringCharges" :: NullOrUndefined (RecurringChargeList) } -> {"ReservedNodeOfferingId" :: NullOrUndefined (String) , "NodeType" :: NullOrUndefined (String) , "Duration" :: NullOrUndefined (Int) , "FixedPrice" :: NullOrUndefined (Number) , "UsagePrice" :: NullOrUndefined (Number) , "CurrencyCode" :: NullOrUndefined (String) , "OfferingType" :: NullOrUndefined (String) , "RecurringCharges" :: NullOrUndefined (RecurringChargeList) } ) -> ReservedNodeOffering
-newReservedNodeOffering'  customize = (ReservedNodeOffering <<< customize) { "CurrencyCode": (NullOrUndefined Nothing), "Duration": (NullOrUndefined Nothing), "FixedPrice": (NullOrUndefined Nothing), "NodeType": (NullOrUndefined Nothing), "OfferingType": (NullOrUndefined Nothing), "RecurringCharges": (NullOrUndefined Nothing), "ReservedNodeOfferingId": (NullOrUndefined Nothing), "UsagePrice": (NullOrUndefined Nothing) }
+newReservedNodeOffering' :: ( { "ReservedNodeOfferingId" :: Maybe (String) , "NodeType" :: Maybe (String) , "Duration" :: Maybe (Int) , "FixedPrice" :: Maybe (Number) , "UsagePrice" :: Maybe (Number) , "CurrencyCode" :: Maybe (String) , "OfferingType" :: Maybe (String) , "RecurringCharges" :: Maybe (RecurringChargeList) } -> {"ReservedNodeOfferingId" :: Maybe (String) , "NodeType" :: Maybe (String) , "Duration" :: Maybe (Int) , "FixedPrice" :: Maybe (Number) , "UsagePrice" :: Maybe (Number) , "CurrencyCode" :: Maybe (String) , "OfferingType" :: Maybe (String) , "RecurringCharges" :: Maybe (RecurringChargeList) } ) -> ReservedNodeOffering
+newReservedNodeOffering'  customize = (ReservedNodeOffering <<< customize) { "CurrencyCode": Nothing, "Duration": Nothing, "FixedPrice": Nothing, "NodeType": Nothing, "OfferingType": Nothing, "RecurringCharges": Nothing, "ReservedNodeOfferingId": Nothing, "UsagePrice": Nothing }
 
 
 
@@ -3911,8 +3910,8 @@ instance encodeReservedNodeOfferingNotFoundFault :: Encode ReservedNodeOfferingN
 
 -- | <p/>
 newtype ReservedNodeOfferingsMessage = ReservedNodeOfferingsMessage 
-  { "Marker" :: NullOrUndefined (String)
-  , "ReservedNodeOfferings" :: NullOrUndefined (ReservedNodeOfferingList)
+  { "Marker" :: Maybe (String)
+  , "ReservedNodeOfferings" :: Maybe (ReservedNodeOfferingList)
   }
 derive instance newtypeReservedNodeOfferingsMessage :: Newtype ReservedNodeOfferingsMessage _
 derive instance repGenericReservedNodeOfferingsMessage :: Generic ReservedNodeOfferingsMessage _
@@ -3922,12 +3921,12 @@ instance encodeReservedNodeOfferingsMessage :: Encode ReservedNodeOfferingsMessa
 
 -- | Constructs ReservedNodeOfferingsMessage from required parameters
 newReservedNodeOfferingsMessage :: ReservedNodeOfferingsMessage
-newReservedNodeOfferingsMessage  = ReservedNodeOfferingsMessage { "Marker": (NullOrUndefined Nothing), "ReservedNodeOfferings": (NullOrUndefined Nothing) }
+newReservedNodeOfferingsMessage  = ReservedNodeOfferingsMessage { "Marker": Nothing, "ReservedNodeOfferings": Nothing }
 
 -- | Constructs ReservedNodeOfferingsMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newReservedNodeOfferingsMessage' :: ( { "Marker" :: NullOrUndefined (String) , "ReservedNodeOfferings" :: NullOrUndefined (ReservedNodeOfferingList) } -> {"Marker" :: NullOrUndefined (String) , "ReservedNodeOfferings" :: NullOrUndefined (ReservedNodeOfferingList) } ) -> ReservedNodeOfferingsMessage
-newReservedNodeOfferingsMessage'  customize = (ReservedNodeOfferingsMessage <<< customize) { "Marker": (NullOrUndefined Nothing), "ReservedNodeOfferings": (NullOrUndefined Nothing) }
+newReservedNodeOfferingsMessage' :: ( { "Marker" :: Maybe (String) , "ReservedNodeOfferings" :: Maybe (ReservedNodeOfferingList) } -> {"Marker" :: Maybe (String) , "ReservedNodeOfferings" :: Maybe (ReservedNodeOfferingList) } ) -> ReservedNodeOfferingsMessage
+newReservedNodeOfferingsMessage'  customize = (ReservedNodeOfferingsMessage <<< customize) { "Marker": Nothing, "ReservedNodeOfferings": Nothing }
 
 
 
@@ -3943,8 +3942,8 @@ instance encodeReservedNodeQuotaExceededFault :: Encode ReservedNodeQuotaExceede
 
 -- | <p/>
 newtype ReservedNodesMessage = ReservedNodesMessage 
-  { "Marker" :: NullOrUndefined (String)
-  , "ReservedNodes" :: NullOrUndefined (ReservedNodeList)
+  { "Marker" :: Maybe (String)
+  , "ReservedNodes" :: Maybe (ReservedNodeList)
   }
 derive instance newtypeReservedNodesMessage :: Newtype ReservedNodesMessage _
 derive instance repGenericReservedNodesMessage :: Generic ReservedNodesMessage _
@@ -3954,20 +3953,20 @@ instance encodeReservedNodesMessage :: Encode ReservedNodesMessage where encode 
 
 -- | Constructs ReservedNodesMessage from required parameters
 newReservedNodesMessage :: ReservedNodesMessage
-newReservedNodesMessage  = ReservedNodesMessage { "Marker": (NullOrUndefined Nothing), "ReservedNodes": (NullOrUndefined Nothing) }
+newReservedNodesMessage  = ReservedNodesMessage { "Marker": Nothing, "ReservedNodes": Nothing }
 
 -- | Constructs ReservedNodesMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newReservedNodesMessage' :: ( { "Marker" :: NullOrUndefined (String) , "ReservedNodes" :: NullOrUndefined (ReservedNodeList) } -> {"Marker" :: NullOrUndefined (String) , "ReservedNodes" :: NullOrUndefined (ReservedNodeList) } ) -> ReservedNodesMessage
-newReservedNodesMessage'  customize = (ReservedNodesMessage <<< customize) { "Marker": (NullOrUndefined Nothing), "ReservedNodes": (NullOrUndefined Nothing) }
+newReservedNodesMessage' :: ( { "Marker" :: Maybe (String) , "ReservedNodes" :: Maybe (ReservedNodeList) } -> {"Marker" :: Maybe (String) , "ReservedNodes" :: Maybe (ReservedNodeList) } ) -> ReservedNodesMessage
+newReservedNodesMessage'  customize = (ReservedNodesMessage <<< customize) { "Marker": Nothing, "ReservedNodes": Nothing }
 
 
 
 -- | <p/>
 newtype ResetClusterParameterGroupMessage = ResetClusterParameterGroupMessage 
   { "ParameterGroupName" :: (String)
-  , "ResetAllParameters" :: NullOrUndefined (Boolean)
-  , "Parameters" :: NullOrUndefined (ParametersList)
+  , "ResetAllParameters" :: Maybe (Boolean)
+  , "Parameters" :: Maybe (ParametersList)
   }
 derive instance newtypeResetClusterParameterGroupMessage :: Newtype ResetClusterParameterGroupMessage _
 derive instance repGenericResetClusterParameterGroupMessage :: Generic ResetClusterParameterGroupMessage _
@@ -3977,12 +3976,12 @@ instance encodeResetClusterParameterGroupMessage :: Encode ResetClusterParameter
 
 -- | Constructs ResetClusterParameterGroupMessage from required parameters
 newResetClusterParameterGroupMessage :: String -> ResetClusterParameterGroupMessage
-newResetClusterParameterGroupMessage _ParameterGroupName = ResetClusterParameterGroupMessage { "ParameterGroupName": _ParameterGroupName, "Parameters": (NullOrUndefined Nothing), "ResetAllParameters": (NullOrUndefined Nothing) }
+newResetClusterParameterGroupMessage _ParameterGroupName = ResetClusterParameterGroupMessage { "ParameterGroupName": _ParameterGroupName, "Parameters": Nothing, "ResetAllParameters": Nothing }
 
 -- | Constructs ResetClusterParameterGroupMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newResetClusterParameterGroupMessage' :: String -> ( { "ParameterGroupName" :: (String) , "ResetAllParameters" :: NullOrUndefined (Boolean) , "Parameters" :: NullOrUndefined (ParametersList) } -> {"ParameterGroupName" :: (String) , "ResetAllParameters" :: NullOrUndefined (Boolean) , "Parameters" :: NullOrUndefined (ParametersList) } ) -> ResetClusterParameterGroupMessage
-newResetClusterParameterGroupMessage' _ParameterGroupName customize = (ResetClusterParameterGroupMessage <<< customize) { "ParameterGroupName": _ParameterGroupName, "Parameters": (NullOrUndefined Nothing), "ResetAllParameters": (NullOrUndefined Nothing) }
+newResetClusterParameterGroupMessage' :: String -> ( { "ParameterGroupName" :: (String) , "ResetAllParameters" :: Maybe (Boolean) , "Parameters" :: Maybe (ParametersList) } -> {"ParameterGroupName" :: (String) , "ResetAllParameters" :: Maybe (Boolean) , "Parameters" :: Maybe (ParametersList) } ) -> ResetClusterParameterGroupMessage
+newResetClusterParameterGroupMessage' _ParameterGroupName customize = (ResetClusterParameterGroupMessage <<< customize) { "ParameterGroupName": _ParameterGroupName, "Parameters": Nothing, "ResetAllParameters": Nothing }
 
 
 
@@ -3998,18 +3997,18 @@ instance encodeResizeNotFoundFault :: Encode ResizeNotFoundFault where encode = 
 
 -- | <p>Describes the result of a cluster resize operation.</p>
 newtype ResizeProgressMessage = ResizeProgressMessage 
-  { "TargetNodeType" :: NullOrUndefined (String)
-  , "TargetNumberOfNodes" :: NullOrUndefined (IntegerOptional)
-  , "TargetClusterType" :: NullOrUndefined (String)
-  , "Status" :: NullOrUndefined (String)
-  , "ImportTablesCompleted" :: NullOrUndefined (ImportTablesCompleted)
-  , "ImportTablesInProgress" :: NullOrUndefined (ImportTablesInProgress)
-  , "ImportTablesNotStarted" :: NullOrUndefined (ImportTablesNotStarted)
-  , "AvgResizeRateInMegaBytesPerSecond" :: NullOrUndefined (DoubleOptional)
-  , "TotalResizeDataInMegaBytes" :: NullOrUndefined (LongOptional)
-  , "ProgressInMegaBytes" :: NullOrUndefined (LongOptional)
-  , "ElapsedTimeInSeconds" :: NullOrUndefined (LongOptional)
-  , "EstimatedTimeToCompletionInSeconds" :: NullOrUndefined (LongOptional)
+  { "TargetNodeType" :: Maybe (String)
+  , "TargetNumberOfNodes" :: Maybe (IntegerOptional)
+  , "TargetClusterType" :: Maybe (String)
+  , "Status" :: Maybe (String)
+  , "ImportTablesCompleted" :: Maybe (ImportTablesCompleted)
+  , "ImportTablesInProgress" :: Maybe (ImportTablesInProgress)
+  , "ImportTablesNotStarted" :: Maybe (ImportTablesNotStarted)
+  , "AvgResizeRateInMegaBytesPerSecond" :: Maybe (DoubleOptional)
+  , "TotalResizeDataInMegaBytes" :: Maybe (LongOptional)
+  , "ProgressInMegaBytes" :: Maybe (LongOptional)
+  , "ElapsedTimeInSeconds" :: Maybe (LongOptional)
+  , "EstimatedTimeToCompletionInSeconds" :: Maybe (LongOptional)
   }
 derive instance newtypeResizeProgressMessage :: Newtype ResizeProgressMessage _
 derive instance repGenericResizeProgressMessage :: Generic ResizeProgressMessage _
@@ -4019,12 +4018,12 @@ instance encodeResizeProgressMessage :: Encode ResizeProgressMessage where encod
 
 -- | Constructs ResizeProgressMessage from required parameters
 newResizeProgressMessage :: ResizeProgressMessage
-newResizeProgressMessage  = ResizeProgressMessage { "AvgResizeRateInMegaBytesPerSecond": (NullOrUndefined Nothing), "ElapsedTimeInSeconds": (NullOrUndefined Nothing), "EstimatedTimeToCompletionInSeconds": (NullOrUndefined Nothing), "ImportTablesCompleted": (NullOrUndefined Nothing), "ImportTablesInProgress": (NullOrUndefined Nothing), "ImportTablesNotStarted": (NullOrUndefined Nothing), "ProgressInMegaBytes": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "TargetClusterType": (NullOrUndefined Nothing), "TargetNodeType": (NullOrUndefined Nothing), "TargetNumberOfNodes": (NullOrUndefined Nothing), "TotalResizeDataInMegaBytes": (NullOrUndefined Nothing) }
+newResizeProgressMessage  = ResizeProgressMessage { "AvgResizeRateInMegaBytesPerSecond": Nothing, "ElapsedTimeInSeconds": Nothing, "EstimatedTimeToCompletionInSeconds": Nothing, "ImportTablesCompleted": Nothing, "ImportTablesInProgress": Nothing, "ImportTablesNotStarted": Nothing, "ProgressInMegaBytes": Nothing, "Status": Nothing, "TargetClusterType": Nothing, "TargetNodeType": Nothing, "TargetNumberOfNodes": Nothing, "TotalResizeDataInMegaBytes": Nothing }
 
 -- | Constructs ResizeProgressMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newResizeProgressMessage' :: ( { "TargetNodeType" :: NullOrUndefined (String) , "TargetNumberOfNodes" :: NullOrUndefined (IntegerOptional) , "TargetClusterType" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (String) , "ImportTablesCompleted" :: NullOrUndefined (ImportTablesCompleted) , "ImportTablesInProgress" :: NullOrUndefined (ImportTablesInProgress) , "ImportTablesNotStarted" :: NullOrUndefined (ImportTablesNotStarted) , "AvgResizeRateInMegaBytesPerSecond" :: NullOrUndefined (DoubleOptional) , "TotalResizeDataInMegaBytes" :: NullOrUndefined (LongOptional) , "ProgressInMegaBytes" :: NullOrUndefined (LongOptional) , "ElapsedTimeInSeconds" :: NullOrUndefined (LongOptional) , "EstimatedTimeToCompletionInSeconds" :: NullOrUndefined (LongOptional) } -> {"TargetNodeType" :: NullOrUndefined (String) , "TargetNumberOfNodes" :: NullOrUndefined (IntegerOptional) , "TargetClusterType" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (String) , "ImportTablesCompleted" :: NullOrUndefined (ImportTablesCompleted) , "ImportTablesInProgress" :: NullOrUndefined (ImportTablesInProgress) , "ImportTablesNotStarted" :: NullOrUndefined (ImportTablesNotStarted) , "AvgResizeRateInMegaBytesPerSecond" :: NullOrUndefined (DoubleOptional) , "TotalResizeDataInMegaBytes" :: NullOrUndefined (LongOptional) , "ProgressInMegaBytes" :: NullOrUndefined (LongOptional) , "ElapsedTimeInSeconds" :: NullOrUndefined (LongOptional) , "EstimatedTimeToCompletionInSeconds" :: NullOrUndefined (LongOptional) } ) -> ResizeProgressMessage
-newResizeProgressMessage'  customize = (ResizeProgressMessage <<< customize) { "AvgResizeRateInMegaBytesPerSecond": (NullOrUndefined Nothing), "ElapsedTimeInSeconds": (NullOrUndefined Nothing), "EstimatedTimeToCompletionInSeconds": (NullOrUndefined Nothing), "ImportTablesCompleted": (NullOrUndefined Nothing), "ImportTablesInProgress": (NullOrUndefined Nothing), "ImportTablesNotStarted": (NullOrUndefined Nothing), "ProgressInMegaBytes": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "TargetClusterType": (NullOrUndefined Nothing), "TargetNodeType": (NullOrUndefined Nothing), "TargetNumberOfNodes": (NullOrUndefined Nothing), "TotalResizeDataInMegaBytes": (NullOrUndefined Nothing) }
+newResizeProgressMessage' :: ( { "TargetNodeType" :: Maybe (String) , "TargetNumberOfNodes" :: Maybe (IntegerOptional) , "TargetClusterType" :: Maybe (String) , "Status" :: Maybe (String) , "ImportTablesCompleted" :: Maybe (ImportTablesCompleted) , "ImportTablesInProgress" :: Maybe (ImportTablesInProgress) , "ImportTablesNotStarted" :: Maybe (ImportTablesNotStarted) , "AvgResizeRateInMegaBytesPerSecond" :: Maybe (DoubleOptional) , "TotalResizeDataInMegaBytes" :: Maybe (LongOptional) , "ProgressInMegaBytes" :: Maybe (LongOptional) , "ElapsedTimeInSeconds" :: Maybe (LongOptional) , "EstimatedTimeToCompletionInSeconds" :: Maybe (LongOptional) } -> {"TargetNodeType" :: Maybe (String) , "TargetNumberOfNodes" :: Maybe (IntegerOptional) , "TargetClusterType" :: Maybe (String) , "Status" :: Maybe (String) , "ImportTablesCompleted" :: Maybe (ImportTablesCompleted) , "ImportTablesInProgress" :: Maybe (ImportTablesInProgress) , "ImportTablesNotStarted" :: Maybe (ImportTablesNotStarted) , "AvgResizeRateInMegaBytesPerSecond" :: Maybe (DoubleOptional) , "TotalResizeDataInMegaBytes" :: Maybe (LongOptional) , "ProgressInMegaBytes" :: Maybe (LongOptional) , "ElapsedTimeInSeconds" :: Maybe (LongOptional) , "EstimatedTimeToCompletionInSeconds" :: Maybe (LongOptional) } ) -> ResizeProgressMessage
+newResizeProgressMessage'  customize = (ResizeProgressMessage <<< customize) { "AvgResizeRateInMegaBytesPerSecond": Nothing, "ElapsedTimeInSeconds": Nothing, "EstimatedTimeToCompletionInSeconds": Nothing, "ImportTablesCompleted": Nothing, "ImportTablesInProgress": Nothing, "ImportTablesNotStarted": Nothing, "ProgressInMegaBytes": Nothing, "Status": Nothing, "TargetClusterType": Nothing, "TargetNodeType": Nothing, "TargetNumberOfNodes": Nothing, "TotalResizeDataInMegaBytes": Nothing }
 
 
 
@@ -4051,26 +4050,26 @@ instance encodeRestorableNodeTypeList :: Encode RestorableNodeTypeList where enc
 newtype RestoreFromClusterSnapshotMessage = RestoreFromClusterSnapshotMessage 
   { "ClusterIdentifier" :: (String)
   , "SnapshotIdentifier" :: (String)
-  , "SnapshotClusterIdentifier" :: NullOrUndefined (String)
-  , "Port" :: NullOrUndefined (IntegerOptional)
-  , "AvailabilityZone" :: NullOrUndefined (String)
-  , "AllowVersionUpgrade" :: NullOrUndefined (BooleanOptional)
-  , "ClusterSubnetGroupName" :: NullOrUndefined (String)
-  , "PubliclyAccessible" :: NullOrUndefined (BooleanOptional)
-  , "OwnerAccount" :: NullOrUndefined (String)
-  , "HsmClientCertificateIdentifier" :: NullOrUndefined (String)
-  , "HsmConfigurationIdentifier" :: NullOrUndefined (String)
-  , "ElasticIp" :: NullOrUndefined (String)
-  , "ClusterParameterGroupName" :: NullOrUndefined (String)
-  , "ClusterSecurityGroups" :: NullOrUndefined (ClusterSecurityGroupNameList)
-  , "VpcSecurityGroupIds" :: NullOrUndefined (VpcSecurityGroupIdList)
-  , "PreferredMaintenanceWindow" :: NullOrUndefined (String)
-  , "AutomatedSnapshotRetentionPeriod" :: NullOrUndefined (IntegerOptional)
-  , "KmsKeyId" :: NullOrUndefined (String)
-  , "NodeType" :: NullOrUndefined (String)
-  , "EnhancedVpcRouting" :: NullOrUndefined (BooleanOptional)
-  , "AdditionalInfo" :: NullOrUndefined (String)
-  , "IamRoles" :: NullOrUndefined (IamRoleArnList)
+  , "SnapshotClusterIdentifier" :: Maybe (String)
+  , "Port" :: Maybe (IntegerOptional)
+  , "AvailabilityZone" :: Maybe (String)
+  , "AllowVersionUpgrade" :: Maybe (BooleanOptional)
+  , "ClusterSubnetGroupName" :: Maybe (String)
+  , "PubliclyAccessible" :: Maybe (BooleanOptional)
+  , "OwnerAccount" :: Maybe (String)
+  , "HsmClientCertificateIdentifier" :: Maybe (String)
+  , "HsmConfigurationIdentifier" :: Maybe (String)
+  , "ElasticIp" :: Maybe (String)
+  , "ClusterParameterGroupName" :: Maybe (String)
+  , "ClusterSecurityGroups" :: Maybe (ClusterSecurityGroupNameList)
+  , "VpcSecurityGroupIds" :: Maybe (VpcSecurityGroupIdList)
+  , "PreferredMaintenanceWindow" :: Maybe (String)
+  , "AutomatedSnapshotRetentionPeriod" :: Maybe (IntegerOptional)
+  , "KmsKeyId" :: Maybe (String)
+  , "NodeType" :: Maybe (String)
+  , "EnhancedVpcRouting" :: Maybe (BooleanOptional)
+  , "AdditionalInfo" :: Maybe (String)
+  , "IamRoles" :: Maybe (IamRoleArnList)
   }
 derive instance newtypeRestoreFromClusterSnapshotMessage :: Newtype RestoreFromClusterSnapshotMessage _
 derive instance repGenericRestoreFromClusterSnapshotMessage :: Generic RestoreFromClusterSnapshotMessage _
@@ -4080,17 +4079,17 @@ instance encodeRestoreFromClusterSnapshotMessage :: Encode RestoreFromClusterSna
 
 -- | Constructs RestoreFromClusterSnapshotMessage from required parameters
 newRestoreFromClusterSnapshotMessage :: String -> String -> RestoreFromClusterSnapshotMessage
-newRestoreFromClusterSnapshotMessage _ClusterIdentifier _SnapshotIdentifier = RestoreFromClusterSnapshotMessage { "ClusterIdentifier": _ClusterIdentifier, "SnapshotIdentifier": _SnapshotIdentifier, "AdditionalInfo": (NullOrUndefined Nothing), "AllowVersionUpgrade": (NullOrUndefined Nothing), "AutomatedSnapshotRetentionPeriod": (NullOrUndefined Nothing), "AvailabilityZone": (NullOrUndefined Nothing), "ClusterParameterGroupName": (NullOrUndefined Nothing), "ClusterSecurityGroups": (NullOrUndefined Nothing), "ClusterSubnetGroupName": (NullOrUndefined Nothing), "ElasticIp": (NullOrUndefined Nothing), "EnhancedVpcRouting": (NullOrUndefined Nothing), "HsmClientCertificateIdentifier": (NullOrUndefined Nothing), "HsmConfigurationIdentifier": (NullOrUndefined Nothing), "IamRoles": (NullOrUndefined Nothing), "KmsKeyId": (NullOrUndefined Nothing), "NodeType": (NullOrUndefined Nothing), "OwnerAccount": (NullOrUndefined Nothing), "Port": (NullOrUndefined Nothing), "PreferredMaintenanceWindow": (NullOrUndefined Nothing), "PubliclyAccessible": (NullOrUndefined Nothing), "SnapshotClusterIdentifier": (NullOrUndefined Nothing), "VpcSecurityGroupIds": (NullOrUndefined Nothing) }
+newRestoreFromClusterSnapshotMessage _ClusterIdentifier _SnapshotIdentifier = RestoreFromClusterSnapshotMessage { "ClusterIdentifier": _ClusterIdentifier, "SnapshotIdentifier": _SnapshotIdentifier, "AdditionalInfo": Nothing, "AllowVersionUpgrade": Nothing, "AutomatedSnapshotRetentionPeriod": Nothing, "AvailabilityZone": Nothing, "ClusterParameterGroupName": Nothing, "ClusterSecurityGroups": Nothing, "ClusterSubnetGroupName": Nothing, "ElasticIp": Nothing, "EnhancedVpcRouting": Nothing, "HsmClientCertificateIdentifier": Nothing, "HsmConfigurationIdentifier": Nothing, "IamRoles": Nothing, "KmsKeyId": Nothing, "NodeType": Nothing, "OwnerAccount": Nothing, "Port": Nothing, "PreferredMaintenanceWindow": Nothing, "PubliclyAccessible": Nothing, "SnapshotClusterIdentifier": Nothing, "VpcSecurityGroupIds": Nothing }
 
 -- | Constructs RestoreFromClusterSnapshotMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRestoreFromClusterSnapshotMessage' :: String -> String -> ( { "ClusterIdentifier" :: (String) , "SnapshotIdentifier" :: (String) , "SnapshotClusterIdentifier" :: NullOrUndefined (String) , "Port" :: NullOrUndefined (IntegerOptional) , "AvailabilityZone" :: NullOrUndefined (String) , "AllowVersionUpgrade" :: NullOrUndefined (BooleanOptional) , "ClusterSubnetGroupName" :: NullOrUndefined (String) , "PubliclyAccessible" :: NullOrUndefined (BooleanOptional) , "OwnerAccount" :: NullOrUndefined (String) , "HsmClientCertificateIdentifier" :: NullOrUndefined (String) , "HsmConfigurationIdentifier" :: NullOrUndefined (String) , "ElasticIp" :: NullOrUndefined (String) , "ClusterParameterGroupName" :: NullOrUndefined (String) , "ClusterSecurityGroups" :: NullOrUndefined (ClusterSecurityGroupNameList) , "VpcSecurityGroupIds" :: NullOrUndefined (VpcSecurityGroupIdList) , "PreferredMaintenanceWindow" :: NullOrUndefined (String) , "AutomatedSnapshotRetentionPeriod" :: NullOrUndefined (IntegerOptional) , "KmsKeyId" :: NullOrUndefined (String) , "NodeType" :: NullOrUndefined (String) , "EnhancedVpcRouting" :: NullOrUndefined (BooleanOptional) , "AdditionalInfo" :: NullOrUndefined (String) , "IamRoles" :: NullOrUndefined (IamRoleArnList) } -> {"ClusterIdentifier" :: (String) , "SnapshotIdentifier" :: (String) , "SnapshotClusterIdentifier" :: NullOrUndefined (String) , "Port" :: NullOrUndefined (IntegerOptional) , "AvailabilityZone" :: NullOrUndefined (String) , "AllowVersionUpgrade" :: NullOrUndefined (BooleanOptional) , "ClusterSubnetGroupName" :: NullOrUndefined (String) , "PubliclyAccessible" :: NullOrUndefined (BooleanOptional) , "OwnerAccount" :: NullOrUndefined (String) , "HsmClientCertificateIdentifier" :: NullOrUndefined (String) , "HsmConfigurationIdentifier" :: NullOrUndefined (String) , "ElasticIp" :: NullOrUndefined (String) , "ClusterParameterGroupName" :: NullOrUndefined (String) , "ClusterSecurityGroups" :: NullOrUndefined (ClusterSecurityGroupNameList) , "VpcSecurityGroupIds" :: NullOrUndefined (VpcSecurityGroupIdList) , "PreferredMaintenanceWindow" :: NullOrUndefined (String) , "AutomatedSnapshotRetentionPeriod" :: NullOrUndefined (IntegerOptional) , "KmsKeyId" :: NullOrUndefined (String) , "NodeType" :: NullOrUndefined (String) , "EnhancedVpcRouting" :: NullOrUndefined (BooleanOptional) , "AdditionalInfo" :: NullOrUndefined (String) , "IamRoles" :: NullOrUndefined (IamRoleArnList) } ) -> RestoreFromClusterSnapshotMessage
-newRestoreFromClusterSnapshotMessage' _ClusterIdentifier _SnapshotIdentifier customize = (RestoreFromClusterSnapshotMessage <<< customize) { "ClusterIdentifier": _ClusterIdentifier, "SnapshotIdentifier": _SnapshotIdentifier, "AdditionalInfo": (NullOrUndefined Nothing), "AllowVersionUpgrade": (NullOrUndefined Nothing), "AutomatedSnapshotRetentionPeriod": (NullOrUndefined Nothing), "AvailabilityZone": (NullOrUndefined Nothing), "ClusterParameterGroupName": (NullOrUndefined Nothing), "ClusterSecurityGroups": (NullOrUndefined Nothing), "ClusterSubnetGroupName": (NullOrUndefined Nothing), "ElasticIp": (NullOrUndefined Nothing), "EnhancedVpcRouting": (NullOrUndefined Nothing), "HsmClientCertificateIdentifier": (NullOrUndefined Nothing), "HsmConfigurationIdentifier": (NullOrUndefined Nothing), "IamRoles": (NullOrUndefined Nothing), "KmsKeyId": (NullOrUndefined Nothing), "NodeType": (NullOrUndefined Nothing), "OwnerAccount": (NullOrUndefined Nothing), "Port": (NullOrUndefined Nothing), "PreferredMaintenanceWindow": (NullOrUndefined Nothing), "PubliclyAccessible": (NullOrUndefined Nothing), "SnapshotClusterIdentifier": (NullOrUndefined Nothing), "VpcSecurityGroupIds": (NullOrUndefined Nothing) }
+newRestoreFromClusterSnapshotMessage' :: String -> String -> ( { "ClusterIdentifier" :: (String) , "SnapshotIdentifier" :: (String) , "SnapshotClusterIdentifier" :: Maybe (String) , "Port" :: Maybe (IntegerOptional) , "AvailabilityZone" :: Maybe (String) , "AllowVersionUpgrade" :: Maybe (BooleanOptional) , "ClusterSubnetGroupName" :: Maybe (String) , "PubliclyAccessible" :: Maybe (BooleanOptional) , "OwnerAccount" :: Maybe (String) , "HsmClientCertificateIdentifier" :: Maybe (String) , "HsmConfigurationIdentifier" :: Maybe (String) , "ElasticIp" :: Maybe (String) , "ClusterParameterGroupName" :: Maybe (String) , "ClusterSecurityGroups" :: Maybe (ClusterSecurityGroupNameList) , "VpcSecurityGroupIds" :: Maybe (VpcSecurityGroupIdList) , "PreferredMaintenanceWindow" :: Maybe (String) , "AutomatedSnapshotRetentionPeriod" :: Maybe (IntegerOptional) , "KmsKeyId" :: Maybe (String) , "NodeType" :: Maybe (String) , "EnhancedVpcRouting" :: Maybe (BooleanOptional) , "AdditionalInfo" :: Maybe (String) , "IamRoles" :: Maybe (IamRoleArnList) } -> {"ClusterIdentifier" :: (String) , "SnapshotIdentifier" :: (String) , "SnapshotClusterIdentifier" :: Maybe (String) , "Port" :: Maybe (IntegerOptional) , "AvailabilityZone" :: Maybe (String) , "AllowVersionUpgrade" :: Maybe (BooleanOptional) , "ClusterSubnetGroupName" :: Maybe (String) , "PubliclyAccessible" :: Maybe (BooleanOptional) , "OwnerAccount" :: Maybe (String) , "HsmClientCertificateIdentifier" :: Maybe (String) , "HsmConfigurationIdentifier" :: Maybe (String) , "ElasticIp" :: Maybe (String) , "ClusterParameterGroupName" :: Maybe (String) , "ClusterSecurityGroups" :: Maybe (ClusterSecurityGroupNameList) , "VpcSecurityGroupIds" :: Maybe (VpcSecurityGroupIdList) , "PreferredMaintenanceWindow" :: Maybe (String) , "AutomatedSnapshotRetentionPeriod" :: Maybe (IntegerOptional) , "KmsKeyId" :: Maybe (String) , "NodeType" :: Maybe (String) , "EnhancedVpcRouting" :: Maybe (BooleanOptional) , "AdditionalInfo" :: Maybe (String) , "IamRoles" :: Maybe (IamRoleArnList) } ) -> RestoreFromClusterSnapshotMessage
+newRestoreFromClusterSnapshotMessage' _ClusterIdentifier _SnapshotIdentifier customize = (RestoreFromClusterSnapshotMessage <<< customize) { "ClusterIdentifier": _ClusterIdentifier, "SnapshotIdentifier": _SnapshotIdentifier, "AdditionalInfo": Nothing, "AllowVersionUpgrade": Nothing, "AutomatedSnapshotRetentionPeriod": Nothing, "AvailabilityZone": Nothing, "ClusterParameterGroupName": Nothing, "ClusterSecurityGroups": Nothing, "ClusterSubnetGroupName": Nothing, "ElasticIp": Nothing, "EnhancedVpcRouting": Nothing, "HsmClientCertificateIdentifier": Nothing, "HsmConfigurationIdentifier": Nothing, "IamRoles": Nothing, "KmsKeyId": Nothing, "NodeType": Nothing, "OwnerAccount": Nothing, "Port": Nothing, "PreferredMaintenanceWindow": Nothing, "PubliclyAccessible": Nothing, "SnapshotClusterIdentifier": Nothing, "VpcSecurityGroupIds": Nothing }
 
 
 
 newtype RestoreFromClusterSnapshotResult = RestoreFromClusterSnapshotResult 
-  { "Cluster" :: NullOrUndefined (Cluster)
+  { "Cluster" :: Maybe (Cluster)
   }
 derive instance newtypeRestoreFromClusterSnapshotResult :: Newtype RestoreFromClusterSnapshotResult _
 derive instance repGenericRestoreFromClusterSnapshotResult :: Generic RestoreFromClusterSnapshotResult _
@@ -4100,23 +4099,23 @@ instance encodeRestoreFromClusterSnapshotResult :: Encode RestoreFromClusterSnap
 
 -- | Constructs RestoreFromClusterSnapshotResult from required parameters
 newRestoreFromClusterSnapshotResult :: RestoreFromClusterSnapshotResult
-newRestoreFromClusterSnapshotResult  = RestoreFromClusterSnapshotResult { "Cluster": (NullOrUndefined Nothing) }
+newRestoreFromClusterSnapshotResult  = RestoreFromClusterSnapshotResult { "Cluster": Nothing }
 
 -- | Constructs RestoreFromClusterSnapshotResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRestoreFromClusterSnapshotResult' :: ( { "Cluster" :: NullOrUndefined (Cluster) } -> {"Cluster" :: NullOrUndefined (Cluster) } ) -> RestoreFromClusterSnapshotResult
-newRestoreFromClusterSnapshotResult'  customize = (RestoreFromClusterSnapshotResult <<< customize) { "Cluster": (NullOrUndefined Nothing) }
+newRestoreFromClusterSnapshotResult' :: ( { "Cluster" :: Maybe (Cluster) } -> {"Cluster" :: Maybe (Cluster) } ) -> RestoreFromClusterSnapshotResult
+newRestoreFromClusterSnapshotResult'  customize = (RestoreFromClusterSnapshotResult <<< customize) { "Cluster": Nothing }
 
 
 
 -- | <p>Describes the status of a cluster restore action. Returns null if the cluster was not created by restoring a snapshot.</p>
 newtype RestoreStatus = RestoreStatus 
-  { "Status" :: NullOrUndefined (String)
-  , "CurrentRestoreRateInMegaBytesPerSecond" :: NullOrUndefined (Number)
-  , "SnapshotSizeInMegaBytes" :: NullOrUndefined (Number)
-  , "ProgressInMegaBytes" :: NullOrUndefined (Number)
-  , "ElapsedTimeInSeconds" :: NullOrUndefined (Number)
-  , "EstimatedTimeToCompletionInSeconds" :: NullOrUndefined (Number)
+  { "Status" :: Maybe (String)
+  , "CurrentRestoreRateInMegaBytesPerSecond" :: Maybe (Number)
+  , "SnapshotSizeInMegaBytes" :: Maybe (Number)
+  , "ProgressInMegaBytes" :: Maybe (Number)
+  , "ElapsedTimeInSeconds" :: Maybe (Number)
+  , "EstimatedTimeToCompletionInSeconds" :: Maybe (Number)
   }
 derive instance newtypeRestoreStatus :: Newtype RestoreStatus _
 derive instance repGenericRestoreStatus :: Generic RestoreStatus _
@@ -4126,12 +4125,12 @@ instance encodeRestoreStatus :: Encode RestoreStatus where encode = genericEncod
 
 -- | Constructs RestoreStatus from required parameters
 newRestoreStatus :: RestoreStatus
-newRestoreStatus  = RestoreStatus { "CurrentRestoreRateInMegaBytesPerSecond": (NullOrUndefined Nothing), "ElapsedTimeInSeconds": (NullOrUndefined Nothing), "EstimatedTimeToCompletionInSeconds": (NullOrUndefined Nothing), "ProgressInMegaBytes": (NullOrUndefined Nothing), "SnapshotSizeInMegaBytes": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newRestoreStatus  = RestoreStatus { "CurrentRestoreRateInMegaBytesPerSecond": Nothing, "ElapsedTimeInSeconds": Nothing, "EstimatedTimeToCompletionInSeconds": Nothing, "ProgressInMegaBytes": Nothing, "SnapshotSizeInMegaBytes": Nothing, "Status": Nothing }
 
 -- | Constructs RestoreStatus's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRestoreStatus' :: ( { "Status" :: NullOrUndefined (String) , "CurrentRestoreRateInMegaBytesPerSecond" :: NullOrUndefined (Number) , "SnapshotSizeInMegaBytes" :: NullOrUndefined (Number) , "ProgressInMegaBytes" :: NullOrUndefined (Number) , "ElapsedTimeInSeconds" :: NullOrUndefined (Number) , "EstimatedTimeToCompletionInSeconds" :: NullOrUndefined (Number) } -> {"Status" :: NullOrUndefined (String) , "CurrentRestoreRateInMegaBytesPerSecond" :: NullOrUndefined (Number) , "SnapshotSizeInMegaBytes" :: NullOrUndefined (Number) , "ProgressInMegaBytes" :: NullOrUndefined (Number) , "ElapsedTimeInSeconds" :: NullOrUndefined (Number) , "EstimatedTimeToCompletionInSeconds" :: NullOrUndefined (Number) } ) -> RestoreStatus
-newRestoreStatus'  customize = (RestoreStatus <<< customize) { "CurrentRestoreRateInMegaBytesPerSecond": (NullOrUndefined Nothing), "ElapsedTimeInSeconds": (NullOrUndefined Nothing), "EstimatedTimeToCompletionInSeconds": (NullOrUndefined Nothing), "ProgressInMegaBytes": (NullOrUndefined Nothing), "SnapshotSizeInMegaBytes": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newRestoreStatus' :: ( { "Status" :: Maybe (String) , "CurrentRestoreRateInMegaBytesPerSecond" :: Maybe (Number) , "SnapshotSizeInMegaBytes" :: Maybe (Number) , "ProgressInMegaBytes" :: Maybe (Number) , "ElapsedTimeInSeconds" :: Maybe (Number) , "EstimatedTimeToCompletionInSeconds" :: Maybe (Number) } -> {"Status" :: Maybe (String) , "CurrentRestoreRateInMegaBytesPerSecond" :: Maybe (Number) , "SnapshotSizeInMegaBytes" :: Maybe (Number) , "ProgressInMegaBytes" :: Maybe (Number) , "ElapsedTimeInSeconds" :: Maybe (Number) , "EstimatedTimeToCompletionInSeconds" :: Maybe (Number) } ) -> RestoreStatus
+newRestoreStatus'  customize = (RestoreStatus <<< customize) { "CurrentRestoreRateInMegaBytesPerSecond": Nothing, "ElapsedTimeInSeconds": Nothing, "EstimatedTimeToCompletionInSeconds": Nothing, "ProgressInMegaBytes": Nothing, "SnapshotSizeInMegaBytes": Nothing, "Status": Nothing }
 
 
 
@@ -4140,10 +4139,10 @@ newtype RestoreTableFromClusterSnapshotMessage = RestoreTableFromClusterSnapshot
   { "ClusterIdentifier" :: (String)
   , "SnapshotIdentifier" :: (String)
   , "SourceDatabaseName" :: (String)
-  , "SourceSchemaName" :: NullOrUndefined (String)
+  , "SourceSchemaName" :: Maybe (String)
   , "SourceTableName" :: (String)
-  , "TargetDatabaseName" :: NullOrUndefined (String)
-  , "TargetSchemaName" :: NullOrUndefined (String)
+  , "TargetDatabaseName" :: Maybe (String)
+  , "TargetSchemaName" :: Maybe (String)
   , "NewTableName" :: (String)
   }
 derive instance newtypeRestoreTableFromClusterSnapshotMessage :: Newtype RestoreTableFromClusterSnapshotMessage _
@@ -4154,17 +4153,17 @@ instance encodeRestoreTableFromClusterSnapshotMessage :: Encode RestoreTableFrom
 
 -- | Constructs RestoreTableFromClusterSnapshotMessage from required parameters
 newRestoreTableFromClusterSnapshotMessage :: String -> String -> String -> String -> String -> RestoreTableFromClusterSnapshotMessage
-newRestoreTableFromClusterSnapshotMessage _ClusterIdentifier _NewTableName _SnapshotIdentifier _SourceDatabaseName _SourceTableName = RestoreTableFromClusterSnapshotMessage { "ClusterIdentifier": _ClusterIdentifier, "NewTableName": _NewTableName, "SnapshotIdentifier": _SnapshotIdentifier, "SourceDatabaseName": _SourceDatabaseName, "SourceTableName": _SourceTableName, "SourceSchemaName": (NullOrUndefined Nothing), "TargetDatabaseName": (NullOrUndefined Nothing), "TargetSchemaName": (NullOrUndefined Nothing) }
+newRestoreTableFromClusterSnapshotMessage _ClusterIdentifier _NewTableName _SnapshotIdentifier _SourceDatabaseName _SourceTableName = RestoreTableFromClusterSnapshotMessage { "ClusterIdentifier": _ClusterIdentifier, "NewTableName": _NewTableName, "SnapshotIdentifier": _SnapshotIdentifier, "SourceDatabaseName": _SourceDatabaseName, "SourceTableName": _SourceTableName, "SourceSchemaName": Nothing, "TargetDatabaseName": Nothing, "TargetSchemaName": Nothing }
 
 -- | Constructs RestoreTableFromClusterSnapshotMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRestoreTableFromClusterSnapshotMessage' :: String -> String -> String -> String -> String -> ( { "ClusterIdentifier" :: (String) , "SnapshotIdentifier" :: (String) , "SourceDatabaseName" :: (String) , "SourceSchemaName" :: NullOrUndefined (String) , "SourceTableName" :: (String) , "TargetDatabaseName" :: NullOrUndefined (String) , "TargetSchemaName" :: NullOrUndefined (String) , "NewTableName" :: (String) } -> {"ClusterIdentifier" :: (String) , "SnapshotIdentifier" :: (String) , "SourceDatabaseName" :: (String) , "SourceSchemaName" :: NullOrUndefined (String) , "SourceTableName" :: (String) , "TargetDatabaseName" :: NullOrUndefined (String) , "TargetSchemaName" :: NullOrUndefined (String) , "NewTableName" :: (String) } ) -> RestoreTableFromClusterSnapshotMessage
-newRestoreTableFromClusterSnapshotMessage' _ClusterIdentifier _NewTableName _SnapshotIdentifier _SourceDatabaseName _SourceTableName customize = (RestoreTableFromClusterSnapshotMessage <<< customize) { "ClusterIdentifier": _ClusterIdentifier, "NewTableName": _NewTableName, "SnapshotIdentifier": _SnapshotIdentifier, "SourceDatabaseName": _SourceDatabaseName, "SourceTableName": _SourceTableName, "SourceSchemaName": (NullOrUndefined Nothing), "TargetDatabaseName": (NullOrUndefined Nothing), "TargetSchemaName": (NullOrUndefined Nothing) }
+newRestoreTableFromClusterSnapshotMessage' :: String -> String -> String -> String -> String -> ( { "ClusterIdentifier" :: (String) , "SnapshotIdentifier" :: (String) , "SourceDatabaseName" :: (String) , "SourceSchemaName" :: Maybe (String) , "SourceTableName" :: (String) , "TargetDatabaseName" :: Maybe (String) , "TargetSchemaName" :: Maybe (String) , "NewTableName" :: (String) } -> {"ClusterIdentifier" :: (String) , "SnapshotIdentifier" :: (String) , "SourceDatabaseName" :: (String) , "SourceSchemaName" :: Maybe (String) , "SourceTableName" :: (String) , "TargetDatabaseName" :: Maybe (String) , "TargetSchemaName" :: Maybe (String) , "NewTableName" :: (String) } ) -> RestoreTableFromClusterSnapshotMessage
+newRestoreTableFromClusterSnapshotMessage' _ClusterIdentifier _NewTableName _SnapshotIdentifier _SourceDatabaseName _SourceTableName customize = (RestoreTableFromClusterSnapshotMessage <<< customize) { "ClusterIdentifier": _ClusterIdentifier, "NewTableName": _NewTableName, "SnapshotIdentifier": _SnapshotIdentifier, "SourceDatabaseName": _SourceDatabaseName, "SourceTableName": _SourceTableName, "SourceSchemaName": Nothing, "TargetDatabaseName": Nothing, "TargetSchemaName": Nothing }
 
 
 
 newtype RestoreTableFromClusterSnapshotResult = RestoreTableFromClusterSnapshotResult 
-  { "TableRestoreStatus" :: NullOrUndefined (TableRestoreStatus)
+  { "TableRestoreStatus" :: Maybe (TableRestoreStatus)
   }
 derive instance newtypeRestoreTableFromClusterSnapshotResult :: Newtype RestoreTableFromClusterSnapshotResult _
 derive instance repGenericRestoreTableFromClusterSnapshotResult :: Generic RestoreTableFromClusterSnapshotResult _
@@ -4174,21 +4173,21 @@ instance encodeRestoreTableFromClusterSnapshotResult :: Encode RestoreTableFromC
 
 -- | Constructs RestoreTableFromClusterSnapshotResult from required parameters
 newRestoreTableFromClusterSnapshotResult :: RestoreTableFromClusterSnapshotResult
-newRestoreTableFromClusterSnapshotResult  = RestoreTableFromClusterSnapshotResult { "TableRestoreStatus": (NullOrUndefined Nothing) }
+newRestoreTableFromClusterSnapshotResult  = RestoreTableFromClusterSnapshotResult { "TableRestoreStatus": Nothing }
 
 -- | Constructs RestoreTableFromClusterSnapshotResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRestoreTableFromClusterSnapshotResult' :: ( { "TableRestoreStatus" :: NullOrUndefined (TableRestoreStatus) } -> {"TableRestoreStatus" :: NullOrUndefined (TableRestoreStatus) } ) -> RestoreTableFromClusterSnapshotResult
-newRestoreTableFromClusterSnapshotResult'  customize = (RestoreTableFromClusterSnapshotResult <<< customize) { "TableRestoreStatus": (NullOrUndefined Nothing) }
+newRestoreTableFromClusterSnapshotResult' :: ( { "TableRestoreStatus" :: Maybe (TableRestoreStatus) } -> {"TableRestoreStatus" :: Maybe (TableRestoreStatus) } ) -> RestoreTableFromClusterSnapshotResult
+newRestoreTableFromClusterSnapshotResult'  customize = (RestoreTableFromClusterSnapshotResult <<< customize) { "TableRestoreStatus": Nothing }
 
 
 
 -- | <p/>
 newtype RevokeClusterSecurityGroupIngressMessage = RevokeClusterSecurityGroupIngressMessage 
   { "ClusterSecurityGroupName" :: (String)
-  , "CIDRIP" :: NullOrUndefined (String)
-  , "EC2SecurityGroupName" :: NullOrUndefined (String)
-  , "EC2SecurityGroupOwnerId" :: NullOrUndefined (String)
+  , "CIDRIP" :: Maybe (String)
+  , "EC2SecurityGroupName" :: Maybe (String)
+  , "EC2SecurityGroupOwnerId" :: Maybe (String)
   }
 derive instance newtypeRevokeClusterSecurityGroupIngressMessage :: Newtype RevokeClusterSecurityGroupIngressMessage _
 derive instance repGenericRevokeClusterSecurityGroupIngressMessage :: Generic RevokeClusterSecurityGroupIngressMessage _
@@ -4198,17 +4197,17 @@ instance encodeRevokeClusterSecurityGroupIngressMessage :: Encode RevokeClusterS
 
 -- | Constructs RevokeClusterSecurityGroupIngressMessage from required parameters
 newRevokeClusterSecurityGroupIngressMessage :: String -> RevokeClusterSecurityGroupIngressMessage
-newRevokeClusterSecurityGroupIngressMessage _ClusterSecurityGroupName = RevokeClusterSecurityGroupIngressMessage { "ClusterSecurityGroupName": _ClusterSecurityGroupName, "CIDRIP": (NullOrUndefined Nothing), "EC2SecurityGroupName": (NullOrUndefined Nothing), "EC2SecurityGroupOwnerId": (NullOrUndefined Nothing) }
+newRevokeClusterSecurityGroupIngressMessage _ClusterSecurityGroupName = RevokeClusterSecurityGroupIngressMessage { "ClusterSecurityGroupName": _ClusterSecurityGroupName, "CIDRIP": Nothing, "EC2SecurityGroupName": Nothing, "EC2SecurityGroupOwnerId": Nothing }
 
 -- | Constructs RevokeClusterSecurityGroupIngressMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRevokeClusterSecurityGroupIngressMessage' :: String -> ( { "ClusterSecurityGroupName" :: (String) , "CIDRIP" :: NullOrUndefined (String) , "EC2SecurityGroupName" :: NullOrUndefined (String) , "EC2SecurityGroupOwnerId" :: NullOrUndefined (String) } -> {"ClusterSecurityGroupName" :: (String) , "CIDRIP" :: NullOrUndefined (String) , "EC2SecurityGroupName" :: NullOrUndefined (String) , "EC2SecurityGroupOwnerId" :: NullOrUndefined (String) } ) -> RevokeClusterSecurityGroupIngressMessage
-newRevokeClusterSecurityGroupIngressMessage' _ClusterSecurityGroupName customize = (RevokeClusterSecurityGroupIngressMessage <<< customize) { "ClusterSecurityGroupName": _ClusterSecurityGroupName, "CIDRIP": (NullOrUndefined Nothing), "EC2SecurityGroupName": (NullOrUndefined Nothing), "EC2SecurityGroupOwnerId": (NullOrUndefined Nothing) }
+newRevokeClusterSecurityGroupIngressMessage' :: String -> ( { "ClusterSecurityGroupName" :: (String) , "CIDRIP" :: Maybe (String) , "EC2SecurityGroupName" :: Maybe (String) , "EC2SecurityGroupOwnerId" :: Maybe (String) } -> {"ClusterSecurityGroupName" :: (String) , "CIDRIP" :: Maybe (String) , "EC2SecurityGroupName" :: Maybe (String) , "EC2SecurityGroupOwnerId" :: Maybe (String) } ) -> RevokeClusterSecurityGroupIngressMessage
+newRevokeClusterSecurityGroupIngressMessage' _ClusterSecurityGroupName customize = (RevokeClusterSecurityGroupIngressMessage <<< customize) { "ClusterSecurityGroupName": _ClusterSecurityGroupName, "CIDRIP": Nothing, "EC2SecurityGroupName": Nothing, "EC2SecurityGroupOwnerId": Nothing }
 
 
 
 newtype RevokeClusterSecurityGroupIngressResult = RevokeClusterSecurityGroupIngressResult 
-  { "ClusterSecurityGroup" :: NullOrUndefined (ClusterSecurityGroup)
+  { "ClusterSecurityGroup" :: Maybe (ClusterSecurityGroup)
   }
 derive instance newtypeRevokeClusterSecurityGroupIngressResult :: Newtype RevokeClusterSecurityGroupIngressResult _
 derive instance repGenericRevokeClusterSecurityGroupIngressResult :: Generic RevokeClusterSecurityGroupIngressResult _
@@ -4218,19 +4217,19 @@ instance encodeRevokeClusterSecurityGroupIngressResult :: Encode RevokeClusterSe
 
 -- | Constructs RevokeClusterSecurityGroupIngressResult from required parameters
 newRevokeClusterSecurityGroupIngressResult :: RevokeClusterSecurityGroupIngressResult
-newRevokeClusterSecurityGroupIngressResult  = RevokeClusterSecurityGroupIngressResult { "ClusterSecurityGroup": (NullOrUndefined Nothing) }
+newRevokeClusterSecurityGroupIngressResult  = RevokeClusterSecurityGroupIngressResult { "ClusterSecurityGroup": Nothing }
 
 -- | Constructs RevokeClusterSecurityGroupIngressResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRevokeClusterSecurityGroupIngressResult' :: ( { "ClusterSecurityGroup" :: NullOrUndefined (ClusterSecurityGroup) } -> {"ClusterSecurityGroup" :: NullOrUndefined (ClusterSecurityGroup) } ) -> RevokeClusterSecurityGroupIngressResult
-newRevokeClusterSecurityGroupIngressResult'  customize = (RevokeClusterSecurityGroupIngressResult <<< customize) { "ClusterSecurityGroup": (NullOrUndefined Nothing) }
+newRevokeClusterSecurityGroupIngressResult' :: ( { "ClusterSecurityGroup" :: Maybe (ClusterSecurityGroup) } -> {"ClusterSecurityGroup" :: Maybe (ClusterSecurityGroup) } ) -> RevokeClusterSecurityGroupIngressResult
+newRevokeClusterSecurityGroupIngressResult'  customize = (RevokeClusterSecurityGroupIngressResult <<< customize) { "ClusterSecurityGroup": Nothing }
 
 
 
 -- | <p/>
 newtype RevokeSnapshotAccessMessage = RevokeSnapshotAccessMessage 
   { "SnapshotIdentifier" :: (String)
-  , "SnapshotClusterIdentifier" :: NullOrUndefined (String)
+  , "SnapshotClusterIdentifier" :: Maybe (String)
   , "AccountWithRestoreAccess" :: (String)
   }
 derive instance newtypeRevokeSnapshotAccessMessage :: Newtype RevokeSnapshotAccessMessage _
@@ -4241,17 +4240,17 @@ instance encodeRevokeSnapshotAccessMessage :: Encode RevokeSnapshotAccessMessage
 
 -- | Constructs RevokeSnapshotAccessMessage from required parameters
 newRevokeSnapshotAccessMessage :: String -> String -> RevokeSnapshotAccessMessage
-newRevokeSnapshotAccessMessage _AccountWithRestoreAccess _SnapshotIdentifier = RevokeSnapshotAccessMessage { "AccountWithRestoreAccess": _AccountWithRestoreAccess, "SnapshotIdentifier": _SnapshotIdentifier, "SnapshotClusterIdentifier": (NullOrUndefined Nothing) }
+newRevokeSnapshotAccessMessage _AccountWithRestoreAccess _SnapshotIdentifier = RevokeSnapshotAccessMessage { "AccountWithRestoreAccess": _AccountWithRestoreAccess, "SnapshotIdentifier": _SnapshotIdentifier, "SnapshotClusterIdentifier": Nothing }
 
 -- | Constructs RevokeSnapshotAccessMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRevokeSnapshotAccessMessage' :: String -> String -> ( { "SnapshotIdentifier" :: (String) , "SnapshotClusterIdentifier" :: NullOrUndefined (String) , "AccountWithRestoreAccess" :: (String) } -> {"SnapshotIdentifier" :: (String) , "SnapshotClusterIdentifier" :: NullOrUndefined (String) , "AccountWithRestoreAccess" :: (String) } ) -> RevokeSnapshotAccessMessage
-newRevokeSnapshotAccessMessage' _AccountWithRestoreAccess _SnapshotIdentifier customize = (RevokeSnapshotAccessMessage <<< customize) { "AccountWithRestoreAccess": _AccountWithRestoreAccess, "SnapshotIdentifier": _SnapshotIdentifier, "SnapshotClusterIdentifier": (NullOrUndefined Nothing) }
+newRevokeSnapshotAccessMessage' :: String -> String -> ( { "SnapshotIdentifier" :: (String) , "SnapshotClusterIdentifier" :: Maybe (String) , "AccountWithRestoreAccess" :: (String) } -> {"SnapshotIdentifier" :: (String) , "SnapshotClusterIdentifier" :: Maybe (String) , "AccountWithRestoreAccess" :: (String) } ) -> RevokeSnapshotAccessMessage
+newRevokeSnapshotAccessMessage' _AccountWithRestoreAccess _SnapshotIdentifier customize = (RevokeSnapshotAccessMessage <<< customize) { "AccountWithRestoreAccess": _AccountWithRestoreAccess, "SnapshotIdentifier": _SnapshotIdentifier, "SnapshotClusterIdentifier": Nothing }
 
 
 
 newtype RevokeSnapshotAccessResult = RevokeSnapshotAccessResult 
-  { "Snapshot" :: NullOrUndefined (Snapshot)
+  { "Snapshot" :: Maybe (Snapshot)
   }
 derive instance newtypeRevokeSnapshotAccessResult :: Newtype RevokeSnapshotAccessResult _
 derive instance repGenericRevokeSnapshotAccessResult :: Generic RevokeSnapshotAccessResult _
@@ -4261,12 +4260,12 @@ instance encodeRevokeSnapshotAccessResult :: Encode RevokeSnapshotAccessResult w
 
 -- | Constructs RevokeSnapshotAccessResult from required parameters
 newRevokeSnapshotAccessResult :: RevokeSnapshotAccessResult
-newRevokeSnapshotAccessResult  = RevokeSnapshotAccessResult { "Snapshot": (NullOrUndefined Nothing) }
+newRevokeSnapshotAccessResult  = RevokeSnapshotAccessResult { "Snapshot": Nothing }
 
 -- | Constructs RevokeSnapshotAccessResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRevokeSnapshotAccessResult' :: ( { "Snapshot" :: NullOrUndefined (Snapshot) } -> {"Snapshot" :: NullOrUndefined (Snapshot) } ) -> RevokeSnapshotAccessResult
-newRevokeSnapshotAccessResult'  customize = (RevokeSnapshotAccessResult <<< customize) { "Snapshot": (NullOrUndefined Nothing) }
+newRevokeSnapshotAccessResult' :: ( { "Snapshot" :: Maybe (Snapshot) } -> {"Snapshot" :: Maybe (Snapshot) } ) -> RevokeSnapshotAccessResult
+newRevokeSnapshotAccessResult'  customize = (RevokeSnapshotAccessResult <<< customize) { "Snapshot": Nothing }
 
 
 
@@ -4292,7 +4291,7 @@ newRotateEncryptionKeyMessage' _ClusterIdentifier customize = (RotateEncryptionK
 
 
 newtype RotateEncryptionKeyResult = RotateEncryptionKeyResult 
-  { "Cluster" :: NullOrUndefined (Cluster)
+  { "Cluster" :: Maybe (Cluster)
   }
 derive instance newtypeRotateEncryptionKeyResult :: Newtype RotateEncryptionKeyResult _
 derive instance repGenericRotateEncryptionKeyResult :: Generic RotateEncryptionKeyResult _
@@ -4302,12 +4301,12 @@ instance encodeRotateEncryptionKeyResult :: Encode RotateEncryptionKeyResult whe
 
 -- | Constructs RotateEncryptionKeyResult from required parameters
 newRotateEncryptionKeyResult :: RotateEncryptionKeyResult
-newRotateEncryptionKeyResult  = RotateEncryptionKeyResult { "Cluster": (NullOrUndefined Nothing) }
+newRotateEncryptionKeyResult  = RotateEncryptionKeyResult { "Cluster": Nothing }
 
 -- | Constructs RotateEncryptionKeyResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRotateEncryptionKeyResult' :: ( { "Cluster" :: NullOrUndefined (Cluster) } -> {"Cluster" :: NullOrUndefined (Cluster) } ) -> RotateEncryptionKeyResult
-newRotateEncryptionKeyResult'  customize = (RotateEncryptionKeyResult <<< customize) { "Cluster": (NullOrUndefined Nothing) }
+newRotateEncryptionKeyResult' :: ( { "Cluster" :: Maybe (Cluster) } -> {"Cluster" :: Maybe (Cluster) } ) -> RotateEncryptionKeyResult
+newRotateEncryptionKeyResult'  customize = (RotateEncryptionKeyResult <<< customize) { "Cluster": Nothing }
 
 
 
@@ -4352,35 +4351,35 @@ instance encodeSensitiveString :: Encode SensitiveString where encode = genericE
 
 -- | <p>Describes a snapshot.</p>
 newtype Snapshot = Snapshot 
-  { "SnapshotIdentifier" :: NullOrUndefined (String)
-  , "ClusterIdentifier" :: NullOrUndefined (String)
-  , "SnapshotCreateTime" :: NullOrUndefined (TStamp)
-  , "Status" :: NullOrUndefined (String)
-  , "Port" :: NullOrUndefined (Int)
-  , "AvailabilityZone" :: NullOrUndefined (String)
-  , "ClusterCreateTime" :: NullOrUndefined (TStamp)
-  , "MasterUsername" :: NullOrUndefined (String)
-  , "ClusterVersion" :: NullOrUndefined (String)
-  , "SnapshotType" :: NullOrUndefined (String)
-  , "NodeType" :: NullOrUndefined (String)
-  , "NumberOfNodes" :: NullOrUndefined (Int)
-  , "DBName" :: NullOrUndefined (String)
-  , "VpcId" :: NullOrUndefined (String)
-  , "Encrypted" :: NullOrUndefined (Boolean)
-  , "KmsKeyId" :: NullOrUndefined (String)
-  , "EncryptedWithHSM" :: NullOrUndefined (Boolean)
-  , "AccountsWithRestoreAccess" :: NullOrUndefined (AccountsWithRestoreAccessList)
-  , "OwnerAccount" :: NullOrUndefined (String)
-  , "TotalBackupSizeInMegaBytes" :: NullOrUndefined (Number)
-  , "ActualIncrementalBackupSizeInMegaBytes" :: NullOrUndefined (Number)
-  , "BackupProgressInMegaBytes" :: NullOrUndefined (Number)
-  , "CurrentBackupRateInMegaBytesPerSecond" :: NullOrUndefined (Number)
-  , "EstimatedSecondsToCompletion" :: NullOrUndefined (Number)
-  , "ElapsedTimeInSeconds" :: NullOrUndefined (Number)
-  , "SourceRegion" :: NullOrUndefined (String)
-  , "Tags" :: NullOrUndefined (TagList)
-  , "RestorableNodeTypes" :: NullOrUndefined (RestorableNodeTypeList)
-  , "EnhancedVpcRouting" :: NullOrUndefined (Boolean)
+  { "SnapshotIdentifier" :: Maybe (String)
+  , "ClusterIdentifier" :: Maybe (String)
+  , "SnapshotCreateTime" :: Maybe (TStamp)
+  , "Status" :: Maybe (String)
+  , "Port" :: Maybe (Int)
+  , "AvailabilityZone" :: Maybe (String)
+  , "ClusterCreateTime" :: Maybe (TStamp)
+  , "MasterUsername" :: Maybe (String)
+  , "ClusterVersion" :: Maybe (String)
+  , "SnapshotType" :: Maybe (String)
+  , "NodeType" :: Maybe (String)
+  , "NumberOfNodes" :: Maybe (Int)
+  , "DBName" :: Maybe (String)
+  , "VpcId" :: Maybe (String)
+  , "Encrypted" :: Maybe (Boolean)
+  , "KmsKeyId" :: Maybe (String)
+  , "EncryptedWithHSM" :: Maybe (Boolean)
+  , "AccountsWithRestoreAccess" :: Maybe (AccountsWithRestoreAccessList)
+  , "OwnerAccount" :: Maybe (String)
+  , "TotalBackupSizeInMegaBytes" :: Maybe (Number)
+  , "ActualIncrementalBackupSizeInMegaBytes" :: Maybe (Number)
+  , "BackupProgressInMegaBytes" :: Maybe (Number)
+  , "CurrentBackupRateInMegaBytesPerSecond" :: Maybe (Number)
+  , "EstimatedSecondsToCompletion" :: Maybe (Number)
+  , "ElapsedTimeInSeconds" :: Maybe (Number)
+  , "SourceRegion" :: Maybe (String)
+  , "Tags" :: Maybe (TagList)
+  , "RestorableNodeTypes" :: Maybe (RestorableNodeTypeList)
+  , "EnhancedVpcRouting" :: Maybe (Boolean)
   }
 derive instance newtypeSnapshot :: Newtype Snapshot _
 derive instance repGenericSnapshot :: Generic Snapshot _
@@ -4390,12 +4389,12 @@ instance encodeSnapshot :: Encode Snapshot where encode = genericEncode options
 
 -- | Constructs Snapshot from required parameters
 newSnapshot :: Snapshot
-newSnapshot  = Snapshot { "AccountsWithRestoreAccess": (NullOrUndefined Nothing), "ActualIncrementalBackupSizeInMegaBytes": (NullOrUndefined Nothing), "AvailabilityZone": (NullOrUndefined Nothing), "BackupProgressInMegaBytes": (NullOrUndefined Nothing), "ClusterCreateTime": (NullOrUndefined Nothing), "ClusterIdentifier": (NullOrUndefined Nothing), "ClusterVersion": (NullOrUndefined Nothing), "CurrentBackupRateInMegaBytesPerSecond": (NullOrUndefined Nothing), "DBName": (NullOrUndefined Nothing), "ElapsedTimeInSeconds": (NullOrUndefined Nothing), "Encrypted": (NullOrUndefined Nothing), "EncryptedWithHSM": (NullOrUndefined Nothing), "EnhancedVpcRouting": (NullOrUndefined Nothing), "EstimatedSecondsToCompletion": (NullOrUndefined Nothing), "KmsKeyId": (NullOrUndefined Nothing), "MasterUsername": (NullOrUndefined Nothing), "NodeType": (NullOrUndefined Nothing), "NumberOfNodes": (NullOrUndefined Nothing), "OwnerAccount": (NullOrUndefined Nothing), "Port": (NullOrUndefined Nothing), "RestorableNodeTypes": (NullOrUndefined Nothing), "SnapshotCreateTime": (NullOrUndefined Nothing), "SnapshotIdentifier": (NullOrUndefined Nothing), "SnapshotType": (NullOrUndefined Nothing), "SourceRegion": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing), "TotalBackupSizeInMegaBytes": (NullOrUndefined Nothing), "VpcId": (NullOrUndefined Nothing) }
+newSnapshot  = Snapshot { "AccountsWithRestoreAccess": Nothing, "ActualIncrementalBackupSizeInMegaBytes": Nothing, "AvailabilityZone": Nothing, "BackupProgressInMegaBytes": Nothing, "ClusterCreateTime": Nothing, "ClusterIdentifier": Nothing, "ClusterVersion": Nothing, "CurrentBackupRateInMegaBytesPerSecond": Nothing, "DBName": Nothing, "ElapsedTimeInSeconds": Nothing, "Encrypted": Nothing, "EncryptedWithHSM": Nothing, "EnhancedVpcRouting": Nothing, "EstimatedSecondsToCompletion": Nothing, "KmsKeyId": Nothing, "MasterUsername": Nothing, "NodeType": Nothing, "NumberOfNodes": Nothing, "OwnerAccount": Nothing, "Port": Nothing, "RestorableNodeTypes": Nothing, "SnapshotCreateTime": Nothing, "SnapshotIdentifier": Nothing, "SnapshotType": Nothing, "SourceRegion": Nothing, "Status": Nothing, "Tags": Nothing, "TotalBackupSizeInMegaBytes": Nothing, "VpcId": Nothing }
 
 -- | Constructs Snapshot's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSnapshot' :: ( { "SnapshotIdentifier" :: NullOrUndefined (String) , "ClusterIdentifier" :: NullOrUndefined (String) , "SnapshotCreateTime" :: NullOrUndefined (TStamp) , "Status" :: NullOrUndefined (String) , "Port" :: NullOrUndefined (Int) , "AvailabilityZone" :: NullOrUndefined (String) , "ClusterCreateTime" :: NullOrUndefined (TStamp) , "MasterUsername" :: NullOrUndefined (String) , "ClusterVersion" :: NullOrUndefined (String) , "SnapshotType" :: NullOrUndefined (String) , "NodeType" :: NullOrUndefined (String) , "NumberOfNodes" :: NullOrUndefined (Int) , "DBName" :: NullOrUndefined (String) , "VpcId" :: NullOrUndefined (String) , "Encrypted" :: NullOrUndefined (Boolean) , "KmsKeyId" :: NullOrUndefined (String) , "EncryptedWithHSM" :: NullOrUndefined (Boolean) , "AccountsWithRestoreAccess" :: NullOrUndefined (AccountsWithRestoreAccessList) , "OwnerAccount" :: NullOrUndefined (String) , "TotalBackupSizeInMegaBytes" :: NullOrUndefined (Number) , "ActualIncrementalBackupSizeInMegaBytes" :: NullOrUndefined (Number) , "BackupProgressInMegaBytes" :: NullOrUndefined (Number) , "CurrentBackupRateInMegaBytesPerSecond" :: NullOrUndefined (Number) , "EstimatedSecondsToCompletion" :: NullOrUndefined (Number) , "ElapsedTimeInSeconds" :: NullOrUndefined (Number) , "SourceRegion" :: NullOrUndefined (String) , "Tags" :: NullOrUndefined (TagList) , "RestorableNodeTypes" :: NullOrUndefined (RestorableNodeTypeList) , "EnhancedVpcRouting" :: NullOrUndefined (Boolean) } -> {"SnapshotIdentifier" :: NullOrUndefined (String) , "ClusterIdentifier" :: NullOrUndefined (String) , "SnapshotCreateTime" :: NullOrUndefined (TStamp) , "Status" :: NullOrUndefined (String) , "Port" :: NullOrUndefined (Int) , "AvailabilityZone" :: NullOrUndefined (String) , "ClusterCreateTime" :: NullOrUndefined (TStamp) , "MasterUsername" :: NullOrUndefined (String) , "ClusterVersion" :: NullOrUndefined (String) , "SnapshotType" :: NullOrUndefined (String) , "NodeType" :: NullOrUndefined (String) , "NumberOfNodes" :: NullOrUndefined (Int) , "DBName" :: NullOrUndefined (String) , "VpcId" :: NullOrUndefined (String) , "Encrypted" :: NullOrUndefined (Boolean) , "KmsKeyId" :: NullOrUndefined (String) , "EncryptedWithHSM" :: NullOrUndefined (Boolean) , "AccountsWithRestoreAccess" :: NullOrUndefined (AccountsWithRestoreAccessList) , "OwnerAccount" :: NullOrUndefined (String) , "TotalBackupSizeInMegaBytes" :: NullOrUndefined (Number) , "ActualIncrementalBackupSizeInMegaBytes" :: NullOrUndefined (Number) , "BackupProgressInMegaBytes" :: NullOrUndefined (Number) , "CurrentBackupRateInMegaBytesPerSecond" :: NullOrUndefined (Number) , "EstimatedSecondsToCompletion" :: NullOrUndefined (Number) , "ElapsedTimeInSeconds" :: NullOrUndefined (Number) , "SourceRegion" :: NullOrUndefined (String) , "Tags" :: NullOrUndefined (TagList) , "RestorableNodeTypes" :: NullOrUndefined (RestorableNodeTypeList) , "EnhancedVpcRouting" :: NullOrUndefined (Boolean) } ) -> Snapshot
-newSnapshot'  customize = (Snapshot <<< customize) { "AccountsWithRestoreAccess": (NullOrUndefined Nothing), "ActualIncrementalBackupSizeInMegaBytes": (NullOrUndefined Nothing), "AvailabilityZone": (NullOrUndefined Nothing), "BackupProgressInMegaBytes": (NullOrUndefined Nothing), "ClusterCreateTime": (NullOrUndefined Nothing), "ClusterIdentifier": (NullOrUndefined Nothing), "ClusterVersion": (NullOrUndefined Nothing), "CurrentBackupRateInMegaBytesPerSecond": (NullOrUndefined Nothing), "DBName": (NullOrUndefined Nothing), "ElapsedTimeInSeconds": (NullOrUndefined Nothing), "Encrypted": (NullOrUndefined Nothing), "EncryptedWithHSM": (NullOrUndefined Nothing), "EnhancedVpcRouting": (NullOrUndefined Nothing), "EstimatedSecondsToCompletion": (NullOrUndefined Nothing), "KmsKeyId": (NullOrUndefined Nothing), "MasterUsername": (NullOrUndefined Nothing), "NodeType": (NullOrUndefined Nothing), "NumberOfNodes": (NullOrUndefined Nothing), "OwnerAccount": (NullOrUndefined Nothing), "Port": (NullOrUndefined Nothing), "RestorableNodeTypes": (NullOrUndefined Nothing), "SnapshotCreateTime": (NullOrUndefined Nothing), "SnapshotIdentifier": (NullOrUndefined Nothing), "SnapshotType": (NullOrUndefined Nothing), "SourceRegion": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing), "TotalBackupSizeInMegaBytes": (NullOrUndefined Nothing), "VpcId": (NullOrUndefined Nothing) }
+newSnapshot' :: ( { "SnapshotIdentifier" :: Maybe (String) , "ClusterIdentifier" :: Maybe (String) , "SnapshotCreateTime" :: Maybe (TStamp) , "Status" :: Maybe (String) , "Port" :: Maybe (Int) , "AvailabilityZone" :: Maybe (String) , "ClusterCreateTime" :: Maybe (TStamp) , "MasterUsername" :: Maybe (String) , "ClusterVersion" :: Maybe (String) , "SnapshotType" :: Maybe (String) , "NodeType" :: Maybe (String) , "NumberOfNodes" :: Maybe (Int) , "DBName" :: Maybe (String) , "VpcId" :: Maybe (String) , "Encrypted" :: Maybe (Boolean) , "KmsKeyId" :: Maybe (String) , "EncryptedWithHSM" :: Maybe (Boolean) , "AccountsWithRestoreAccess" :: Maybe (AccountsWithRestoreAccessList) , "OwnerAccount" :: Maybe (String) , "TotalBackupSizeInMegaBytes" :: Maybe (Number) , "ActualIncrementalBackupSizeInMegaBytes" :: Maybe (Number) , "BackupProgressInMegaBytes" :: Maybe (Number) , "CurrentBackupRateInMegaBytesPerSecond" :: Maybe (Number) , "EstimatedSecondsToCompletion" :: Maybe (Number) , "ElapsedTimeInSeconds" :: Maybe (Number) , "SourceRegion" :: Maybe (String) , "Tags" :: Maybe (TagList) , "RestorableNodeTypes" :: Maybe (RestorableNodeTypeList) , "EnhancedVpcRouting" :: Maybe (Boolean) } -> {"SnapshotIdentifier" :: Maybe (String) , "ClusterIdentifier" :: Maybe (String) , "SnapshotCreateTime" :: Maybe (TStamp) , "Status" :: Maybe (String) , "Port" :: Maybe (Int) , "AvailabilityZone" :: Maybe (String) , "ClusterCreateTime" :: Maybe (TStamp) , "MasterUsername" :: Maybe (String) , "ClusterVersion" :: Maybe (String) , "SnapshotType" :: Maybe (String) , "NodeType" :: Maybe (String) , "NumberOfNodes" :: Maybe (Int) , "DBName" :: Maybe (String) , "VpcId" :: Maybe (String) , "Encrypted" :: Maybe (Boolean) , "KmsKeyId" :: Maybe (String) , "EncryptedWithHSM" :: Maybe (Boolean) , "AccountsWithRestoreAccess" :: Maybe (AccountsWithRestoreAccessList) , "OwnerAccount" :: Maybe (String) , "TotalBackupSizeInMegaBytes" :: Maybe (Number) , "ActualIncrementalBackupSizeInMegaBytes" :: Maybe (Number) , "BackupProgressInMegaBytes" :: Maybe (Number) , "CurrentBackupRateInMegaBytesPerSecond" :: Maybe (Number) , "EstimatedSecondsToCompletion" :: Maybe (Number) , "ElapsedTimeInSeconds" :: Maybe (Number) , "SourceRegion" :: Maybe (String) , "Tags" :: Maybe (TagList) , "RestorableNodeTypes" :: Maybe (RestorableNodeTypeList) , "EnhancedVpcRouting" :: Maybe (Boolean) } ) -> Snapshot
+newSnapshot'  customize = (Snapshot <<< customize) { "AccountsWithRestoreAccess": Nothing, "ActualIncrementalBackupSizeInMegaBytes": Nothing, "AvailabilityZone": Nothing, "BackupProgressInMegaBytes": Nothing, "ClusterCreateTime": Nothing, "ClusterIdentifier": Nothing, "ClusterVersion": Nothing, "CurrentBackupRateInMegaBytesPerSecond": Nothing, "DBName": Nothing, "ElapsedTimeInSeconds": Nothing, "Encrypted": Nothing, "EncryptedWithHSM": Nothing, "EnhancedVpcRouting": Nothing, "EstimatedSecondsToCompletion": Nothing, "KmsKeyId": Nothing, "MasterUsername": Nothing, "NodeType": Nothing, "NumberOfNodes": Nothing, "OwnerAccount": Nothing, "Port": Nothing, "RestorableNodeTypes": Nothing, "SnapshotCreateTime": Nothing, "SnapshotIdentifier": Nothing, "SnapshotType": Nothing, "SourceRegion": Nothing, "Status": Nothing, "Tags": Nothing, "TotalBackupSizeInMegaBytes": Nothing, "VpcId": Nothing }
 
 
 
@@ -4431,9 +4430,9 @@ instance encodeSnapshotCopyDisabledFault :: Encode SnapshotCopyDisabledFault whe
 
 -- | <p>The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified customer master key (CMK) from AWS KMS in the destination region.</p> <p> For more information about managing snapshot copy grants, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
 newtype SnapshotCopyGrant = SnapshotCopyGrant 
-  { "SnapshotCopyGrantName" :: NullOrUndefined (String)
-  , "KmsKeyId" :: NullOrUndefined (String)
-  , "Tags" :: NullOrUndefined (TagList)
+  { "SnapshotCopyGrantName" :: Maybe (String)
+  , "KmsKeyId" :: Maybe (String)
+  , "Tags" :: Maybe (TagList)
   }
 derive instance newtypeSnapshotCopyGrant :: Newtype SnapshotCopyGrant _
 derive instance repGenericSnapshotCopyGrant :: Generic SnapshotCopyGrant _
@@ -4443,12 +4442,12 @@ instance encodeSnapshotCopyGrant :: Encode SnapshotCopyGrant where encode = gene
 
 -- | Constructs SnapshotCopyGrant from required parameters
 newSnapshotCopyGrant :: SnapshotCopyGrant
-newSnapshotCopyGrant  = SnapshotCopyGrant { "KmsKeyId": (NullOrUndefined Nothing), "SnapshotCopyGrantName": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newSnapshotCopyGrant  = SnapshotCopyGrant { "KmsKeyId": Nothing, "SnapshotCopyGrantName": Nothing, "Tags": Nothing }
 
 -- | Constructs SnapshotCopyGrant's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSnapshotCopyGrant' :: ( { "SnapshotCopyGrantName" :: NullOrUndefined (String) , "KmsKeyId" :: NullOrUndefined (String) , "Tags" :: NullOrUndefined (TagList) } -> {"SnapshotCopyGrantName" :: NullOrUndefined (String) , "KmsKeyId" :: NullOrUndefined (String) , "Tags" :: NullOrUndefined (TagList) } ) -> SnapshotCopyGrant
-newSnapshotCopyGrant'  customize = (SnapshotCopyGrant <<< customize) { "KmsKeyId": (NullOrUndefined Nothing), "SnapshotCopyGrantName": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newSnapshotCopyGrant' :: ( { "SnapshotCopyGrantName" :: Maybe (String) , "KmsKeyId" :: Maybe (String) , "Tags" :: Maybe (TagList) } -> {"SnapshotCopyGrantName" :: Maybe (String) , "KmsKeyId" :: Maybe (String) , "Tags" :: Maybe (TagList) } ) -> SnapshotCopyGrant
+newSnapshotCopyGrant'  customize = (SnapshotCopyGrant <<< customize) { "KmsKeyId": Nothing, "SnapshotCopyGrantName": Nothing, "Tags": Nothing }
 
 
 
@@ -4473,8 +4472,8 @@ instance encodeSnapshotCopyGrantList :: Encode SnapshotCopyGrantList where encod
 
 -- | <p/>
 newtype SnapshotCopyGrantMessage = SnapshotCopyGrantMessage 
-  { "Marker" :: NullOrUndefined (String)
-  , "SnapshotCopyGrants" :: NullOrUndefined (SnapshotCopyGrantList)
+  { "Marker" :: Maybe (String)
+  , "SnapshotCopyGrants" :: Maybe (SnapshotCopyGrantList)
   }
 derive instance newtypeSnapshotCopyGrantMessage :: Newtype SnapshotCopyGrantMessage _
 derive instance repGenericSnapshotCopyGrantMessage :: Generic SnapshotCopyGrantMessage _
@@ -4484,12 +4483,12 @@ instance encodeSnapshotCopyGrantMessage :: Encode SnapshotCopyGrantMessage where
 
 -- | Constructs SnapshotCopyGrantMessage from required parameters
 newSnapshotCopyGrantMessage :: SnapshotCopyGrantMessage
-newSnapshotCopyGrantMessage  = SnapshotCopyGrantMessage { "Marker": (NullOrUndefined Nothing), "SnapshotCopyGrants": (NullOrUndefined Nothing) }
+newSnapshotCopyGrantMessage  = SnapshotCopyGrantMessage { "Marker": Nothing, "SnapshotCopyGrants": Nothing }
 
 -- | Constructs SnapshotCopyGrantMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSnapshotCopyGrantMessage' :: ( { "Marker" :: NullOrUndefined (String) , "SnapshotCopyGrants" :: NullOrUndefined (SnapshotCopyGrantList) } -> {"Marker" :: NullOrUndefined (String) , "SnapshotCopyGrants" :: NullOrUndefined (SnapshotCopyGrantList) } ) -> SnapshotCopyGrantMessage
-newSnapshotCopyGrantMessage'  customize = (SnapshotCopyGrantMessage <<< customize) { "Marker": (NullOrUndefined Nothing), "SnapshotCopyGrants": (NullOrUndefined Nothing) }
+newSnapshotCopyGrantMessage' :: ( { "Marker" :: Maybe (String) , "SnapshotCopyGrants" :: Maybe (SnapshotCopyGrantList) } -> {"Marker" :: Maybe (String) , "SnapshotCopyGrants" :: Maybe (SnapshotCopyGrantList) } ) -> SnapshotCopyGrantMessage
+newSnapshotCopyGrantMessage'  customize = (SnapshotCopyGrantMessage <<< customize) { "Marker": Nothing, "SnapshotCopyGrants": Nothing }
 
 
 
@@ -4524,8 +4523,8 @@ instance encodeSnapshotList :: Encode SnapshotList where encode = genericEncode 
 
 -- | <p>Contains the output from the <a>DescribeClusterSnapshots</a> action. </p>
 newtype SnapshotMessage = SnapshotMessage 
-  { "Marker" :: NullOrUndefined (String)
-  , "Snapshots" :: NullOrUndefined (SnapshotList)
+  { "Marker" :: Maybe (String)
+  , "Snapshots" :: Maybe (SnapshotList)
   }
 derive instance newtypeSnapshotMessage :: Newtype SnapshotMessage _
 derive instance repGenericSnapshotMessage :: Generic SnapshotMessage _
@@ -4535,12 +4534,12 @@ instance encodeSnapshotMessage :: Encode SnapshotMessage where encode = genericE
 
 -- | Constructs SnapshotMessage from required parameters
 newSnapshotMessage :: SnapshotMessage
-newSnapshotMessage  = SnapshotMessage { "Marker": (NullOrUndefined Nothing), "Snapshots": (NullOrUndefined Nothing) }
+newSnapshotMessage  = SnapshotMessage { "Marker": Nothing, "Snapshots": Nothing }
 
 -- | Constructs SnapshotMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSnapshotMessage' :: ( { "Marker" :: NullOrUndefined (String) , "Snapshots" :: NullOrUndefined (SnapshotList) } -> {"Marker" :: NullOrUndefined (String) , "Snapshots" :: NullOrUndefined (SnapshotList) } ) -> SnapshotMessage
-newSnapshotMessage'  customize = (SnapshotMessage <<< customize) { "Marker": (NullOrUndefined Nothing), "Snapshots": (NullOrUndefined Nothing) }
+newSnapshotMessage' :: ( { "Marker" :: Maybe (String) , "Snapshots" :: Maybe (SnapshotList) } -> {"Marker" :: Maybe (String) , "Snapshots" :: Maybe (SnapshotList) } ) -> SnapshotMessage
+newSnapshotMessage'  customize = (SnapshotMessage <<< customize) { "Marker": Nothing, "Snapshots": Nothing }
 
 
 
@@ -4574,9 +4573,9 @@ instance encodeSourceType :: Encode SourceType where encode = genericEncode opti
 
 -- | <p>Describes a subnet.</p>
 newtype Subnet = Subnet 
-  { "SubnetIdentifier" :: NullOrUndefined (String)
-  , "SubnetAvailabilityZone" :: NullOrUndefined (AvailabilityZone)
-  , "SubnetStatus" :: NullOrUndefined (String)
+  { "SubnetIdentifier" :: Maybe (String)
+  , "SubnetAvailabilityZone" :: Maybe (AvailabilityZone)
+  , "SubnetStatus" :: Maybe (String)
   }
 derive instance newtypeSubnet :: Newtype Subnet _
 derive instance repGenericSubnet :: Generic Subnet _
@@ -4586,12 +4585,12 @@ instance encodeSubnet :: Encode Subnet where encode = genericEncode options
 
 -- | Constructs Subnet from required parameters
 newSubnet :: Subnet
-newSubnet  = Subnet { "SubnetAvailabilityZone": (NullOrUndefined Nothing), "SubnetIdentifier": (NullOrUndefined Nothing), "SubnetStatus": (NullOrUndefined Nothing) }
+newSubnet  = Subnet { "SubnetAvailabilityZone": Nothing, "SubnetIdentifier": Nothing, "SubnetStatus": Nothing }
 
 -- | Constructs Subnet's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSubnet' :: ( { "SubnetIdentifier" :: NullOrUndefined (String) , "SubnetAvailabilityZone" :: NullOrUndefined (AvailabilityZone) , "SubnetStatus" :: NullOrUndefined (String) } -> {"SubnetIdentifier" :: NullOrUndefined (String) , "SubnetAvailabilityZone" :: NullOrUndefined (AvailabilityZone) , "SubnetStatus" :: NullOrUndefined (String) } ) -> Subnet
-newSubnet'  customize = (Subnet <<< customize) { "SubnetAvailabilityZone": (NullOrUndefined Nothing), "SubnetIdentifier": (NullOrUndefined Nothing), "SubnetStatus": (NullOrUndefined Nothing) }
+newSubnet' :: ( { "SubnetIdentifier" :: Maybe (String) , "SubnetAvailabilityZone" :: Maybe (AvailabilityZone) , "SubnetStatus" :: Maybe (String) } -> {"SubnetIdentifier" :: Maybe (String) , "SubnetAvailabilityZone" :: Maybe (AvailabilityZone) , "SubnetStatus" :: Maybe (String) } ) -> Subnet
+newSubnet'  customize = (Subnet <<< customize) { "SubnetAvailabilityZone": Nothing, "SubnetIdentifier": Nothing, "SubnetStatus": Nothing }
 
 
 
@@ -4694,20 +4693,20 @@ instance encodeTableRestoreNotFoundFault :: Encode TableRestoreNotFoundFault whe
 
 -- | <p>Describes the status of a <a>RestoreTableFromClusterSnapshot</a> operation.</p>
 newtype TableRestoreStatus = TableRestoreStatus 
-  { "TableRestoreRequestId" :: NullOrUndefined (String)
-  , "Status" :: NullOrUndefined (TableRestoreStatusType)
-  , "Message" :: NullOrUndefined (String)
-  , "RequestTime" :: NullOrUndefined (TStamp)
-  , "ProgressInMegaBytes" :: NullOrUndefined (LongOptional)
-  , "TotalDataInMegaBytes" :: NullOrUndefined (LongOptional)
-  , "ClusterIdentifier" :: NullOrUndefined (String)
-  , "SnapshotIdentifier" :: NullOrUndefined (String)
-  , "SourceDatabaseName" :: NullOrUndefined (String)
-  , "SourceSchemaName" :: NullOrUndefined (String)
-  , "SourceTableName" :: NullOrUndefined (String)
-  , "TargetDatabaseName" :: NullOrUndefined (String)
-  , "TargetSchemaName" :: NullOrUndefined (String)
-  , "NewTableName" :: NullOrUndefined (String)
+  { "TableRestoreRequestId" :: Maybe (String)
+  , "Status" :: Maybe (TableRestoreStatusType)
+  , "Message" :: Maybe (String)
+  , "RequestTime" :: Maybe (TStamp)
+  , "ProgressInMegaBytes" :: Maybe (LongOptional)
+  , "TotalDataInMegaBytes" :: Maybe (LongOptional)
+  , "ClusterIdentifier" :: Maybe (String)
+  , "SnapshotIdentifier" :: Maybe (String)
+  , "SourceDatabaseName" :: Maybe (String)
+  , "SourceSchemaName" :: Maybe (String)
+  , "SourceTableName" :: Maybe (String)
+  , "TargetDatabaseName" :: Maybe (String)
+  , "TargetSchemaName" :: Maybe (String)
+  , "NewTableName" :: Maybe (String)
   }
 derive instance newtypeTableRestoreStatus :: Newtype TableRestoreStatus _
 derive instance repGenericTableRestoreStatus :: Generic TableRestoreStatus _
@@ -4717,12 +4716,12 @@ instance encodeTableRestoreStatus :: Encode TableRestoreStatus where encode = ge
 
 -- | Constructs TableRestoreStatus from required parameters
 newTableRestoreStatus :: TableRestoreStatus
-newTableRestoreStatus  = TableRestoreStatus { "ClusterIdentifier": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing), "NewTableName": (NullOrUndefined Nothing), "ProgressInMegaBytes": (NullOrUndefined Nothing), "RequestTime": (NullOrUndefined Nothing), "SnapshotIdentifier": (NullOrUndefined Nothing), "SourceDatabaseName": (NullOrUndefined Nothing), "SourceSchemaName": (NullOrUndefined Nothing), "SourceTableName": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "TableRestoreRequestId": (NullOrUndefined Nothing), "TargetDatabaseName": (NullOrUndefined Nothing), "TargetSchemaName": (NullOrUndefined Nothing), "TotalDataInMegaBytes": (NullOrUndefined Nothing) }
+newTableRestoreStatus  = TableRestoreStatus { "ClusterIdentifier": Nothing, "Message": Nothing, "NewTableName": Nothing, "ProgressInMegaBytes": Nothing, "RequestTime": Nothing, "SnapshotIdentifier": Nothing, "SourceDatabaseName": Nothing, "SourceSchemaName": Nothing, "SourceTableName": Nothing, "Status": Nothing, "TableRestoreRequestId": Nothing, "TargetDatabaseName": Nothing, "TargetSchemaName": Nothing, "TotalDataInMegaBytes": Nothing }
 
 -- | Constructs TableRestoreStatus's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTableRestoreStatus' :: ( { "TableRestoreRequestId" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (TableRestoreStatusType) , "Message" :: NullOrUndefined (String) , "RequestTime" :: NullOrUndefined (TStamp) , "ProgressInMegaBytes" :: NullOrUndefined (LongOptional) , "TotalDataInMegaBytes" :: NullOrUndefined (LongOptional) , "ClusterIdentifier" :: NullOrUndefined (String) , "SnapshotIdentifier" :: NullOrUndefined (String) , "SourceDatabaseName" :: NullOrUndefined (String) , "SourceSchemaName" :: NullOrUndefined (String) , "SourceTableName" :: NullOrUndefined (String) , "TargetDatabaseName" :: NullOrUndefined (String) , "TargetSchemaName" :: NullOrUndefined (String) , "NewTableName" :: NullOrUndefined (String) } -> {"TableRestoreRequestId" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (TableRestoreStatusType) , "Message" :: NullOrUndefined (String) , "RequestTime" :: NullOrUndefined (TStamp) , "ProgressInMegaBytes" :: NullOrUndefined (LongOptional) , "TotalDataInMegaBytes" :: NullOrUndefined (LongOptional) , "ClusterIdentifier" :: NullOrUndefined (String) , "SnapshotIdentifier" :: NullOrUndefined (String) , "SourceDatabaseName" :: NullOrUndefined (String) , "SourceSchemaName" :: NullOrUndefined (String) , "SourceTableName" :: NullOrUndefined (String) , "TargetDatabaseName" :: NullOrUndefined (String) , "TargetSchemaName" :: NullOrUndefined (String) , "NewTableName" :: NullOrUndefined (String) } ) -> TableRestoreStatus
-newTableRestoreStatus'  customize = (TableRestoreStatus <<< customize) { "ClusterIdentifier": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing), "NewTableName": (NullOrUndefined Nothing), "ProgressInMegaBytes": (NullOrUndefined Nothing), "RequestTime": (NullOrUndefined Nothing), "SnapshotIdentifier": (NullOrUndefined Nothing), "SourceDatabaseName": (NullOrUndefined Nothing), "SourceSchemaName": (NullOrUndefined Nothing), "SourceTableName": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "TableRestoreRequestId": (NullOrUndefined Nothing), "TargetDatabaseName": (NullOrUndefined Nothing), "TargetSchemaName": (NullOrUndefined Nothing), "TotalDataInMegaBytes": (NullOrUndefined Nothing) }
+newTableRestoreStatus' :: ( { "TableRestoreRequestId" :: Maybe (String) , "Status" :: Maybe (TableRestoreStatusType) , "Message" :: Maybe (String) , "RequestTime" :: Maybe (TStamp) , "ProgressInMegaBytes" :: Maybe (LongOptional) , "TotalDataInMegaBytes" :: Maybe (LongOptional) , "ClusterIdentifier" :: Maybe (String) , "SnapshotIdentifier" :: Maybe (String) , "SourceDatabaseName" :: Maybe (String) , "SourceSchemaName" :: Maybe (String) , "SourceTableName" :: Maybe (String) , "TargetDatabaseName" :: Maybe (String) , "TargetSchemaName" :: Maybe (String) , "NewTableName" :: Maybe (String) } -> {"TableRestoreRequestId" :: Maybe (String) , "Status" :: Maybe (TableRestoreStatusType) , "Message" :: Maybe (String) , "RequestTime" :: Maybe (TStamp) , "ProgressInMegaBytes" :: Maybe (LongOptional) , "TotalDataInMegaBytes" :: Maybe (LongOptional) , "ClusterIdentifier" :: Maybe (String) , "SnapshotIdentifier" :: Maybe (String) , "SourceDatabaseName" :: Maybe (String) , "SourceSchemaName" :: Maybe (String) , "SourceTableName" :: Maybe (String) , "TargetDatabaseName" :: Maybe (String) , "TargetSchemaName" :: Maybe (String) , "NewTableName" :: Maybe (String) } ) -> TableRestoreStatus
+newTableRestoreStatus'  customize = (TableRestoreStatus <<< customize) { "ClusterIdentifier": Nothing, "Message": Nothing, "NewTableName": Nothing, "ProgressInMegaBytes": Nothing, "RequestTime": Nothing, "SnapshotIdentifier": Nothing, "SourceDatabaseName": Nothing, "SourceSchemaName": Nothing, "SourceTableName": Nothing, "Status": Nothing, "TableRestoreRequestId": Nothing, "TargetDatabaseName": Nothing, "TargetSchemaName": Nothing, "TotalDataInMegaBytes": Nothing }
 
 
 
@@ -4737,8 +4736,8 @@ instance encodeTableRestoreStatusList :: Encode TableRestoreStatusList where enc
 
 -- | <p/>
 newtype TableRestoreStatusMessage = TableRestoreStatusMessage 
-  { "TableRestoreStatusDetails" :: NullOrUndefined (TableRestoreStatusList)
-  , "Marker" :: NullOrUndefined (String)
+  { "TableRestoreStatusDetails" :: Maybe (TableRestoreStatusList)
+  , "Marker" :: Maybe (String)
   }
 derive instance newtypeTableRestoreStatusMessage :: Newtype TableRestoreStatusMessage _
 derive instance repGenericTableRestoreStatusMessage :: Generic TableRestoreStatusMessage _
@@ -4748,12 +4747,12 @@ instance encodeTableRestoreStatusMessage :: Encode TableRestoreStatusMessage whe
 
 -- | Constructs TableRestoreStatusMessage from required parameters
 newTableRestoreStatusMessage :: TableRestoreStatusMessage
-newTableRestoreStatusMessage  = TableRestoreStatusMessage { "Marker": (NullOrUndefined Nothing), "TableRestoreStatusDetails": (NullOrUndefined Nothing) }
+newTableRestoreStatusMessage  = TableRestoreStatusMessage { "Marker": Nothing, "TableRestoreStatusDetails": Nothing }
 
 -- | Constructs TableRestoreStatusMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTableRestoreStatusMessage' :: ( { "TableRestoreStatusDetails" :: NullOrUndefined (TableRestoreStatusList) , "Marker" :: NullOrUndefined (String) } -> {"TableRestoreStatusDetails" :: NullOrUndefined (TableRestoreStatusList) , "Marker" :: NullOrUndefined (String) } ) -> TableRestoreStatusMessage
-newTableRestoreStatusMessage'  customize = (TableRestoreStatusMessage <<< customize) { "Marker": (NullOrUndefined Nothing), "TableRestoreStatusDetails": (NullOrUndefined Nothing) }
+newTableRestoreStatusMessage' :: ( { "TableRestoreStatusDetails" :: Maybe (TableRestoreStatusList) , "Marker" :: Maybe (String) } -> {"TableRestoreStatusDetails" :: Maybe (TableRestoreStatusList) , "Marker" :: Maybe (String) } ) -> TableRestoreStatusMessage
+newTableRestoreStatusMessage'  customize = (TableRestoreStatusMessage <<< customize) { "Marker": Nothing, "TableRestoreStatusDetails": Nothing }
 
 
 
@@ -4768,8 +4767,8 @@ instance encodeTableRestoreStatusType :: Encode TableRestoreStatusType where enc
 
 -- | <p>A tag consisting of a name/value pair for a resource.</p>
 newtype Tag = Tag 
-  { "Key" :: NullOrUndefined (String)
-  , "Value" :: NullOrUndefined (String)
+  { "Key" :: Maybe (String)
+  , "Value" :: Maybe (String)
   }
 derive instance newtypeTag :: Newtype Tag _
 derive instance repGenericTag :: Generic Tag _
@@ -4779,12 +4778,12 @@ instance encodeTag :: Encode Tag where encode = genericEncode options
 
 -- | Constructs Tag from required parameters
 newTag :: Tag
-newTag  = Tag { "Key": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newTag  = Tag { "Key": Nothing, "Value": Nothing }
 
 -- | Constructs Tag's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTag' :: ( { "Key" :: NullOrUndefined (String) , "Value" :: NullOrUndefined (String) } -> {"Key" :: NullOrUndefined (String) , "Value" :: NullOrUndefined (String) } ) -> Tag
-newTag'  customize = (Tag <<< customize) { "Key": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newTag' :: ( { "Key" :: Maybe (String) , "Value" :: Maybe (String) } -> {"Key" :: Maybe (String) , "Value" :: Maybe (String) } ) -> Tag
+newTag'  customize = (Tag <<< customize) { "Key": Nothing, "Value": Nothing }
 
 
 
@@ -4827,9 +4826,9 @@ instance encodeTagValueList :: Encode TagValueList where encode = genericEncode 
 
 -- | <p>A tag and its associated resource.</p>
 newtype TaggedResource = TaggedResource 
-  { "Tag" :: NullOrUndefined (Tag)
-  , "ResourceName" :: NullOrUndefined (String)
-  , "ResourceType" :: NullOrUndefined (String)
+  { "Tag" :: Maybe (Tag)
+  , "ResourceName" :: Maybe (String)
+  , "ResourceType" :: Maybe (String)
   }
 derive instance newtypeTaggedResource :: Newtype TaggedResource _
 derive instance repGenericTaggedResource :: Generic TaggedResource _
@@ -4839,12 +4838,12 @@ instance encodeTaggedResource :: Encode TaggedResource where encode = genericEnc
 
 -- | Constructs TaggedResource from required parameters
 newTaggedResource :: TaggedResource
-newTaggedResource  = TaggedResource { "ResourceName": (NullOrUndefined Nothing), "ResourceType": (NullOrUndefined Nothing), "Tag": (NullOrUndefined Nothing) }
+newTaggedResource  = TaggedResource { "ResourceName": Nothing, "ResourceType": Nothing, "Tag": Nothing }
 
 -- | Constructs TaggedResource's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTaggedResource' :: ( { "Tag" :: NullOrUndefined (Tag) , "ResourceName" :: NullOrUndefined (String) , "ResourceType" :: NullOrUndefined (String) } -> {"Tag" :: NullOrUndefined (Tag) , "ResourceName" :: NullOrUndefined (String) , "ResourceType" :: NullOrUndefined (String) } ) -> TaggedResource
-newTaggedResource'  customize = (TaggedResource <<< customize) { "ResourceName": (NullOrUndefined Nothing), "ResourceType": (NullOrUndefined Nothing), "Tag": (NullOrUndefined Nothing) }
+newTaggedResource' :: ( { "Tag" :: Maybe (Tag) , "ResourceName" :: Maybe (String) , "ResourceType" :: Maybe (String) } -> {"Tag" :: Maybe (Tag) , "ResourceName" :: Maybe (String) , "ResourceType" :: Maybe (String) } ) -> TaggedResource
+newTaggedResource'  customize = (TaggedResource <<< customize) { "ResourceName": Nothing, "ResourceType": Nothing, "Tag": Nothing }
 
 
 
@@ -4859,8 +4858,8 @@ instance encodeTaggedResourceList :: Encode TaggedResourceList where encode = ge
 
 -- | <p/>
 newtype TaggedResourceListMessage = TaggedResourceListMessage 
-  { "TaggedResources" :: NullOrUndefined (TaggedResourceList)
-  , "Marker" :: NullOrUndefined (String)
+  { "TaggedResources" :: Maybe (TaggedResourceList)
+  , "Marker" :: Maybe (String)
   }
 derive instance newtypeTaggedResourceListMessage :: Newtype TaggedResourceListMessage _
 derive instance repGenericTaggedResourceListMessage :: Generic TaggedResourceListMessage _
@@ -4870,12 +4869,12 @@ instance encodeTaggedResourceListMessage :: Encode TaggedResourceListMessage whe
 
 -- | Constructs TaggedResourceListMessage from required parameters
 newTaggedResourceListMessage :: TaggedResourceListMessage
-newTaggedResourceListMessage  = TaggedResourceListMessage { "Marker": (NullOrUndefined Nothing), "TaggedResources": (NullOrUndefined Nothing) }
+newTaggedResourceListMessage  = TaggedResourceListMessage { "Marker": Nothing, "TaggedResources": Nothing }
 
 -- | Constructs TaggedResourceListMessage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTaggedResourceListMessage' :: ( { "TaggedResources" :: NullOrUndefined (TaggedResourceList) , "Marker" :: NullOrUndefined (String) } -> {"TaggedResources" :: NullOrUndefined (TaggedResourceList) , "Marker" :: NullOrUndefined (String) } ) -> TaggedResourceListMessage
-newTaggedResourceListMessage'  customize = (TaggedResourceListMessage <<< customize) { "Marker": (NullOrUndefined Nothing), "TaggedResources": (NullOrUndefined Nothing) }
+newTaggedResourceListMessage' :: ( { "TaggedResources" :: Maybe (TaggedResourceList) , "Marker" :: Maybe (String) } -> {"TaggedResources" :: Maybe (TaggedResourceList) , "Marker" :: Maybe (String) } ) -> TaggedResourceListMessage
+newTaggedResourceListMessage'  customize = (TaggedResourceListMessage <<< customize) { "Marker": Nothing, "TaggedResources": Nothing }
 
 
 
@@ -4930,8 +4929,8 @@ instance encodeVpcSecurityGroupIdList :: Encode VpcSecurityGroupIdList where enc
 
 -- | <p>Describes the members of a VPC security group.</p>
 newtype VpcSecurityGroupMembership = VpcSecurityGroupMembership 
-  { "VpcSecurityGroupId" :: NullOrUndefined (String)
-  , "Status" :: NullOrUndefined (String)
+  { "VpcSecurityGroupId" :: Maybe (String)
+  , "Status" :: Maybe (String)
   }
 derive instance newtypeVpcSecurityGroupMembership :: Newtype VpcSecurityGroupMembership _
 derive instance repGenericVpcSecurityGroupMembership :: Generic VpcSecurityGroupMembership _
@@ -4941,12 +4940,12 @@ instance encodeVpcSecurityGroupMembership :: Encode VpcSecurityGroupMembership w
 
 -- | Constructs VpcSecurityGroupMembership from required parameters
 newVpcSecurityGroupMembership :: VpcSecurityGroupMembership
-newVpcSecurityGroupMembership  = VpcSecurityGroupMembership { "Status": (NullOrUndefined Nothing), "VpcSecurityGroupId": (NullOrUndefined Nothing) }
+newVpcSecurityGroupMembership  = VpcSecurityGroupMembership { "Status": Nothing, "VpcSecurityGroupId": Nothing }
 
 -- | Constructs VpcSecurityGroupMembership's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newVpcSecurityGroupMembership' :: ( { "VpcSecurityGroupId" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (String) } -> {"VpcSecurityGroupId" :: NullOrUndefined (String) , "Status" :: NullOrUndefined (String) } ) -> VpcSecurityGroupMembership
-newVpcSecurityGroupMembership'  customize = (VpcSecurityGroupMembership <<< customize) { "Status": (NullOrUndefined Nothing), "VpcSecurityGroupId": (NullOrUndefined Nothing) }
+newVpcSecurityGroupMembership' :: ( { "VpcSecurityGroupId" :: Maybe (String) , "Status" :: Maybe (String) } -> {"VpcSecurityGroupId" :: Maybe (String) , "Status" :: Maybe (String) } ) -> VpcSecurityGroupMembership
+newVpcSecurityGroupMembership'  customize = (VpcSecurityGroupMembership <<< customize) { "Status": Nothing, "VpcSecurityGroupId": Nothing }
 
 
 

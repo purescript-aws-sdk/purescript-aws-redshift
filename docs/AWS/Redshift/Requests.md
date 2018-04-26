@@ -99,7 +99,7 @@ createSnapshotCopyGrant :: forall eff. Service -> CreateSnapshotCopyGrantMessage
 #### `createTags`
 
 ``` purescript
-createTags :: forall eff. Service -> CreateTagsMessage -> Aff (exception :: EXCEPTION | eff) NoOutput
+createTags :: forall eff. Service -> CreateTagsMessage -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Adds one or more tags to a specified resource.</p> <p>A resource can have up to 10 tags. If you try to create more than 10 tags for a resource, you will receive an error and the attempt will fail.</p> <p>If you specify a key that already exists for the resource, the value for that key will be updated with the new value.</p>
@@ -115,7 +115,7 @@ deleteCluster :: forall eff. Service -> DeleteClusterMessage -> Aff (exception :
 #### `deleteClusterParameterGroup`
 
 ``` purescript
-deleteClusterParameterGroup :: forall eff. Service -> DeleteClusterParameterGroupMessage -> Aff (exception :: EXCEPTION | eff) NoOutput
+deleteClusterParameterGroup :: forall eff. Service -> DeleteClusterParameterGroupMessage -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Deletes a specified Amazon Redshift parameter group.</p> <note> <p>You cannot delete a parameter group if it is associated with a cluster.</p> </note>
@@ -123,7 +123,7 @@ deleteClusterParameterGroup :: forall eff. Service -> DeleteClusterParameterGrou
 #### `deleteClusterSecurityGroup`
 
 ``` purescript
-deleteClusterSecurityGroup :: forall eff. Service -> DeleteClusterSecurityGroupMessage -> Aff (exception :: EXCEPTION | eff) NoOutput
+deleteClusterSecurityGroup :: forall eff. Service -> DeleteClusterSecurityGroupMessage -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Deletes an Amazon Redshift security group.</p> <note> <p>You cannot delete a security group that is associated with any clusters. You cannot delete the default security group.</p> </note> <p> For information about managing security groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
@@ -139,7 +139,7 @@ deleteClusterSnapshot :: forall eff. Service -> DeleteClusterSnapshotMessage -> 
 #### `deleteClusterSubnetGroup`
 
 ``` purescript
-deleteClusterSubnetGroup :: forall eff. Service -> DeleteClusterSubnetGroupMessage -> Aff (exception :: EXCEPTION | eff) NoOutput
+deleteClusterSubnetGroup :: forall eff. Service -> DeleteClusterSubnetGroupMessage -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Deletes the specified cluster subnet group.</p>
@@ -147,7 +147,7 @@ deleteClusterSubnetGroup :: forall eff. Service -> DeleteClusterSubnetGroupMessa
 #### `deleteEventSubscription`
 
 ``` purescript
-deleteEventSubscription :: forall eff. Service -> DeleteEventSubscriptionMessage -> Aff (exception :: EXCEPTION | eff) NoOutput
+deleteEventSubscription :: forall eff. Service -> DeleteEventSubscriptionMessage -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Deletes an Amazon Redshift event notification subscription.</p>
@@ -155,7 +155,7 @@ deleteEventSubscription :: forall eff. Service -> DeleteEventSubscriptionMessage
 #### `deleteHsmClientCertificate`
 
 ``` purescript
-deleteHsmClientCertificate :: forall eff. Service -> DeleteHsmClientCertificateMessage -> Aff (exception :: EXCEPTION | eff) NoOutput
+deleteHsmClientCertificate :: forall eff. Service -> DeleteHsmClientCertificateMessage -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Deletes the specified HSM client certificate.</p>
@@ -163,7 +163,7 @@ deleteHsmClientCertificate :: forall eff. Service -> DeleteHsmClientCertificateM
 #### `deleteHsmConfiguration`
 
 ``` purescript
-deleteHsmConfiguration :: forall eff. Service -> DeleteHsmConfigurationMessage -> Aff (exception :: EXCEPTION | eff) NoOutput
+deleteHsmConfiguration :: forall eff. Service -> DeleteHsmConfigurationMessage -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Deletes the specified Amazon Redshift HSM configuration.</p>
@@ -171,7 +171,7 @@ deleteHsmConfiguration :: forall eff. Service -> DeleteHsmConfigurationMessage -
 #### `deleteSnapshotCopyGrant`
 
 ``` purescript
-deleteSnapshotCopyGrant :: forall eff. Service -> DeleteSnapshotCopyGrantMessage -> Aff (exception :: EXCEPTION | eff) NoOutput
+deleteSnapshotCopyGrant :: forall eff. Service -> DeleteSnapshotCopyGrantMessage -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Deletes the specified snapshot copy grant.</p>
@@ -179,7 +179,7 @@ deleteSnapshotCopyGrant :: forall eff. Service -> DeleteSnapshotCopyGrantMessage
 #### `deleteTags`
 
 ``` purescript
-deleteTags :: forall eff. Service -> DeleteTagsMessage -> Aff (exception :: EXCEPTION | eff) NoOutput
+deleteTags :: forall eff. Service -> DeleteTagsMessage -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Deletes a tag or tags from a resource. You must provide the ARN of the resource from which you want to delete the tag or tags.</p>

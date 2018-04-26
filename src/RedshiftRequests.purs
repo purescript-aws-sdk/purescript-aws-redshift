@@ -85,7 +85,7 @@ createSnapshotCopyGrant (Redshift.Service serviceImpl) = AWS.request serviceImpl
 
 
 -- | <p>Adds one or more tags to a specified resource.</p> <p>A resource can have up to 10 tags. If you try to create more than 10 tags for a resource, you will receive an error and the attempt will fail.</p> <p>If you specify a key that already exists for the resource, the value for that key will be updated with the new value.</p>
-createTags :: forall eff. Redshift.Service -> RedshiftTypes.CreateTagsMessage -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+createTags :: forall eff. Redshift.Service -> RedshiftTypes.CreateTagsMessage -> Aff (exception :: EXCEPTION | eff) Unit
 createTags (Redshift.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "createTags"
 
@@ -97,13 +97,13 @@ deleteCluster (Redshift.Service serviceImpl) = AWS.request serviceImpl method  w
 
 
 -- | <p>Deletes a specified Amazon Redshift parameter group.</p> <note> <p>You cannot delete a parameter group if it is associated with a cluster.</p> </note>
-deleteClusterParameterGroup :: forall eff. Redshift.Service -> RedshiftTypes.DeleteClusterParameterGroupMessage -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteClusterParameterGroup :: forall eff. Redshift.Service -> RedshiftTypes.DeleteClusterParameterGroupMessage -> Aff (exception :: EXCEPTION | eff) Unit
 deleteClusterParameterGroup (Redshift.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteClusterParameterGroup"
 
 
 -- | <p>Deletes an Amazon Redshift security group.</p> <note> <p>You cannot delete a security group that is associated with any clusters. You cannot delete the default security group.</p> </note> <p> For information about managing security groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-deleteClusterSecurityGroup :: forall eff. Redshift.Service -> RedshiftTypes.DeleteClusterSecurityGroupMessage -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteClusterSecurityGroup :: forall eff. Redshift.Service -> RedshiftTypes.DeleteClusterSecurityGroupMessage -> Aff (exception :: EXCEPTION | eff) Unit
 deleteClusterSecurityGroup (Redshift.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteClusterSecurityGroup"
 
@@ -115,37 +115,37 @@ deleteClusterSnapshot (Redshift.Service serviceImpl) = AWS.request serviceImpl m
 
 
 -- | <p>Deletes the specified cluster subnet group.</p>
-deleteClusterSubnetGroup :: forall eff. Redshift.Service -> RedshiftTypes.DeleteClusterSubnetGroupMessage -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteClusterSubnetGroup :: forall eff. Redshift.Service -> RedshiftTypes.DeleteClusterSubnetGroupMessage -> Aff (exception :: EXCEPTION | eff) Unit
 deleteClusterSubnetGroup (Redshift.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteClusterSubnetGroup"
 
 
 -- | <p>Deletes an Amazon Redshift event notification subscription.</p>
-deleteEventSubscription :: forall eff. Redshift.Service -> RedshiftTypes.DeleteEventSubscriptionMessage -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteEventSubscription :: forall eff. Redshift.Service -> RedshiftTypes.DeleteEventSubscriptionMessage -> Aff (exception :: EXCEPTION | eff) Unit
 deleteEventSubscription (Redshift.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteEventSubscription"
 
 
 -- | <p>Deletes the specified HSM client certificate.</p>
-deleteHsmClientCertificate :: forall eff. Redshift.Service -> RedshiftTypes.DeleteHsmClientCertificateMessage -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteHsmClientCertificate :: forall eff. Redshift.Service -> RedshiftTypes.DeleteHsmClientCertificateMessage -> Aff (exception :: EXCEPTION | eff) Unit
 deleteHsmClientCertificate (Redshift.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteHsmClientCertificate"
 
 
 -- | <p>Deletes the specified Amazon Redshift HSM configuration.</p>
-deleteHsmConfiguration :: forall eff. Redshift.Service -> RedshiftTypes.DeleteHsmConfigurationMessage -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteHsmConfiguration :: forall eff. Redshift.Service -> RedshiftTypes.DeleteHsmConfigurationMessage -> Aff (exception :: EXCEPTION | eff) Unit
 deleteHsmConfiguration (Redshift.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteHsmConfiguration"
 
 
 -- | <p>Deletes the specified snapshot copy grant.</p>
-deleteSnapshotCopyGrant :: forall eff. Redshift.Service -> RedshiftTypes.DeleteSnapshotCopyGrantMessage -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteSnapshotCopyGrant :: forall eff. Redshift.Service -> RedshiftTypes.DeleteSnapshotCopyGrantMessage -> Aff (exception :: EXCEPTION | eff) Unit
 deleteSnapshotCopyGrant (Redshift.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteSnapshotCopyGrant"
 
 
 -- | <p>Deletes a tag or tags from a resource. You must provide the ARN of the resource from which you want to delete the tag or tags.</p>
-deleteTags :: forall eff. Redshift.Service -> RedshiftTypes.DeleteTagsMessage -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteTags :: forall eff. Redshift.Service -> RedshiftTypes.DeleteTagsMessage -> Aff (exception :: EXCEPTION | eff) Unit
 deleteTags (Redshift.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteTags"
 
